@@ -1,0 +1,26 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace RogueFPS
+<root>
+	<div class="upgrades">
+		@foreach (var upgrade in TargetObject.PickedUpUpgrades.Values)
+		{
+			<div class="upgrade">
+				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.Icon')"></div>
+				@* <div class="name">@upgrade.Name</div>*@
+				<div class="amount">@upgrade.Amount</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	[Property] PlayerStats TargetObject { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(Time.Delta);
+}

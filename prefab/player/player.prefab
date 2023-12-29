@@ -33,7 +33,7 @@
         "Acceleration": 10,
         "GroundAngle": 45,
         "Height": 64,
-        "IgnoreLayers": "player",
+        "IgnoreLayers": "player,trigger",
         "Radius": 16,
         "StepHeight": 18
       },
@@ -347,7 +347,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3000.9775
+              "Relative": 7035.323
             }
           },
           {
@@ -362,7 +362,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3000.9775
+              "Relative": 7035.323
             }
           },
           {
@@ -382,7 +382,7 @@
             "SpecialAbilityIcon": "ui/test/ability/ab3.jpg",
             "SpecialAbilityName": "Power Slide",
             "TimeSinceActiveChanged": {
-              "Relative": 3000.9775
+              "Relative": 7035.323
             },
             "WishDirectionScale": 0.4
           },
@@ -391,14 +391,14 @@
             "__enabled": true,
             "IsActive": false,
             "PlayerController": null,
-            "PlayerStatsComponent": null,
+            "PlayerStatsComponent": "c33647ce-f849-407c-ab4b-7ad5bac351e8",
             "Priority": 0,
             "SpecialAbility": false,
             "SpecialAbilityDescription": "None",
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3000.9775
+              "Relative": 7035.323
             }
           }
         ]
@@ -423,6 +423,28 @@
             "MyStringValue": "Hello World!",
             "playerAbility": "c33647ce-f849-407c-ab4b-7ad5bac351e8",
             "playerStats": "c33647ce-f849-407c-ab4b-7ad5bac351e8"
+          },
+          {
+            "__type": "ItemsUI",
+            "__enabled": true,
+            "TargetObject": "c33647ce-f849-407c-ab4b-7ad5bac351e8"
+          }
+        ]
+      },
+      {
+        "Id": "46302018-130f-402f-bc6c-fe6a61267c3f",
+        "Name": "Object",
+        "Position": "0,0,32.72334",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SphereCollider",
+            "__enabled": true,
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Radius": 16,
+            "Static": false,
+            "Surface": null
           }
         ]
       }

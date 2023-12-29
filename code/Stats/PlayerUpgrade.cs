@@ -4,7 +4,7 @@ using static RogueFPS.PlayerStats;
 
 namespace RogueFPS;
 
-[Title( "Rogue FPS Player Upgrade" )]
+[Title( "Upgrade" )]
 [Category( "Player Upgrade" )]
 [Icon( "upgrade", "red", "white" )]
 [EditorHandle( "materials/gizmo/charactercontroller.png" )]
@@ -63,8 +63,8 @@ public sealed class PlayerUpgrade : Component, Component.ITriggerListener
 				plyStatComp.AddUpgrade( pickedUpgrade );
 
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
-
-				GameObject.Parent.Destroy();
+				Log.Info( "Player picked up an upgrade" );
+				GameObject.Destroy();
 			}
 
 			else

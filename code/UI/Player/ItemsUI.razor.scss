@@ -1,0 +1,43 @@
+ItemsUI {
+	position: absolute;
+	top: 5%;
+	width:100%;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+
+	.upgrade {
+		margin: 5px;
+		padding: 10px;
+		border-radius: 5px;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			background-color: rgba(white, 0.2);
+		}
+	}
+
+	.upgrade .icon {
+		width: 50px;
+		height: 50px;
+		background-size: cover;
+		margin-bottom: 5px;
+		border: 1px solid #ccc;
+	}
+
+	.upgrade .name {
+		font-weight: bold;
+		position: absolute;
+	}
+
+	.upgrade .amount {
+		color: cyan;
+		font-size: 20px;
+		font-weight: bold;
+		position: absolute;
+		top: 80%;
+		left: 80%;
+	}
+}

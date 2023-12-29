@@ -1928,6 +1928,158 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "afdd136d-87d7-436d-a364-291340d3d304",
+      "Name": "Sphere",
+      "Position": "-384,992,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__enabled": true,
+          "AsAPercent": false,
+          "ItemDescription": "Boing",
+          "ItemName": "Oingo",
+          "UpgradeAmount": 1,
+          "UpgradeIcon": "ui/test/items/hyper.png",
+          "UpgradeType": "AmountOfJumps"
+        },
+        {
+          "__type": "SphereCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "a58e6ac7-9186-4d05-ba3a-2108d89a7901",
+      "Name": "Sphere (1)",
+      "Position": "-539.0129,992,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__enabled": true,
+          "AsAPercent": true,
+          "ItemDescription": "Boingsfa",
+          "ItemName": "Oingodfsa",
+          "UpgradeAmount": 10,
+          "UpgradeIcon": "ui/test/items/icecream.png",
+          "UpgradeType": "JumpHeight"
+        },
+        {
+          "__type": "SphereCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "0f871044-d426-4f66-bec3-f51e5b9c4c38",
+      "Name": "Sphere (2)",
+      "Position": "-693.9497,992,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__enabled": true,
+          "AsAPercent": false,
+          "ItemDescription": "Boing",
+          "ItemName": "Oingo",
+          "UpgradeAmount": 1,
+          "UpgradeIcon": "ui/test/items/hyper.png",
+          "UpgradeType": "AmountOfJumps"
+        },
+        {
+          "__type": "SphereCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "c4552992-603b-41d3-bb68-91a87d6062c0",
+      "Name": "Sphere (3)",
+      "Position": "-784.4181,992,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__enabled": true,
+          "AsAPercent": false,
+          "ItemDescription": "Boing",
+          "ItemName": "Oingo",
+          "UpgradeAmount": 1,
+          "UpgradeIcon": "ui/test/items/hyper.png",
+          "UpgradeType": "AmountOfJumps"
+        },
+        {
+          "__type": "SphereCollider",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false,
+          "Surface": null
+        }
+      ]
     }
   ],
   "SceneProperties": {
