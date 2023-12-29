@@ -1,0 +1,46 @@
+AbilityIcon {
+    .ability {
+        gap: 8px;
+
+        .title {
+            font-size: 15px;
+            font-family: Poppins;
+            color: #FF0000;
+            position: absolute;
+        }
+
+        .input {
+            font-size: 15px;
+            font-family: Roboto;
+            font-weight: 800;
+            color: white;
+            position: absolute;
+            left: 5%;
+            top: 2%;
+        }
+
+        .icon {
+            width: 75px;
+            aspect-ratio: 1;
+            background-size: contain;
+            border: 2px solid rgba(255,255,255,1);
+
+            &.cooldown {
+                background-tint: rgba(100,50,200,100);
+            }
+        }
+
+        .coolingdown {
+            position: absolute;
+            width: 75px;
+
+            &.cooldown {
+                border-bottom: 2px solid rgba(100,100,255,1);
+            }
+
+            height: 100%;
+            bottom: 100%;
+            z-index: 5;
+        }
+    }
+}

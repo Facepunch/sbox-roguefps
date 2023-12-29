@@ -1,0 +1,13 @@
+{
+  "DisplayName": "Test Player",
+  "Description": "I am a player xd",
+  "Health": 100,
+  "Armour": 0,
+  "WalkSpeed": 280,
+  "SprintSpeed": 400,
+  "AmountOfJumps": 1,
+  "JumpHeight": 1,
+  "AttackSpeed": 2,
+  "AttackDamage": 1,
+  "__references": []
+}

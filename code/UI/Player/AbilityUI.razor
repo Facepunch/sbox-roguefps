@@ -1,0 +1,100 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+@namespace RogueFPS
+
+<root>
+	<div class="abilities">
+	<AbilityIcon AbilityName="@playerAbility.AbilityPrimaryName" AbilityImage="@playerAbility.AbilityPrimaryIcons" AbilityInput="M1"/>
+	
+	<AbilityIcon AbilityName="@playerAbility.AbilitySecondaryName" AbilityImage="@playerAbility.AbilitySecondaryIcons" AbilityInput="M2"/>
+	
+	<AbilityIcon AbilityName="@playerAbility.AbilityUtilityName" AbilityImage="@playerAbility.AbilityUtilityIcons" AbilityInput="C"	
+	CooldownTime="@CoolDownSecondaryBar(skillCoolDown)" CooldownCheck="@CoolDownMessage(isSkillOne)"/>
+	
+	<AbilityIcon AbilityName="@playerAbility.AbilityUltimateName" AbilityImage="@playerAbility.AbilityUltimateIcons" AbilityInput="R"/>
+	
+	</div>
+	
+</root>
+
+@code
+{
+	[Property] PlayerAbilities playerAbility { get; set; }
+	[Property] PlayerStats playerStats { get; set; }
+	[Property] public string MyStringValue { get; set; } = "Hello World!";
+
+	public string secondaryCooldown;
+	public string skillOneCooldown;
+	public string skillUltCooldown;
+
+	public int secCool;
+	public int skilloneCool;
+	public int skillUltCool;
+
+	private float secCoolDown;
+	private float skillCoolDown;
+	private float skillUltCoolDown;
+
+	public bool isPrimaryAttacking = false;
+	public bool isSecondaryAttacking = false;
+	public bool isSkillOne = false;
+	public bool isSkillUlt = false;
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+
+		if (playerStats.AbilityCooldown >= 0)
+		{
+			skillCoolDown = playerStats.AbilityCooldown;
+			skilloneCool = (int)playerStats.AbilityCooldown + 1;
+			skillOneCooldown = skilloneCool.ToString();
+			isSkillOne = false;
+		}
+		else
+		{
+			skillOneCooldown = "Shift";
+			isSkillOne = true;
+		}
+	}
+
+	public string CoolDownMessage(bool isUsing)
+	{
+		if (isUsing)
+		{
+			return "";
+		}
+		else
+		{
+			return "cooldown";
+		}
+	}
+
+	public string CoolDownSecondaryBar(float currentCooldown)
+	{
+		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SecondaryAttackCoolDown] * 100;
+		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
+		return $"bottom: {cooldownPercentage}%";
+	}
+
+	public string CoolDownSkill1Bar(float currentCooldown)
+	{
+		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown] * 100;
+		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
+		return $"bottom: {cooldownPercentage}%";
+	}
+
+	public string CoolDownUltiBar(float currentCooldown)
+	{
+		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.UltimateCoolDown] * 100;
+		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
+		return $"bottom: {cooldownPercentage}%";
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Delta );
+}

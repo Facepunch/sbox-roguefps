@@ -1,0 +1,32 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+
+<root>
+    <div class="vitals">
+        <div class="health">6544654</div>
+    </div>
+</root>
+
+@code
+{
+    public override void Tick()
+    {
+        var tr = new PanelTransform();
+
+        var screenSize = Screen.Size;
+        var mousePos = Mouse.Position;
+
+        Style.Left = Length.Fraction(mousePos.x / screenSize.x);
+        Style.Top = Length.Fraction(mousePos.y / screenSize.y);
+
+        // // tr.AddTranslateX( Length.Percent( -50 ) );
+        // // tr.AddTranslateY( Length.Percent( -50 ) );
+
+        // Log.Info(mousePos.y / screenSize.y);
+    }
+
+    // Update every frame. This is just done as a test, and definitely should not be done.
+    protected override int BuildHash() => System.HashCode.Combine(Time.Now );
+}

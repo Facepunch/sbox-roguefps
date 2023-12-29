@@ -1,0 +1,285 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+@namespace RogueFPS
+
+<root>
+    <div class="vitals">
+	    <div class="abilities">
+		    <div class="ability ">
+                <div class="icon" style="background-image: url( 'roguefps/ui/test/ability/ab1.png')"></div>
+                <div class="icontext">M1</div>
+		    </div>
+            <div class="ability ">
+            
+                <div class="icon @CanUseSeconday(isSecondaryAttacking)" style="background-image: url( 'roguefps/ui/test/ability/ab2.png')">
+                    <div class="coolingdown @CanUseSeconday(isSecondaryAttacking)" style="@CoolDownSecondaryBar(secCoolDown)"></div>
+                </div>
+                <div class="icontext">@secondaryCooldown</div>
+            </div>
+            @foreach (var ability in TargetObject.PickedUpAbilities.Values)
+            {
+                <div class="ability">
+                        <div class="usage @HasMultipleAbilities( AbilityHasMultiple )">@TargetObject.AbilityUsed</div>
+                    <div class="icon @CanUseSeconday(isSkillOne)" style="background-image: url('@ability.Icon')">
+                        <div class="coolingdown @CanUseSeconday(isSkillOne)" style="@CoolDownSkill1Bar(skillCoolDown)"></div>			
+                    </div>
+                    <div class="icontext">@skillOneCooldown</div>
+                </div>
+            }
+            @foreach (var ability in TargetObject.PickedUpUltimate.Values)
+            {
+                <div class="ability">
+                    <div class="icon @CanUseSeconday(isSkillUlt)" style="background-image: url('@ability.Icon')">
+                        <div class="coolingdown @CanUseSeconday(isSkillUlt)" style="@CoolDownUltiBar(skillUltCoolDown)"></div>
+                    </div>
+                    <div class="icontext">@skillUltCooldown</div>
+                </div>
+            }
+        </div>
+
+        <div class="health">
+            <div class="value">100</div>
+        </div>
+        <div class="armour">
+            <div class="value">50</div>
+        </div>
+    </div>
+	
+	<div class="coinage">
+		<div class="icon"></div>
+        <div class="value">
+            @TargetObject.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins]
+        </div>
+    </div>
+
+    <div class="upgrades">
+        @foreach (var upgrade in TargetObject.PickedUpUpgrades.Values)
+        {
+            <div class="upgrade">
+                            <div class="icon" onmouseout="@(() => KillToolTip())" onmouseover="@(() => ToolTip())" style="background-image: url('@upgrade.Icon')"></div>
+                @* <div class="name">@upgrade.Name</div>*@
+                <div class="amount">@upgrade.Amount</div>
+            </div>
+        }
+    </div>
+
+    <div class="lootbox @CanInteractWithLootBox">
+		<div class="use">[E]</div>
+        <div class="type">Open @TargetObject.LootBoxName</div>
+        <div class="cost">$@TargetObject.LootBoxCost</div>
+    </div>
+
+@*     <div class="item">
+        <div class="value">16</div>
+        <div class="subvalue">67</div>
+    </div> *@
+
+	<div class="stats">
+		<div class="stat">stats</div>
+        <div class="value">Amount Of Jumps: @TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps]</div>
+		<div class="value">Walk Speed: @TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed]</div>
+		<div class="value">Jump Height: @TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.JumpHeight]</div>
+		<div class="value">Attack Speed: @TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed]</div>
+		<div class="value">Secondary Attack CoolDown: @TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.SecondaryAttackCoolDown]</div>
+		<div class="value">Skill One CoolDown: @TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown]</div>
+    </div>
+
+</root>
+
+@code
+{
+
+    [Property] public PlayerStats TargetObject { get; set; }
+
+    [Property] public RogueFPSTestGun TestGun { get; set; }
+
+    [Property] public RogueFPSPlayerController PlayerController { get; set; }
+
+    public bool isPrimaryAttacking = false;
+    public bool isSecondaryAttacking = false;
+    public bool isSkillOne = false;
+    public bool isSkillUlt = false;
+
+    public string secondaryCooldown;
+    public string skillOneCooldown;
+    public string skillUltCooldown;
+
+    public int secCool;
+    public int skilloneCool;
+    public int skillUltCool;
+
+    private float secCoolDown;
+    private float skillCoolDown;
+    private float skillUltCoolDown;
+
+    public string CanInteractWithLootBox = "using";
+
+    public bool AbilityHasMultiple = false;
+
+    public bool TabDown = false;
+
+    public ItemsToolTip itemToolTip;
+
+    protected override void OnUpdate()
+    {
+        base.OnUpdate();
+
+        isPrimaryAttacking = Input.Down("attack1");
+        //isSecondaryAttacking = Input.Down("attack2");
+
+        if (TestGun.burstCoolDown >= 0)
+        {
+            secCoolDown = TestGun.burstCoolDown;
+            secCool = (int)TestGun.burstCoolDown + 1;
+            secondaryCooldown = secCool.ToString();
+            isSecondaryAttacking = false;
+        }
+        else
+        {
+            secondaryCooldown = "M2";
+            isSecondaryAttacking = true;
+        }
+
+        var ability = TargetObject.PickedUpAbilities.Count();
+
+        TabDown = Input.Down("score");
+        SetClass("open", TabDown);
+
+        if (TargetObject.AbilityCooldown >= 0)
+        {
+            skillCoolDown = TargetObject.AbilityCooldown;
+            skilloneCool = (int)TargetObject.AbilityCooldown + 1;
+            skillOneCooldown = skilloneCool.ToString();
+            isSkillOne = false;
+        }
+        else
+        {
+            skillOneCooldown = "Shift";
+            isSkillOne = true;
+        }
+
+        if (TargetObject.UltimateCooldown >= 0)
+        {
+            skillUltCoolDown = TargetObject.UltimateCooldown;
+            skillUltCool = (int)TargetObject.UltimateCooldown + 1;
+            skillUltCooldown = skillUltCool.ToString();
+            isSkillUlt = false;
+        }
+        else
+        {
+            skillUltCooldown = "R";
+            isSkillUlt = true;
+        }
+
+        if (TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] <= 1.0f)
+        {           
+            AbilityHasMultiple = true;
+        }
+        else
+        {
+            AbilityHasMultiple = false;
+        }
+
+        //secondaryCooldown = TestGun.burstCoolDown.ToString();
+
+        //Get ability upgrade.
+        //var abilityUpgrade = TargetObject.PickedUpUpgrades.Values.FirstOrDefault(x => x.Type == RogueFPSPlayerStats.UpgradeType.Ability);
+
+        if (TargetObject.LootBoxInteract)
+        {
+            CanInteractWithLootBox = "using";
+        }
+        else
+        {
+            CanInteractWithLootBox = "";
+        }
+
+    }
+
+    public void ToolTip()
+    {
+        Log.Info("Hovering over item");
+
+        itemToolTip?.Delete(true);
+        itemToolTip = Panel.AddChild<ItemsToolTip>();
+    }
+
+    public void KillToolTip()
+    {
+        itemToolTip?.Delete();
+    }
+
+    public string CoolDownSecondaryBar(float currentCooldown)
+    {
+        float cooldownPercentage = currentCooldown / TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.SecondaryAttackCoolDown] * 100;
+        cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
+        return $"bottom: {cooldownPercentage}%";
+    }
+
+    public string CoolDownSkill1Bar(float currentCooldown)
+    {
+        float cooldownPercentage = currentCooldown / TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown] * 100;
+        cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
+        return $"bottom: {cooldownPercentage}%";
+    }
+
+    public string CoolDownUltiBar(float currentCooldown)
+    {
+        float cooldownPercentage = currentCooldown / TargetObject.UpgradedStats[PlayerStats.PlayerUpgradedStats.UltimateCoolDown] * 100;
+        cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
+        return $"bottom: {cooldownPercentage}%";
+    }
+
+    public string HasMultipleAbilities(bool hasMultiple)
+	{
+		if (hasMultiple)
+		{
+            return "hidden";
+		}
+		else
+		{
+            return "";
+		}
+	}
+
+    public string CanUseSeconday(bool isUsing)
+    {
+        if (isUsing)
+        {
+            return "";
+        }
+        else
+        {
+            return "cooldown";
+        }
+    }
+
+    public string IsUsing(bool isUsing)
+    {
+        if (isUsing)
+        {
+            return "using";
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+	public string CanUseBox(bool canUse)
+	{
+		if (canUse)
+		{
+			return "";
+		}
+		else
+		{
+            return "using";
+		}
+	}
+
+    // Update every frame. This is just done as a test, and definitely should not be done.
+    protected override int BuildHash() => System.HashCode.Combine(Time.Now, TestGun.burstCoolDown, (int)TestGun.burstCoolDown);
+}

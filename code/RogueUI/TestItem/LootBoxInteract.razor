@@ -1,0 +1,31 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace RogueFPS
+<root>
+
+    <div class="card">
+        <div class="interact">$@LootBoxPrice</div>
+        @if (TargetObject is not null)
+        {
+        <div class="name">@TargetObject.ItemName</div>
+        <div class="gameobject">@TargetObject.ItemDescription</div>
+        }
+    </div>
+
+</root>
+
+@code {
+
+	public int LootBoxPrice { get; set; } = 100;
+
+    /// <summary>
+    /// Testing something a bit dynamic to make sure serialized properly
+    /// </summary>
+    [Property] public RogueFPSPlayerUpgradeInfo TargetObject { get; set; }
+
+    /// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine(TargetObject);
+}
