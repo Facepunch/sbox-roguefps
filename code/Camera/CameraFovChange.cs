@@ -1,12 +1,12 @@
 using Sandbox;
 
-[Title( "Rogue FPS FOV Speed" )]
+[Title( "FOV Speed" )]
 [Category( "Rogue FPS Camera" )]
 [Icon( "camera", "red", "white" )]
-public sealed class RogueFPSCameraFovChange : Component
+public sealed class CameraFovChange : Component
 {
 	[Property]
-	public RogueFPSCharacterController PlayerController { get; set; }
+	public CharacterController PlayerController { get; set; }
 
 	private float _fov;
 
