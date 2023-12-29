@@ -88,7 +88,6 @@ public partial class SlideMechanic : BasePlayerControllerMechanic
 		PlayerStatsComponent.HandleAbilityCoolDown( slideCoolDown );
 		PlayerStatsComponent.HandleAbilityUses( slideCharges );
 
-		Log.Info( slideCoolDown );
 	}
 
 	public override IEnumerable<string> GetTags()

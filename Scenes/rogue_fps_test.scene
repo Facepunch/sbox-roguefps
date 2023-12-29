@@ -507,6 +507,180 @@
           ]
         },
         {
+          "Id": "c920e473-8bac-4a22-95af-18b27ddb9ad7",
+          "Name": "Plane",
+          "Position": "512,2048,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "36cfb48a-a5b5-4862-8061-8b8143630d7f",
+          "Name": "Plane",
+          "Position": "512,4608,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a74da07f-6f7e-4e37-9cdf-76ffe77d6c75",
+          "Name": "Plane",
+          "Position": "512,7168,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9d6a4431-411b-4f6c-83d8-a67998247831",
+          "Name": "Plane",
+          "Position": "1024,2048,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b0108f1f-8683-4a55-84b6-1288386da731",
+          "Name": "Plane",
+          "Position": "1024,4608,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0c0b1d90-e442-4126-addb-dc02b9c54a45",
+          "Name": "Plane",
+          "Position": "1024,7168,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
           "Id": "f1a66366-dece-411f-a032-f91dc57afb7b",
           "Name": "Plane",
           "Position": "1024,-512,0",
@@ -539,6 +713,180 @@
           "Id": "27a8ed00-7c9a-424f-91d6-166994beb947",
           "Name": "Plane",
           "Position": "512,-1024,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "87624db7-83bc-471c-b2da-6de3d052ffd8",
+          "Name": "Plane",
+          "Position": "512,1536,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4d91df79-0101-472a-9cfe-7077d3a080e3",
+          "Name": "Plane",
+          "Position": "512,4096,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "db762ec8-b942-464c-ada0-29cec4a4ec8e",
+          "Name": "Plane",
+          "Position": "512,6656,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "8493b678-a8da-49be-a189-fb49c3c3c230",
+          "Name": "Plane",
+          "Position": "1024,1536,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5d5e735e-a0e4-46ee-87d7-729917735f9d",
+          "Name": "Plane",
+          "Position": "1024,4096,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "bb06a69f-7719-49ea-8c9d-d9de86a47712",
+          "Name": "Plane",
+          "Position": "1024,6656,0",
           "Scale": "5.12,5.12,5.12",
           "Tags": "solid",
           "Enabled": true,
@@ -623,6 +971,180 @@
           ]
         },
         {
+          "Id": "06e2ec6d-eb07-4d82-8dca-de39cd1417c2",
+          "Name": "Plane",
+          "Position": "512,2560,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "72c540a4-ffec-4388-ae2d-a90ed5379b32",
+          "Name": "Plane",
+          "Position": "512,5120,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2a484dda-7630-44fe-9088-077e89589657",
+          "Name": "Plane",
+          "Position": "512,7680,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "097d0c74-3e41-483e-9761-9e87b0b159b2",
+          "Name": "Plane",
+          "Position": "1024,2560,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "cd603af5-22ea-49bf-b8e4-0a973a208fbb",
+          "Name": "Plane",
+          "Position": "1024,5120,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5b670e31-4c4a-42e9-b7bd-a054a2cacf27",
+          "Name": "Plane",
+          "Position": "1024,7680,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
           "Id": "be55e5e2-f330-46b1-9a46-18eb734cb7a6",
           "Name": "Plane",
           "Position": "1024,0,0",
@@ -681,6 +1203,180 @@
           ]
         },
         {
+          "Id": "e6496a5f-a3ca-46fd-8c5c-0d4e50dcfe88",
+          "Name": "Plane",
+          "Position": "512,3072,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a987e91e-3490-4337-beb5-0c1cc4425916",
+          "Name": "Plane",
+          "Position": "512,5632,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2393a11d-77ed-4f83-9db0-076965ad2bd9",
+          "Name": "Plane",
+          "Position": "512,8192,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "fa4a49eb-b4bb-4f94-a327-d9091f2ba8bc",
+          "Name": "Plane",
+          "Position": "1024,3072,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "fa54cfc1-0bdb-4861-8540-70a46a2797b2",
+          "Name": "Plane",
+          "Position": "1024,5632,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f1b24000-502e-4829-b2db-b05d359003be",
+          "Name": "Plane",
+          "Position": "1024,8192,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
           "Id": "71d8c999-c7b7-44df-9ecf-2c204a001f90",
           "Name": "Plane",
           "Position": "1024,512,0",
@@ -713,6 +1409,180 @@
           "Id": "f6aaabf0-1dac-4171-83b6-b2d6c3e6bce3",
           "Name": "Plane",
           "Position": "512,1024,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5b347fb7-3f6e-48ee-be34-54b24b84b8c9",
+          "Name": "Plane",
+          "Position": "512,3584,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "bbd024a6-5912-4f8a-bdb5-49ee22bd66d4",
+          "Name": "Plane",
+          "Position": "512,6144,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d7a17281-85d1-47cb-9743-0253fe63860e",
+          "Name": "Plane",
+          "Position": "512,8704,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c926cc0e-b205-4887-8c8c-3033c61e2fce",
+          "Name": "Plane",
+          "Position": "1024,3584,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "46e1558a-cfcd-48b1-9a24-de9543ab140a",
+          "Name": "Plane",
+          "Position": "1024,6144,0",
+          "Scale": "5.12,5.12,5.12",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/dev/simple/simple_tile.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "100,100,0.5",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c1424443-ba54-4e1b-b954-2619da63f79b",
+          "Name": "Plane",
+          "Position": "1024,8704,0",
           "Scale": "5.12,5.12,5.12",
           "Tags": "solid",
           "Enabled": true,
