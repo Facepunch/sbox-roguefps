@@ -1,0 +1,24 @@
+{
+  "TileModels": [
+    "models/test/test_wall_01.vmdl",
+    "models/test/test_wall_02.vmdl",
+    "models/walls/corrugated_wall_a_128.vmdl",
+    "models/walls/corrugated_wall_a_64.vmdl",
+    "models/walls/corrugated_wall_a_sheet_128.vmdl",
+    "models/walls/corrugated_wall_doorframe_a_128.vmdl",
+    "models/walls/corrugated_wall_doorframe_a_64.vmdl",
+    "models/walls/corrugated_wall_doorframe_double_a_128.vmdl",
+    "models/walls/corrugated_wall_windowframe_a_128.vmdl",
+    "models/walls/corrugated_wall_windowframe_a_64.vmdl"
+  ],
+  "TilePrefab": [
+    "templates/gameobject/3d object - sphere.prefab",
+    "templates/gameobject/3d object - cube.prefab",
+    "templates/gameobject/particle - sprayer.prefab",
+    "templates/gameobject/3d object - decal.prefab",
+    "templates/gameobject/particles - burst.prefab",
+    "templates/hammer/info_player_start.prefab",
+    "test/light.prefab"
+  ],
+  "__references": []
+}
