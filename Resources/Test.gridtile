@@ -9,7 +9,15 @@
     "models/walls/corrugated_wall_doorframe_a_64.vmdl",
     "models/walls/corrugated_wall_doorframe_double_a_128.vmdl",
     "models/walls/corrugated_wall_windowframe_a_128.vmdl",
-    "models/walls/corrugated_wall_windowframe_a_64.vmdl"
+    "models/walls/corrugated_wall_windowframe_a_64.vmdl",
+    "models/test/test_floor_01.vmdl",
+    "scifi/scifi_floor_basic.vmdl",
+    "scifi/scifi_floor_corner.vmdl",
+    "scifi/scifi_floor_basic2.vmdl",
+    "models/concrete_barrier/concrete_barrier.vmdl",
+    "models/rust_structures/fences_walls/wall_300x300.vmdl",
+    "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+    "models/rust_structures/fences_walls/wall_300x900_unstable.vmdl"
   ],
   "TilePrefab": [
     "templates/gameobject/3d object - sphere.prefab",
@@ -20,5 +28,13 @@
     "templates/hammer/info_player_start.prefab",
     "test/light.prefab"
   ],
-  "__references": []
+  "__references": [
+    "degg.02_floor_basic",
+    "degg.02_floor_basic2",
+    "degg.02_floor_corner",
+    "rust.wall_300_pillar",
+    "rust.wall_300x300",
+    "rust.wall_300x900_unstable",
+    "way.concrete_barrier"
+  ]
 }
