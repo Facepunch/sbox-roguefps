@@ -1,4 +1,6 @@
 ﻿
+using RogueFPS;
+
 namespace Editor;
 
 /// <summary>
@@ -15,7 +17,8 @@ public partial class GridMapTool : EditorTool
 
 	public string CopyString { get; set; }
 
-	public PrefabFile resource { get; set; }
+	public GridMapEditorResource resource { get; set; }
+	//public PrefabFile resource { get; set; }
 
 	public enum ModelPrefabSelection
 	{
@@ -30,6 +33,17 @@ public partial class GridMapTool : EditorTool
 	public ListView prefablistView { get; set; } = new();
 
 	public List<PrefabFile> prefabList { get; set; } = new();
+
+	public List<ModelList> modelList { get; set; } = new();
+
+	public struct ModelList
+	{
+		public string name;
+		public string path;
+		public Pixmap icon;
+	}
+
+	/*
 	public List<TileList> tileList { get; set; } = new();
 
 	public struct TileList
@@ -37,9 +51,9 @@ public partial class GridMapTool : EditorTool
 		public GameObject gameObject;
 		public Pixmap icon;
 	}
-
+	*/
 	public PrefabFile SelectedPrefab { get; set; }
-	public GameObject SelectedModel { get; set; }
+	public string SelectedModel { get; set; }
 
 	public float floors = 0.0f;
 	public int floorCount = 0;
@@ -105,8 +119,13 @@ public partial class GridMapTool : EditorTool
 	{
 		if ( CurrentSelection == ModelPrefabSelection.Model )
 		{
-			var filteredModelList = tileList
+			/*
+			var filteredModelList = Model
 				.Where( model => model.gameObject.Name.ToLower().Contains( SearchString ) )
+				.ToList();
+			*/
+			var filteredModelList = modelList
+				.Where( model => model.name.ToLower().Contains( SearchString ) )
 				.ToList();
 			modellistView.SetItems( filteredModelList.Cast<object>() );
 			modellistView.Update(); // Refresh ListView
@@ -156,9 +175,9 @@ public partial class GridMapTool : EditorTool
 	{
 		if ( SelectedModel != null )
 		{
-			var go = SceneUtility.Instantiate( SelectedModel );
-			//go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
-			//go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
+			var go = new GameObject( true, "GridTile" );
+			go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
+			go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
 			go.Transform.Position = position;
 			go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 			go.Tags.Add( "sprinkled" );
@@ -168,19 +187,34 @@ public partial class GridMapTool : EditorTool
 	//GPT Moment
 	private SceneTraceResult ProjectRayOntoGroundPlane( Vector3 rayOrigin, Vector3 rayDirection, float groundHeight )
 	{
-		Vector3 planeNormal = Vector3.Up;
-		Vector3 planePoint = new Vector3( 0, 0, groundHeight );
+		Vector3 planeNormal;
+		Vector3 planePoint;
+		GroundAxis axis = Axis;
 
-		// Correct usage of Vector3.Dot based on your environment's API
+		switch ( axis )
+		{
+			case GroundAxis.X:
+				planeNormal = Vector3.Forward; // Normal perpendicular to X-axis
+				planePoint = new Vector3( groundHeight, 0, 0 ); // Point on the X-axis plane
+				break;
+			case GroundAxis.Y:
+				planeNormal = Vector3.Left; // Normal perpendicular to Y-axis
+				planePoint = new Vector3( 0, groundHeight, 0 ); // Point on the Y-axis plane
+				break;
+			default: // Z-axis
+				planeNormal = Vector3.Up; // Normal perpendicular to Z-axisZ
+				planePoint = new Vector3( 0, 0, groundHeight ); // Point on the Z-axis plane
+				break;
+		}
+
 		float denom = Vector3.Dot( planeNormal, rayDirection );
 		if ( Math.Abs( denom ) > 0.0001f ) // Ensure not parallel
 		{
-			float num = Vector3.Dot( planeNormal, planePoint );
-			float distance = (num - Vector3.Dot( planeNormal, rayOrigin )) / denom;
+			float num = Vector3.Dot( planeNormal, planePoint - rayOrigin );
+			float distance = num / denom;
 
 			if ( distance >= 0 )
 			{
-				// Calculate the hit point
 				Vector3 hitPoint = rayOrigin + rayDirection * distance;
 				return new SceneTraceResult { Hit = true, EndPosition = hitPoint };
 			}
@@ -206,7 +240,7 @@ public partial class GridMapTool : EditorTool
 	public override void OnUpdate()
 	{
 
-		if ( GameObjectCollection is not null && resource is not null && resource.ResourceName.Contains( "_tileset" ) )
+		if ( GameObjectCollection is not null && resource is not null )
 		{
 			CurrentGameObjectCollection = GameObjectCollection.FirstOrDefault( x => x.Name == collectionDropDown.CurrentText );
 
@@ -216,61 +250,34 @@ public partial class GridMapTool : EditorTool
 			};
 		}
 
-		if ( resource is not null )
+		//&& resource.ResourceName.Contains( "_tileset" )
+
+		if ( resource != null )
 		{
-			if ( resource.ResourceName.Contains( "_tileset" ) )
+			foreach ( var model in resource.TileModels )
 			{
-				//Log.Info( resource.GameObjects.Count() );
-	
-				if ( SceneUtility.GetPrefabScene( resource ).GetAllObjects(true).Count() != 0 )
+				if ( !modelList.Any( x => x.name == model.ResourceName ) )
 				{
-	
-					foreach ( var obj in SceneUtility.GetPrefabScene( resource ).GetAllObjects( true ) )
+					modelList.Add( new ModelList()
 					{
-				
-				
-						/*
-						if ( !tileList.All( x => x.gameObject == go ) )
-						{
-							tileList.Add( new TileList()
-							{
-								gameObject = go,
-								icon = AssetSystem.FindByPath( go.Components.Get<ModelRenderer>( FindMode.EnabledInSelfAndChildren ).Model.ResourcePath ).GetAssetThumb()
-							} );
+						name = model.ResourceName,
+						path = model.ResourcePath,
+						icon = AssetSystem.FindByPath( model.ResourcePath ).GetAssetThumb()
+					} );
 
-							Log.Info( $"Added {go.Name}" );
-
-						}
-						*/
-					}
+					Log.Info( model.Name );
 				}
 			}
-			/*
-		foreach ( var model in resource.GameObjects )
-		{
-			Log.Info( model.GetValue<GameObject>() );
-			if ( !tileList.Any( x => tileList.Contains(x) ) )
+
+			foreach ( var prefab in resource.TilePrefab )
 			{
-				tileList.Add( new TileList()
+				if ( !prefabList.Any( x => x.ResourceName == prefab.ResourceName ) )
 				{
-					gameObject = model.GetValue<GameObject>(),
-					icon = AssetSystem.FindByPath( model.GetValue<GameObject>().Components.Get<ModelRenderer>().Model.ResourcePath ).GetAssetThumb()
-				} );
+					prefabList.Add( prefab );
 
-
+					Log.Info( prefab.ResourceName );
+				}
 			}
-		}
-
-		foreach ( var prefab in resource.TilePrefab )
-		{
-			if ( !prefabList.Any( x => x.ResourceName == prefab.ResourceName ) )
-			{
-				prefabList.Add( prefab );
-
-				Log.Info( prefab.ResourceName );
-			}
-		}
-		*/
 			UpdateListViewItems();
 			//modellistView.SetItems( modelList.Cast<object>() );
 
@@ -307,12 +314,12 @@ public partial class GridMapTool : EditorTool
 		{
 			if ( Gizmo.WasLeftMousePressed )
 			{
-				startSelectionPoint = boxtr.EndPosition.WithZ(floors).SnapToGrid( Gizmo.Settings.GridSpacing );
+				startSelectionPoint = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
 				isSelecting = true;
 			}
 			else if ( isSelecting )
 			{
-				endSelectionPoint = boxtr.EndPosition.WithZ( floors + 128 ).SnapToGrid( Gizmo.Settings.GridSpacing );
+				endSelectionPoint = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
 
 				if ( Gizmo.WasLeftMouseReleased )
 				{
@@ -328,12 +335,28 @@ public partial class GridMapTool : EditorTool
 				isSelecting = false;
 			}
 
-			if ( Application.IsKeyDown( KeyCode.X ) )
+			if ( Application.IsKeyDown( KeyCode.R ) )
 			{
 				foreach ( var obj in SelectedGroupObjects )
 				{
 					obj.Destroy();
 				}
+			}
+
+			if ( Application.IsKeyDown( KeyCode.Z ) )
+			{
+				Axis = GroundAxis.Z;
+				currentaxisLabel.Text = Axis.ToString();
+			}
+			else if ( Application.IsKeyDown( KeyCode.C ) )
+			{
+				Axis = GroundAxis.X;
+				currentaxisLabel.Text = Axis.ToString();
+			}
+			else if ( Application.IsKeyDown( KeyCode.X ) )
+			{
+				Axis = GroundAxis.Y;
+				currentaxisLabel.Text = Axis.ToString();
 			}
 
 			FloorHeightShortCut();
@@ -474,7 +497,6 @@ public partial class GridMapTool : EditorTool
 	}
 
 	GameObject previewPrefab;
-	private Label floorLabel;
 
 	public void PaintPrefabGizmos( SceneTraceResult tr )
 	{
@@ -550,104 +572,10 @@ public partial class GridMapTool : EditorTool
 			}
 		}
 	}
-	private static bool PaintListBackground( Widget widget )
-	{
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.ControlBackground.WithAlpha( 0.5f ) );
-		Paint.DrawRect( widget.LocalRect );
-
-		return false;
-	}
-
-	/// <summary>
-	/// UI Paint
-	/// </summary>
-	/// <param name="widget"></param>
-	private void PaintBrushItem( VirtualWidget widget )
-	{
-		var brush = (TileList)widget.Object;
-
-		Paint.Antialiasing = true;
-		Paint.TextAntialiasing = true;
-
-
-		if ( brush.gameObject == SelectedModel )
-		{
-			Paint.ClearPen();
-			Paint.SetBrush( Theme.Green.WithAlpha( 0.10f ) );
-			Paint.SetPen( Theme.Green.WithAlpha( 0.50f ) );
-			Paint.DrawRect( widget.Rect.Grow( 0 ), 3 );
-		}
-
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.White.WithAlpha( 0.01f ) );
-		Paint.SetPen( Theme.White.WithAlpha( 0.05f ) );
-		Paint.DrawRect( widget.Rect.Shrink( 2 ), 3 );
-
-		Paint.Draw( widget.Rect.Shrink( 1 ), brush.icon );
-
-		var rect = widget.Rect;
-
-		var textRect = rect.Shrink( 2 );
-		textRect.Top = textRect.Top + 20;
-		textRect.Top = textRect.Top + 25;
-
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.Black.WithAlpha( 0.5f ) );
-		Paint.DrawRect( textRect, 0.0f );
-
-		Paint.Antialiasing = true;
-
-		Paint.SetPen( Theme.Blue, 2.0f );
-		Paint.ClearBrush();
-		Paint.SetFont( "Poppins", 6, 700 );
-		Paint.DrawText( textRect, brush.gameObject.Name );
-	}
-	private void PaintBrushPrefab( VirtualWidget widget )
-	{
-		var brush = (PrefabFile)widget.Object;
-
-		Paint.Antialiasing = true;
-		Paint.TextAntialiasing = true;
-
-
-		if ( brush == SelectedPrefab )
-		{
-			Paint.ClearPen();
-			Paint.SetBrush( Theme.Green.WithAlpha( 0.10f ) );
-			Paint.SetPen( Theme.Green.WithAlpha( 0.50f ) );
-			Paint.DrawRect( widget.Rect.Grow( 0 ), 3 );
-		}
-
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.White.WithAlpha( 0.01f ) );
-		Paint.SetPen( Theme.White.WithAlpha( 0.05f ) );
-		Paint.DrawRect( widget.Rect.Shrink( 2 ), 3 );
-
-		Paint.Draw( widget.Rect.Shrink( 1 ), AssetSystem.FindByPath( brush.ResourcePath ).GetAssetThumb() );
-
-		var rect = widget.Rect;
-
-		var textRect = rect.Shrink( 2 );
-		textRect.Top = textRect.Top + 20;
-		textRect.Top = textRect.Top + 25;
-
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.Black.WithAlpha( 0.5f ) );
-		Paint.DrawRect( textRect, 0.0f );
-
-		Paint.Antialiasing = true;
-
-		Paint.SetPen( Theme.Blue, 2.0f );
-		Paint.ClearBrush();
-		Paint.SetFont( "Poppins", 6, 700 );
-		Paint.DrawText( textRect, brush.ResourceName );
-	}
-
 
 	void SetSelection( object o )
 	{
-		if ( o is GameObject s )
+		if ( o is string s )
 		{
 			SelectedModel = s;
 
@@ -709,61 +637,4 @@ public partial class GridMapTool : EditorTool
 			obj.Destroy();
 		}
 	}
-
-}
-
-
-public class NewCollectionObjectWindow : BaseWindow
-{
-
-	Widget container;
-	public GridMapTool gridmapToolDockWidget;
-
-	public NewCollectionObjectWindow()
-	{
-		Size = new Vector2( 350, 150 );
-		MinimumSize = Size;
-		MaximumSize = Size;
-		TranslucentBackground = true;
-		NoSystemBackground = true;
-
-		WindowTitle = "Add New Collection Object";
-		SetWindowIcon( "rocket_launch" );
-
-		Layout = Layout.Column();
-		Layout.Margin = 4;
-		Layout.Spacing = 4;
-
-		container = new Widget( this );
-
-		var properties = new PropertySheet( this );
-
-		var nameLabel = new Label.Subtitle( "Add New Collection Object" );
-		nameLabel.Margin = 16;
-
-		var nameEdit = properties.AddLineEdit( "Collection Object Name", "" );
-		var addbutton = new Button.Primary( "Add Collection", "add_circle" );
-		addbutton.MaximumWidth = 100;
-		addbutton.Clicked = () =>
-		{
-			gridmapToolDockWidget.CreateCollection( nameEdit.Text );
-			/*
-			var gameobject = new GameObject(true, nameEdit.Text );
-			gameobject.Transform.Position = Vector3.Zero;
-			gameobject.Tags.Add( "sprinkled" );
-			gameobject.Tags.Add( "collection" );
-			*/
-			gridmapToolDockWidget.collectionDropDown.AddItem( nameEdit.Text );
-			Close();
-		};
-		Layout.Add( nameLabel );
-		Layout.Add( properties );
-		Layout.Add( addbutton );
-		Layout.Add( container );
-
-		Show();
-	}
-	public string SetButtonIcon = "settings";
-
-	public Button buttonIcon;
 }

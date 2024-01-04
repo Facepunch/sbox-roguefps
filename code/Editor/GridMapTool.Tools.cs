@@ -24,22 +24,22 @@ public partial class GridMapTool
 
 	public void HandlePlacement( SceneTraceResult tr, Ray cursorRay )
 	{
+		if ( SelectedModel is null ) return;
+		
 		projectedPoint = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
 		
 		if ( projectedPoint.Hit )
 		{
 			// Snap the projected point to the grid and adjust for floor height
-			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
+			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
 
-			//var go = new GameObject( true, "GridTile" );
-			var go = SceneUtility.Instantiate( SelectedModel );
+			var go = new GameObject( true, "GridTile" );
 			go.Parent = CurrentGameObjectCollection;
-			//go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
-			//go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
+			go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
+			go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
 			go.Transform.Position = snappedPosition;
 			go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 			go.Tags.Add( "sprinkled" );
-
 
 			Log.Info( $"Placed {SelectedModel} at {snappedPosition}" );
 		}

@@ -2080,6 +2080,4486 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "a14ec964-9067-44e9-8ae7-59a395e4e8cb",
+      "Name": "Collection",
+      "Position": "-192,-640,416",
+      "Tags": "collection,sprinkled",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "52d24676-f3f5-48a6-87a4-2baad91fd22d",
+          "Name": "GridTile",
+          "Position": "0,-64,0",
+          "Rotation": "0,-0.00000005960464,0.707106,-0.7071074",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d5accf3c-70f1-4381-b96b-657cd49ca0b3",
+          "Name": "GridTile",
+          "Position": "0,64,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "508363ac-f7d5-41f9-b65a-3f5a7f97f8ab",
+          "Name": "GridTile",
+          "Position": "-96,64,0",
+          "Rotation": "0,-0.00000002980232,0.7071069,0.7071065",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "27bb079d-a025-45fa-832c-3ff203cc606b",
+          "Name": "GridTile",
+          "Position": "-96,-64,0",
+          "Rotation": "0,-0.00000005960464,0.707106,-0.7071074",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "49af5882-3aa4-4740-aa85-755d0c4be2b8",
+          "Name": "GridTile",
+          "Position": "96,-64,0",
+          "Rotation": "0,-0.00000005960464,0.707106,-0.7071074",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "62329624-32db-4056-b813-ca1cc38dcc67",
+          "Name": "GridTile",
+          "Position": "96,64,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b45db9fb-7575-4879-99ce-97fa63072b78",
+          "Name": "GridTile",
+          "Position": "64,0,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "eb567f17-85df-4e3d-8a7e-1f652e81c423",
+          "Name": "GridTile",
+          "Position": "-64,0,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c0854057-81fc-44e8-b25a-a987c83063c7",
+          "Name": "GridTile",
+          "Position": "-64,0,128",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "669779c7-e741-4793-abf1-07337ea36319",
+          "Name": "GridTile",
+          "Position": "64,0,128",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "bbf3d21d-6334-4872-9676-1ec02d3cd197",
+          "Name": "GridTile",
+          "Position": "-288,320,-416",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": null,
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": null,
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "2011d347-682c-46fc-ab08-95120bbc1180",
+      "Name": "Collection (1)",
+      "Position": "192,-640,416",
+      "Tags": "collection,sprinkled",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "a9f661f1-ac4b-46ad-9a6c-b88e6cd38727",
+          "Name": "GridTile",
+          "Position": "0,-64,0",
+          "Rotation": "0,-0.00000005960464,0.707106,-0.7071074",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "7a967eb3-42f5-4909-87da-f318b89fe23b",
+          "Name": "GridTile",
+          "Position": "0,64,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "24ee8388-c6d1-45e7-b718-e0283b51bd25",
+          "Name": "GridTile",
+          "Position": "-96,64,0",
+          "Rotation": "0,-0.00000002980232,0.7071069,0.7071065",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b3db993f-1f51-4b48-a6ad-466f7d43724f",
+          "Name": "GridTile",
+          "Position": "-96,-64,0",
+          "Rotation": "0,-0.00000005960464,0.707106,-0.7071074",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "02273473-2cf4-4ee0-81da-2d14af1b5843",
+          "Name": "GridTile",
+          "Position": "96,-64,0",
+          "Rotation": "0,-0.00000005960464,0.707106,-0.7071074",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "95db4490-b9b1-4280-a11a-e96988921f8f",
+          "Name": "GridTile",
+          "Position": "96,64,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_64.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "325b2be2-4b41-467b-92db-2de1b6b2bc5f",
+          "Name": "GridTile",
+          "Position": "64,0,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "57649dd0-38e9-47d1-a902-73e2aef6c4a3",
+          "Name": "GridTile",
+          "Position": "-64,0,0",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3f53c17b-b9cb-4e67-8d89-c32c9a3bc5ce",
+          "Name": "GridTile",
+          "Position": "-64,0,128",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "cced2ee0-0821-4704-81ca-dc9eeb748461",
+          "Name": "GridTile",
+          "Position": "64,0,128",
+          "Rotation": "-0.00000005960464,0.00000002980232,-0.7071079,-0.7071055",
+          "Tags": "collection,sprinkled",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "6a1f2074-edd0-4491-aa86-a0d32f742705",
+      "Name": "Dog",
+      "Position": "0,-640,0",
+      "Tags": "collection",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "3ac48a96-af79-4166-9df7-fab9b5542f7a",
+          "Name": "GridTile",
+          "Position": "64,-64,0",
+          "Rotation": "0.0000002107317,0.0000001192093,0.000008218635,0.9999998",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9ccd32f2-daa9-4c74-8f36-5e774ec50d9c",
+          "Name": "GridTile",
+          "Position": "64,64,0",
+          "Rotation": "-0.0000002086163,0.00000002980232,-0.7071117,-0.7071016",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "bb835522-5204-4762-a564-a839e0d2a41f",
+          "Name": "GridTile",
+          "Position": "-64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "fef756d3-1ac9-4974-9aa5-d7d37bbead99",
+          "Name": "GridTile",
+          "Position": "64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "1a19a8f9-a6a5-4f0d-891d-806d699907b6",
+          "Name": "GridTile",
+          "Position": "64,64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4f0057e1-855c-4bbe-ba76-4fc697394b48",
+          "Name": "GridTile",
+          "Position": "-64,64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "fdf21e0c-7991-4c14-8f6e-00d936b53726",
+          "Name": "GridTile",
+          "Position": "64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a1c91b5f-5174-4de1-b27e-d43aa71d73c3",
+          "Name": "GridTile",
+          "Position": "64,64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "7fb47a56-c9bf-49d1-9509-5784af8d90ae",
+          "Name": "GridTile",
+          "Position": "-64,64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "8a2e0417-d733-41eb-9493-c9ea45e42bdb",
+          "Name": "GridTile",
+          "Position": "-64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4f4e5ab8-e660-4d2a-8eea-8b40059c4d08",
+          "Name": "GridTile",
+          "Position": "-64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c5d38a88-5063-4609-b63f-54d19972e123",
+          "Name": "GridTile",
+          "Position": "64,-64,128",
+          "Rotation": "-0.0000002107313,-0.0000001788139,-0.000009609481,-0.9999998",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9e8d5d22-c56b-4538-96b9-301e927dc890",
+          "Name": "GridTile",
+          "Position": "64,64,128",
+          "Rotation": "-0.0000002682209,0.00000002980232,-0.7071136,-0.7070996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "8f218578-cea1-4e0e-87b0-3caa5710c0dc",
+          "Name": "GridTile",
+          "Position": "-64,64,128",
+          "Rotation": "-0.0000001788139,0.0000002107304,-0.9999998,0.00001028383",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9683d26f-f1bb-4159-ba28-49fd35710b0a",
+          "Name": "GridTile",
+          "Position": "-64,64,256",
+          "Rotation": "-0.0000001788139,0.0000002107304,-0.9999998,0.00001028383",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "bcfebc78-f7c8-48c9-bc2a-5dd3b8004aff",
+          "Name": "GridTile",
+          "Position": "-64,-64,256",
+          "Rotation": "0.00000002980232,0.0000003278255,-0.7070991,0.7071141",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "19d49453-f2f6-4465-906b-a11a943cfbad",
+          "Name": "GridTile",
+          "Position": "64,-64,256",
+          "Rotation": "0.0000002528773,0.0000002086163,0.00001095818,0.9999997",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "8e3da01c-5186-4450-98aa-79771e557b7c",
+          "Name": "GridTile",
+          "Position": "64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3497e793-4874-4b60-893b-4c6a65485db0",
+          "Name": "GridTile",
+          "Position": "64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f2a87161-43b7-4a74-8107-eaac5afdc2c4",
+          "Name": "GridTile",
+          "Position": "-64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5394583d-5059-46cd-a669-eba5840f491e",
+          "Name": "GridTile",
+          "Position": "-64,-64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c3e09547-dd06-40b5-87de-cb752ef6cc22",
+          "Name": "GridTile",
+          "Position": "64,-64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "24248c1f-a6e2-49a1-9030-2191e91cb588",
+          "Name": "GridTile",
+          "Position": "64,64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "cc616f99-5b9c-483d-b298-ad9119cfc517",
+          "Name": "GridTile",
+          "Position": "-64,64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ade24f81-6c70-48ba-9f04-bd00a97f96db",
+          "Name": "GridTile",
+          "Position": "-64,-64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "17c515af-ba04-4399-93f8-a0f666449b20",
+          "Name": "GridTile",
+          "Position": "64,-64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ab07f3a5-a29c-452d-bab1-b9aee0637269",
+          "Name": "GridTile",
+          "Position": "64,0,384",
+          "Rotation": "0.0000002528764,0.0000002384186,0.00001369773,0.9999996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "91c62663-f50b-4893-9c4e-7b5f685bf3df",
+          "Name": "GridTile",
+          "Position": "0,-64,384",
+          "Rotation": "0.00000002980232,-0.0000003576279,0.7070961,-0.707117",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3ce1089b-1eb2-4532-aaa1-b10f70f01c5f",
+          "Name": "GridTile",
+          "Position": "-64,0,384",
+          "Rotation": "-0.0000002384186,0.0000002318029,-0.9999996,0.00001582614",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c0e6f8ec-00bb-4bc3-b152-dc17e9a8e136",
+          "Name": "GridTile",
+          "Position": "0,64,384",
+          "Rotation": "0.0000003278255,0.00000002980232,0.7071185,0.7070946",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "e1a8d534-f002-4f60-ae59-b627a60aee99",
+          "Name": "GridTile",
+          "Position": "64,0,512",
+          "Rotation": "-0.0000002107281,-0.0000002384186,-0.00001795456,-0.9999996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "539d6d40-c2a1-44c6-a3f1-61b921b59e20",
+          "Name": "GridTile",
+          "Position": "0,-64,512",
+          "Rotation": "-0.00000005960464,0.0000003278255,-0.7070931,0.7071199",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "8e71942a-1205-47f7-bca7-dc455a0656ea",
+          "Name": "GridTile",
+          "Position": "-64,0,512",
+          "Rotation": "0.0000002384186,-0.0000001685803,0.9999996,-0.0000200619",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9828b3c4-18b6-4a57-9d67-3fa0c42b338f",
+          "Name": "GridTile",
+          "Position": "0,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "7ff99f42-3a37-4dac-a6b5-9327a6d29175",
+          "Name": "GridTile",
+          "Position": "-64,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f6cace57-521b-4527-8f5a-37f75a038dc9",
+          "Name": "GridTile",
+          "Position": "64,-64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2392cd1c-6935-492a-8a97-ebb0db4e8d55",
+          "Name": "GridTile",
+          "Position": "64,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "12521f83-d0ce-4eaf-8ca5-1f0c62515633",
+          "Name": "GridTile",
+          "Position": "0,0,640",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ae5111d8-8d83-478b-9075-11b8560ea034",
+          "Name": "GridTile",
+          "Position": "-64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c6eb06ef-6b90-4608-90d7-32686ab073be",
+          "Name": "GridTile",
+          "Position": "-64,64,0",
+          "Rotation": "0.0000001192093,-0.0000002107313,0.9999998,-0.000008892985",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "aa5cf9ac-9865-4772-add9-ac326c1cb43e",
+      "Name": "Dog (1)",
+      "Position": "352,-640,0",
+      "Tags": "collection",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "0bebc047-810d-46c3-bf85-3f1ed59e4f85",
+          "Name": "GridTile",
+          "Position": "64,-64,0",
+          "Rotation": "0.0000002107317,0.0000001192093,0.000008218635,0.9999998",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4e8d778b-48cd-419a-aae9-bee9ec3b1bd0",
+          "Name": "GridTile",
+          "Position": "64,64,0",
+          "Rotation": "-0.0000002086163,0.00000002980232,-0.7071117,-0.7071016",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b9dd03b5-1717-4536-9881-11cce675634a",
+          "Name": "GridTile",
+          "Position": "-64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "75983a44-585d-469a-b44c-4fe6f5a050f7",
+          "Name": "GridTile",
+          "Position": "64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5860d8af-c58f-421d-9472-1d477b18a958",
+          "Name": "GridTile",
+          "Position": "64,64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d1e2fd7e-e2f3-49e8-9760-73d0cf29a80d",
+          "Name": "GridTile",
+          "Position": "-64,64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "47fcaa52-c445-4843-9682-efdd1f0e92d7",
+          "Name": "GridTile",
+          "Position": "64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5697bf50-bb52-4f31-a37e-0ca6a3070fa6",
+          "Name": "GridTile",
+          "Position": "64,64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b49b3eb1-aa5b-46f9-b2c5-d4d842b61957",
+          "Name": "GridTile",
+          "Position": "-64,64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "bcf45ccf-fa9a-4ec5-a619-b6e051dadebe",
+          "Name": "GridTile",
+          "Position": "-64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b98cb2f0-ec10-4876-945c-0a74a1b795ed",
+          "Name": "GridTile",
+          "Position": "-64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "54779757-61f7-4ad0-a617-354f7a0f835c",
+          "Name": "GridTile",
+          "Position": "64,-64,128",
+          "Rotation": "-0.0000002107313,-0.0000001788139,-0.000009609481,-0.9999998",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "1d302537-95b9-477f-87fd-d598c78a2503",
+          "Name": "GridTile",
+          "Position": "64,64,128",
+          "Rotation": "-0.0000002682209,0.00000002980232,-0.7071136,-0.7070996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "1ff882f2-2dc2-4cd5-9ff7-10ac051f074f",
+          "Name": "GridTile",
+          "Position": "-64,64,128",
+          "Rotation": "-0.0000001788139,0.0000002107304,-0.9999998,0.00001028383",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "7d0aadd5-c0d0-4315-bfad-74aacad45d03",
+          "Name": "GridTile",
+          "Position": "-64,64,256",
+          "Rotation": "-0.0000001788139,0.0000002107304,-0.9999998,0.00001028383",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4f794fea-2c48-4102-9762-46476926a02a",
+          "Name": "GridTile",
+          "Position": "-64,-64,256",
+          "Rotation": "0.00000002980232,0.0000003278255,-0.7070991,0.7071141",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "6aa270b5-c040-4fd2-b329-598058ba5cd4",
+          "Name": "GridTile",
+          "Position": "64,-64,256",
+          "Rotation": "0.0000002528773,0.0000002086163,0.00001095818,0.9999997",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ccc0e8a3-531c-4826-956e-2d8100ebe12f",
+          "Name": "GridTile",
+          "Position": "64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "25e92c1a-72c9-431d-b920-d193f5cad886",
+          "Name": "GridTile",
+          "Position": "64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "960a9d9e-9bec-49ca-8943-5acca44627c4",
+          "Name": "GridTile",
+          "Position": "-64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ea51cc17-9dcf-4445-95db-9ed681501675",
+          "Name": "GridTile",
+          "Position": "-64,-64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3358e4b3-a591-446e-a8fc-7dcc4a69e8e9",
+          "Name": "GridTile",
+          "Position": "64,-64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "cd6f2975-f122-464f-b536-7c57e622e83f",
+          "Name": "GridTile",
+          "Position": "64,64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3ac30d8c-be90-4919-9066-1cefc9c3bb5a",
+          "Name": "GridTile",
+          "Position": "-64,64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2e8799b1-0026-44a9-9064-9daf969c42fa",
+          "Name": "GridTile",
+          "Position": "-64,-64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d539dceb-cd39-431c-9040-8f5f218c35c0",
+          "Name": "GridTile",
+          "Position": "64,-64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "68bc1dd8-6ddf-42c7-a1a9-f43c0243ca34",
+          "Name": "GridTile",
+          "Position": "64,0,384",
+          "Rotation": "0.0000002528764,0.0000002384186,0.00001369773,0.9999996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4923d427-78b6-4efd-aa74-eb801a6e5e5b",
+          "Name": "GridTile",
+          "Position": "0,-64,384",
+          "Rotation": "0.00000002980232,-0.0000003576279,0.7070961,-0.707117",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b7897f83-da9b-409c-80b6-4f3c5b95431d",
+          "Name": "GridTile",
+          "Position": "-64,0,384",
+          "Rotation": "-0.0000002384186,0.0000002318029,-0.9999996,0.00001582614",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "39b6f69c-6594-4df5-982c-5db05b883127",
+          "Name": "GridTile",
+          "Position": "0,64,384",
+          "Rotation": "0.0000003278255,0.00000002980232,0.7071185,0.7070946",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0c599bf8-ef1a-4d58-87e6-8577aa86f407",
+          "Name": "GridTile",
+          "Position": "64,0,512",
+          "Rotation": "-0.0000002107281,-0.0000002384186,-0.00001795456,-0.9999996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b71408ba-9e05-4b45-9951-7f9a66f1e266",
+          "Name": "GridTile",
+          "Position": "0,-64,512",
+          "Rotation": "-0.00000005960464,0.0000003278255,-0.7070931,0.7071199",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a76cb195-1ec3-4756-85be-7f171df98810",
+          "Name": "GridTile",
+          "Position": "-64,0,512",
+          "Rotation": "0.0000002384186,-0.0000001685803,0.9999996,-0.0000200619",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a0cebbc1-77c7-45b3-b724-9714fd0fc320",
+          "Name": "GridTile",
+          "Position": "0,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f54172af-fdff-42f3-9af0-644ff78bcf49",
+          "Name": "GridTile",
+          "Position": "-64,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "cc0be981-3d86-4e5d-a949-50301237966b",
+          "Name": "GridTile",
+          "Position": "-64,-64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "be10d143-de1b-438b-a0da-2c1256598bc6",
+          "Name": "GridTile",
+          "Position": "64,-64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b579843f-1802-4d12-a541-d2d169fe839a",
+          "Name": "GridTile",
+          "Position": "64,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4d145af2-24d2-43e9-b701-de64a4846bda",
+          "Name": "GridTile",
+          "Position": "0,0,640",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "326a978b-da56-4bc3-befb-03864aab2f77",
+          "Name": "GridTile",
+          "Position": "-64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4a9732a4-660a-4fdd-b5d4-3430bef9fac7",
+          "Name": "GridTile",
+          "Position": "-64,64,0",
+          "Rotation": "0.0000001192093,-0.0000002107313,0.9999998,-0.000008892985",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f4ffd025-6521-46a5-88e2-2f9e6e57be42",
+      "Name": "Dog (2)",
+      "Position": "-384,-640,0",
+      "Tags": "collection",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "04b830e3-9c07-4ab6-8d5c-4dd9ebb7542c",
+          "Name": "GridTile",
+          "Position": "64,-64,0",
+          "Rotation": "0.0000002107317,0.0000001192093,0.000008218635,0.9999998",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d20c62dc-c880-4bf5-acc4-0a70a3a08fc4",
+          "Name": "GridTile",
+          "Position": "64,64,0",
+          "Rotation": "-0.0000002086163,0.00000002980232,-0.7071117,-0.7071016",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d8c52166-2ab8-48c5-8942-26b4b1a1f7cc",
+          "Name": "GridTile",
+          "Position": "-64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4e2f11f9-70f5-461a-b07d-c60189dd4fb9",
+          "Name": "GridTile",
+          "Position": "64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a2c6dca2-c67a-400d-b33f-de3c02ac1b37",
+          "Name": "GridTile",
+          "Position": "64,64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "57351a12-7b91-4ac3-b53f-e79cd6a8cb86",
+          "Name": "GridTile",
+          "Position": "-64,64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3f4007aa-352c-4a39-a50d-1f7a833838a4",
+          "Name": "GridTile",
+          "Position": "64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a71ef5c5-54ac-47e8-978d-8184da854ca9",
+          "Name": "GridTile",
+          "Position": "64,64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "810466cd-ad7b-41b8-a053-c25aea9014f8",
+          "Name": "GridTile",
+          "Position": "-64,64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "667c844c-a6e0-476d-926f-09fec0b1632b",
+          "Name": "GridTile",
+          "Position": "-64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ade935ca-aca8-4675-a5b9-8ce7c888466d",
+          "Name": "GridTile",
+          "Position": "-64,-64,128",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "d00d8e3c-0e22-465b-b941-f34d2b58e983",
+          "Name": "GridTile",
+          "Position": "64,-64,128",
+          "Rotation": "-0.0000002107313,-0.0000001788139,-0.000009609481,-0.9999998",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "01859e5e-9c18-451b-bda8-8d56fd9ca256",
+          "Name": "GridTile",
+          "Position": "64,64,128",
+          "Rotation": "-0.0000002682209,0.00000002980232,-0.7071136,-0.7070996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "40dca9d8-9f24-4b48-92b1-d55b597c2127",
+          "Name": "GridTile",
+          "Position": "-64,64,128",
+          "Rotation": "-0.0000001788139,0.0000002107304,-0.9999998,0.00001028383",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "00e205c1-6efc-49f4-8201-8a871a367e43",
+          "Name": "GridTile",
+          "Position": "-64,64,256",
+          "Rotation": "-0.0000001788139,0.0000002107304,-0.9999998,0.00001028383",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "1b317a9a-2291-44ec-89e2-bb4bb411533e",
+          "Name": "GridTile",
+          "Position": "-64,-64,256",
+          "Rotation": "0.00000002980232,0.0000003278255,-0.7070991,0.7071141",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2e240dac-2d03-486a-818b-525b7b1fbed8",
+          "Name": "GridTile",
+          "Position": "64,-64,256",
+          "Rotation": "0.0000002528773,0.0000002086163,0.00001095818,0.9999997",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f1c65c34-8fcc-4e09-86d2-24c70614f72d",
+          "Name": "GridTile",
+          "Position": "64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "531967ea-5cc8-47c9-b5a3-deb7ac6938f0",
+          "Name": "GridTile",
+          "Position": "64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "41df8f81-768f-4526-9c72-da5eca974b15",
+          "Name": "GridTile",
+          "Position": "-64,64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f09b8182-4e8a-4291-a8e8-b746700df916",
+          "Name": "GridTile",
+          "Position": "-64,-64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "532b2edd-0e20-41b7-9f8e-7f1d34d9dc0b",
+          "Name": "GridTile",
+          "Position": "64,-64,256",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "366bff20-db31-4775-a028-dc913321affb",
+          "Name": "GridTile",
+          "Position": "64,64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9b643c18-bd0f-4012-a0a5-799c1f0c79e3",
+          "Name": "GridTile",
+          "Position": "-64,64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "1d144663-6ed1-47f0-93a1-536e857b830a",
+          "Name": "GridTile",
+          "Position": "-64,-64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "54b5ca2c-6617-468c-9c61-b0fa6ab8ca9f",
+          "Name": "GridTile",
+          "Position": "64,-64,384",
+          "Rotation": "0.0000003576279,-0.00000002980232,0.7071145,0.7070986",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0f582889-b0c5-47ea-84d7-27d77742d3e9",
+          "Name": "GridTile",
+          "Position": "64,0,384",
+          "Rotation": "0.0000002528764,0.0000002384186,0.00001369773,0.9999996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b690ee1c-2a04-44bd-bb89-bf5540e66b19",
+          "Name": "GridTile",
+          "Position": "0,-64,384",
+          "Rotation": "0.00000002980232,-0.0000003576279,0.7070961,-0.707117",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ac2a27b3-635d-4bab-8d37-d27078ed56e4",
+          "Name": "GridTile",
+          "Position": "-64,0,384",
+          "Rotation": "-0.0000002384186,0.0000002318029,-0.9999996,0.00001582614",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "69c65ead-beae-4b60-8e45-d76c9dc56134",
+          "Name": "GridTile",
+          "Position": "0,64,384",
+          "Rotation": "0.0000003278255,0.00000002980232,0.7071185,0.7070946",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "770f074d-e538-4026-bcd0-f383f9026f85",
+          "Name": "GridTile",
+          "Position": "64,0,512",
+          "Rotation": "-0.0000002107281,-0.0000002384186,-0.00001795456,-0.9999996",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c0a82819-7547-4b19-8054-2e31febb3811",
+          "Name": "GridTile",
+          "Position": "0,-64,512",
+          "Rotation": "-0.00000005960464,0.0000003278255,-0.7070931,0.7071199",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0e633d79-4426-4d26-b9c1-f3b7da4b7d72",
+          "Name": "GridTile",
+          "Position": "-64,0,512",
+          "Rotation": "0.0000002384186,-0.0000001685803,0.9999996,-0.0000200619",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "dfa39925-443f-4e44-8f5a-4425488bfd06",
+          "Name": "GridTile",
+          "Position": "0,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/walls/corrugated_wall_a_sheet_128.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ad1adfe1-b2fc-406b-9b9f-06288b8ac8b9",
+          "Name": "GridTile",
+          "Position": "-64,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "08f46642-b814-473b-a5dd-e2b953185436",
+          "Name": "GridTile",
+          "Position": "-64,-64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "04dc9cc8-1030-4f33-a4db-7dd9ed585969",
+          "Name": "GridTile",
+          "Position": "64,-64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ccf6af74-a753-4d56-83ab-2049f93ae537",
+          "Name": "GridTile",
+          "Position": "64,64,512",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300_pillar.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0d8aad1d-1df1-4193-be77-22b3716eb29e",
+          "Name": "GridTile",
+          "Position": "0,0,640",
+          "Rotation": "-0.0000002682209,-0.00000005960464,-0.7071215,-0.7070916",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b376f9c4-e17f-493f-a70c-21af72dc06ea",
+          "Name": "GridTile",
+          "Position": "-64,-64,0",
+          "Rotation": "-0.00000005960464,-0.0000002384186,0.7071,-0.7071131",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "de6c5125-7828-4e00-87ac-4f29345492a9",
+          "Name": "GridTile",
+          "Position": "-64,64,0",
+          "Rotation": "0.0000001192093,-0.0000002107313,0.9999998,-0.000008892985",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_wall_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_wall_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "7d942e91-01c8-4745-b90a-718844da84e7",
+      "Name": "detail",
+      "Position": "-0.00004049383,-512,384",
+      "Tags": "collection",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "b8a32ffd-a1ef-4576-acf0-c769e1f24475",
+          "Name": "GridTile",
+          "Position": "0,0,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4686d0b7-731b-49d1-a97b-d5ca20310e0e",
+          "Name": "GridTile",
+          "Position": "-32,-32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f649532a-dfaa-49c7-975c-c3483fa33ea7",
+          "Name": "GridTile",
+          "Position": "-32,32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4f32cb28-0c07-4a90-a858-cdd8b1941eb1",
+          "Name": "GridTile",
+          "Position": "32,32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "6be1214f-ea3a-4c86-8025-a67ea933f5e6",
+          "Name": "GridTile",
+          "Position": "32,-32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "66f05cd0-428f-448e-8789-e9fce9fc64bd",
+      "Name": "detail (1)",
+      "Position": "352,-512,384",
+      "Tags": "collection",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "6524f37e-d611-4e35-9625-7a11ff5f0c5c",
+          "Name": "GridTile",
+          "Position": "0,0,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4dd3be54-f51b-4779-acbe-a9dc1715d960",
+          "Name": "GridTile",
+          "Position": "-32,-32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "dfcd1995-00a9-46ef-8036-ce1402daa080",
+          "Name": "GridTile",
+          "Position": "-32,32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "6a3d0efc-9e23-4f2e-a089-d7fdf4ba0d86",
+          "Name": "GridTile",
+          "Position": "32,32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "be842728-37f6-4821-a77a-47ad71d7b2af",
+          "Name": "GridTile",
+          "Position": "32,-32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8b9192a1-64c9-4c3a-8290-cd4f5f4056eb",
+      "Name": "detail (2)",
+      "Position": "-384,-512,384",
+      "Tags": "collection",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "52ab3bb1-f489-46e5-a5ff-45cba66acd94",
+          "Name": "GridTile",
+          "Position": "0,0,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/test/test_floor_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/test/test_floor_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "66e603e4-e52d-4b6e-a76b-215d9e5cf582",
+          "Name": "GridTile",
+          "Position": "-32,-32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "6a2c48ad-6f42-4d63-9b50-1d185d06b352",
+          "Name": "GridTile",
+          "Position": "-32,32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b93831e1-ae7e-4c47-a849-bcf91fa74cc5",
+          "Name": "GridTile",
+          "Position": "32,32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "fdce53c6-f43d-47d8-82b0-3b3f656e86ee",
+          "Name": "GridTile",
+          "Position": "32,-32,0",
+          "Tags": "sprinkled,collection",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "scifi/scifi_floor_basic.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -2094,6 +6574,7 @@
   "Title": "minimal",
   "Description": "",
   "__references": [
-    "caro.bluecloudysky"
+    "caro.bluecloudysky",
+    "degg.02_floor_basic"
   ]
 }

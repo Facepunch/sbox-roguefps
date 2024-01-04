@@ -20,14 +20,17 @@ public partial class GridMapTool
 				Gizmo.Draw.Color = Gizmo.Colors.Pitch.WithAlpha( alpha.LerpTo( 1, 0.0f ) );
 				Gizmo.Draw.SolidBox( CurrentGameObjectCollection.GetBounds() );
 
+				Gizmo.Draw.Color = Gizmo.Colors.Pitch.WithAlpha( alpha.LerpTo( 1, 0.0f ) );
+				Gizmo.Draw.LineBBox( CurrentGameObjectCollection.GetBounds() );
 			}
 		}
-
+		/*
 		Gizmo.Draw.Color = Gizmo.Colors.Pitch.WithAlpha( 0.15f );
 		Gizmo.Draw.SolidBox( CurrentGameObjectCollection.GetBounds() );
 
 		Gizmo.Draw.Color = Gizmo.Colors.Pitch;
 		Gizmo.Draw.LineBBox( CurrentGameObjectCollection.GetBounds() );
+		*/
 	}
 
 	public void GroundGizmo( Ray cursorRay )
@@ -37,12 +40,24 @@ public partial class GridMapTool
 		if ( projectedPoint.Hit )
 		{
 			// Snap the projected point to the grid and adjust for floor height
-			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
+			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+
+			Vector3 normal = Vector3.Up; // Default for Z-axis
+			switch ( Axis )
+			{
+				case GroundAxis.X:
+					normal = Vector3.Forward; // Normal for X-axis
+					break;
+				case GroundAxis.Y:
+					normal = Vector3.Left; // Normal for Y-axis
+					break;
+					// Z-axis is already set as default
+			}
 
 			using ( Gizmo.Scope( "Ground" , snappedPosition ) )
 			{
 				Gizmo.Draw.Color = Gizmo.Colors.Blue;
-				Gizmo.Draw.Plane( 0, Vector3.Up );
+				Gizmo.Draw.Plane( 0, normal );
 			}
 		}
 	}
@@ -74,13 +89,13 @@ public partial class GridMapTool
 				
 				if ( projectedPoint.Hit )
 				{
-					var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
+					var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
 
 					Gizmo.Transform = new Transform( snappedPosition, Rotation.FromPitch( -90 ) * rotation );
 					Gizmo.Draw.Color = Color.White;
-					Gizmo.Draw.Model( Model.Load( SelectedModel.Components.Get<ModelRenderer>().Model.ResourcePath ) );
+					Gizmo.Draw.Model( Model.Load( SelectedModel ) );
 					Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( 0.35f );
-					Gizmo.Draw.LineBBox( SelectedModel.GetBounds());
+					Gizmo.Draw.LineBBox( Model.Load( SelectedModel ).Bounds );
 				}
 			}
 		}
@@ -140,7 +155,7 @@ public partial class GridMapTool
 
 				if ( CopyString != null )
 				{
-					Gizmo.Transform = new Transform( boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors ), Rotation.FromPitch( -90 ) * rotation );
+					Gizmo.Transform = new Transform( boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.FromPitch( -90 ) * rotation );
 					Gizmo.Draw.Color = Color.Yellow.WithAlpha( 0.15f );
 					Gizmo.Draw.LineBBox( Model.Load( CopyString ).Bounds );
 					Gizmo.Draw.SolidBox( Model.Load( CopyString ).Bounds );
