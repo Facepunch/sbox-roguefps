@@ -15,7 +15,7 @@ namespace Editor;
 [Icon( "🏗️" )]
 [Group( "Grid Map Editor" )]
 [Order( 0 )]
-public class GridMapTool : EditorTool
+public partial class GridMapTool : EditorTool
 {
 	public GameObject SelectedObject { get; set; }
 
@@ -75,7 +75,9 @@ public class GridMapTool : EditorTool
 	public List<GameObject> GameObjectCollection { get; set; } = new();
 
 	public ComboBox collectionDropDown { get; set; } = new();
-	
+
+	TimeSince timeSinceChangedCollection = 0;
+
 	public override void OnEnabled()
 	{
 		var so = EditorTypeLibrary.GetSerializedObject( this );
@@ -273,7 +275,7 @@ public class GridMapTool : EditorTool
 	private Vector3 endSelectionPoint;
 	private bool isSelecting = false;
 
-	private void FillSelectionWithTiles( Vector3 start, Vector3 end, SceneTraceResult tr )
+	private void FillSelectionWithTiles( Vector3 start, Vector3 end )
 	{
 		float gridSpacing = Gizmo.Settings.GridSpacing;
 		Vector3 lowerCorner = new Vector3( Math.Min( start.x, end.x ), Math.Min( start.y, end.y ), start.z ); // Use start.z as it's the ground level
@@ -283,12 +285,12 @@ public class GridMapTool : EditorTool
 		{
 			for ( float y = lowerCorner.y; y <= upperCorner.y; y += gridSpacing )
 			{
-				PlaceTileAtPosition( new Vector3( x, y, lowerCorner.z ), tr );
+				PlaceTileAtPosition( new Vector3( x, y, lowerCorner.z ));
 			}
 		}
 	}
 
-	private void PlaceTileAtPosition( Vector3 position, SceneTraceResult tr )
+	private void PlaceTileAtPosition( Vector3 position )
 	{
 		if ( SelectedModel != null )
 		{
@@ -296,7 +298,7 @@ public class GridMapTool : EditorTool
 			go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
 			go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
 			go.Transform.Position = position;
-			go.Transform.Rotation = Rotation.LookAt( tr.Normal ) * rotation;
+			go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 			go.Tags.Add( "sprinkled" );
 		}
 	}
@@ -346,6 +348,11 @@ public class GridMapTool : EditorTool
 		if ( GameObjectCollection is not null )
 		{
 			CurrentGameObjectCollection = GameObjectCollection.FirstOrDefault( x => x.Name == collectionDropDown.CurrentText );
+
+			collectionDropDown.ItemChanged += () =>
+			{
+				timeSinceChangedCollection = 0;
+			};
 		}
 
 		if ( resource != null )
@@ -391,24 +398,21 @@ public class GridMapTool : EditorTool
 						.WithoutTags( "sprinkled" )
 						.Run();
 
-		if ( resource is null )
-			return;
+		var boxtr = Scene.Trace.Ray( cursorRay, 5000 )
+			.UsePhysicsWorld( true )
+			.WithoutTags( "sprinkled" )
+			.Run();
+
+		if ( !boxtr.Hit )
+		{
+			Vector3 rayOrigin = cursorRay.Position;
+			Vector3 rayDirection = cursorRay.Forward;
+
+			boxtr = ProjectRayOntoGroundPlane( rayOrigin, rayDirection, 0 );
+		}
 
 		if ( Gizmo.IsShiftPressed )
 		{
-			var boxtr = Scene.Trace.Ray(cursorRay,5000)
-						.UsePhysicsWorld( true )
-						.WithoutTags( "sprinkled" )
-						.Run();
-
-			if ( !boxtr.Hit )
-			{
-				Vector3 rayOrigin = cursorRay.Position;
-				Vector3 rayDirection = cursorRay.Forward;
-
-				boxtr = ProjectRayOntoGroundPlane( rayOrigin, rayDirection, 0 );
-			}
-
 			if ( Gizmo.WasLeftMousePressed )
 			{
 				startSelectionPoint = boxtr.EndPosition.WithZ(floors).SnapToGrid( Gizmo.Settings.GridSpacing );
@@ -428,7 +432,7 @@ public class GridMapTool : EditorTool
 
 			if ( Application.IsKeyDown( KeyCode.F ) )
 			{
-				FillSelectionWithTiles( startSelectionPoint, endSelectionPoint, tr );
+				FillSelectionWithTiles( startSelectionPoint, endSelectionPoint );
 				isSelecting = false;
 			}
 
@@ -481,60 +485,36 @@ public class GridMapTool : EditorTool
 			rotation *= Rotation.FromYaw( (float)CurrentRotationSnap );
 		}
 
-		if ( tr.Hit )
+
+		if ( CurrentSelection == ModelPrefabSelection.Model )
 		{
-			if ( CurrentSelection == ModelPrefabSelection.Model )
+			PaintModelGizmos( tr );
+			if ( previewPrefab is not null )
 			{
-				PaintModelGizmos( tr );
-				if ( previewPrefab is not null )
-				{
-					previewPrefab.Destroy();
-					previewPrefab = null;
-				}
-			}
-			else if ( CurrentSelection == ModelPrefabSelection.Prefab )
-			{
-				PaintPrefabGizmos( tr );
+				previewPrefab.Destroy();
+				previewPrefab = null;
 			}
 		}
-
-
+		else if ( CurrentSelection == ModelPrefabSelection.Prefab )
+		{
+			PaintPrefabGizmos( tr );
+		}
+		GroundGizmo( cursorRay );
+		
 		if ( !Gizmo.IsCtrlPressed && CurrentSelection == ModelPrefabSelection.Model )
 		{
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Place )
 			{
-				var go = new GameObject( true, "GridTile" );
-				go.Parent = CurrentGameObjectCollection;
-				go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
-				go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
-				go.Transform.Position = tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-				go.Transform.Rotation = Rotation.LookAt( tr.Normal ) * rotation;
-				go.Tags.Add( "sprinkled" );
+				HandlePlacement( tr,cursorRay );
 			}
 			else if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Remove )
 			{
-				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-								.UseRenderMeshes( true )
-								.UsePhysicsWorld( false )
-								.WithTag( "sprinkled" )
-								.Run();
-				if ( tr2.Hit )
-				{
-					tr2.GameObject.Destroy();
-				}
+				HandleRemove( cursorRay );
 			}
 
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Move )
 			{
-				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-								.UseRenderMeshes( true )
-								.UsePhysicsWorld( false )
-								.WithTag( "sprinkled" )
-								.Run();
-				if ( tr2.Hit )
-				{
-					SelectedObject = tr2.GameObject;
-				}
+				HandleGetMove( cursorRay );
 			}
 			else if ( Gizmo.WasLeftMouseReleased && CurrentPaintMode == PaintMode.Move && SelectedObject is not null )
 			{
@@ -542,30 +522,22 @@ public class GridMapTool : EditorTool
 			}
 			if ( Gizmo.IsLeftMouseDown && CurrentPaintMode == PaintMode.Move && SelectedObject is not null )
 			{
-				SelectedObject.Transform.Position = tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-				SelectedObject.Transform.Rotation = Rotation.LookAt( tr.Normal ) * rotation;
+				HandleMove( cursorRay );
 			}
 
 			if ( Gizmo.WasLeftMouseReleased && CurrentPaintMode == PaintMode.Copy && CopyString == null )
 			{
-				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-								.UseRenderMeshes( true )
-								.UsePhysicsWorld( false )
-								.WithTag( "sprinkled" )
-								.Run();
-				if ( tr2.Hit )
-				{
-					CopyString = tr2.GameObject.Components.Get<ModelRenderer>().Model.Name;
-				}
+				HandleCopy( cursorRay );
 			}
 
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Copy && CopyString != null )
 			{
 				var go = new GameObject( true, "GridTile" );
+				go.Parent = CurrentGameObjectCollection;
 				go.Components.Create<ModelRenderer>().Model = Model.Load( CopyString );
 				go.Components.Create<ModelCollider>().Model = Model.Load( CopyString );
-				go.Transform.Position = tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-				go.Transform.Rotation = Rotation.LookAt( tr.Normal ) * rotation;
+				go.Transform.Position = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
+				go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 				go.Tags.Add( "sprinkled" );
 			}
 
@@ -579,8 +551,8 @@ public class GridMapTool : EditorTool
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Place && previewPrefab != null )
 			{
 				var go = SceneUtility.Instantiate( SceneUtility.GetPrefabScene( SelectedPrefab ) );
-				go.Transform.Position = tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-				go.Transform.Rotation = Rotation.LookAt( tr.Normal ) * rotation;
+				go.Transform.Position = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
+				go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 				go.Tags.Add( "sprinkled" );
 			}
 			else if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Remove )
@@ -598,6 +570,11 @@ public class GridMapTool : EditorTool
 		}
 
 
+		if ( CurrentGameObjectCollection is not null )
+		{
+			CollectionGroupHighLight();
+		}
+
 		if ( !Gizmo.IsLeftMouseDown )
 			return;
 	}
@@ -607,6 +584,19 @@ public class GridMapTool : EditorTool
 	public void PaintPrefabGizmos( SceneTraceResult tr )
 	{
 		var cursorRay = Gizmo.CurrentRay;
+
+		var boxtr = Scene.Trace.Ray( cursorRay, 5000 )
+					.UsePhysicsWorld( true )
+					.WithoutTags( "sprinkled" )
+					.Run();
+
+		if ( !boxtr.Hit )
+		{
+			Vector3 rayOrigin = cursorRay.Position;
+			Vector3 rayDirection = cursorRay.Forward;
+
+			boxtr = ProjectRayOntoGroundPlane( rayOrigin, rayDirection, 0 );
+		}
 
 		if ( CurrentPaintMode == PaintMode.Place && SelectedPrefab is not null )
 		{
@@ -628,14 +618,14 @@ public class GridMapTool : EditorTool
 			{
 				using ( Gizmo.Scope( "preview" ) )
 				{
-					Gizmo.Transform = new Transform( tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.LookAt( tr.Normal ) * rotation );
+					Gizmo.Transform = new Transform( boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.FromPitch( -90 ) * rotation );
 					Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( 0.35f );
 					Gizmo.Draw.SolidBox( previewPrefab.GetBounds() );
 					Gizmo.Draw.LineBBox( previewPrefab.GetBounds() );
 
-					Gizmo.Transform = new Transform( tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors ), Rotation.LookAt( tr.Normal ) * rotation );
-					previewPrefab.Transform.Position = tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-					previewPrefab.Transform.Rotation = Rotation.LookAt( tr.Normal ) * rotation;
+					Gizmo.Transform = new Transform( boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.FromPitch( -90 ) * rotation );
+					previewPrefab.Transform.Position = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
+					previewPrefab.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 				}
 			}
 		}
@@ -658,104 +648,13 @@ public class GridMapTool : EditorTool
 			
 			if ( tr2.Hit )
 			{
+
 				Gizmo.Draw.Color = Color.Red.WithAlpha( 0.5f );
 				Gizmo.Draw.LineBBox( tr2.GameObject.GetBounds() );
 				Gizmo.Draw.SolidBox( tr2.GameObject.GetBounds() );
 			}
 		}
 	}
-
-	public void PaintModelGizmos( SceneTraceResult tr )
-	{
-		// Do gizmos and stuff
-		var cursorRay = Gizmo.CurrentRay;
-
-		if ( CurrentPaintMode == PaintMode.Place && SelectedModel is not null )
-		{
-			using ( Gizmo.Scope( "preview" ) )
-			{
-
-				Gizmo.Transform = new Transform( tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.LookAt( tr.Normal ) * rotation );
-				Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( 0.35f );
-				Gizmo.Draw.SolidBox( Model.Load( SelectedModel ).Bounds );
-				Gizmo.Draw.LineBBox( Model.Load( SelectedModel ).Bounds );
-				Gizmo.Transform = new Transform( tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors ), Rotation.LookAt( tr.Normal ) * rotation );
-
-				//var trans = new Transform( tr.HitPosition, Rotation.LookAt( tr.Normal ) );
-				Gizmo.Draw.Color = Color.White;
-				Gizmo.Draw.Model( Model.Load( SelectedModel ) );
-			}
-		}
-		else if ( CurrentPaintMode == PaintMode.Remove )
-		{
-			using ( Gizmo.Scope( "preview" ) )
-			{
-				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-						.UseRenderMeshes( true )
-						.UsePhysicsWorld( false )
-						.WithTag( "sprinkled" )
-						.Run();
-				if ( tr2.Hit )
-				{
-					Gizmo.Draw.Color = Color.Red.WithAlpha( 0.5f );
-					Gizmo.Draw.LineBBox( tr2.GameObject.GetBounds() );
-					Gizmo.Draw.SolidBox( tr2.GameObject.GetBounds() );
-				}
-			}
-		}
-		else if ( CurrentPaintMode == PaintMode.Move )
-		{
-			using ( Gizmo.Scope( "preview" ) )
-			{
-				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-						.UseRenderMeshes( true )
-						.UsePhysicsWorld( false )
-						.WithTag( "sprinkled" )
-						.Run();
-				if ( tr2.Hit && SelectedObject is null )
-				{
-					Gizmo.Draw.Color = Theme.Blue.WithAlpha( 0.5f );
-					Gizmo.Draw.LineBBox( tr2.GameObject.GetBounds() );
-					Gizmo.Draw.SolidBox( tr2.GameObject.GetBounds() );
-				}
-				else if ( SelectedObject is not null )
-				{
-					Gizmo.Draw.Color = Theme.Blue.WithAlpha( 0.5f );
-					Gizmo.Draw.LineBBox( SelectedObject.GetBounds() );
-					Gizmo.Draw.SolidBox( SelectedObject.GetBounds() );
-				}
-			}
-		}
-		else if ( CurrentPaintMode == PaintMode.Copy )
-		{
-			using ( Gizmo.Scope( "preview" ) )
-			{
-				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-						.UseRenderMeshes( true )
-						.UsePhysicsWorld( false )
-						.WithTag( "sprinkled" )
-						.Run();
-				if ( tr.Hit && CopyString != null )
-				{
-
-					Gizmo.Transform = new Transform( tr.HitPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors ), Rotation.LookAt( tr.Normal ) * rotation );
-					Gizmo.Draw.Color = Color.Yellow.WithAlpha( 0.15f );
-					Gizmo.Draw.LineBBox( Model.Load( CopyString ).Bounds );
-					Gizmo.Draw.SolidBox( Model.Load( CopyString ).Bounds );
-
-					Gizmo.Draw.Color = Color.White;
-					Gizmo.Draw.Model( Model.Load( CopyString ) );
-				}
-				else if ( tr2.Hit && CopyString == null )
-				{
-					Gizmo.Draw.Color = Theme.Yellow.WithAlpha( 0.5f );
-					Gizmo.Draw.LineBBox( tr2.GameObject.GetBounds() );
-					Gizmo.Draw.SolidBox( tr2.GameObject.GetBounds() );
-				}
-			}
-		}
-	}
-
 	private static bool PaintListBackground( Widget widget )
 	{
 		Paint.ClearPen();
@@ -902,7 +801,6 @@ public class GridMapTool : EditorTool
 		var go = new GameObject( true, name );
 		go.Transform.Position = Vector3.Zero;
 		go.Tags.Add( "collection" );
-		go.Tags.Add( "sprinkled" );
 
 		GameObjectCollection.Add( go );
 
