@@ -78,9 +78,9 @@ public partial class GridMapTool
 
 					Gizmo.Transform = new Transform( snappedPosition, Rotation.FromPitch( -90 ) * rotation );
 					Gizmo.Draw.Color = Color.White;
-					Gizmo.Draw.Model( Model.Load( SelectedModel ) );
+					Gizmo.Draw.Model( Model.Load( SelectedModel.Components.Get<ModelRenderer>().Model.ResourcePath ) );
 					Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( 0.35f );
-					Gizmo.Draw.LineBBox( Model.Load( SelectedModel ).Bounds );
+					Gizmo.Draw.LineBBox( SelectedModel.GetBounds());
 				}
 			}
 		}

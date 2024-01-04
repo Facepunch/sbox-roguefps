@@ -31,10 +31,11 @@ public partial class GridMapTool
 			// Snap the projected point to the grid and adjust for floor height
 			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
 
-			var go = new GameObject( true, "GridTile" );
+			//var go = new GameObject( true, "GridTile" );
+			var go = SceneUtility.Instantiate( SelectedModel );
 			go.Parent = CurrentGameObjectCollection;
-			go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
-			go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
+			//go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
+			//go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
 			go.Transform.Position = snappedPosition;
 			go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 			go.Tags.Add( "sprinkled" );
@@ -83,5 +84,24 @@ public partial class GridMapTool
 			CopyString = CursorRay( cursorRay ).GameObject.Components.Get<ModelRenderer>().Model.Name;
 			Log.Info( $"Copy {CopyString}" );
 		}
+	}
+	
+	private bool _prevlessFloor = false;
+	private bool _prevmoreFloor = false;
+	public void FloorHeightShortCut()
+	{
+		if ( Application.IsKeyDown( KeyCode.Q ) && !_prevlessFloor )
+		{
+			DoFloors( 128 )();
+			floorLabel.Text = floorCount.ToString();
+		}
+		else if ( Application.IsKeyDown( KeyCode.E ) && !_prevmoreFloor )
+		{
+			DoFloors( -128 )();
+			floorLabel.Text = floorCount.ToString();
+		}
+
+		_prevlessFloor = Application.IsKeyDown( KeyCode.Q );
+		_prevmoreFloor = Application.IsKeyDown( KeyCode.E );
 	}
 }
