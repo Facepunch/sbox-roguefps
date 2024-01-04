@@ -1,5 +1,6 @@
 ﻿
 using RogueFPS;
+using System;
 
 namespace Editor;
 
@@ -59,6 +60,7 @@ public partial class GridMapTool : EditorTool
 	public int floorCount = 0;
 
 	public Rotation rotation = Rotation.From( 90, 0, 0 );
+	float rotationSnap = 90.0f;
 	public enum RotationSnap
 	{
 		None = 0,
@@ -68,7 +70,6 @@ public partial class GridMapTool : EditorTool
 		Ninety = 90
 	}
 	public RotationSnap CurrentRotationSnap { get; set; } = RotationSnap.Ninety;
-
 	public enum PaintMode
 	{
 		Place = 0,
@@ -90,7 +91,7 @@ public partial class GridMapTool : EditorTool
 		var so = EditorTypeLibrary.GetSerializedObject( this );
 		AllowGameObjectSelection = false;
 
-		foreach (var objectinscene in Scene.GetAllObjects(true))
+		foreach ( var objectinscene in Scene.GetAllObjects( true ) )
 		{
 			if ( objectinscene.Tags.Has( "Collection" ) && (objectinscene.Parent is Scene) )
 			{
@@ -100,12 +101,11 @@ public partial class GridMapTool : EditorTool
 		}
 
 		MainWindow( so );
-		
+
 		UpdateListViewVisibility();
 		UpdateListViewItems();
-		
-		ToolWindow( so );
 
+		ToolWindow( so );
 	}
 
 	private void OnSearchTextChanged( string searchText )
@@ -166,7 +166,7 @@ public partial class GridMapTool : EditorTool
 		{
 			for ( float y = lowerCorner.y; y <= upperCorner.y; y += gridSpacing )
 			{
-				PlaceTileAtPosition( new Vector3( x, y, lowerCorner.z ));
+				PlaceTileAtPosition( new Vector3( x, y, lowerCorner.z ) );
 			}
 		}
 	}
@@ -239,7 +239,17 @@ public partial class GridMapTool : EditorTool
 
 	public override void OnUpdate()
 	{
+		gridwindowWidget.FixedHeight = SceneOverlay.Height;
 
+		if ( CurrentListStyle == ListStyle.Grid )
+		{
+			modellistView.ItemSize = slider.Value;
+		}
+		else if( CurrentListStyle == ListStyle.List )
+		{
+			modellistView.ItemSize = new Vector2( 275, slider.Value );
+		}
+		
 		if ( GameObjectCollection is not null && resource is not null )
 		{
 			CurrentGameObjectCollection = GameObjectCollection.FirstOrDefault( x => x.Name == collectionDropDown.CurrentText );
@@ -307,19 +317,59 @@ public partial class GridMapTool : EditorTool
 
 			boxtr = ProjectRayOntoGroundPlane( rayOrigin, rayDirection, 0 );
 		}
-
+		
 		GroundGizmo( cursorRay );
+
+		HandleRotation();
+
+		if ( CurrentSelection == ModelPrefabSelection.Model )
+		{
+			PaintModelGizmos( tr );
+			if ( previewPrefab is not null )
+			{
+				previewPrefab.Destroy();
+				previewPrefab = null;
+			}
+		}
+		else if ( CurrentSelection == ModelPrefabSelection.Prefab )
+		{
+			PaintPrefabGizmos( tr );
+		}
 
 		if ( Gizmo.IsShiftPressed )
 		{
 			if ( Gizmo.WasLeftMousePressed )
 			{
 				startSelectionPoint = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+				switch ( Axis )
+				{
+					case GroundAxis.X:
+						startSelectionPoint.x *= FloorHeight;
+						break;
+					case GroundAxis.Y:
+						startSelectionPoint.y += FloorHeight;
+						break;
+					default:
+						startSelectionPoint.z += FloorHeight;
+						break;
+				}
 				isSelecting = true;
 			}
 			else if ( isSelecting )
 			{
 				endSelectionPoint = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+				switch ( Axis )
+				{
+					case GroundAxis.X:
+						endSelectionPoint.x *= FloorHeight;
+						break;
+					case GroundAxis.Y:
+						endSelectionPoint.y *= FloorHeight;
+						break;
+					default:
+						endSelectionPoint.z *= FloorHeight;
+						break;
+				}
 
 				if ( Gizmo.WasLeftMouseReleased )
 				{
@@ -361,7 +411,7 @@ public partial class GridMapTool : EditorTool
 
 			FloorHeightShortCut();
 
-			if ( SelectedGroupObjects is not null)
+			if ( SelectedGroupObjects is not null )
 			{
 				using ( Gizmo.Scope( "Selection" ) )
 				{
@@ -384,7 +434,7 @@ public partial class GridMapTool : EditorTool
 			return;
 		}
 		else if ( isSelecting )
-		{	
+		{
 			isSelecting = false;
 		}
 		else
@@ -397,32 +447,11 @@ public partial class GridMapTool : EditorTool
 			endSelectionPoint = Vector3.Zero;
 		}
 
-		if ( Gizmo.IsCtrlPressed && Gizmo.WasLeftMousePressed )
-		{
-			rotation *= Rotation.FromYaw( (float)CurrentRotationSnap );
-		}
-
-
-		if ( CurrentSelection == ModelPrefabSelection.Model )
-		{
-			PaintModelGizmos( tr );
-			if ( previewPrefab is not null )
-			{
-				previewPrefab.Destroy();
-				previewPrefab = null;
-			}
-		}
-		else if ( CurrentSelection == ModelPrefabSelection.Prefab )
-		{
-			PaintPrefabGizmos( tr );
-		}
-	
-		
 		if ( !Gizmo.IsCtrlPressed && CurrentSelection == ModelPrefabSelection.Model )
 		{
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Place )
 			{
-				HandlePlacement( tr,cursorRay );
+				HandlePlacement( tr, cursorRay );
 			}
 			else if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Remove )
 			{
@@ -446,7 +475,7 @@ public partial class GridMapTool : EditorTool
 			{
 				HandleCopy( cursorRay );
 			}
-
+			
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Copy && CopyString != null )
 			{
 				var go = new GameObject( true, "GridTile" );
@@ -458,12 +487,13 @@ public partial class GridMapTool : EditorTool
 				go.Tags.Add( "sprinkled" );
 			}
 
-			if ( Application.IsKeyDown( KeyCode.Escape ) && CopyString != null )
+			if ( Application.IsKeyDown( KeyCode.Escape ) )
 			{
 				CopyString = null;
+				SelectedModel = null;
 			}
 		}
-		else if ( !Gizmo.IsCtrlPressed && CurrentSelection == ModelPrefabSelection.Prefab)
+		else if ( !Gizmo.IsCtrlPressed && CurrentSelection == ModelPrefabSelection.Prefab )
 		{
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Place && previewPrefab != null )
 			{
@@ -486,6 +516,7 @@ public partial class GridMapTool : EditorTool
 			}
 		}
 
+		UpdateRotationSnapWithKeybind();
 
 		if ( CurrentGameObjectCollection is not null )
 		{
@@ -546,7 +577,7 @@ public partial class GridMapTool : EditorTool
 				}
 			}
 		}
-		else if( CurrentPaintMode != PaintMode.Place)
+		else if ( CurrentPaintMode != PaintMode.Place )
 		{
 			if ( previewPrefab != null )
 			{
@@ -562,7 +593,7 @@ public partial class GridMapTool : EditorTool
 					.UsePhysicsWorld( false )
 					.WithTag( "sprinkled" )
 					.Run();
-			
+
 			if ( tr2.Hit )
 			{
 
@@ -582,27 +613,50 @@ public partial class GridMapTool : EditorTool
 			Log.Info( $"Selected {s}" );
 		}
 	}
-
-	private Action DoRotation( bool leftright )
+	private Action DoRotation( bool leftright, GroundAxis axis )
 	{
-
-		Log.Info( "Rotate" );
-
+		float rotationIncrement = leftright ? (float)CurrentRotationSnap : -(float)CurrentRotationSnap;
 		return () =>
 		{
-			if ( leftright )
-			{
-				rotation *= Rotation.FromYaw( (float)CurrentRotationSnap );
-			}
-			else
-			{
-				rotation *= Rotation.FromYaw( -(float)CurrentRotationSnap );
-			}
-		};
 
+			switch ( axis )
+			{
+				case GroundAxis.X:
+					rotation *= Rotation.FromAxis( Vector3.Right, rotationIncrement );
+					break;
+				case GroundAxis.Y:
+					rotation *= Rotation.FromAxis( Vector3.Forward, rotationIncrement );
+					break;
+				case GroundAxis.Z:
+					rotation *= Rotation.FromAxis( Vector3.Up, rotationIncrement );
+					break;
+			}
+
+		};
 	}
 
-	private Action DoFloors( float i )
+	void SnapToClosest( GroundAxis axis )
+	{
+		var a = rotation.Angles();
+
+		switch (axis)
+		{
+			case GroundAxis.X:
+				a.pitch = a.pitch.SnapToGrid( (float)CurrentRotationSnap );
+				break;
+			case GroundAxis.Y:
+				a.yaw = a.yaw.SnapToGrid( (float)CurrentRotationSnap );
+				break;
+			case GroundAxis.Z:
+				a.roll = a.roll.SnapToGrid( (float)CurrentRotationSnap );
+				break;
+		}
+		rotation = Rotation.From( a );
+	}
+
+
+	
+private Action DoFloors( int i )
 	{
 		return () =>
 		{

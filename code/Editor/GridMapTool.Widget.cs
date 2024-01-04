@@ -13,6 +13,13 @@ public partial class GridMapTool
 	private Label floorLabel;
 	private Label currentaxisLabel;
 
+	private LineEdit heightInput;
+	private WidgetWindow gridwindowWidget;
+	private FloatSlider slider;
+
+	[Sandbox.Range( 0, 100 )]
+	public float thumbnailScale { get; set; }
+
 	public GroundAxis Axis { get; set; } = GroundAxis.Z;
 	public enum GroundAxis
 	{
@@ -21,12 +28,22 @@ public partial class GridMapTool
 		Y,
 		Z
 	}
+	
+	ListStyle CurrentListStyle = ListStyle.Grid;
+	public enum ListStyle
+	{
+		Grid,
+		List
+	}
 	void ToolWindow(SerializedObject so)
 	{
-		{
-			var window = new TileWindow( SceneOverlay, Scene );
-			window.MaximumWidth = 300;
 
+		{
+			gridwindowWidget = new WidgetWindow( SceneOverlay );
+			gridwindowWidget.MaximumWidth = 300;
+			gridwindowWidget.WindowTitle = "Grid Map Tool";
+			gridwindowWidget.OnPaintOverride += () => PaintListBackground( prefablistView );
+			
 			var rotshort = new Shortcut( SceneOverlay, "Rotate", "p", () => Log.Info( "Buttes" ) );
 			var row = Layout.Column();
 			var cs = new ControlSheet();
@@ -72,7 +89,37 @@ public partial class GridMapTool
 			collectionrow.Add( collectionCombo );
 			collectionrow.Add( collectionButton );
 
+			var iconrow = Layout.Row();
+			iconrow.AddSpacingCell( 15 );
+			var iconScaleLable = new Label( "Icon Size:" );
+			iconrow.Add( iconScaleLable );
+			slider = iconrow.Add(new FloatSlider( gridwindowWidget ));
+			slider.Minimum = 48;
+			slider.Maximum = 128;
+			slider.MinimumWidth = 150;
+			slider.Value = 64;
 
+			iconrow.AddSpacingCell( 5 );
+			var buttonGrid = iconrow.Add( new Button( "", "grid_view" ) );
+			buttonGrid.OnPaintOverride += () =>
+			{
+				PaintButton( "grid_view", ListStyle.Grid );
+				return true;
+			};
+
+			buttonGrid.MaximumSize = 24;
+			var buttonList = iconrow.Add( new Button() );
+			buttonList.MaximumSize = 24;
+			buttonList.OnPaintOverride += () =>
+			{
+				PaintButton( "reorder", ListStyle.List );
+				return true;
+			};
+
+			buttonGrid.Clicked += () => { CurrentListStyle = ListStyle.Grid; buttonList.Update(); };
+			buttonList.Clicked += () => { CurrentListStyle = ListStyle.List; buttonGrid.Update(); };
+
+			/*
 			var modelprefab = row.Add( new SegmentedControl() );
 			modelprefab.AddOption( "Model", "brush" );
 			modelprefab.AddOption( "Prefab", "delete" );
@@ -82,9 +129,9 @@ public partial class GridMapTool
 				UpdateListViewVisibility();
 				UpdateListViewItems();
 			};
-
+			*/
 			prefablistView.ItemSize = 64;
-			prefablistView.ItemAlign = Sandbox.UI.Align.SpaceBetween;
+			prefablistView.ItemAlign = Align.SpaceBetween;
 			prefablistView.OnPaintOverride += () => PaintListBackground( prefablistView );
 			prefablistView.ItemPaint = PaintBrushPrefab;
 			prefablistView.ItemSelected = ( item ) =>
@@ -95,8 +142,7 @@ public partial class GridMapTool
 				}
 			};
 
-			modellistView.ItemSize = new Vector2( 64, 64 );
-			modellistView.ItemAlign = Sandbox.UI.Align.SpaceBetween;
+			modellistView.ItemAlign = Align.Center;
 			modellistView.ItemSelected = ( item ) =>
 			{
 				if ( item is ModelList data )
@@ -104,18 +150,23 @@ public partial class GridMapTool
 					SelectedModel = data.path;
 				}
 			};
-
 			modellistView.OnPaintOverride += () => PaintListBackground( modellistView );
 			modellistView.ItemPaint = PaintBrushItem;
+
+			
+
 			row.Add( collectionrow );
 			row.Add( cs );
+			row.Add( iconrow );
+			row.AddSeparator();
 			row.Add( modellistView );
 			row.Add( prefablistView );
 
-			window.Layout = row;
-			window.MinimumSize = new Vector2( 300, 600 );
+			gridwindowWidget.Layout = row;
 
-			AddOverlay( window, TextFlag.RightBottom, 10 );
+			//gridwindowWidget.MinimumSize = new Vector2( 300, SceneOverlay.Height );
+			AddOverlay( gridwindowWidget, TextFlag.RightBottom, 0 );
+
 		}
 	}
 
@@ -128,12 +179,36 @@ public partial class GridMapTool
 			var cs = new ControlSheet();
 			cs.AddRow( so.GetProperty( "CurrentRotationSnap" ) );
 
-			var Rotbuttons = Layout.Row();
-			Rotbuttons.Spacing = 8;
-			Rotbuttons.Add( new Label( "Rotation:" ) );
-			Rotbuttons.AddStretchCell( 1 );
-			Rotbuttons.Add( new Button( "", "arrow_back" ) { Clicked = DoRotation( true ) } );
-			Rotbuttons.Add( new Button( "", "arrow_forward" ) { Clicked = DoRotation( false ) } );
+			var rotationButtons = Layout.Column();
+			var rotButtonX = rotationButtons.Add(Layout.Row());
+			rotButtonX.Spacing = 8;
+			rotButtonX.Add( new Label( "Rotation X: " ) );
+			rotButtonX.AddStretchCell( 1 );
+			rotButtonX.Add( new Button( "", "arrow_back" ) { Clicked = DoRotation( true, GroundAxis.X ), ButtonType = "clear" } );
+			rotButtonX.Add( new Button( "", "arrow_forward" ) { Clicked = DoRotation( false, GroundAxis.X ), ButtonType = "clear" } );
+
+			var rotButtonY = rotationButtons.Add( Layout.Row() );
+			rotButtonY.Spacing = 8;
+			rotButtonY.Add( new Label( "Rotation Y: " ) );
+			rotButtonY.AddStretchCell( 1 );
+			rotButtonY.Add( new Button( "", "arrow_back" ) { Clicked = DoRotation( true, GroundAxis.Y ), ButtonType = "clear" } );
+			rotButtonY.Add( new Button( "", "arrow_forward" ) { Clicked = DoRotation( false, GroundAxis.Y ), ButtonType = "clear" } );
+
+			var rotButtonZ = rotationButtons.Add( Layout.Row() );
+			rotButtonZ.Spacing = 8;
+			rotButtonZ.Add( new Label( "Rotation Z: " ) );
+			rotButtonZ.AddStretchCell( 1 );
+			rotButtonZ.Add( new Button( "", "arrow_back" ) { Clicked = DoRotation( true, GroundAxis.Z ), ButtonType = "clear" } );
+			rotButtonZ.Add( new Button( "", "arrow_forward" ) { Clicked = DoRotation( false, GroundAxis.Z ), ButtonType = "clear" } );
+
+			var FloorHeightValue = Layout.Row();
+			FloorHeightValue.Add( new Label( "Floor Height:" ) );
+			FloorHeightValue.AddStretchCell( 1 );
+			heightInput = new LineEdit();
+			FloorHeightValue.Add( heightInput );
+			heightInput.MinimumHeight = Theme.RowHeight;
+			heightInput.Text = "128";
+			heightInput.TextChanged += (x) => FloorHeight = x.ToInt();
 
 			var Floorbuttons = Layout.Row();
 			Floorbuttons.Spacing = 8;
@@ -142,8 +217,8 @@ public partial class GridMapTool
 			floorLabel = new Label( floorCount.ToString() );
 			Floorbuttons.Add( floorLabel );
 			Floorbuttons.AddStretchCell( 1 );
-			Floorbuttons.Add( new Button( "", "arrow_upward" ) { Clicked = () => { DoFloors( 128 )(); floorLabel.Text = floorCount.ToString(); } } );
-			Floorbuttons.Add( new Button( "", "arrow_downward" ) { Clicked = () => { DoFloors( -128 )(); floorLabel.Text = floorCount.ToString(); } } );
+			Floorbuttons.Add( new Button( "", "arrow_upward" ) { Clicked = () => { DoFloors( FloorHeight )(); floorLabel.Text = floorCount.ToString(); }, ButtonType = "clear" } );
+			Floorbuttons.Add( new Button( "", "arrow_downward" ) { Clicked = () => { DoFloors( -FloorHeight )(); floorLabel.Text = floorCount.ToString(); }, ButtonType = "clear" } );
 
 			var pop = Layout.Row();
 			pop.Add( new Label( "Current Axis: " ) );
@@ -153,13 +228,14 @@ public partial class GridMapTool
 			var popbutton = pop.Add( new Button( "Options", "more_horiz" ) { Clicked = () => { OpenDropdown( window ); } } );
 			popbutton.ButtonType = "clear";
 
+			cs.AddLayout( FloorHeightValue );
 			cs.AddLayout( Floorbuttons );
-			cs.AddLayout( Rotbuttons );
+			cs.AddLayout( rotationButtons );
 			cs.AddLayout( pop );
 
 			//cs.Add( new Button( "Clear", "clear" ) { Clicked = ClearAll } );
 			window.Layout = cs;
-			AddOverlay( window, TextFlag.RightTop, 10 );
+			AddOverlay( window, TextFlag.LeftTop, 10 );
 		}
 	}
 
@@ -195,10 +271,32 @@ public partial class GridMapTool
 	private static bool PaintListBackground( Widget widget )
 	{
 		Paint.ClearPen();
-		Paint.SetBrush( Theme.ControlBackground.WithAlpha( 0.5f ) );
+		Paint.SetBrush( Theme.ControlBackground.WithAlpha( 1f ) );
 		Paint.DrawRect( widget.LocalRect );
 
 		return false;
+	}
+
+	private void PaintButton(string icon, ListStyle style)
+	{
+		if( CurrentListStyle == style )
+		{
+			Paint.ClearPen();
+			Paint.SetBrush( Theme.Green.WithAlpha( 0.10f ) );
+			Paint.SetPen( Theme.Black.WithAlpha( 0.50f ) );
+			Paint.DrawRect( new Rect( 0, 0, 24, 24 ), 3 );
+		}
+
+		Paint.ClearPen();
+		Paint.SetBrush( Theme.Grey.WithAlpha( 0.10f ) );
+		Paint.SetPen( Theme.Black.WithAlpha( 0.50f ) );
+		Paint.DrawRect( new Rect( 0, 0, 24, 24 ), 3 );
+
+
+		Paint.ClearPen();
+		Paint.SetPen( Theme.Grey, 2.0f );
+		Paint.SetFont( "Poppins", 6, 700 );
+		Paint.DrawIcon( new Rect( 0, 0, 24, 24 ), icon, 16 );
 	}
 
 	private void PaintBrushItem( VirtualWidget widget )
@@ -207,7 +305,6 @@ public partial class GridMapTool
 
 		Paint.Antialiasing = true;
 		Paint.TextAntialiasing = true;
-
 
 		if ( brush.path == SelectedModel )
 		{
@@ -222,23 +319,47 @@ public partial class GridMapTool
 		Paint.SetPen( Theme.White.WithAlpha( 0.05f ) );
 		Paint.DrawRect( widget.Rect.Shrink( 2 ), 3 );
 
-		Paint.Draw( widget.Rect.Shrink( 1 ), brush.icon );
-		
+		if ( CurrentListStyle == ListStyle.List )
+		{
+			int iconSize = (int)Math.Min( widget.Rect.Height, widget.Rect.Width / 3 ); // Adjust for icon width ratio
+			Vector2 iconPosition = new Vector2(
+				widget.Rect.Left + 5, // 5 pixels padding from the left edge
+				widget.Rect.Top + (widget.Rect.Height - iconSize) / 2 // Center icon vertically
+			);
+
+			var iconRect = new Rect( iconPosition.x, iconPosition.y, iconSize, iconSize );
+
+			Paint.Draw( iconRect, brush.icon );
+		}
+		else
+		{
+			Paint.Draw( widget.Rect.Shrink(5), brush.icon );
+		}
+
+
 		var rect = widget.Rect;
 
 		var textRect = rect.Shrink( 2 );
-		textRect.Top = textRect.Top + 20;
-		textRect.Top = textRect.Top + 25;
 
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.Black.WithAlpha( 0.5f ) );
-		Paint.DrawRect( textRect, 0.0f );
+		if ( CurrentListStyle == ListStyle.Grid )
+		{
+			textRect.Top = textRect.Top + slider.Value * 0.65f;
+			textRect.Top = textRect.Top + slider.Value / 10;
 
+			Paint.ClearPen();
+			Paint.SetBrush( Theme.Black.WithAlpha( 0.5f ) );
+			Paint.DrawRect( textRect, 0.0f );
+		}
+		else
+		{
+			textRect.Right = textRect.Right + slider.Value;
+		}
+		
 		Paint.Antialiasing = true;
 
 		Paint.SetPen( Theme.Blue, 2.0f );
 		Paint.ClearBrush();
-		Paint.SetFont( "Poppins", 6, 700 );
+		Paint.SetFont( "Poppins", slider.Value / 8f, 700 );
 		Paint.DrawText( textRect, brush.name );
 	}
 	private void PaintBrushPrefab( VirtualWidget widget )
@@ -280,21 +401,6 @@ public partial class GridMapTool
 		Paint.ClearBrush();
 		Paint.SetFont( "Poppins", 6, 700 );
 		Paint.DrawText( textRect, brush.ResourceName );
-	}
-}
-file class TileWindow : WidgetWindow
-{
-	Scene scene;
-	public TileWindow( Widget parent, Scene scene ) : base( parent, "Grid Map Editor" )
-	{
-
-		this.scene = scene;
-	}
-
-	protected override void OnPaint()
-	{
-		base.OnPaint();
-
 	}
 }
 

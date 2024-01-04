@@ -53,7 +53,7 @@ public partial class GridMapTool
 					break;
 					// Z-axis is already set as default
 			}
-
+				
 			using ( Gizmo.Scope( "Ground" , snappedPosition ) )
 			{
 				Gizmo.Draw.Color = Gizmo.Colors.Blue;
