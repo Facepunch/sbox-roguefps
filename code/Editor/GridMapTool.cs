@@ -166,7 +166,7 @@ public partial class GridMapTool : EditorTool
 		{
 			for ( float y = lowerCorner.y; y <= upperCorner.y; y += gridSpacing )
 			{
-				PlaceTileAtPosition( new Vector3( x, y, floors ) );
+				PlaceTileAtPosition( new Vector3( x, y, lowerCorner.z ) );
 			}
 		}
 	}
@@ -227,7 +227,6 @@ public partial class GridMapTool : EditorTool
 
 	private void SelectObjectsInBox( BBox selectionBox )
 	{
-
 		foreach ( var obj in Scene.GetAllObjects( false ) )
 		{
 			if ( selectionBox.Contains( obj.Transform.Position ) && obj.Tags.Has( "sprinkled" ) )
@@ -330,36 +329,31 @@ public partial class GridMapTool : EditorTool
 
 		if ( Gizmo.IsShiftPressed && SelectedObject is null )
 		{
+			projectedPoint = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
 			if ( Gizmo.WasLeftMousePressed )
 			{
-				startSelectionPoint = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
-				switch ( Axis )
-				{
-					case GroundAxis.X:
-						startSelectionPoint.x *= FloorHeight;
-						break;
-					case GroundAxis.Y:
-						startSelectionPoint.y += FloorHeight;
-						break;
-					default:
-						startSelectionPoint.z += FloorHeight;
-						break;
-				}
+				var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+				
+				startSelectionPoint = snappedPosition;
+				
 				isSelecting = true;
 			}
 			else if ( isSelecting )
 			{
-				endSelectionPoint = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+				var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+
+				endSelectionPoint = snappedPosition;
+				
 				switch ( Axis )
 				{
 					case GroundAxis.X:
-						endSelectionPoint.x *= FloorHeight;
+						endSelectionPoint.x += FloorHeight;
 						break;
 					case GroundAxis.Y:
-						endSelectionPoint.y *= FloorHeight;
+						endSelectionPoint.y += FloorHeight;
 						break;
 					default:
-						endSelectionPoint.z *= FloorHeight;
+						endSelectionPoint.z += FloorHeight;
 						break;
 				}
 
