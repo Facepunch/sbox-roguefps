@@ -19,6 +19,7 @@ public partial class GridMapTool : EditorTool
 	public string CopyString { get; set; }
 
 	public GridMapEditorResource resource { get; set; }
+	public GridMapEditorResource oldresource { get; set; }
 	//public PrefabFile resource { get; set; }
 
 	public enum ModelPrefabSelection
@@ -86,11 +87,21 @@ public partial class GridMapTool : EditorTool
 
 	TimeSince timeSinceChangedCollection = 0;
 
+	bool gridActiveState = true;
+
+	SerializedObject serializedObject;
+
 	public override void OnEnabled()
 	{
+		gridActiveState = Gizmo.Settings.ShowGrid;
+
 		var so = EditorTypeLibrary.GetSerializedObject( this );
+
+		serializedObject = so;
+
 		AllowGameObjectSelection = false;
 
+		
 		foreach ( var objectinscene in Scene.GetAllObjects( true ) )
 		{
 			if ( objectinscene.Tags.Has( "Collection" ) && (objectinscene.Parent is Scene) )
@@ -106,6 +117,8 @@ public partial class GridMapTool : EditorTool
 		UpdateListViewItems();
 
 		ToolWindow( so );
+		Gizmo.Settings.ShowGrid = false;
+		Grid( new Vector2( 16384, 16384 ), Gizmo.Settings.GridSpacing, Gizmo.Settings.GridOpacity );
 	}
 
 	private void OnSearchTextChanged( string searchText )
@@ -117,6 +130,7 @@ public partial class GridMapTool : EditorTool
 
 	private void UpdateListViewItems()
 	{
+
 		if ( CurrentSelection == ModelPrefabSelection.Model )
 		{
 			/*
@@ -138,6 +152,8 @@ public partial class GridMapTool : EditorTool
 			prefablistView.SetItems( filteredPrefabList.Cast<object>() );
 			prefablistView.Update(); // Refresh ListView
 		}
+
+		oldresource = resource;
 	}
 
 	private void UpdateListViewVisibility()
@@ -150,6 +166,10 @@ public partial class GridMapTool : EditorTool
 	public override void OnDisabled()
 	{
 		base.OnDisabled();
+
+		so.Delete();
+
+		Gizmo.Settings.ShowGrid = gridActiveState;
 	}
 
 	private Vector3 startSelectionPoint;
@@ -234,7 +254,7 @@ public partial class GridMapTool : EditorTool
 				planePoint = new Vector3( 0, groundHeight, 0 ); // Point on the Y-axis plane
 				break;
 			default: // Z-axis
-				planeNormal = Vector3.Up; // Normal perpendicular to Z-axisZ
+				planeNormal = Vector3.Up; // Normal perpendicular to Z-axis
 				planePoint = new Vector3( 0, 0, groundHeight ); // Point on the Z-axis plane
 				break;
 		}
@@ -248,11 +268,32 @@ public partial class GridMapTool : EditorTool
 			if ( distance >= 0 )
 			{
 				Vector3 hitPoint = rayOrigin + rayDirection * distance;
+
+				// Snap to grid, but do not snap the axis that is currently being used
+				switch ( axis )
+				{
+					case GroundAxis.X:
+						hitPoint = new Vector3( hitPoint.x, SnapToGrid( hitPoint.y ), SnapToGrid( hitPoint.z ) );
+						break;
+					case GroundAxis.Y:
+						hitPoint = new Vector3( SnapToGrid( hitPoint.x ), hitPoint.y, SnapToGrid( hitPoint.z ) );
+						break;
+					default: // Z-axis
+						hitPoint = new Vector3( SnapToGrid( hitPoint.x ), SnapToGrid( hitPoint.y ), hitPoint.z );
+						break;
+				}
+
 				return new SceneTraceResult { Hit = true, EndPosition = hitPoint };
 			}
 		}
 
 		return new SceneTraceResult { Hit = false };
+	}
+
+	private float SnapToGrid( float value )
+	{
+		// Assuming you have a grid spacing value
+		return MathF.Round( value / Gizmo.Settings.GridSpacing ) * Gizmo.Settings.GridSpacing;
 	}
 
 	List<GameObject> SelectedGroupObjects { get; set; } = new List<GameObject>();
@@ -270,7 +311,8 @@ public partial class GridMapTool : EditorTool
 
 	public override void OnUpdate()
 	{
-		
+		Grid( new Vector2( 16384, 16384 ), Gizmo.Settings.GridSpacing, Gizmo.Settings.GridOpacity );
+
 		UpdateWidgetValues();
 
 		if ( GameObjectCollection is not null && resource is not null )
@@ -284,8 +326,19 @@ public partial class GridMapTool : EditorTool
 		}
 
 		//&& resource.ResourceName.Contains( "_tileset" )
+		
+		if ( resource != oldresource )
+		{
+			Log.Info( "Resource Changed" );
+			modelList.Clear();
+			prefabList.Clear();
+			modellistView.Clear();
+			prefablistView.Clear();
 
-		if ( resource != null )
+			UpdateListViewItems();
+		}
+
+		if ( resource != null && resource == oldresource)
 		{
 			foreach ( var model in resource.TileModels )
 			{
@@ -311,12 +364,11 @@ public partial class GridMapTool : EditorTool
 					Log.Info( prefab.ResourceName );
 				}
 			}
+
+
 			UpdateListViewItems();
-			//modellistView.SetItems( modelList.Cast<object>() );
-
-			//prefablistView.SetItems( prefabList.Cast<object>() );
 		}
-
+		
 		modellistView.ItemsSelected = SetSelection;
 
 		// Do gizmos and stuff
@@ -364,7 +416,7 @@ public partial class GridMapTool : EditorTool
 			projectedPoint = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
 			if ( Gizmo.WasLeftMousePressed )
 			{
-				var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+				var snappedPosition = projectedPoint.EndPosition;
 				
 				startSelectionPoint = snappedPosition;
 				
@@ -372,7 +424,7 @@ public partial class GridMapTool : EditorTool
 			}
 			else if ( isSelecting )
 			{
-				var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+				var snappedPosition = projectedPoint.EndPosition;
 
 				endSelectionPoint = snappedPosition;
 				

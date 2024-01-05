@@ -30,6 +30,9 @@ public partial class GridMapTool
 	}
 	
 	ListStyle CurrentListStyle = ListStyle.Grid;
+	private SegmentedControl paintmode;
+	private SerializedProperty resourceso;
+
 	public enum ListStyle
 	{
 		Grid,
@@ -46,7 +49,7 @@ public partial class GridMapTool
 
 			var rotshort = new Shortcut( SceneOverlay, "Rotate", "p", () => Log.Info( "Buttes" ) );
 			var row = Layout.Column();
-			var paintmode = row.Add( new SegmentedControl() );
+			paintmode = row.Add( new SegmentedControl() );
 			paintmode.AddOption( "Place", "brush" );
 			paintmode.AddOption( "Remove", "delete" );
 			paintmode.AddOption( "Move", "open_with" );
@@ -178,6 +181,8 @@ public partial class GridMapTool
 			modellistView.ItemSize = new Vector2( 275, slider.Value );
 		}
 	}
+
+	
 
 	void MainWindow(SerializedObject so)
 	{

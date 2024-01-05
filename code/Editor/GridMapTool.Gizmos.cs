@@ -36,11 +36,11 @@ public partial class GridMapTool
 	public void GroundGizmo( Ray cursorRay )
 	{
 		projectedPoint = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
-
+		
 		if ( projectedPoint.Hit )
 		{
 			// Snap the projected point to the grid and adjust for floor height
-			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+			var snappedPosition = projectedPoint.EndPosition;
 
 			Vector3 normal = Vector3.Up; // Default for Z-axis
 			switch ( Axis )
@@ -53,15 +53,56 @@ public partial class GridMapTool
 					break;
 					// Z-axis is already set as default
 			}
-				
-			using ( Gizmo.Scope( "Ground" , snappedPosition ) )
+
+			using ( Gizmo.Scope( "Ground") )
 			{
-				Gizmo.Draw.Color = Gizmo.Colors.Blue;
-				Gizmo.Draw.Plane( 0, normal );
+				var axiscolor = Gizmo.Colors.Up;
+				switch ( Axis )
+				{
+					case GroundAxis.X:
+						axiscolor = Gizmo.Colors.Left;
+						break;
+					case GroundAxis.Y:
+						axiscolor = Gizmo.Colors.Forward;
+						break;
+				}
+
+				Gizmo.Draw.Color = axiscolor.WithAlpha(0.25f);
+				//Gizmo.Transform = new Transform( snappedPosition );
+				//Gizmo.Draw.Plane( 0, normal );
+
+				// Calculate the half size of the grid spacing
+				float halfGridSize = Gizmo.Settings.GridSpacing / 2.0f;
+
+				// Create a flat box based on the grid spacing
+				Vector3 minCorner = snappedPosition - new Vector3( halfGridSize, halfGridSize, 0 );
+				switch ( Axis )
+				{
+					case GroundAxis.X:
+						minCorner = snappedPosition - new Vector3( 0, halfGridSize, halfGridSize );
+						break;
+					case GroundAxis.Y:
+						minCorner = snappedPosition - new Vector3( halfGridSize, 0, halfGridSize );
+						break;
+				}
+				Vector3 maxCorner = snappedPosition + new Vector3( halfGridSize, halfGridSize, 0 );
+				switch ( Axis )
+				{
+					case GroundAxis.X:
+						maxCorner = snappedPosition + new Vector3( 0, halfGridSize, halfGridSize );
+						break;
+					case GroundAxis.Y:
+						maxCorner = snappedPosition + new Vector3( halfGridSize, 0, halfGridSize );
+						break;
+				}
+				var bbox = new BBox( minCorner, maxCorner );
+				Gizmo.Draw.LineThickness = 6;
+				Gizmo.Draw.Color = axiscolor.WithAlpha( 1f );
+				Gizmo.Draw.LineBBox( bbox );
+				Gizmo.Transform = new Transform( 0, Rotation.FromAxis( Vector3.Up, 45 ) );
 			}
 		}
 	}
-	
 
 	public void PaintModelGizmos( SceneTraceResult tr )
 	{
@@ -89,7 +130,7 @@ public partial class GridMapTool
 				
 				if ( projectedPoint.Hit )
 				{
-					var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+					var snappedPosition = projectedPoint.EndPosition;
 
 					Gizmo.Transform = new Transform( snappedPosition, Rotation.FromPitch( -90 ) * rotation );
 					Gizmo.Draw.Color = Color.White;

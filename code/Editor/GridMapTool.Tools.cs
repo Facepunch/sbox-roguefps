@@ -32,7 +32,7 @@ public partial class GridMapTool
 		if ( projectedPoint.Hit )
 		{
 			// Snap the projected point to the grid and adjust for floor height
-			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing );
+			var snappedPosition = projectedPoint.EndPosition;
 
 			var go = new GameObject( true, "GridTile" );
 			go.Parent = CurrentGameObjectCollection;
@@ -73,7 +73,7 @@ public partial class GridMapTool
 		if ( projectedPoint.Hit )
 		{
 			// Snap the projected point to the grid and adjust for floor height
-			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
+			var snappedPosition = projectedPoint.EndPosition;
 
 			SelectedObject.Transform.Position = snappedPosition;
 
@@ -107,11 +107,19 @@ public partial class GridMapTool
 		if ( Application.IsKeyDown( KeyCode.Q ) && !_prevlessFloor )
 		{
 			DoFloors( -FloorHeight )();
+			so.Delete();
+			so = null;
+			Grid( new Vector2( 16384, 16384 ), Gizmo.Settings.GridSpacing, Gizmo.Settings.GridOpacity );
+
 			floorLabel.Text = floorCount.ToString();
 		}
 		else if ( Application.IsKeyDown( KeyCode.E ) && !_prevmoreFloor )
 		{
 			DoFloors( FloorHeight )();
+			so.Delete();
+			so = null;
+			Grid( new Vector2( 16384, 16384 ), Gizmo.Settings.GridSpacing, Gizmo.Settings.GridOpacity );
+			
 			floorLabel.Text = floorCount.ToString();
 		}
 
