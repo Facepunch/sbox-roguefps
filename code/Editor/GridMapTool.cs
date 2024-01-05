@@ -166,7 +166,7 @@ public partial class GridMapTool : EditorTool
 		{
 			for ( float y = lowerCorner.y; y <= upperCorner.y; y += gridSpacing )
 			{
-				PlaceTileAtPosition( new Vector3( x, y, lowerCorner.z ) );
+				PlaceTileAtPosition( new Vector3( x, y, floors ) );
 			}
 		}
 	}
@@ -239,17 +239,9 @@ public partial class GridMapTool : EditorTool
 
 	public override void OnUpdate()
 	{
-		gridwindowWidget.FixedHeight = SceneOverlay.Height;
-
-		if ( CurrentListStyle == ListStyle.Grid )
-		{
-			modellistView.ItemSize = slider.Value;
-		}
-		else if( CurrentListStyle == ListStyle.List )
-		{
-			modellistView.ItemSize = new Vector2( 275, slider.Value );
-		}
 		
+		UpdateWidgetValues();
+
 		if ( GameObjectCollection is not null && resource is not null )
 		{
 			CurrentGameObjectCollection = GameObjectCollection.FirstOrDefault( x => x.Name == collectionDropDown.CurrentText );
@@ -336,7 +328,7 @@ public partial class GridMapTool : EditorTool
 			PaintPrefabGizmos( tr );
 		}
 
-		if ( Gizmo.IsShiftPressed )
+		if ( Gizmo.IsShiftPressed && SelectedObject is null )
 		{
 			if ( Gizmo.WasLeftMousePressed )
 			{
@@ -466,6 +458,7 @@ public partial class GridMapTool : EditorTool
 			{
 				SelectedObject = null;
 			}
+			
 			if ( Gizmo.IsLeftMouseDown && CurrentPaintMode == PaintMode.Move && SelectedObject is not null )
 			{
 				HandleMove( cursorRay );
@@ -483,7 +476,14 @@ public partial class GridMapTool : EditorTool
 				go.Components.Create<ModelRenderer>().Model = Model.Load( CopyString );
 				go.Components.Create<ModelCollider>().Model = Model.Load( CopyString );
 				go.Transform.Position = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-				go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
+				if ( beenRotated )
+				{
+					go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
+				}
+				else
+				{
+					go.Transform.Rotation = lastRot;
+				}
 				go.Tags.Add( "sprinkled" );
 			}
 
@@ -615,6 +615,8 @@ public partial class GridMapTool : EditorTool
 	}
 	private Action DoRotation( bool leftright, GroundAxis axis )
 	{
+		beenRotated = true;	
+		
 		float rotationIncrement = leftright ? (float)CurrentRotationSnap : -(float)CurrentRotationSnap;
 		return () =>
 		{

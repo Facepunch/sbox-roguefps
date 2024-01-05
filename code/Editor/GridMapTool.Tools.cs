@@ -54,16 +54,18 @@ public partial class GridMapTool
 			CursorRay( cursorRay ).GameObject.Destroy();
 		}
 	}
-
 	public void HandleGetMove( Ray cursorRay )
 	{
 		if ( CursorRay( cursorRay ).Hit )
 		{
 			Log.Info( $"Start Moving {CursorRay( cursorRay ).GameObject.Name}" );
-			SelectedObject = CursorRay( cursorRay ).GameObject;		
+			SelectedObject = CursorRay( cursorRay ).GameObject;
+			lastRot = SelectedObject.Transform.Rotation;
+			beenRotated = false;
 		}
 	}
-
+	Rotation lastRot;
+	bool beenRotated;
 	public void HandleMove( Ray cursorRay )
 	{
 		projectedPoint = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
@@ -74,7 +76,17 @@ public partial class GridMapTool
 			var snappedPosition = projectedPoint.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
 
 			SelectedObject.Transform.Position = snappedPosition;
-			SelectedObject.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
+
+			// Only update rotation if 'shouldRotate' is true
+			if ( beenRotated )
+			{
+				SelectedObject.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
+			}
+			else
+			{
+				// Keep the last rotation
+				SelectedObject.Transform.Rotation = lastRot;
+			}
 		}
 	}
 
@@ -84,6 +96,7 @@ public partial class GridMapTool
 		{
 			CopyString = CursorRay( cursorRay ).GameObject.Components.Get<ModelRenderer>().Model.Name;
 			Log.Info( $"Copy {CopyString}" );
+			beenRotated = false;
 		}
 	}
 	

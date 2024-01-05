@@ -43,10 +43,9 @@ public partial class GridMapTool
 			gridwindowWidget.MaximumWidth = 300;
 			gridwindowWidget.WindowTitle = "Grid Map Tool";
 			gridwindowWidget.OnPaintOverride += () => PaintListBackground( prefablistView );
-			
+
 			var rotshort = new Shortcut( SceneOverlay, "Rotate", "p", () => Log.Info( "Buttes" ) );
 			var row = Layout.Column();
-			var cs = new ControlSheet();
 			var paintmode = row.Add( new SegmentedControl() );
 			paintmode.AddOption( "Place", "brush" );
 			paintmode.AddOption( "Remove", "delete" );
@@ -59,18 +58,10 @@ public partial class GridMapTool
 				CurrentPaintMode = Enum.Parse<PaintMode>( s );
 			};
 
-			cs.AddRow( so.GetProperty( "resource" ) );
-
 			var collectionrow = Layout.Row();
 
-			var search = new LineEdit();
-			search.MinimumHeight = Theme.RowHeight;
-			search.PlaceholderText = "Search...";
-			search.TextEdited += OnSearchTextChanged;
-
-			var collectionLabel = new Label( "Collection" );
+			var collectionLabel = new Label( "Collection :" );
 			var collectionCombo = collectionDropDown;
-			collectionrow.AddSpacingCell( 5 );
 
 			var collectionButton = new Button( "", "add" );
 			collectionButton.ButtonType = "clear";
@@ -82,24 +73,32 @@ public partial class GridMapTool
 			};
 			collectionButton.MaximumWidth = 32;
 
-			collectionrow.Add( search );
 			collectionrow.AddSpacingCell( 5 );
 			collectionrow.Add( collectionLabel );
-			collectionrow.AddSpacingCell( 5 );
+			collectionrow.AddSpacingCell( 1 );
 			collectionrow.Add( collectionCombo );
 			collectionrow.Add( collectionButton );
 
 			var iconrow = Layout.Row();
-			iconrow.AddSpacingCell( 15 );
+
+			/*
 			var iconScaleLable = new Label( "Icon Size:" );
 			iconrow.Add( iconScaleLable );
+			*/
+
+			var search = new LineEdit();
+			//search.MinimumHeight = Theme.RowHeight;
+			search.PlaceholderText = "Search...";
+			search.TextEdited += OnSearchTextChanged;
+			iconrow.Add( search );
+			
 			slider = iconrow.Add(new FloatSlider( gridwindowWidget ));
 			slider.Minimum = 48;
 			slider.Maximum = 128;
 			slider.MinimumWidth = 150;
 			slider.Value = 64;
 
-			iconrow.AddSpacingCell( 5 );
+			iconrow.AddSpacingCell( 2 );
 			var buttonGrid = iconrow.Add( new Button( "", "grid_view" ) );
 			buttonGrid.OnPaintOverride += () =>
 			{
@@ -153,20 +152,30 @@ public partial class GridMapTool
 			modellistView.OnPaintOverride += () => PaintListBackground( modellistView );
 			modellistView.ItemPaint = PaintBrushItem;
 
-			
-
 			row.Add( collectionrow );
-			row.Add( cs );
 			row.Add( iconrow );
+			
 			row.AddSeparator();
 			row.Add( modellistView );
 			row.Add( prefablistView );
 
 			gridwindowWidget.Layout = row;
-
-			//gridwindowWidget.MinimumSize = new Vector2( 300, SceneOverlay.Height );
+			
 			AddOverlay( gridwindowWidget, TextFlag.RightBottom, 0 );
+		}
+	}
 
+	void UpdateWidgetValues()
+	{
+		gridwindowWidget.FixedHeight = SceneOverlay.Height;
+
+		if ( CurrentListStyle == ListStyle.Grid )
+		{
+			modellistView.ItemSize = slider.Value;
+		}
+		else if ( CurrentListStyle == ListStyle.List )
+		{
+			modellistView.ItemSize = new Vector2( 275, slider.Value );
 		}
 	}
 
@@ -177,6 +186,7 @@ public partial class GridMapTool
 			window.MaximumWidth = 300;
 
 			var cs = new ControlSheet();
+			cs.AddRow( so.GetProperty( "resource" ) );
 			cs.AddRow( so.GetProperty( "CurrentRotationSnap" ) );
 
 			var rotationButtons = Layout.Column();
@@ -235,10 +245,10 @@ public partial class GridMapTool
 
 			//cs.Add( new Button( "Clear", "clear" ) { Clicked = ClearAll } );
 			window.Layout = cs;
+	
 			AddOverlay( window, TextFlag.LeftTop, 10 );
 		}
 	}
-
 	void OpenDropdown( Widget window )
 	{
 		var popup = new PopupWidget( window );
@@ -267,16 +277,15 @@ public partial class GridMapTool
 		popup.Layout.Add( ps );
 		popup.Show();
 	}
-
 	private static bool PaintListBackground( Widget widget )
 	{
+		
 		Paint.ClearPen();
 		Paint.SetBrush( Theme.ControlBackground.WithAlpha( 1f ) );
 		Paint.DrawRect( widget.LocalRect );
 
 		return false;
 	}
-
 	private void PaintButton(string icon, ListStyle style)
 	{
 		if( CurrentListStyle == style )
@@ -298,7 +307,6 @@ public partial class GridMapTool
 		Paint.SetFont( "Poppins", 6, 700 );
 		Paint.DrawIcon( new Rect( 0, 0, 24, 24 ), icon, 16 );
 	}
-
 	private void PaintBrushItem( VirtualWidget widget )
 	{
 		var brush = (ModelList)widget.Object;
