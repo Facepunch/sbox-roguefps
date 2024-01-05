@@ -156,18 +156,48 @@ public partial class GridMapTool : EditorTool
 	private Vector3 endSelectionPoint;
 	private bool isSelecting = false;
 
+	bool _prevFilled = false;
 	private void FillSelectionWithTiles( Vector3 start, Vector3 end )
 	{
 		float gridSpacing = Gizmo.Settings.GridSpacing;
-		Vector3 lowerCorner = new Vector3( Math.Min( start.x, end.x ), Math.Min( start.y, end.y ), start.z ); // Use start.z as it's the ground level
-		Vector3 upperCorner = new Vector3( Math.Max( start.x, end.x ), Math.Max( start.y, end.y ), start.z );
+		Vector3 lowerCorner = new Vector3( Math.Min( start.x, end.x ), Math.Min( start.y, end.y ), Math.Min( start.z, end.z ) );
+		Vector3 upperCorner = new Vector3( Math.Max( start.x, end.x ), Math.Max( start.y, end.y ), Math.Max( start.z, end.z ) );
 
-		for ( float x = lowerCorner.x; x <= upperCorner.x; x += gridSpacing )
+		// Calculate the number of tiles in each dimension
+		int tilesX = (int)Math.Floor( (upperCorner.x - lowerCorner.x) / gridSpacing ) + 1;
+		int tilesY = (int)Math.Floor( (upperCorner.y - lowerCorner.y) / gridSpacing ) + 1;
+		int tilesZ = (int)Math.Floor( (upperCorner.z - lowerCorner.z) / gridSpacing ) + 1;
+
+		// Iterate based on the selected axis
+		switch ( Axis )
 		{
-			for ( float y = lowerCorner.y; y <= upperCorner.y; y += gridSpacing )
-			{
-				PlaceTileAtPosition( new Vector3( x, y, lowerCorner.z ) );
-			}
+			case GroundAxis.X:
+				for ( int i = 0; i < tilesY; i++ )
+				{
+					for ( int j = 0; j < tilesZ; j++ )
+					{
+						PlaceTileAtPosition( new Vector3( lowerCorner.x, lowerCorner.y + i * gridSpacing, lowerCorner.z + j * gridSpacing ) );
+					}
+				}
+				break;
+			case GroundAxis.Y:
+				for ( int i = 0; i < tilesX; i++ )
+				{
+					for ( int j = 0; j < tilesZ; j++ )
+					{
+						PlaceTileAtPosition( new Vector3( lowerCorner.x + i * gridSpacing, lowerCorner.y, lowerCorner.z + j * gridSpacing ) );
+					}
+				}
+				break;
+			case GroundAxis.Z:
+				for ( int i = 0; i < tilesX; i++ )
+				{
+					for ( int j = 0; j < tilesY; j++ )
+					{
+						PlaceTileAtPosition( new Vector3( lowerCorner.x + i * gridSpacing, lowerCorner.y + j * gridSpacing, lowerCorner.z ) );
+					}
+				}
+				break;
 		}
 	}
 
@@ -181,6 +211,8 @@ public partial class GridMapTool : EditorTool
 			go.Transform.Position = position;
 			go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
 			go.Tags.Add( "sprinkled" );
+
+			_prevFilled = false;
 		}
 	}
 
@@ -365,11 +397,13 @@ public partial class GridMapTool : EditorTool
 				}
 			}
 
-			if ( Application.IsKeyDown( KeyCode.F ) )
+			if ( Application.IsKeyDown( KeyCode.F ) && !_prevFilled )
 			{
 				FillSelectionWithTiles( startSelectionPoint, endSelectionPoint );
 				isSelecting = false;
 			}
+
+			_prevFilled = Application.IsKeyDown( KeyCode.F );
 
 			if ( Application.IsKeyDown( KeyCode.R ) )
 			{
