@@ -17,7 +17,7 @@ public partial class GridMapTool
 		var tr = Scene.Trace.Ray( cursorRay, 5000 )
 		.UseRenderMeshes( true )
 		.UsePhysicsWorld( false )
-		.WithTag( "sprinkled" )
+		.WithTag( "gridtile" )
 		.Run();
 
 		return tr;
@@ -25,7 +25,7 @@ public partial class GridMapTool
 
 	public void HandlePlacement( SceneTraceResult tr, Ray cursorRay )
 	{
-		if ( SelectedModel is null ) return;
+		if ( SelectedJsonObject is null ) return;
 		
 		projectedPoint = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
 		
@@ -35,14 +35,13 @@ public partial class GridMapTool
 			var snappedPosition = projectedPoint.EndPosition;
 
 			var go = new GameObject( true, "GridTile" );
+			go.Deserialize( SelectedJsonObject );
 			go.Parent = CurrentGameObjectCollection;
-			go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
-			go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
 			go.Transform.Position = snappedPosition;
 			go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
-			go.Tags.Add( "sprinkled" );
+			go.Tags.Add( "gridtile" );
 
-			Log.Info( $"Placed {SelectedModel} at {snappedPosition}" );
+			Log.Info( $"Placed {SelectedJsonObject} at {snappedPosition}" );
 		}
 	}
 
@@ -94,8 +93,8 @@ public partial class GridMapTool
 	{
 		if ( CursorRay( cursorRay ).Hit )
 		{
-			CopyString = CursorRay( cursorRay ).GameObject.Components.Get<ModelRenderer>().Model.Name;
-			Log.Info( $"Copy {CopyString}" );
+			CopyObject = CursorRay( cursorRay ).GameObject;
+			Log.Info( $"Copy {CopyObject}" );
 			beenRotated = false;
 		}
 	}

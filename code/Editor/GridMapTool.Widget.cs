@@ -40,12 +40,10 @@ public partial class GridMapTool
 	}
 	void ToolWindow(SerializedObject so)
 	{
-
 		{
 			gridwindowWidget = new WidgetWindow( SceneOverlay );
 			gridwindowWidget.MaximumWidth = 300;
 			gridwindowWidget.WindowTitle = "Grid Map Tool";
-			gridwindowWidget.OnPaintOverride += () => PaintListBackground( prefablistView );
 
 			var rotshort = new Shortcut( SceneOverlay, "Rotate", "p", () => Log.Info( "Buttes" ) );
 			var row = Layout.Column();
@@ -84,13 +82,7 @@ public partial class GridMapTool
 
 			var iconrow = Layout.Row();
 
-			/*
-			var iconScaleLable = new Label( "Icon Size:" );
-			iconrow.Add( iconScaleLable );
-			*/
-
 			var search = new LineEdit();
-			//search.MinimumHeight = Theme.RowHeight;
 			search.PlaceholderText = "Search...";
 			search.TextEdited += OnSearchTextChanged;
 			iconrow.Add( search );
@@ -121,69 +113,44 @@ public partial class GridMapTool
 			buttonGrid.Clicked += () => { CurrentListStyle = ListStyle.Grid; buttonList.Update(); };
 			buttonList.Clicked += () => { CurrentListStyle = ListStyle.List; buttonGrid.Update(); };
 
-			/*
-			var modelprefab = row.Add( new SegmentedControl() );
-			modelprefab.AddOption( "Model", "brush" );
-			modelprefab.AddOption( "Prefab", "delete" );
-			modelprefab.OnSelectedChanged += ( s ) =>
+			tilelistView.ItemAlign = Align.Center;
+			tilelistView.ItemSelected = ( item ) =>
 			{
-				CurrentSelection = Enum.Parse<ModelPrefabSelection>( s, true );
-				UpdateListViewVisibility();
-				UpdateListViewItems();
-			};
-			*/
-			prefablistView.ItemSize = 64;
-			prefablistView.ItemAlign = Align.SpaceBetween;
-			prefablistView.OnPaintOverride += () => PaintListBackground( prefablistView );
-			prefablistView.ItemPaint = PaintBrushPrefab;
-			prefablistView.ItemSelected = ( item ) =>
-			{
-				if ( item is PrefabFile data )
+				if ( item is TileList data )
 				{
-					SelectedPrefab = data;
+					SelectedJsonObject = data.jsonObject;
+					UpdatePaintObjectGizmo();
+					Log.Info( "Selected Model: " + SelectedJsonObject );
 				}
 			};
-
-			modellistView.ItemAlign = Align.Center;
-			modellistView.ItemSelected = ( item ) =>
-			{
-				if ( item is ModelList data )
-				{
-					SelectedModel = data.path;
-				}
-			};
-			modellistView.OnPaintOverride += () => PaintListBackground( modellistView );
-			modellistView.ItemPaint = PaintBrushItem;
+			
+			tilelistView.OnPaintOverride += () => PaintListBackground( tilelistView );
+			tilelistView.ItemPaint = PaintBrushItem;
 
 			row.Add( collectionrow );
 			row.Add( iconrow );
 			
 			row.AddSeparator();
-			row.Add( modellistView );
-			row.Add( prefablistView );
+			row.Add( tilelistView );
 
 			gridwindowWidget.Layout = row;
 			
 			AddOverlay( gridwindowWidget, TextFlag.RightBottom, 0 );
 		}
 	}
-
 	void UpdateWidgetValues()
 	{
 		gridwindowWidget.FixedHeight = SceneOverlay.Height;
 
 		if ( CurrentListStyle == ListStyle.Grid )
 		{
-			modellistView.ItemSize = slider.Value;
+			tilelistView.ItemSize = slider.Value;
 		}
 		else if ( CurrentListStyle == ListStyle.List )
 		{
-			modellistView.ItemSize = new Vector2( 275, slider.Value );
+			tilelistView.ItemSize = new Vector2( 275, slider.Value );
 		}
 	}
-
-	
-
 	void MainWindow(SerializedObject so)
 	{
 		{
@@ -191,7 +158,7 @@ public partial class GridMapTool
 			window.MaximumWidth = 300;
 
 			var cs = new ControlSheet();
-			cs.AddRow( so.GetProperty( "resource" ) );
+			cs.AddRow( so.GetProperty( "PrefabResourse" ) );
 			cs.AddRow( so.GetProperty( "CurrentRotationSnap" ) );
 
 			var rotationButtons = Layout.Column();
@@ -314,19 +281,20 @@ public partial class GridMapTool
 	}
 	private void PaintBrushItem( VirtualWidget widget )
 	{
-		var brush = (ModelList)widget.Object;
+		var brush = (TileList)widget.Object;
 
 		Paint.Antialiasing = true;
 		Paint.TextAntialiasing = true;
 
-		if ( brush.path == SelectedModel )
+		
+		if ( brush.jsonObject == SelectedJsonObject )
 		{
 			Paint.ClearPen();
 			Paint.SetBrush( Theme.Green.WithAlpha( 0.10f ) );
 			Paint.SetPen( Theme.Green.WithAlpha( 0.50f ) );
 			Paint.DrawRect( widget.Rect.Grow( 0 ), 3 );
 		}
-
+		
 		Paint.ClearPen();
 		Paint.SetBrush( Theme.White.WithAlpha( 0.01f ) );
 		Paint.SetPen( Theme.White.WithAlpha( 0.05f ) );
@@ -375,46 +343,6 @@ public partial class GridMapTool
 		Paint.SetFont( "Poppins", slider.Value / 8f, 700 );
 		Paint.DrawText( textRect, brush.name );
 	}
-	private void PaintBrushPrefab( VirtualWidget widget )
-	{
-		var brush = (PrefabFile)widget.Object;
-
-		Paint.Antialiasing = true;
-		Paint.TextAntialiasing = true;
-
-
-		if ( brush == SelectedPrefab )
-		{
-			Paint.ClearPen();
-			Paint.SetBrush( Theme.Green.WithAlpha( 0.10f ) );
-			Paint.SetPen( Theme.Green.WithAlpha( 0.50f ) );
-			Paint.DrawRect( widget.Rect.Grow( 0 ), 3 );
-		}
-
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.White.WithAlpha( 0.01f ) );
-		Paint.SetPen( Theme.White.WithAlpha( 0.05f ) );
-		Paint.DrawRect( widget.Rect.Shrink( 2 ), 3 );
-
-		Paint.Draw( widget.Rect.Shrink( 1 ), AssetSystem.FindByPath( brush.ResourcePath ).GetAssetThumb() );
-
-		var rect = widget.Rect;
-
-		var textRect = rect.Shrink( 2 );
-		textRect.Top = textRect.Top + 20;
-		textRect.Top = textRect.Top + 25;
-
-		Paint.ClearPen();
-		Paint.SetBrush( Theme.Black.WithAlpha( 0.5f ) );
-		Paint.DrawRect( textRect, 0.0f );
-
-		Paint.Antialiasing = true;
-
-		Paint.SetPen( Theme.Blue, 2.0f );
-		Paint.ClearBrush();
-		Paint.SetFont( "Poppins", 6, 700 );
-		Paint.DrawText( textRect, brush.ResourceName );
-	}
 }
 
 public class NewCollectionObjectWindow : BaseWindow
@@ -454,7 +382,7 @@ public class NewCollectionObjectWindow : BaseWindow
 			/*
 			var gameobject = new GameObject(true, nameEdit.Text );
 			gameobject.Transform.Position = Vector3.Zero;
-			gameobject.Tags.Add( "sprinkled" );
+			gameobject.Tags.Add( "gridtile" );
 			gameobject.Tags.Add( "collection" );
 			*/
 			gridmapToolDockWidget.collectionDropDown.AddItem( nameEdit.Text );

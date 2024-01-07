@@ -4,6 +4,7 @@ using Sandbox;
 using Sandbox.UI;
 using System;
 using System.Drawing;
+using System.Runtime.Versioning;
 using static Sandbox.HitboxSet;
 
 namespace Editor;
@@ -24,13 +25,6 @@ public partial class GridMapTool
 				Gizmo.Draw.LineBBox( CurrentGameObjectCollection.GetBounds() );
 			}
 		}
-		/*
-		Gizmo.Draw.Color = Gizmo.Colors.Pitch.WithAlpha( 0.15f );
-		Gizmo.Draw.SolidBox( CurrentGameObjectCollection.GetBounds() );
-
-		Gizmo.Draw.Color = Gizmo.Colors.Pitch;
-		Gizmo.Draw.LineBBox( CurrentGameObjectCollection.GetBounds() );
-		*/
 	}
 
 	public void GroundGizmo( Ray cursorRay )
@@ -104,15 +98,24 @@ public partial class GridMapTool
 		}
 	}
 
-	public void PaintModelGizmos( SceneTraceResult tr )
+	void UpdatePaintObjectGizmo()
+	{
+		EndGameObjectGizmo();
+	}
+
+	public void PaintGizmos( SceneTraceResult tr )
 	{
 		// Do gizmos and stuff
 		var cursorRay = Gizmo.CurrentRay;
 
 		var boxtr = Scene.Trace.Ray( cursorRay, 5000 )
 			.UsePhysicsWorld( true )
-			.WithoutTags( "sprinkled" )
+			.WithoutTags( "gridtile" )
 			.Run();
+
+		var gizmopos = GetGizmoPosition( tr, cursorRay );
+
+		Gizmo.Draw.LineCircle( gizmopos, 10.5f );
 
 		if ( !boxtr.Hit )
 		{
@@ -122,33 +125,27 @@ public partial class GridMapTool
 			boxtr = ProjectRayOntoGroundPlane( rayOrigin, rayDirection, 0 );
 		}
 
-		if ( CurrentPaintMode == PaintMode.Place && SelectedModel is not null )
+		if ( CurrentPaintMode == PaintMode.Place )
 		{
-			using ( Gizmo.Scope( "preview" ) )
+			if ( SelectedJsonObject is not null )
 			{
-				projectedPoint = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
-				
-				if ( projectedPoint.Hit )
-				{
-					var snappedPosition = projectedPoint.EndPosition;
-
-					Gizmo.Transform = new Transform( snappedPosition, Rotation.FromPitch( -90 ) * rotation );
-					Gizmo.Draw.Color = Color.White;
-					Gizmo.Draw.Model( Model.Load( SelectedModel ) );
-					Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( 0.35f );
-					Gizmo.Draw.LineBBox( Model.Load( SelectedModel ).Bounds );
-				}
-			}
+				PlaceGameObjectGizmo( tr, cursorRay );
+			}		
 		}
 
-		else if ( CurrentPaintMode == PaintMode.Remove )
+		if ( CurrentPaintMode != PaintMode.Place )
+		{
+			//EndGameObjectGizmo();
+		}
+
+		if ( CurrentPaintMode == PaintMode.Remove )
 		{
 			using ( Gizmo.Scope( "preview" ) )
 			{
 				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
 						.UseRenderMeshes( true )
 						.UsePhysicsWorld( false )
-						.WithTag( "sprinkled" )
+						.WithTag( "gridtile" )
 						.Run();
 
 				if ( tr2.Hit )
@@ -167,7 +164,7 @@ public partial class GridMapTool
 				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
 						.UseRenderMeshes( true )
 						.UsePhysicsWorld( false )
-						.WithTag( "sprinkled" )
+						.WithTag( "gridtile" )
 						.Run();
 				
 				if ( tr2.Hit && SelectedObject is null )
@@ -191,19 +188,17 @@ public partial class GridMapTool
 				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
 						.UseRenderMeshes( true )
 						.UsePhysicsWorld( false )
-						.WithTag( "sprinkled" )
+						.WithTag( "gridtile" )
 						.Run();
 
-				if ( CopyString != null )
+				if ( CopyObject is not null )
 				{
-					Gizmo.Transform = new Transform( boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.FromPitch( -90 ) * rotation );
+					CopyGameObjectGizmo( tr, cursorRay );
 					Gizmo.Draw.Color = Color.Yellow.WithAlpha( 0.15f );
-					Gizmo.Draw.LineBBox( Model.Load( CopyString ).Bounds );
-					Gizmo.Draw.SolidBox( Model.Load( CopyString ).Bounds );
-					Gizmo.Draw.Color = Color.White;
-					Gizmo.Draw.Model( Model.Load( CopyString ) );
+					Gizmo.Draw.LineBBox( GizmoGameObject.GetBounds() );
+					Gizmo.Draw.SolidBox( GizmoGameObject.GetBounds() );
 				}
-				else if ( tr2.Hit && CopyString == null )
+				else if ( tr2.Hit && CopyObject is null )
 				{
 					Gizmo.Draw.Color = Theme.Yellow.WithAlpha( 0.5f );
 					Gizmo.Draw.LineBBox( tr2.GameObject.GetBounds() );
@@ -211,5 +206,68 @@ public partial class GridMapTool
 				}
 			}
 		}
+	}
+	void CopyGameObjectGizmo( SceneTraceResult trace, Ray cursorRay )
+	{
+		if ( CopyObject is null ) return;
+
+		if ( GizmoGameObject is null )
+		{
+			//Log.Info( SelectedGameObject.Components.Count );
+			GizmoGameObject = SceneUtility.Instantiate( CopyObject );
+			GizmoGameObject.Flags = GameObjectFlags.NotSaved | GameObjectFlags.Hidden;
+			GizmoGameObject.Tags.Add( "isgizmoobject" );
+		}
+
+		if ( GizmoGameObject is not null )
+		{
+			GizmoGameObject.Transform.Position = GetGizmoPosition( trace, cursorRay );
+			GizmoGameObject.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
+
+			Log.Info( "GizmoGameObject is not null" );
+		}
+	}
+
+	void PlaceGameObjectGizmo( SceneTraceResult trace, Ray cursorRay )
+	{
+		if ( SelectedJsonObject is null ) return;
+	
+		if(GizmoGameObject is null)
+		{
+			//Log.Info( SelectedGameObject.Components.Count );
+			GizmoGameObject = new GameObject();
+			GizmoGameObject.Flags = GameObjectFlags.NotSaved | GameObjectFlags.Hidden;
+			GizmoGameObject.Deserialize( SelectedJsonObject );
+		}
+
+		if ( GizmoGameObject is not null )
+		{
+			GizmoGameObject.Transform.Position = GetGizmoPosition( trace, cursorRay );
+			GizmoGameObject.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation ;
+
+		}
+	}
+
+	void EndGameObjectGizmo()
+	{
+		if ( GizmoGameObject is not null )
+		{
+			GizmoGameObject.Destroy();
+			GizmoGameObject = null;
+		}
+	}
+
+	private Vector3 GetGizmoPosition( SceneTraceResult trace, Ray cursorRay )
+	{
+		trace = ProjectRayOntoGroundPlane( cursorRay.Position, cursorRay.Forward, floors );
+
+		if ( trace.Hit )
+		{
+			var snappedPosition = trace.EndPosition;
+
+			return snappedPosition;
+		}
+
+		return Vector3.Zero;
 	}
 }

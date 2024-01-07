@@ -1,6 +1,11 @@
 ﻿
+using Editor.Inspectors;
 using RogueFPS;
+using Sandbox;
 using System;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using static Editor.GridMapTool;
 
 namespace Editor;
 
@@ -9,57 +14,16 @@ namespace Editor;
 /// </summary>
 [EditorTool]
 [Title( "Grid Map Tool" )]
-[Icon( "🏗️" )]
+[Icon( "apps", "#F9B003", "#00" )]
 [Group( "Grid Map Editor" )]
-[Order( 0 )]
+[Order( 5 )]
 public partial class GridMapTool : EditorTool
 {
-	public GameObject SelectedObject { get; set; }
-
-	public string CopyString { get; set; }
-
-	public GridMapEditorResource resource { get; set; }
-	public GridMapEditorResource oldresource { get; set; }
-	//public PrefabFile resource { get; set; }
-
-	public enum ModelPrefabSelection
-	{
-		Model,
-		Prefab
-	}
-	public ModelPrefabSelection CurrentSelection { get; set; } = ModelPrefabSelection.Model;
-
+	public PrefabFile PrefabResourse { get; set; }
+	public PrefabFile oldresource { get; set; }
 	public string SearchString { get; set; } = "";
-
-	public ListView modellistView { get; set; } = new();
-	public ListView prefablistView { get; set; } = new();
-
-	public List<PrefabFile> prefabList { get; set; } = new();
-
-	public List<ModelList> modelList { get; set; } = new();
-
-	public struct ModelList
-	{
-		public string name;
-		public string path;
-		public Pixmap icon;
-	}
-
-	/*
-	public List<TileList> tileList { get; set; } = new();
-
-	public struct TileList
-	{
-		public GameObject gameObject;
-		public Pixmap icon;
-	}
-	*/
-	public PrefabFile SelectedPrefab { get; set; }
-	public string SelectedModel { get; set; }
-
 	public float floors = 0.0f;
 	public int floorCount = 0;
-
 	public Rotation rotation = Rotation.From( 90, 0, 0 );
 	float rotationSnap = 90.0f;
 	public enum RotationSnap
@@ -82,7 +46,6 @@ public partial class GridMapTool : EditorTool
 
 	public GameObject CurrentGameObjectCollection;
 	public List<GameObject> GameObjectCollection { get; set; } = new();
-
 	public ComboBox collectionDropDown { get; set; } = new();
 
 	TimeSince timeSinceChangedCollection = 0;
@@ -90,6 +53,24 @@ public partial class GridMapTool : EditorTool
 	bool gridActiveState = true;
 
 	SerializedObject serializedObject;
+
+	//Get and store the gameobjects from the prefab file.
+	GameObject SelectedObject { get; set; }
+	GameObject CopyObject { get; set; }
+	GameObject GizmoGameObject { get; set; }
+	JsonObject SelectedJsonObject { get; set; }
+
+	//Widget
+	public ListView tilelistView { get; set; } = new();
+	//
+
+	public List<TileList> tileList { get; set; } = new();
+	public struct TileList
+	{
+		public string name;
+		public JsonObject jsonObject;
+		public Pixmap icon;
+	}
 
 	public override void OnEnabled()
 	{
@@ -101,7 +82,6 @@ public partial class GridMapTool : EditorTool
 
 		AllowGameObjectSelection = false;
 
-		
 		foreach ( var objectinscene in Scene.GetAllObjects( true ) )
 		{
 			if ( objectinscene.Tags.Has( "Collection" ) && (objectinscene.Parent is Scene) )
@@ -113,7 +93,6 @@ public partial class GridMapTool : EditorTool
 
 		MainWindow( so );
 
-		UpdateListViewVisibility();
 		UpdateListViewItems();
 
 		ToolWindow( so );
@@ -127,49 +106,28 @@ public partial class GridMapTool : EditorTool
 		UpdateListViewItems();
 	}
 
-
 	private void UpdateListViewItems()
 	{
 
-		if ( CurrentSelection == ModelPrefabSelection.Model )
-		{
-			/*
-			var filteredModelList = Model
-				.Where( model => model.gameObject.Name.ToLower().Contains( SearchString ) )
-				.ToList();
-			*/
-			var filteredModelList = modelList
-				.Where( model => model.name.ToLower().Contains( SearchString ) )
-				.ToList();
-			modellistView.SetItems( filteredModelList.Cast<object>() );
-			modellistView.Update(); // Refresh ListView
-		}
-		else if ( CurrentSelection == ModelPrefabSelection.Prefab )
-		{
-			var filteredPrefabList = prefabList
-				.Where( prefab => prefab.ResourceName.ToLower().Contains( SearchString ) )
-				.ToList();
-			prefablistView.SetItems( filteredPrefabList.Cast<object>() );
-			prefablistView.Update(); // Refresh ListView
-		}
+		var filteredTileList = tileList
+			.Where( model => model.name.ToLower().Contains( SearchString ) )
+			.ToList();
+		tilelistView.SetItems( filteredTileList.Cast<object>() );
+		tilelistView.Update(); // Refresh ListView
 
-		oldresource = resource;
-	}
-
-	private void UpdateListViewVisibility()
-	{
-		modellistView.Visible = CurrentSelection == ModelPrefabSelection.Model;
-		prefablistView.Visible = CurrentSelection == ModelPrefabSelection.Prefab;
+		oldresource = PrefabResourse;
 	}
 
 
 	public override void OnDisabled()
 	{
 		base.OnDisabled();
-
+	
 		so.Delete();
 
 		Gizmo.Settings.ShowGrid = gridActiveState;
+
+		EndGameObjectGizmo();
 	}
 
 	private Vector3 startSelectionPoint;
@@ -223,14 +181,14 @@ public partial class GridMapTool : EditorTool
 
 	private void PlaceTileAtPosition( Vector3 position )
 	{
-		if ( SelectedModel != null )
+		if ( SelectedJsonObject != null )
 		{
 			var go = new GameObject( true, "GridTile" );
-			go.Components.Create<ModelRenderer>().Model = Model.Load( SelectedModel );
-			go.Components.Create<ModelCollider>().Model = Model.Load( SelectedModel );
+			go.Deserialize( SelectedJsonObject );
+			go.Parent = CurrentGameObjectCollection;
 			go.Transform.Position = position;
 			go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
-			go.Tags.Add( "sprinkled" );
+			go.Tags.Add( "gridtile" );
 
 			_prevFilled = false;
 		}
@@ -302,20 +260,83 @@ public partial class GridMapTool : EditorTool
 	{
 		foreach ( var obj in Scene.GetAllObjects( false ) )
 		{
-			if ( selectionBox.Contains( obj.Transform.Position ) && obj.Tags.Has( "sprinkled" ) )
+			if ( selectionBox.Contains( obj.Transform.Position ) && obj.Tags.Has( "gridtile" ) )
 			{
 				SelectedGroupObjects.Add( obj );
 			}
 		}
 	}
 
+	bool finishedLoadedFromScene = false;
+
+	async Task LoadFromScene()
+	{
+		if ( !finishedLoadedFromScene && !loadscene )
+		{
+			var gameObject = SceneUtility.Instantiate( SceneUtility.GetPrefabScene( PrefabResourse ), new Transform( Vector3.Left * 10000 ) );
+			gameObject.BreakFromPrefab();
+			gameObject.Flags = GameObjectFlags.NotSaved | GameObjectFlags.Hidden;
+
+			var allObjects = gameObject.GetAllObjects( true );
+
+			bool isFirst = true;
+
+			foreach ( var obj in allObjects )
+			{
+				// Skip the first object
+				if ( isFirst )
+				{
+					isFirst = false;
+					continue;
+				}
+
+				if ( obj.Components.Get<ModelRenderer>( FindMode.EnabledInSelfAndChildren ) != null )
+				{
+					if ( !tileList.Any( x => x.name == obj.Name ) && !obj.Tags.Has( "ignore" ) )
+					{
+						tileList.Add( new TileList()
+						{
+							name = obj.Name,
+							jsonObject = obj.Serialize(),
+							icon = AssetSystem.FindByPath( obj.Components.Get<ModelRenderer>( FindMode.EnabledInSelfAndChildren ).Model.ResourcePath ).GetAssetThumb()
+						} );
+
+						Log.Info( obj.Components.Get<ModelRenderer>( FindMode.EnabledInSelfAndChildren ).Model );
+
+						await Task.Delay( 10 );
+					}
+					else
+					{
+						Log.Info( obj.Name );
+					}
+					 // Delay for UI update and to avoid freezing
+				}
+			}
+
+			UpdateListViewItems();
+			finishedLoadedFromScene = true;
+			gameObject.Destroy();
+		}
+	}
+
+	bool loadscene;
+	
 	public override void OnUpdate()
 	{
 		Grid( new Vector2( 16384, 16384 ), Gizmo.Settings.GridSpacing, Gizmo.Settings.GridOpacity );
 
 		UpdateWidgetValues();
-
-		if ( GameObjectCollection is not null && resource is not null )
+	
+		if( PrefabResourse is not null && tileList is not null)
+		{
+			if ( PrefabResourse.ResourceName.Contains( "_tileset" ) )
+			{
+				_ = LoadFromScene();
+				loadscene = true;
+			}
+		}
+				
+		if ( GameObjectCollection is not null && PrefabResourse is not null )
 		{
 			CurrentGameObjectCollection = GameObjectCollection.FirstOrDefault( x => x.Name == collectionDropDown.CurrentText );
 
@@ -324,52 +345,15 @@ public partial class GridMapTool : EditorTool
 				timeSinceChangedCollection = 0;
 			};
 		}
-
-		//&& resource.ResourceName.Contains( "_tileset" )
 		
-		if ( resource != oldresource )
+		if ( PrefabResourse != oldresource )
 		{
 			Log.Info( "Resource Changed" );
-			modelList.Clear();
-			prefabList.Clear();
-			modellistView.Clear();
-			prefablistView.Clear();
-
+			tileList.Clear();
 			UpdateListViewItems();
 		}
-
-		if ( resource != null && resource == oldresource)
-		{
-			foreach ( var model in resource.TileModels )
-			{
-				if ( !modelList.Any( x => x.name == model.ResourceName ) )
-				{
-					modelList.Add( new ModelList()
-					{
-						name = model.ResourceName,
-						path = model.ResourcePath,
-						icon = AssetSystem.FindByPath( model.ResourcePath ).GetAssetThumb()
-					} );
-
-					Log.Info( model.Name );
-				}
-			}
-
-			foreach ( var prefab in resource.TilePrefab )
-			{
-				if ( !prefabList.Any( x => x.ResourceName == prefab.ResourceName ) )
-				{
-					prefabList.Add( prefab );
-
-					Log.Info( prefab.ResourceName );
-				}
-			}
-
-
-			UpdateListViewItems();
-		}
-		
-		modellistView.ItemsSelected = SetSelection;
+	
+		tilelistView.ItemsSelected = SetSelection;
 
 		// Do gizmos and stuff
 		var cursorRay = Gizmo.CurrentRay;
@@ -377,12 +361,12 @@ public partial class GridMapTool : EditorTool
 		var tr = Scene.Trace.Ray( cursorRay, 5000 )
 						.UseRenderMeshes( true )
 						.UsePhysicsWorld( false )
-						.WithoutTags( "sprinkled" )
+						.WithoutTags( "gridtile" )
 						.Run();
 
 		var boxtr = Scene.Trace.Ray( cursorRay, 5000 )
 			.UsePhysicsWorld( true )
-			.WithoutTags( "sprinkled" )
+			.WithoutTags( "gridtile" )
 			.Run();
 
 		if ( !boxtr.Hit )
@@ -397,19 +381,7 @@ public partial class GridMapTool : EditorTool
 
 		HandleRotation();
 
-		if ( CurrentSelection == ModelPrefabSelection.Model )
-		{
-			PaintModelGizmos( tr );
-			if ( previewPrefab is not null )
-			{
-				previewPrefab.Destroy();
-				previewPrefab = null;
-			}
-		}
-		else if ( CurrentSelection == ModelPrefabSelection.Prefab )
-		{
-			PaintPrefabGizmos( tr );
-		}
+		PaintGizmos( tr );
 
 		if ( Gizmo.IsShiftPressed && SelectedObject is null )
 		{
@@ -464,7 +436,6 @@ public partial class GridMapTool : EditorTool
 					obj.Destroy();
 				}
 			}
-
 			if ( Application.IsKeyDown( KeyCode.Z ) )
 			{
 				Axis = GroundAxis.Z;
@@ -519,7 +490,7 @@ public partial class GridMapTool : EditorTool
 			endSelectionPoint = Vector3.Zero;
 		}
 
-		if ( !Gizmo.IsCtrlPressed && CurrentSelection == ModelPrefabSelection.Model )
+		if ( !Gizmo.IsCtrlPressed )
 		{
 			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Place )
 			{
@@ -544,17 +515,15 @@ public partial class GridMapTool : EditorTool
 				HandleMove( cursorRay );
 			}
 
-			if ( Gizmo.WasLeftMouseReleased && CurrentPaintMode == PaintMode.Copy && CopyString == null )
+			if ( Gizmo.WasLeftMouseReleased && CurrentPaintMode == PaintMode.Copy && CopyObject == null )
 			{
 				HandleCopy( cursorRay );
 			}
 			
-			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Copy && CopyString != null )
+			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Copy && CopyObject != null )
 			{
-				var go = new GameObject( true, "GridTile" );
+				var go = SceneUtility.Instantiate( CopyObject );
 				go.Parent = CurrentGameObjectCollection;
-				go.Components.Create<ModelRenderer>().Model = Model.Load( CopyString );
-				go.Components.Create<ModelCollider>().Model = Model.Load( CopyString );
 				go.Transform.Position = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
 				if ( beenRotated )
 				{
@@ -564,35 +533,14 @@ public partial class GridMapTool : EditorTool
 				{
 					go.Transform.Rotation = lastRot;
 				}
-				go.Tags.Add( "sprinkled" );
+				go.Tags.Add( "gridtile" );
 			}
 
 			if ( Application.IsKeyDown( KeyCode.Escape ) )
 			{
-				CopyString = null;
-				SelectedModel = null;
-			}
-		}
-		else if ( !Gizmo.IsCtrlPressed && CurrentSelection == ModelPrefabSelection.Prefab )
-		{
-			if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Place && previewPrefab != null )
-			{
-				var go = SceneUtility.Instantiate( SceneUtility.GetPrefabScene( SelectedPrefab ) );
-				go.Transform.Position = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-				go.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
-				go.Tags.Add( "sprinkled" );
-			}
-			else if ( Gizmo.WasLeftMousePressed && CurrentPaintMode == PaintMode.Remove )
-			{
-				var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-								.UseRenderMeshes( true )
-								.UsePhysicsWorld( false )
-								.WithTag( "sprinkled" )
-								.Run();
-				if ( tr2.Hit )
-				{
-					tr2.GameObject.Destroy();
-				}
+				CopyObject = null;
+				SelectedJsonObject = null;
+				EndGameObjectGizmo();
 			}
 		}
 
@@ -607,88 +555,11 @@ public partial class GridMapTool : EditorTool
 			return;
 	}
 
-	GameObject previewPrefab;
-
-	public void PaintPrefabGizmos( SceneTraceResult tr )
-	{
-		var cursorRay = Gizmo.CurrentRay;
-
-		var boxtr = Scene.Trace.Ray( cursorRay, 5000 )
-					.UsePhysicsWorld( true )
-					.WithoutTags( "sprinkled" )
-					.Run();
-
-		if ( !boxtr.Hit )
-		{
-			Vector3 rayOrigin = cursorRay.Position;
-			Vector3 rayDirection = cursorRay.Forward;
-
-			boxtr = ProjectRayOntoGroundPlane( rayOrigin, rayDirection, 0 );
-		}
-
-		if ( CurrentPaintMode == PaintMode.Place && SelectedPrefab is not null )
-		{
-			if ( previewPrefab is null )
-			{
-				previewPrefab = SceneUtility.Instantiate( SceneUtility.GetPrefabScene( SelectedPrefab ) );
-				previewPrefab.Tags.Add( "sprinkled" );
-			}
-
-			if ( previewPrefab != SceneUtility.GetPrefabScene( SelectedPrefab ) )
-			{
-				previewPrefab.Destroy();
-
-				previewPrefab = SceneUtility.Instantiate( SceneUtility.GetPrefabScene( SelectedPrefab ) );
-				previewPrefab.Tags.Add( "sprinkled" );
-			}
-
-			if ( previewPrefab is not null )
-			{
-				using ( Gizmo.Scope( "preview" ) )
-				{
-					Gizmo.Transform = new Transform( boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.FromPitch( -90 ) * rotation );
-					Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( 0.35f );
-					Gizmo.Draw.SolidBox( previewPrefab.GetBounds() );
-					Gizmo.Draw.LineBBox( previewPrefab.GetBounds() );
-
-					Gizmo.Transform = new Transform( boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ), Rotation.FromPitch( -90 ) * rotation );
-					previewPrefab.Transform.Position = boxtr.EndPosition.SnapToGrid( Gizmo.Settings.GridSpacing ).WithZ( floors );
-					previewPrefab.Transform.Rotation = Rotation.FromPitch( -90 ) * rotation;
-				}
-			}
-		}
-		else if ( CurrentPaintMode != PaintMode.Place )
-		{
-			if ( previewPrefab != null )
-			{
-				previewPrefab.Destroy();
-				previewPrefab = null;
-			}
-		}
-
-		if ( CurrentPaintMode == PaintMode.Remove )
-		{
-			var tr2 = Scene.Trace.Ray( cursorRay, 5000 )
-					.UseRenderMeshes( true )
-					.UsePhysicsWorld( false )
-					.WithTag( "sprinkled" )
-					.Run();
-
-			if ( tr2.Hit )
-			{
-
-				Gizmo.Draw.Color = Color.Red.WithAlpha( 0.5f );
-				Gizmo.Draw.LineBBox( tr2.GameObject.GetBounds() );
-				Gizmo.Draw.SolidBox( tr2.GameObject.GetBounds() );
-			}
-		}
-	}
-
 	void SetSelection( object o )
 	{
-		if ( o is string s )
+		if ( o is JsonObject s )
 		{
-			SelectedModel = s;
+			SelectedJsonObject = s;
 
 			Log.Info( $"Selected {s}" );
 		}
@@ -768,7 +639,7 @@ private Action DoFloors( int i )
 
 	void ClearAll()
 	{
-		foreach ( var obj in Scene.GetAllObjects( false ).Where( x => x.Tags.Has( "sprinkled" ) ).ToArray() )
+		foreach ( var obj in Scene.GetAllObjects( false ).Where( x => x.Tags.Has( "gridtile" ) ).ToArray() )
 		{
 			obj.Destroy();
 		}
