@@ -90,10 +90,10 @@
         "SecondaryAttackCoolDown": 5,
         "SkillOneCoolDown": 5,
         "SkillOneUses": 1,
-        "SprintSpeed": 800,
+        "SprintSpeed": 450,
         "UltimateCoolDown": 50,
         "UltimateUses": 1,
-        "WalkSpeed": 280
+        "WalkSpeed": 150
       },
       {
         "__type": "PlayerAbilities",
@@ -445,7 +445,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3503.8726
+              "Relative": 6524.1074
             }
           },
           {
@@ -464,7 +464,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3503.8726
+              "Relative": 6524.1074
             }
           },
           {
@@ -488,7 +488,7 @@
             "SpecialAbilityIcon": "ui/test/ability/ab3.jpg",
             "SpecialAbilityName": "Power Slide",
             "TimeSinceActiveChanged": {
-              "Relative": 3503.8726
+              "Relative": 6524.1074
             },
             "WishDirectionScale": 0.4
           },
@@ -508,7 +508,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3503.8726
+              "Relative": 6524.1074
             }
           }
         ]

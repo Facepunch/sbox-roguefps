@@ -10,7 +10,6 @@ namespace RogueFPS;
 [EditorHandle( "materials/gizmo/charactercontroller.png" )]
 public sealed class PlayerUpgrade : Component, Component.ITriggerListener
 {
-
 	public struct UpgradeHas
 	{
 		public string Icon;
