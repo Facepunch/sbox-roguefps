@@ -1,0 +1,27 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<root>
+		<div class="health-bar">
+			<div class="bg"></div>
+			<div class="lvl">
+				<div class="lvltxt">LV: 16</div>
+				<div class="lvlbar"></div>
+			</div>
+			<div class="bar">50/100</div>
+		</div>
+	</root>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

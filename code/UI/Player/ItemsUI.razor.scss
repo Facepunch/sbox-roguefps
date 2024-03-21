@@ -1,15 +1,28 @@
 ItemsUI {
 	position: absolute;
-	top: 5%;
-	width:100%;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	font-weight: bold;
+	width: 100%;
+	height: 100%;
+	font-family: "Major Mono Display";
+
+	.upgrades {
+		margin: 50px;
+		display:flex;
+		overflow:hidden;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+		flex-shrink: 1;
+		width: 50%;
+		height: 15%;
+		border-image: url( ui/mainui/border_ui_01.png ) 30;
+	}
 
 	.upgrade {
-		margin: 5px;
-		padding: 10px;
-		border-radius: 5px;
+		margin: 2px;
 		text-align: center;
 		justify-content: center;
 		align-items: center;
@@ -20,10 +33,10 @@ ItemsUI {
 	}
 
 	.upgrade .icon {
-		width: 50px;
-		height: 50px;
+		width: 45px;
+		height: 45px;
 		background-size: cover;
-		margin-bottom: 5px;
+		background-image: url( ui/mainui/item_bg_01.png );
 		border: 1px solid #ccc;
 	}
 
@@ -33,11 +46,11 @@ ItemsUI {
 	}
 
 	.upgrade .amount {
-		color: cyan;
-		font-size: 20px;
+		color: white;
+		font-size: 12px;
 		font-weight: bold;
 		position: absolute;
-		top: 80%;
-		left: 80%;
+		bottom: 10%;
+		left: 10%;
 	}
 }
