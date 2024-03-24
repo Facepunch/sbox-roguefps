@@ -474,6 +474,126 @@
       ]
     },
     {
+      "__guid": "f46f3778-0dd3-4b25-83b9-0d54dc2b1e60",
+      "Name": "Sphere (1)",
+      "Position": "-1088,1344,64.00004",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "bf5a9354-38f2-481c-a62a-6a80082f959c",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/error.vmat",
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__guid": "43d20150-c4f2-4170-b0e2-9a597dd9abb8",
+          "AsAPercent": true,
+          "IsStatUpgrade": true,
+          "ItemDescription": "Boingsfa",
+          "ItemName": "Runner",
+          "Model": "models/editor/iv_helper.vmdl",
+          "Rarity": "Uncommon",
+          "UpgradeAmount": 50,
+          "UpgradeIcon": "ui/test/items/chips.png",
+          "UpgradeType": "SprintSpeed"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "45ad4dda-d8a9-4f5a-a0dc-4735b4bf22a5",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "e18bc9da-4c68-4ed2-be3e-d3e01709862c",
+      "Name": "Sphere (2)",
+      "Position": "-1472,1344,64.00004",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "fcd5853d-ded9-4c0a-a54b-b51c100a946c",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/error.vmat",
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__guid": "76cdc2a9-52ed-422d-b1be-b0a1c0cacd98",
+          "AsAPercent": true,
+          "IsStatUpgrade": true,
+          "ItemDescription": "Boingsfa",
+          "ItemName": "Runner",
+          "Model": "models/editor/iv_helper.vmdl",
+          "Rarity": "Uncommon",
+          "UpgradeAmount": 50,
+          "UpgradeIcon": "ui/test/items/chips.png",
+          "UpgradeType": "SprintSpeed"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "bc197ea5-17c7-4ce0-8006-5d67029eb009",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "fd7d7497-48dd-411c-bb18-4ba882bf2776",
+      "Name": "Sphere (3)",
+      "Position": "-1472,1536,64.00004",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "899ce721-2c16-4cdd-bab1-f62d7218aa4b",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/error.vmat",
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__guid": "c14edd4a-6e4a-4853-8a0c-f0bd03a4f63c",
+          "AsAPercent": true,
+          "IsStatUpgrade": true,
+          "ItemDescription": "Boingsfa",
+          "ItemName": "Runner",
+          "Model": "models/editor/iv_helper.vmdl",
+          "Rarity": "Uncommon",
+          "UpgradeAmount": 50,
+          "UpgradeIcon": "ui/test/items/chips.png",
+          "UpgradeType": "SprintSpeed"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "c0ad807b-264a-4ac1-91d7-32287dab4c33",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ]
+    },
+    {
       "__guid": "c974d8c2-706e-4759-970e-2ec54eb691ad",
       "Name": "Sphere (11)",
       "Position": "-960,1472,63.99999",
@@ -7549,7 +7669,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-24T02:04:18.1697105\u002B00:00",
+  "LastSaved": "2024-03-24T02:10:50.8656756\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
