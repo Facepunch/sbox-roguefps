@@ -273,8 +273,6 @@ public partial class PlayerController : Component
 	{
 		WishMove = 0;
 		WishMove = Input.AnalogMove.Normal;
-		Log.Info( $"WishMove: {WishMove}" );
-		Log.Info( $"Input.AnalogMove: {Input.AnalogMove}" );
 	}
 
 	public void BuildWishVelocity()
