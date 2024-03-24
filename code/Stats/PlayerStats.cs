@@ -16,6 +16,7 @@ public sealed class PlayerStats : Component
 	[Property, Group( "Jump" )] public float JumpHeight { get; set; } = 1f;
 	[Property, Group( "Attack" )] public float AttackSpeed { get; set; } = 1f;
 	[Property, Group( "Attack" )] public float AttackDamage { get; set; } = 1f;
+	[Property, Group( "Attack" )] public float ReloadTime { get; set; } = 1f;
 	[Property, Group( "Attack" )] public float SecondaryAttackCoolDown { get; set; } = 5f;
 	[Property, Group( "Skill" )] public float SkillOneCoolDown { get; set; } = 5f;
 	[Property, Group( "Skill" )] public float SkillOneUses { get; set; } = 1f;
@@ -38,7 +39,7 @@ public sealed class PlayerStats : Component
 	public bool HasStat( PlayerStartingStats stat ) => StartingStats[stat] > 0f;
 	public enum PlayerStartingStats
 	{
-		Health, Armor, WalkSpeed, SprintSpeed, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, Armor, WalkSpeed, SprintSpeed, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -46,7 +47,7 @@ public sealed class PlayerStats : Component
 	public IDictionary<PlayerUpgradedStats, float> UpgradedStats { get; private set; }
 	public enum PlayerUpgradedStats
 	{
-		Health, Armor, WalkSpeed, SprintSpeed, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, Armor, WalkSpeed, SprintSpeed, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -254,6 +255,7 @@ public sealed class PlayerStats : Component
 		StartingStats[PlayerStartingStats.JumpHeight] = JumpHeight;
 		StartingStats[PlayerStartingStats.AttackSpeed] = AttackSpeed;
 		StartingStats[PlayerStartingStats.AttackDamage] = AttackDamage;
+		StartingStats[PlayerStartingStats.ReloadTime] = ReloadTime;
 		StartingStats[PlayerStartingStats.SecondaryAttackCoolDown] = SecondaryAttackCoolDown;
 		StartingStats[PlayerStartingStats.SkillOneCoolDown] = SkillOneCoolDown;
 		StartingStats[PlayerStartingStats.SkillOneUses] = SkillOneUses;
@@ -270,6 +272,7 @@ public sealed class PlayerStats : Component
 		UpgradedStats[PlayerUpgradedStats.JumpHeight] = JumpHeight;
 		UpgradedStats[PlayerUpgradedStats.AttackSpeed] = AttackSpeed;
 		UpgradedStats[PlayerUpgradedStats.AttackDamage] = AttackDamage;
+		UpgradedStats[PlayerUpgradedStats.ReloadTime] = ReloadTime;
 		UpgradedStats[PlayerUpgradedStats.SecondaryAttackCoolDown] = SecondaryAttackCoolDown;
 		UpgradedStats[PlayerUpgradedStats.SkillOneCoolDown] = SkillOneCoolDown;
 		UpgradedStats[PlayerUpgradedStats.SkillOneUses] = SkillOneUses;

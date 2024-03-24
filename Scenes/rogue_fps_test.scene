@@ -554,6 +554,126 @@
       ]
     },
     {
+      "__guid": "f14aa42c-b5af-4d00-89ac-51c3ed33828d",
+      "Name": "Sphere (7)",
+      "Position": "-960,128,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "52804bb1-3aee-44a5-a4c0-e9b38bcec9ba",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/error.vmat",
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__guid": "80acf093-c3ef-4d4b-bdd3-9e04e40c3689",
+          "AsAPercent": true,
+          "IsStatUpgrade": true,
+          "ItemDescription": "Boingsfa",
+          "ItemName": "AttackUp",
+          "Model": "models/editor/iv_helper.vmdl",
+          "Rarity": "Uncommon",
+          "UpgradeAmount": -10,
+          "UpgradeIcon": "ui/test/items/chips.png",
+          "UpgradeType": "AttackSpeed"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "3776c714-198e-4876-b322-808f30ecd550",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "ba4e936c-83fd-4a91-8342-d8139f448ade",
+      "Name": "Sphere (6)",
+      "Position": "-960,192,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "1dcaae9b-fc68-4cbc-8007-eeb9d9b5fc58",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/error.vmat",
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__guid": "c02c4016-64cb-4547-b118-1bf366313b8c",
+          "AsAPercent": true,
+          "IsStatUpgrade": true,
+          "ItemDescription": "Boingsfa",
+          "ItemName": "AttackUp",
+          "Model": "models/editor/iv_helper.vmdl",
+          "Rarity": "Uncommon",
+          "UpgradeAmount": -10,
+          "UpgradeIcon": "ui/test/items/chips.png",
+          "UpgradeType": "AttackSpeed"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "68b02b6c-781d-4764-851d-6109971cc08c",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "0c5b83e7-9857-448e-8ef2-319ccc9efc68",
+      "Name": "Sphere (8)",
+      "Position": "-960,256,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "42e5c599-fc8c-4838-bf11-fa222376180b",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/error.vmat",
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PlayerUpgrade",
+          "__guid": "b39430b0-d8ea-496a-a4aa-d23795b5f9d5",
+          "AsAPercent": true,
+          "IsStatUpgrade": true,
+          "ItemDescription": "Boingsfa",
+          "ItemName": "AttackUp",
+          "Model": "models/editor/iv_helper.vmdl",
+          "Rarity": "Uncommon",
+          "UpgradeAmount": -10,
+          "UpgradeIcon": "ui/test/items/chips.png",
+          "UpgradeType": "AttackSpeed"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "3050f380-5a6b-4ef1-b9b5-3e70c9a158e1",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ]
+    },
+    {
       "__guid": "fd7d7497-48dd-411c-bb18-4ba882bf2776",
       "Name": "Sphere (3)",
       "Position": "-1472,1536,64.00004",
@@ -7669,7 +7789,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-24T02:10:50.8656756\u002B00:00",
+  "LastSaved": "2024-03-24T22:26:07.1275258\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

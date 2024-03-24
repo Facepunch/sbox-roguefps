@@ -7,8 +7,16 @@
 
 <root class="AbilityIcon">
 	<div class="ability">
-		<div class="icon @CooldownCheck" style="background-image: url('@AbilityImage')"></div>
+		@if (hasAmmo)
+		{
+			<div class="ammo">@AmmoCount</div>
+		}else{
+			<div class="ammo"></div>
+		}
+		<div class="icon @CooldownCheck" style="background-image: url('@AbilityImage')">
 		<div class="coolingdown @CooldownCheck" style="@CooldownTime"></div>
+		</div>
+
 @* 		<div class="title">@AbilityName</div> *@
 		<div class="input">@AbilityInput</div>
 	</div>	
@@ -20,9 +28,11 @@
 	public string AbilityInput { get; set; } = "Hello World!";
 	public string AbilityImage { get; set; } = "Hello World!";
 	public bool hasCoolDown { get; set; } = false;
+	public bool hasAmmo { get; set; } = false;
 	public string CooldownTime { get; set; } = "";
 	public string CooldownCheck { get; set; } = "";
 	public float coolDownMax { get; set; } = 0.0f;
+	public int AmmoCount { get; set; }
 
 	private float skillCoolDown;
 

@@ -1,6 +1,11 @@
 AbilityIcon {
     .ability {
-        gap: 8px;
+        gap: 12px;
+        padding: 10px;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
         .title {
             font-size: 15px;
@@ -15,8 +20,19 @@ AbilityIcon {
             font-weight: 800;
             color: white;
             position: absolute;
-            left: 5%;
-            top: 2%;
+            left: 15%;
+            bottom: 12%;
+        }
+
+        .ammo {
+            font-size: 28px;
+            font-family: Roboto;
+            font-weight: 800;
+            color: white;
+            height: 26px;
+            font-family: "Major Mono Display";
+            text-align: center;
+            text-shadow: 2px 2px 2px #000000;
         }
 
         .icon {
@@ -32,7 +48,7 @@ AbilityIcon {
 
         .coolingdown {
             position: absolute;
-            width: 75px;
+            width: 100%;
 
             &.cooldown {
                 border-bottom: 2px solid rgba(100,100,255,1);
