@@ -16,12 +16,14 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 		public string Icon;
 		public string Name;
 		public int Amount;
+		public UpgradeRarity Rarity;
 
-		public UpgradeHas( string icon, string name, int amount )
+		public UpgradeHas( string icon, string name, int amount, UpgradeRarity rarity )
 		{
 			Icon = icon;
 			Name = name;
 			Amount = amount;
+			Rarity = rarity;
 		}
 	}
 	public enum UpgradeRarity
@@ -62,13 +64,13 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 					plyStatComp.Modify( UpgradeType, upgradeValue );
 
 					// Create an UpgradeHas object
-					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0 ); // Initial amount set to 0
+					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
 					plyStatComp.AddUpgrade( pickedUpgrade );
 				}
 				else
 				{
 					// Create an UpgradeHas object
-					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0 ); // Initial amount set to 0
+					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
 					plyStatComp.AddUpgrade( pickedUpgrade );
 
 					var typeDesc = TypeLibrary.GetType( GetType() );
