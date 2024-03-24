@@ -1,5 +1,6 @@
 using Sandbox;
 using System.Collections.Generic;
+using System.Text;
 using static RogueFPS.PlayerStats;
 
 namespace RogueFPS;
@@ -7,8 +8,8 @@ namespace RogueFPS;
 [Title( "Upgrade" )]
 [Category( "Player Upgrade" )]
 [Icon( "upgrade", "red", "white" )]
-[EditorHandle( "materials/gizmo/charactercontroller.png" )]
-public sealed class PlayerUpgrade : Component, Component.ITriggerListener
+[EditorHandle( "materials/editor/upgrade.png" )]
+public class PlayerUpgrade : Component, Component.ITriggerListener
 {
 	public struct UpgradeHas
 	{
@@ -23,17 +24,18 @@ public sealed class PlayerUpgrade : Component, Component.ITriggerListener
 			Amount = amount;
 		}
 	}
+	public enum UpgradeRarity
+	{ Common, Uncommon, Rare, Epic, Legendary }
 
-	[Property] public string UpgradeIcon { get; set; } = "roguefps/ui/test/ability/ab1.png";
-	[Property] public PlayerStats.PlayerUpgradedStats UpgradeType { get; set; } = PlayerStats.PlayerUpgradedStats.Health;
-	//[Property] public string UpgradeName { get; set; } = "Health";	
-	[Property] public float UpgradeAmount { get; set; } = 100f;
-	[Property] public bool AsAPercent { get; set; } = false;
-
-	[Property] public string ItemName { get; set; } = "Item Name";
-
-	[Property] public string ItemDescription { get; set; } = "Item Description";
-
+	[Property, ImageAssetPath] public virtual string UpgradeIcon { get; set; } = "materials/editor/upgrade.png";
+	[Property] public virtual bool IsStatUpgrade { get; set; } = true;
+	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual PlayerStats.PlayerUpgradedStats UpgradeType { get; set; } = PlayerStats.PlayerUpgradedStats.Health;
+	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual float UpgradeAmount { get; set; } = 100f;
+	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual bool AsAPercent { get; set; } = false;
+	[Property] public virtual UpgradeRarity Rarity { get; set; } = UpgradeRarity.Common;
+	[Property] public virtual string ItemName { get; set; } = "Item Name";
+	[Property] public virtual string ItemDescription { get; set; } = "Item Description";
+	[Property] public virtual Model Model { get; set; } = Model.Load( "models/editor/iv_helper.vmdl_c" );
 	//
 	private GameObject Player { get; set; }
 	//
@@ -47,19 +49,28 @@ public sealed class PlayerUpgrade : Component, Component.ITriggerListener
 			var plyStatComp = Player.Components.Get<PlayerStats>();
 			if ( plyStatComp != null )
 			{
-				// Convert upgraded stat to starting stat
-				PlayerStartingStats startingStatType = plyStatComp.ConvertToStartingStat( UpgradeType );
+				if ( IsStatUpgrade )
+				{
+					// Convert upgraded stat to starting stat
+					PlayerStartingStats startingStatType = plyStatComp.ConvertToStartingStat( UpgradeType );
 
-				// Get the starting stat value
-				float startingStatValue = plyStatComp.GetStartingStat( startingStatType );
-				float upgradeValue = AsAPercent ? startingStatValue * (UpgradeAmount / 100f) : UpgradeAmount;
+					// Get the starting stat value
+					float startingStatValue = plyStatComp.GetStartingStat( startingStatType );
+					float upgradeValue = AsAPercent ? startingStatValue * (UpgradeAmount / 100f) : UpgradeAmount;
 
-				// Apply the upgrade
-				plyStatComp.Modify( UpgradeType, upgradeValue );
+					// Apply the upgrade
+					plyStatComp.Modify( UpgradeType, upgradeValue );
 
-				// Create an UpgradeHas object
-				var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0 ); // Initial amount set to 0
-				plyStatComp.AddUpgrade( pickedUpgrade );
+					// Create an UpgradeHas object
+					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0 ); // Initial amount set to 0
+					plyStatComp.AddUpgrade( pickedUpgrade );
+				}
+				else
+				{
+					// Create an UpgradeHas object
+					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0 ); // Initial amount set to 0
+					plyStatComp.AddUpgrade( pickedUpgrade );
+				}
 
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
 				Log.Info( "Player picked up an upgrade" );
