@@ -70,6 +70,13 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 					// Create an UpgradeHas object
 					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0 ); // Initial amount set to 0
 					plyStatComp.AddUpgrade( pickedUpgrade );
+
+					var typeDesc = TypeLibrary.GetType( GetType() );
+					//if player does not have the component, create it
+					if ( plyStatComp.Components.Get<PlayerUpgrade>() == null )
+					{
+						Player.Components.Create( typeDesc );
+					}
 				}
 
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
@@ -84,10 +91,14 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 		}
 	}
 
+	public virtual void DoUpgradeUpdate( )
+	{
+		Log.Info( "Upgrade on Update" );
+	}
+
 	void ITriggerListener.OnTriggerExit( Collider other )
 	{
 		//Log.Info( "OnTriggerExit" );
-
 	}
 }
 //keeping this around might be useful later.

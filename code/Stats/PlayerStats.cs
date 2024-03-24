@@ -119,6 +119,12 @@ public sealed class PlayerStats : Component
 		//	GetStatingStats();
 	}
 
+	public void AddItemComponent( PlayerUpgrade comp )
+	{
+		var typeDesc = TypeLibrary.GetType( GetType() );
+		Components.Create( typeDesc );
+	}
+
 	public void ApplyUpgrade( string upgradeName, float upgradeAmount )
 	{
 		TypeLibrary.SetProperty( this, upgradeName, upgradeAmount );
@@ -179,6 +185,12 @@ public sealed class PlayerStats : Component
 		{
 			Log.Info( PickedUpAbilities.FirstOrDefault() );
 
+		}
+
+		var items = Components.GetAll<PlayerUpgrade>();
+		foreach ( var item in items )
+		{
+			item.DoUpgradeUpdate();
 		}
 		
 	}

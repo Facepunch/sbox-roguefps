@@ -400,7 +400,7 @@
     {
       "__guid": "c99ab875-8a3b-4eaf-acca-6fd50de41ba9",
       "Name": "Sphere (4)",
-      "Position": "-1088,1147.37,128",
+      "Position": "-960,1147.37,64",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
@@ -427,10 +427,86 @@
           "AsAPercent": false,
           "ItemDescription": "Item Description",
           "ItemName": "Item Name",
-          "Model": "models/editor/iv_helper.vmdl",
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
           "Rarity": "Common",
           "UpgradeAmount": 100,
           "UpgradeIcon": "materials/editor/upgrade.png",
+          "UpgradeType": "Health"
+        }
+      ]
+    },
+    {
+      "__guid": "f3ec93c3-b45f-4227-949b-2b6a0d42cc3c",
+      "Name": "Sphere (16)",
+      "Position": "-960,1600,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "57caf452-69af-4137-80e7-d05d21a9613f",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "52e53212-66cb-4245-bbaa-348e60033199",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "d14810e1-c9f3-4a3c-9e81-8d1258af8e98",
+          "AsAPercent": false,
+          "ItemDescription": "Item Description",
+          "ItemName": "Item Name",
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "Rarity": "Common",
+          "UpgradeAmount": 100,
+          "UpgradeIcon": "materials/editor/upgrade.png",
+          "UpgradeType": "Health"
+        }
+      ]
+    },
+    {
+      "__guid": "4ec6cf20-ed44-43ba-8ba5-cadca93628e8",
+      "Name": "Sphere (17)",
+      "Position": "-1088,1408,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "7b28bac2-aa31-4d81-8f14-0540750e88db",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_props/beachball.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "ea75c915-edf1-4ef3-bf27-f450b6801859",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "TestTwoItem",
+          "__guid": "fc436e08-5ed6-4298-8b37-3825728abd86",
+          "AsAPercent": false,
+          "ItemDescription": "Its a ball",
+          "ItemName": "Ball",
+          "Model": "models/editor/iv_helper.vmdl",
+          "Rarity": "Legendary",
+          "UpgradeAmount": 100,
+          "UpgradeIcon": "ui/test/items/kelly.png",
           "UpgradeType": "Health"
         }
       ]
@@ -8031,7 +8107,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-24T01:15:46.7550878\u002B00:00",
+  "LastSaved": "2024-03-24T01:41:39.5998048\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
