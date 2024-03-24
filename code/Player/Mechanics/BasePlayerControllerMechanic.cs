@@ -8,7 +8,7 @@ public abstract partial class BasePlayerControllerMechanic : Component
 	[Property, ToggleGroup( "SpecialAbility" )] public virtual bool SpecialAbility { get; set; } = false;
 	[Property, ToggleGroup( "SpecialAbility" )] public virtual string SpecialAbilityName { get; set; } = "None";
 	[Property, ToggleGroup( "SpecialAbility" )] public virtual string SpecialAbilityDescription { get; set; } = "None";
-	[Property, ToggleGroup( "SpecialAbility" )] public virtual string SpecialAbilityIcon { get; set; } = "None";
+	[Property, ToggleGroup( "SpecialAbility" ), ImageAssetPath] public virtual string SpecialAbilityIcon { get; set; } = "None";
 
 
 	/// <summary>

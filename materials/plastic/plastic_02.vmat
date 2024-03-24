@@ -5,7 +5,6 @@ Layer0
 	shader "shaders/complex.shader"
 
 	//---- PBR ----
-	F_ANISOTROPIC_GLOSS 1
 	F_SPECULAR 1
 
 	//---- Rendering ----

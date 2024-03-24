@@ -4,26 +4,26 @@
 @namespace RogueFPS
 <root>
 	<div class="upgrades">
-		@*
+
  		@foreach (var upgrade in TargetObject.PickedUpUpgrades.Values)
 		{
 			<div class="upgrade">
-				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.Icon')"></div> 
-				@* <div class="name">@upgrade.Name</div>
+				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.Icon')"></div>
+				@* <div class="name">@upgrade.Name</div>*@
 				<div class="amount">@upgrade.Amount</div>
 			</div>
-		}*@
-		
+		}
+		@*
 		@for (int i = 0; i < 19; i++)
 		{
 			<div class="upgrade">
 				<div class="icon" onmouseout="" onmouseover=""></div>
 				@* <div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.Icon')"></div> *@
-				@* <div class="name">@upgrade.Name</div>	*@
+				@* <div class="name">@upgrade.Name</div>	
 				<div class="amount">x10</div>
 			</div>
 		}
-
+	*@
 	</div>
 </root>
 
