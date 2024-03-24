@@ -358,46 +358,6 @@
       ]
     },
     {
-      "__guid": "afdd136d-87d7-436d-a364-291340d3d304",
-      "Name": "Sphere",
-      "Position": "-384.0012,991.9891,63.99567",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "3c14c92c-4fb5-45b9-9b24-254e5674d5f7",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "5e8e9ab8-bc72-480b-a04d-8fe0bd871bd9",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "62e45e53-ea38-479d-9c2e-bda18fd4d8e0",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "c99ab875-8a3b-4eaf-acca-6fd50de41ba9",
       "Name": "Sphere (4)",
       "Position": "-960,1147.37,64",
@@ -428,45 +388,7 @@
           "ItemDescription": "Item Description",
           "ItemName": "Item Name",
           "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
-        }
-      ]
-    },
-    {
-      "__guid": "f3ec93c3-b45f-4227-949b-2b6a0d42cc3c",
-      "Name": "Sphere (16)",
-      "Position": "-960,1600,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "57caf452-69af-4137-80e7-d05d21a9613f",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "52e53212-66cb-4245-bbaa-348e60033199",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "TestItem",
-          "__guid": "d14810e1-c9f3-4a3c-9e81-8d1258af8e98",
-          "AsAPercent": false,
-          "ItemDescription": "Item Description",
-          "ItemName": "Item Name",
-          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
-          "Rarity": "Common",
+          "Rarity": "Legendary",
           "UpgradeAmount": 100,
           "UpgradeIcon": "materials/editor/upgrade.png",
           "UpgradeType": "Health"
@@ -476,7 +398,7 @@
     {
       "__guid": "4ec6cf20-ed44-43ba-8ba5-cadca93628e8",
       "Name": "Sphere (17)",
-      "Position": "-1088,1408,64",
+      "Position": "-960,1536,64",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
@@ -504,7 +426,7 @@
           "ItemDescription": "Its a ball",
           "ItemName": "Ball",
           "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Legendary",
+          "Rarity": "Epic",
           "UpgradeAmount": 100,
           "UpgradeIcon": "ui/test/items/kelly.png",
           "UpgradeType": "Health"
@@ -512,129 +434,9 @@
       ]
     },
     {
-      "__guid": "045688f0-3c68-4516-9587-baa40f41d515",
-      "Name": "Sphere (8)",
-      "Position": "-384.0012,1295.74,63.99567",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "8b6b3c52-1e61-4927-922b-562494f20ef6",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "e48b95f7-d63b-4a83-affd-4d0ded45553a",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 10,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "6b97abfa-601f-4631-a05f-ee520b645df9",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "a72cb423-3860-44d7-90f8-eacd4fc078d3",
-      "Name": "Sphere (12)",
-      "Position": "-384.0012,1422.33,63.99567",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "397f9882-a850-4170-bcbc-a6d87b284ff5",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "e6b08ff1-c31e-44c2-9e00-b521fabcc6a1",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "18854c1a-d4d5-424f-9ad4-1a0e09d238c3",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "a58e6ac7-9186-4d05-ba3a-2108d89a7901",
-      "Name": "Sphere (1)",
-      "Position": "-539.0129,992,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "f432ecfd-cc36-4895-af6c-ce930b72c1d2",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "fead95e6-81f9-48d9-9be4-4165087f9601",
-          "AsAPercent": true,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boingsfa",
-          "ItemName": "Oingodfsa",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 10,
-          "UpgradeIcon": "ui/test/items/icecream.png",
-          "UpgradeType": "JumpHeight"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "c5a01791-dd46-4c83-ab25-bac9068b6c9f",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "784b4943-fdf4-4a78-8154-b33b889bf975",
       "Name": "Sphere (5)",
-      "Position": "-539.0129,1147.381,64",
+      "Position": "-960,1344,64.00004",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
@@ -656,7 +458,7 @@
           "ItemDescription": "Boingsfa",
           "ItemName": "Oingodfsa",
           "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
+          "Rarity": "Uncommon",
           "UpgradeAmount": 10,
           "UpgradeIcon": "ui/test/items/icecream.png",
           "UpgradeType": "JumpHeight"
@@ -672,329 +474,9 @@
       ]
     },
     {
-      "__guid": "0c703f5a-dfc9-4a71-98ec-4d400058fb12",
-      "Name": "Sphere (9)",
-      "Position": "-539.0129,1295.751,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "3645830d-24af-4305-b5cd-bf6edfa53b21",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "b4d02de4-19a3-4d14-8ccc-143e13ae7c60",
-          "AsAPercent": true,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boingsfa",
-          "ItemName": "Oingodfsa",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 10,
-          "UpgradeIcon": "ui/test/items/icecream.png",
-          "UpgradeType": "JumpHeight"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "cabe4427-144e-4b6d-89cf-5027523312c8",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "562daeff-9467-4ac6-88f2-eb6f7221cc99",
-      "Name": "Sphere (13)",
-      "Position": "-539.0129,1422.341,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "071269c0-38ac-4761-9ab9-2041e3903a40",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "8c179bbf-3f66-48c8-b406-7762935a9791",
-          "AsAPercent": true,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boingsfa",
-          "ItemName": "Oingodfsa",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 10,
-          "UpgradeIcon": "ui/test/items/icecream.png",
-          "UpgradeType": "JumpHeight"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "41b8bd54-31a8-4c46-a88b-b3d53e451b0b",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "0f871044-d426-4f66-bec3-f51e5b9c4c38",
-      "Name": "Sphere (2)",
-      "Position": "-693.9497,992,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "82c86088-8a15-4940-8a09-d2c788ef617d",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "269757d5-d9d3-4d8a-9a39-7ca7ad097f93",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "06f8e307-8dbc-498a-b64b-98cd9c682fe4",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "89b081c5-6c06-4ebf-923c-53dd3925dc84",
-      "Name": "Sphere (6)",
-      "Position": "-693.9497,1147.381,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "9814362c-f82a-484f-ba7f-0a8015bb1d1b",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "9aa06e15-0a10-4e94-88ad-47385c10ca1d",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "3726ed0e-7812-49dc-a780-31b9c82e248c",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "ce504c97-73f6-4c92-bac1-35588a7d3494",
-      "Name": "Sphere (10)",
-      "Position": "-693.9497,1295.751,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "267526a9-18a4-4f8f-84f3-4d6dc217dd46",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "39728f28-cd50-40f1-9fd8-2aeb8f92045a",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "5d39bcf5-b53e-4d03-9d53-09c67d327853",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "ba1f0be7-3840-44c9-a118-e11caa56e787",
-      "Name": "Sphere (14)",
-      "Position": "-693.9497,1422.341,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "cda9c628-3c63-4e68-81e6-f486a18d4a06",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "168de4e0-536d-4546-9ec0-5e2f99668cbc",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "78c82fa4-abd2-4862-a410-e00988e998c2",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "c4552992-603b-41d3-bb68-91a87d6062c0",
-      "Name": "Sphere (3)",
-      "Position": "-784.4181,992,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "98121bd6-5b70-4400-9397-a9fe5f3567aa",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "a32a8cce-f764-44fb-9f87-a8c491b8885d",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "17b6f4ff-cab8-423c-9648-bdc891658db1",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "e835479d-69ba-4d11-b8b2-b1652fea821f",
-      "Name": "Sphere (7)",
-      "Position": "-784.4181,1147.381,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "b3a1e30b-5c0d-4573-be8f-789d117437cf",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "c49f06ac-320d-4851-b7da-d1eb34502340",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "7d7bb85d-4cc4-4145-b584-b4ec42205682",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "c974d8c2-706e-4759-970e-2ec54eb691ad",
       "Name": "Sphere (11)",
-      "Position": "-784.4181,1295.751,64",
+      "Position": "-960,1472,63.99999",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
@@ -1016,7 +498,7 @@
           "ItemDescription": "Boing",
           "ItemName": "Oingo",
           "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
+          "Rarity": "Rare",
           "UpgradeAmount": 1,
           "UpgradeIcon": "ui/test/items/hyper.png",
           "UpgradeType": "AmountOfJumps"
@@ -1024,46 +506,6 @@
         {
           "__type": "SphereCollider",
           "__guid": "802c7c2d-1946-4246-a55c-7e6689ae14c7",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "36ea100b-07e3-4e58-bd8d-7e8f7d84435e",
-      "Name": "Sphere (15)",
-      "Position": "-784.4181,1422.341,64",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "6aa71433-1a05-41d5-bc65-7e424ece3973",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "2d13e7e7-96ee-4863-b56a-93e9b596fba3",
-          "AsAPercent": false,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "4893d9fa-55c5-4566-9e47-aef8badc2b0c",
           "Center": "0,0,0",
           "IsTrigger": true,
           "Radius": 100,
@@ -5310,12 +4752,12 @@
               "0,0,-1"
             ],
             "TextureScale": [
-              "75,75",
+              "0.25,0.25",
+              "0.25,0.25",
               "0.25,0.25",
               "75,75",
               "75,75",
-              "75,75",
-              "75,75"
+              "0.25,0.25"
             ],
             "TextureAngle": [
               0,
@@ -8107,7 +7549,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-24T01:41:39.5998048\u002B00:00",
+  "LastSaved": "2024-03-24T02:04:18.1697105\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

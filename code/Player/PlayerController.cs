@@ -272,11 +272,9 @@ public partial class PlayerController : Component
 	public void BuildWishInput()
 	{
 		WishMove = 0;
-
-		if ( Input.Down( "forward", false ) ) WishMove += Vector3.Forward;
-		if ( Input.Down( "backward", false ) ) WishMove += Vector3.Backward;
-		if ( Input.Down( "left", false ) ) WishMove += Vector3.Left;
-		if ( Input.Down( "right", false ) ) WishMove += Vector3.Right;
+		WishMove = Input.AnalogMove.Normal;
+		Log.Info( $"WishMove: {WishMove}" );
+		Log.Info( $"Input.AnalogMove: {Input.AnalogMove}" );
 	}
 
 	public void BuildWishVelocity()
