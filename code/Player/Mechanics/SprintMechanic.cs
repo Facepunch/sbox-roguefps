@@ -5,7 +5,7 @@ namespace RogueFPS;
 /// </summary>
 public partial class SprintMechanic : BasePlayerControllerMechanic
 {
-	private bool IsSprinting = false;
+	public bool IsSprinting = false;
 
 	public override bool ShouldBecomeActive()
 	{

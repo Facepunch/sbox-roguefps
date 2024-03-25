@@ -94,7 +94,7 @@
         "SprintSpeed": 250,
         "UltimateCoolDown": 50,
         "UltimateUses": 1,
-        "WalkSpeed": 100
+        "WalkSpeed": 150
       },
       {
         "__type": "PlayerAbilities",
@@ -287,7 +287,7 @@
                         "IsEmpty": false,
                         "IsTwoHanded": false,
                         "LoweredWeapon": false,
-                        "MainCamera": {
+                        "Player": {
                           "_type": "component",
                           "component_id": "9b99de0a-353e-48f4-bb88-8d205eb434ab",
                           "go": "6e769ce0-a5f2-463a-9599-ae9d4a35f4e2",
@@ -554,7 +554,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 4845.025
+              "Relative": 12720.688
             }
           },
           {
@@ -573,7 +573,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 4845.025
+              "Relative": 12720.688
             }
           },
           {
@@ -597,7 +597,7 @@
             "SpecialAbilityIcon": "ui/test/ability/ab3.jpg",
             "SpecialAbilityName": "Power Slide",
             "TimeSinceActiveChanged": {
-              "Relative": 4845.025
+              "Relative": 12720.688
             },
             "WishDirectionScale": 0.4
           },
@@ -617,7 +617,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 4845.025
+              "Relative": 12720.688
             }
           }
         ]
@@ -698,6 +698,10 @@
           {
             "__type": "TestWeapon",
             "__guid": "98022580-5cc9-41c7-8f79-d1db5cad6581",
+            "BulletTrace": {
+              "_type": "gameobject",
+              "prefab": "prefab/weapon/fx/bullettracer.prefab"
+            },
             "Icon": "ui/test/ability/ab1.png",
             "MaxAmmoCount": 30,
             "UsesAmmo": true,

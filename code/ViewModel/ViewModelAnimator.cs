@@ -51,7 +51,7 @@ public sealed class ViewModelAnimator : Component
 	//
 	[Property]
 	[Group( "Don't worry about these" )]
-	private PlayerController MainCamera { get; set; }
+	private PlayerController Player { get; set; }
 
 	[Property]
 	[Group( "Don't worry about these" )]
@@ -91,9 +91,9 @@ public sealed class ViewModelAnimator : Component
 		YawInertia += yawDelta;
 		PitchInertia += pitchDelta;
 
-		var dir = MainCamera.WishVelocity;
-		var forward = MainCamera.Transform.Rotation.Forward.Dot( dir );
-		var sideward = MainCamera.Transform.Rotation.Right.Dot( dir );
+		var dir = Player.WishVelocity;
+		var forward = Player.Transform.Rotation.Forward.Dot( dir );
+		var sideward = Player.Transform.Rotation.Right.Dot( dir );
 
 		var angle = MathF.Atan2( sideward, forward ).RadianToDegree().NormalizeDegrees();
 
@@ -112,16 +112,16 @@ public sealed class ViewModelAnimator : Component
 		}
 
 		//Movement
-		anim.Set( "b_jump", !MainCamera.AnimationHelper.IsGrounded );
+		anim.Set( "b_jump", !Player.AnimationHelper.IsGrounded );
 		anim.Set( "move_direction", angle );
-		anim.Set( "move_speed", MainCamera.WishVelocity.Length );
-		anim.Set( "move_groundspeed", MainCamera.WishVelocity.WithZ( 0 ).Length );
+		anim.Set( "move_speed", Player.WishVelocity.Length );
+		anim.Set( "move_groundspeed", Player.WishVelocity.WithZ( 0 ).Length );
 		anim.Set( "move_y", sideward );
 		anim.Set( "move_x", forward );
-		anim.Set( "move_z", MainCamera.WishVelocity.z );
-		anim.Set( "b_grounded", MainCamera.AnimationHelper.IsGrounded );
-		anim.Set( "move_sprint", Input.Down( "run" ) );
-		anim.Set( "b_sprint", Input.Down( "run" ) );
+		anim.Set( "move_z", Player.WishVelocity.z );
+		anim.Set( "b_grounded", Player.AnimationHelper.IsGrounded );
+		anim.Set( "move_sprint", Player.HasTag( "sprint" ) );
+		anim.Set( "b_sprint", Player.HasTag("sprint"));
 		anim.Set( "b_crouch", Input.Down( "duck" ) );
 
 		//Fire
@@ -129,7 +129,7 @@ public sealed class ViewModelAnimator : Component
 		//anim.Set( "b_attack_dry", Input.Pressed( "Attack1" ) && IsEmpty );
 
 		//Reload
-		anim.Set( "b_reload", Input.Pressed( "Reload" ) );
+		//anim.Set( "b_reload", Input.Pressed( "Reload" ) );
 
 		//Empty
 		anim.Set( "b_empty", IsEmpty );

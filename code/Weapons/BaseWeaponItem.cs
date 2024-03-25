@@ -15,8 +15,8 @@ public class BaseWeaponItem : Component
 	[Property] public virtual InputType WeaponInputType { get; set; } = InputType.Primary;
 	[Property] public GameObject ViewModelObject { get; set; }
 	public SkinnedModelRenderer ViewModel { get; set; }
-
 	public PlayerStats PlayerStats { get; set; }
+	public PlayerController PlayerController { get; set; }
 
 	protected override void OnAwake()
 	{
@@ -25,6 +25,7 @@ public class BaseWeaponItem : Component
 		CurrentAmmoCount = MaxAmmoCount;
 
 		ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
+		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
 	}
 
 	protected override void OnUpdate()
@@ -43,7 +44,11 @@ public class BaseWeaponItem : Component
 				{
 					LastFired = 0;
 					OnPrimaryFire();
-					Log.Info( $"Primary Speed: {PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed]}" );
+					var sprintcomp = PlayerController.Components.Get<SprintMechanic>(FindMode.EverythingInSelfAndChildren);
+					if ( sprintcomp != null )
+					{
+						sprintcomp.IsSprinting = false;
+					}
 				}
 			}
 		}
@@ -71,18 +76,18 @@ public class BaseWeaponItem : Component
 		Log.Info( $"Secondary Fire: {GameObject.Name}" );
 	}
 
-	public void DoBulletTrace( Vector3 start, Vector3 end )
+	public SceneTraceResult TraceBullet( Vector3 start, Vector3 end )
 	{
 		var tr = Scene.Trace.Ray( start, end )
-			.WithoutTags( "player" )
-			.Run();
+		.WithoutTags( "player" )
+		.Run();
 
-		if ( tr.Hit )
-		{
-			Log.Info( $"Hit: {tr.GameObject.Name}" );
-		}
+		return tr;
+	}
 
-		Gizmo.Draw.Line( start, tr.EndPosition );
+	public void DoBulletTrace( Vector3 start, Vector3 end )
+	{
+		//DoNothing
 	}
 }
 public enum InputType
