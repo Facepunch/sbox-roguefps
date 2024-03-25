@@ -69,6 +69,12 @@ public class BaseWeaponItem : Component
 		Log.Info( $"Primary Fire: {GameObject.Name}" );
 
 		CurrentAmmoCount--;
+
+		var items = PlayerStats.Components.GetAll<PlayerUpgrade>();
+		foreach ( var item in items )
+		{
+			item.DoAttackUpgrade( TraceBullet( Scene.Camera.Transform.Position, Scene.Camera.Transform.Position + Scene.Camera.Transform.Rotation.Forward * 1000f ) );
+		}
 	}
 
 	public virtual void OnSecondaryFire()

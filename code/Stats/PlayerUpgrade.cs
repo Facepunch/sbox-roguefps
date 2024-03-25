@@ -93,9 +93,14 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 		}
 	}
 
-	public virtual void DoUpgradeUpdate( )
+	public virtual void DoUpgradeUpdate()
 	{
 		//Log.Info( "Upgrade on Update" );
+	}
+
+	public virtual void DoAttackUpgrade(SceneTraceResult trace )
+	{
+		Log.Info( "Upgrade on Attack" );
 	}
 
 	void ITriggerListener.OnTriggerExit( Collider other )

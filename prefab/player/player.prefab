@@ -554,7 +554,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 853.31305
+              "Relative": 3656.5774
             }
           },
           {
@@ -573,7 +573,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 853.31305
+              "Relative": 3656.5774
             }
           },
           {
@@ -597,7 +597,7 @@
             "SpecialAbilityIcon": "ui/test/ability/ab3.jpg",
             "SpecialAbilityName": "Power Slide",
             "TimeSinceActiveChanged": {
-              "Relative": 853.31305
+              "Relative": 3656.5774
             },
             "WishDirectionScale": 0.4
           },
@@ -617,7 +617,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 853.31305
+              "Relative": 3656.5774
             }
           }
         ]

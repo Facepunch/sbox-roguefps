@@ -385,6 +385,10 @@
           "__type": "TestItem",
           "__guid": "05fe5d5f-1200-470f-b96d-85592537b477",
           "AsAPercent": false,
+          "BulletTrace": {
+            "_type": "gameobject",
+            "prefab": "prefab/weapon/fx/bullettracertest.prefab"
+          },
           "ItemDescription": "Item Description",
           "ItemName": "Item Name",
           "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
@@ -7764,6 +7768,20 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "81598fa3-159f-4eaf-8428-50d516ddf68e",
+      "Name": "Object",
+      "Position": "-1088,960,128",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "__guid": "c0c7fc29-4151-4872-840b-fe84bfec77b1",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -7789,7 +7807,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-25T01:44:31.6694993\u002B00:00",
+  "LastSaved": "2024-03-25T02:48:56.3713546\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
