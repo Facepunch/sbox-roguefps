@@ -13,6 +13,8 @@ public class BaseWeaponItem : Component
 	public TimeUntil ReloadTime { get; set; } = 1f;
 	public bool IsReloading { get; set; }
 	[Property] public virtual InputType WeaponInputType { get; set; } = InputType.Primary;
+	[Property] public GameObject ViewModelObject { get; set; }
+	public SkinnedModelRenderer ViewModel { get; set; }
 
 	public PlayerStats PlayerStats { get; set; }
 
@@ -21,6 +23,8 @@ public class BaseWeaponItem : Component
 		base.OnAwake();
 		PlayerStats = GameObject.Components.Get<PlayerStats>( FindMode.InParent );
 		CurrentAmmoCount = MaxAmmoCount;
+
+		ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
 	}
 
 	protected override void OnUpdate()

@@ -255,7 +255,7 @@
                 "Children": [
                   {
                     "__guid": "09b68963-a2a8-4815-b36c-d4b99ae6788e",
-                    "Name": "Object",
+                    "Name": "VM",
                     "Position": "0,0,0",
                     "Tags": "viewmodel",
                     "Enabled": true,
@@ -269,6 +269,32 @@
                         "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
                         "RenderType": "On",
                         "Tint": "0,0.96667,1,1"
+                      },
+                      {
+                        "__type": "ViewModelAnimator",
+                        "__guid": "ef802f1a-31da-4f42-9ce0-01e73ca42c97",
+                        "CameraComp": {
+                          "_type": "component",
+                          "component_id": "1dc02f86-8b40-4ab9-9a8a-17e0af386e94",
+                          "go": "3a859316-faf0-4df9-9711-2a1dd8c67e9a",
+                          "component_type": "CameraComponent"
+                        },
+                        "FiringMode": 0,
+                        "HoldType": 0,
+                        "HolsterWeapon": false,
+                        "InertiaDamping": 20,
+                        "IronSightFireScale": 1,
+                        "IsEmpty": false,
+                        "IsTwoHanded": false,
+                        "LoweredWeapon": false,
+                        "MainCamera": {
+                          "_type": "component",
+                          "component_id": "9b99de0a-353e-48f4-bb88-8d205eb434ab",
+                          "go": "6e769ce0-a5f2-463a-9599-ae9d4a35f4e2",
+                          "component_type": "PlayerController"
+                        },
+                        "PosOffset": "0,0,0",
+                        "Visible": true
                       }
                     ]
                   },
@@ -528,7 +554,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3476.5186
+              "Relative": 4845.025
             }
           },
           {
@@ -547,7 +573,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3476.5186
+              "Relative": 4845.025
             }
           },
           {
@@ -571,7 +597,7 @@
             "SpecialAbilityIcon": "ui/test/ability/ab3.jpg",
             "SpecialAbilityName": "Power Slide",
             "TimeSinceActiveChanged": {
-              "Relative": 3476.5186
+              "Relative": 4845.025
             },
             "WishDirectionScale": 0.4
           },
@@ -591,7 +617,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 3476.5186
+              "Relative": 4845.025
             }
           }
         ]
@@ -675,6 +701,10 @@
             "Icon": "ui/test/ability/ab1.png",
             "MaxAmmoCount": 30,
             "UsesAmmo": true,
+            "ViewModelObject": {
+              "_type": "gameobject",
+              "go": "09b68963-a2a8-4815-b36c-d4b99ae6788e"
+            },
             "WeaponDescription": "Weapon",
             "WeaponInputType": "Primary",
             "WeaponName": "Primary"
@@ -694,6 +724,10 @@
             "Icon": "ui/test/ability/ab2.png",
             "MaxAmmoCount": 30,
             "UsesAmmo": false,
+            "ViewModelObject": {
+              "_type": "gameobject",
+              "go": "09b68963-a2a8-4815-b36c-d4b99ae6788e"
+            },
             "WeaponDescription": "Weapon",
             "WeaponInputType": "Secondary",
             "WeaponName": "Second"

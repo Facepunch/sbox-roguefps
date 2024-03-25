@@ -73,7 +73,7 @@ public partial class PlayerController : Component
 	[Property] public Action OnJump { get; set; }
 
 	// Properties used only in this component.
-	Vector3 WishVelocity;
+	public Vector3 WishVelocity;
 	public Angles EyeAngles;
 
 	public bool IsGrounded { get; set; }

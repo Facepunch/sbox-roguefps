@@ -16,6 +16,7 @@ public class TestWeapon : BaseWeaponItem
 		{
 			ReloadTime = PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.ReloadTime];
 			IsReloading = true;
+			ViewModel.Set("b_reload", true);
 		}
 
 		if (IsReloading)
@@ -35,5 +36,6 @@ public class TestWeapon : BaseWeaponItem
 
 		Sound.Play( "ui.popup.message.close", GameObject.Parent.Transform.Position );
 		DoBulletTrace(Scene.Camera.Transform.Position, Scene.Camera.Transform.Rotation.Forward * 1000f );
+		ViewModel.Set("b_attack", true);
 	}
 }
