@@ -1,0 +1,101 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@if (CurrentItem != null)
+	{
+		<div class="container">
+			<div class="icon" style="background-image: url('@CurrentItem.Icon'); box-shadow: 0 0 50px 10px @GetRarityColor(CurrentItem.Rarity)"></div>
+			<div class="text">
+				<div class="name" style="color:@GetRarityColor(CurrentItem.Rarity)">@CurrentItem.Name</div>
+				<div class="description">@CurrentItem.Description</div>
+			</div>
+		</div>
+	}
+</root>
+
+@code {
+	public class Item
+	{
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public string Icon { get; set; }
+		public PlayerUpgrade.UpgradeRarity Rarity { get; set; }
+
+		public Item(string name, string description, string icon, PlayerUpgrade.UpgradeRarity rarity)
+		{
+			Name = name;
+			Description = description;
+			Icon = icon;
+			Rarity = rarity;
+		}
+	}
+
+	Queue<Item> Items = new Queue<Item>(); // Use a Queue to manage items FIFO
+	Item CurrentItem => Items.FirstOrDefault();
+	private TimeSince timeSinceLastItemDisplayed;
+	private const float ItemDisplayInterval = 5.0f; // Time in seconds before showing the next item
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+		timeSinceLastItemDisplayed = 0;
+	}
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+
+		// Check if it's time to show (and remove) the next item
+		if (Items.Any() && timeSinceLastItemDisplayed > ItemDisplayInterval)
+		{
+			ShowAndRemoveNextItem();
+			timeSinceLastItemDisplayed = 0; // Reset the timer
+		}
+	}
+
+	public void NewItem(string name, string description, string icon, PlayerUpgrade.UpgradeRarity rarity)
+	{
+		var newItem = new Item(name, description, icon, rarity);
+		Items.Enqueue(newItem); // Add new items to the end of the queue
+	}
+
+	public void ShowAndRemoveNextItem()
+	{
+		if (Items.Any())
+		{
+			Items.Dequeue(); // Remove the current (oldest) item from the queue
+			if (Items.Any())
+			{
+				var nextItem = Items.Peek(); // Peek at the next item without removing it
+				Log.Info($"Next item: {nextItem.Name}");
+			}
+		}
+	}
+
+	string GetRarityColor(PlayerUpgrade.UpgradeRarity upgrade)
+	{
+		switch (upgrade)
+		{
+			case PlayerUpgrade.UpgradeRarity.Common:
+				return "#3A3A3C";
+			case PlayerUpgrade.UpgradeRarity.Uncommon:
+				return "#1DB954";
+			case PlayerUpgrade.UpgradeRarity.Rare:
+				return "#0077B5";
+			case PlayerUpgrade.UpgradeRarity.Epic:
+				return "#9B30FF";
+			case PlayerUpgrade.UpgradeRarity.Legendary:
+				return "#E00707";
+			default:
+				return "#FFFFFF";
+		}
+	}
+
+	/// <summary>
+	/// The hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now, Items.Count > 0 ? Items.Peek().Name : string.Empty);
+}
+

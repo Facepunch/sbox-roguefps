@@ -385,10 +385,196 @@
           "__type": "TestItem",
           "__guid": "05fe5d5f-1200-470f-b96d-85592537b477",
           "AsAPercent": false,
-          "BulletTrace": {
-            "_type": "gameobject",
-            "prefab": "prefab/weapon/fx/bullettracertest.prefab"
-          },
+          "ItemDescription": "Item Description",
+          "ItemName": "Item Name",
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "Rarity": "Legendary",
+          "UpgradeAmount": 100,
+          "UpgradeIcon": "materials/editor/upgrade.png",
+          "UpgradeType": "Health"
+        }
+      ]
+    },
+    {
+      "__guid": "ae55afcc-d14b-467c-a408-24a42feacd5f",
+      "Name": "Sphere (9)",
+      "Position": "-832,1147.37,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "f3fe87cd-0146-47ee-95e4-e8043118dcfd",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "f75f1f84-e54e-4248-9dd2-1ca6425e6e66",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "a02f9636-0e63-4ee8-9d84-071e29ce73c9",
+          "AsAPercent": false,
+          "ItemDescription": "Item Description",
+          "ItemName": "Item Name",
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "Rarity": "Legendary",
+          "UpgradeAmount": 100,
+          "UpgradeIcon": "materials/editor/upgrade.png",
+          "UpgradeType": "Health"
+        }
+      ]
+    },
+    {
+      "__guid": "f125ba90-2560-420a-9436-3284f0411f5f",
+      "Name": "Sphere (10)",
+      "Position": "-768,1147.37,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "95db57a2-de7c-4849-bcb0-cec7da3b93ff",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "7ecbbaa5-ad93-4830-9ad9-1c2936c0c84f",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "edca23e6-e81e-4fa8-a273-3a5ca9fb67ad",
+          "AsAPercent": false,
+          "ItemDescription": "Item Description",
+          "ItemName": "Item Name",
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "Rarity": "Legendary",
+          "UpgradeAmount": 100,
+          "UpgradeIcon": "materials/editor/upgrade.png",
+          "UpgradeType": "Health"
+        }
+      ]
+    },
+    {
+      "__guid": "b02b30a9-d404-4d71-b67d-b88f75764b85",
+      "Name": "Sphere (12)",
+      "Position": "-768,1216,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "c04c5e46-9cef-4d3f-bb94-4fef077309ff",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "9b2e9ed1-898a-4e1f-b4ff-c93068132d1f",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "d95c5f03-b086-4042-906e-07ace30c4b9d",
+          "AsAPercent": false,
+          "ItemDescription": "Item Description",
+          "ItemName": "Item Name",
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "Rarity": "Legendary",
+          "UpgradeAmount": 100,
+          "UpgradeIcon": "materials/editor/upgrade.png",
+          "UpgradeType": "Health"
+        }
+      ]
+    },
+    {
+      "__guid": "e72aa0e0-f8a5-4386-aada-9f904cb1cc09",
+      "Name": "Sphere (13)",
+      "Position": "-768,1280,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "5db8d0a9-d7da-4212-859c-11eb8c494239",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "84c7285a-8739-477a-88cf-96f92579ad26",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "279698e5-cbdf-45bb-9a0e-f213f7488a75",
+          "AsAPercent": false,
+          "ItemDescription": "Item Description",
+          "ItemName": "Item Name",
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "Rarity": "Legendary",
+          "UpgradeAmount": 100,
+          "UpgradeIcon": "materials/editor/upgrade.png",
+          "UpgradeType": "Health"
+        }
+      ]
+    },
+    {
+      "__guid": "ccce40f7-c8b0-4667-963c-be5b739941ac",
+      "Name": "Sphere (14)",
+      "Position": "-768,1344,64",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a2214bb3-befa-472d-9ede-fd6b3cd06ba5",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "b97b1a97-569d-401b-99a1-d4f6e412833b",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "68dffd52-416f-46cd-835a-368edfce83a4",
+          "AsAPercent": false,
           "ItemDescription": "Item Description",
           "ItemName": "Item Name",
           "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
@@ -459,8 +645,8 @@
           "__guid": "b5549f03-4f9f-46a3-a543-edfddd7c7fd4",
           "AsAPercent": true,
           "IsStatUpgrade": true,
-          "ItemDescription": "Boingsfa",
-          "ItemName": "Oingodfsa",
+          "ItemDescription": "Give \u002B10% Jump Height",
+          "ItemName": "Jumper Legs",
           "Model": "models/editor/iv_helper.vmdl",
           "Rarity": "Uncommon",
           "UpgradeAmount": 10,
@@ -480,7 +666,7 @@
     {
       "__guid": "f46f3778-0dd3-4b25-83b9-0d54dc2b1e60",
       "Name": "Sphere (1)",
-      "Position": "-1088,1344,64.00004",
+      "Position": "-1344,1344,64.00004",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
@@ -489,8 +675,7 @@
           "__type": "ModelRenderer",
           "__guid": "bf5a9354-38f2-481c-a62a-6a80082f959c",
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
+          "Model": "models/citizen_props/coffeemug01.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -499,7 +684,7 @@
           "__guid": "43d20150-c4f2-4170-b0e2-9a597dd9abb8",
           "AsAPercent": true,
           "IsStatUpgrade": true,
-          "ItemDescription": "Boingsfa",
+          "ItemDescription": "Increases Speed but \u002B50% (stackable)",
           "ItemName": "Runner",
           "Model": "models/editor/iv_helper.vmdl",
           "Rarity": "Uncommon",
@@ -514,46 +699,10 @@
           "IsTrigger": true,
           "Radius": 100,
           "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "e18bc9da-4c68-4ed2-be3e-d3e01709862c",
-      "Name": "Sphere (2)",
-      "Position": "-1472,1344,64.00004",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "fcd5853d-ded9-4c0a-a54b-b51c100a946c",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
         },
         {
-          "__type": "PlayerUpgrade",
-          "__guid": "76cdc2a9-52ed-422d-b1be-b0a1c0cacd98",
-          "AsAPercent": true,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boingsfa",
-          "ItemName": "Runner",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Uncommon",
-          "UpgradeAmount": 50,
-          "UpgradeIcon": "ui/test/items/chips.png",
-          "UpgradeType": "SprintSpeed"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "bc197ea5-17c7-4ce0-8006-5d67029eb009",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "d4472a67-dc3a-410a-89d3-215a92c52073"
         }
       ]
     },
@@ -678,46 +827,6 @@
       ]
     },
     {
-      "__guid": "fd7d7497-48dd-411c-bb18-4ba882bf2776",
-      "Name": "Sphere (3)",
-      "Position": "-1472,1536,64.00004",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "899ce721-2c16-4cdd-bab1-f62d7218aa4b",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/error.vmat",
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "PlayerUpgrade",
-          "__guid": "c14edd4a-6e4a-4853-8a0c-f0bd03a4f63c",
-          "AsAPercent": true,
-          "IsStatUpgrade": true,
-          "ItemDescription": "Boingsfa",
-          "ItemName": "Runner",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Uncommon",
-          "UpgradeAmount": 50,
-          "UpgradeIcon": "ui/test/items/chips.png",
-          "UpgradeType": "SprintSpeed"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "c0ad807b-264a-4ac1-91d7-32287dab4c33",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "c974d8c2-706e-4759-970e-2ec54eb691ad",
       "Name": "Sphere (11)",
       "Position": "-960,1472,63.99999",
@@ -739,8 +848,8 @@
           "__guid": "67c782ed-0f19-448a-a338-f5905cf968f3",
           "AsAPercent": false,
           "IsStatUpgrade": true,
-          "ItemDescription": "Boing",
-          "ItemName": "Oingo",
+          "ItemDescription": "\u002B1 Jump",
+          "ItemName": "Leaping Legs",
           "Model": "models/editor/iv_helper.vmdl",
           "Rarity": "Rare",
           "UpgradeAmount": 1,
@@ -7807,7 +7916,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-25T02:48:56.3713546\u002B00:00",
+  "LastSaved": "2024-03-25T16:46:45.0756295\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

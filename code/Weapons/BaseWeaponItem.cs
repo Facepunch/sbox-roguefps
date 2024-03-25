@@ -66,8 +66,6 @@ public class BaseWeaponItem : Component
 
 	public virtual void OnPrimaryFire()
 	{
-		Log.Info( $"Primary Fire: {GameObject.Name}" );
-
 		CurrentAmmoCount--;
 
 		var items = PlayerStats.Components.GetAll<PlayerUpgrade>();

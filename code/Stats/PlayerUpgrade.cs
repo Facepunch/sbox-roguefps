@@ -36,8 +36,12 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual bool AsAPercent { get; set; } = false;
 	[Property] public virtual UpgradeRarity Rarity { get; set; } = UpgradeRarity.Common;
 	[Property] public virtual string ItemName { get; set; } = "Item Name";
-	[Property] public virtual string ItemDescription { get; set; } = "Item Description";
+	[Property, TextArea] public virtual string ItemDescription { get; set; } = "Item Description";
 	[Property] public virtual Model Model { get; set; } = Model.Load( "models/editor/iv_helper.vmdl_c" );
+	public int Amount { get; set; } = 1;
+	private const float BaseChance = 10.0f; // 10%
+	private const float MaxChance = 80.0f; // 80%
+	public virtual float ChanceIncrementPerUpgrade { get; set; } = 5.0f; // 5%
 	//
 	private GameObject Player { get; set; }
 	//
@@ -79,8 +83,17 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 					{
 						Player.Components.Create( typeDesc );
 					}
+					else
+					{
+						//if player already has the component, add the upgrade to the existing component
+						var upgradeComp = plyStatComp.Components.Get<PlayerUpgrade>();
+						upgradeComp.Amount++;
+					}
 				}
 
+				var pickupui = Player.Components.Get<PickedUpItemUI>(FindMode.EnabledInSelfAndDescendants);
+				pickupui.NewItem(ItemName, ItemDescription, UpgradeIcon, Rarity );
+				
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
 				Log.Info( "Player picked up an upgrade" );
 				GameObject.Destroy();
@@ -101,6 +114,18 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 	public virtual void DoAttackUpgrade(SceneTraceResult trace )
 	{
 		Log.Info( "Upgrade on Attack" );
+	}
+
+	public bool ShouldEffectTrigger( int upgradeAmount )
+	{
+		float currentChance = BaseChance + (ChanceIncrementPerUpgrade * (upgradeAmount - 1));
+		currentChance = Math.Min( currentChance, MaxChance ); // Clamp to MaxChance
+
+		float randomChance = Random.Shared.Float( 0.0f, 100.0f );
+
+		Log.Info( $"Current chance: {currentChance}, Random chance: {randomChance}" );
+
+		return randomChance <= currentChance;
 	}
 
 	void ITriggerListener.OnTriggerExit( Collider other )
