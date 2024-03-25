@@ -1,0 +1,27 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="items">
+		<div class="item coingradient">
+			<div class="icon" style="background-image: url(ui/mainui/coin.png)"></div>
+			<div class="amount">15000</div>
+		</div>
+		<div class="item hxrgradient">
+			<div class="icon" style="background-image: url(ui/mainui/hrkcoin.png)"></div>
+			<div class="amount">10</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

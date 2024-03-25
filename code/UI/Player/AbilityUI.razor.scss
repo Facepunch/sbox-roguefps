@@ -9,8 +9,7 @@ AbilityUI {
     .abilities {
         position: absolute;
         flex-direction: row;
-        left: 50%;
-        transform: translate( -50% -0% );
+        right: 5%;
         bottom: 5%;
 
         AbilityIcon {
