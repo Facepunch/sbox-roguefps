@@ -38,6 +38,6 @@ public partial class SprintMechanic : BasePlayerControllerMechanic
 
 	public override float? GetSpeed()
 	{
-		return PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SprintSpeed];
+		return PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed] * PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SprintMultiplier];
 	}
 }
