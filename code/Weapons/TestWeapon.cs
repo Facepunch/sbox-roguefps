@@ -10,27 +10,11 @@ public class TestWeapon : BaseWeaponItem
 
 	}
 
-	public override void Reload()
+	public override void DoReloadAnimation( bool should )
 	{
-		base.Reload();
+		base.DoReloadAnimation( should );
 
-		if (!IsReloading)
-		{
-			ReloadTime = PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.ReloadTime];
-			IsReloading = true;
-			ViewModel.Set("b_reload", true);
-		}
-
-		if (IsReloading)
-		{
-			if (ReloadTime <= 0)
-			{
-				CurrentAmmoCount = MaxAmmoCount;
-				IsReloading = false;
-				ViewModel.Set( "b_reload", false );
-			}
-		}
-
+		ViewModel.Set( "b_reload", should );
 	}
 
 	public override void OnPrimaryFire()

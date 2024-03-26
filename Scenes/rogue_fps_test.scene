@@ -360,7 +360,7 @@
     {
       "__guid": "f125ba90-2560-420a-9436-3284f0411f5f",
       "Name": "Sphere (10)",
-      "Position": "-288,160,32",
+      "Position": "-256,224,32",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
@@ -390,8 +390,7 @@
           "__guid": "2f46bd7f-8abb-4984-a246-4f783231a81b",
           "Amount": 1,
           "AsAPercent": false,
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Uncommon"
+          "Model": "models/editor/iv_helper.vmdl"
         },
         {
           "__type": "HighlightOutline",
@@ -405,9 +404,101 @@
       ]
     },
     {
+      "__guid": "6dbe7bdd-5bf3-4419-9723-1d8242f2cb08",
+      "Name": "Sphere (1)",
+      "Position": "-160,224,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "ff625e35-34a0-4231-bd86-a4f5f308c5dd",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "5d77ef2d-a18e-4be9-a135-ad16fd341806",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "17e269eb-eda0-4166-bab7-fd9be1d9d1e5"
+        },
+        {
+          "__type": "TestTwoItem",
+          "__guid": "0fa296cc-3643-4537-9f7c-fb9329f4ab05",
+          "Amount": 1,
+          "AsAPercent": false,
+          "Model": "models/editor/iv_helper.vmdl"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "fa41cf2d-f2fc-40c3-8286-25790ca2f7c7",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        }
+      ]
+    },
+    {
+      "__guid": "b7bb6a7c-3a77-4da1-98ca-c30ba4f17499",
+      "Name": "Sphere (2)",
+      "Position": "-64,224,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "7dbb30dd-73b6-4fd9-89cd-4f939ef4e914",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "254109aa-a071-413b-bc00-a5cfb6a2b12a",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "e7b01df4-f3da-45db-99bf-de03282c0b46"
+        },
+        {
+          "__type": "TestTwoItem",
+          "__guid": "aab07e3f-2053-4236-bd09-077ff3433ad2",
+          "Amount": 1,
+          "AsAPercent": false,
+          "Model": "models/editor/iv_helper.vmdl"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "53d3ed03-53c7-4210-a984-6898a00439c2",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        }
+      ]
+    },
+    {
       "__guid": "0c5b83e7-9857-448e-8ef2-319ccc9efc68",
       "Name": "Bob",
-      "Position": "-288,64,32",
+      "Position": "-256,64,32",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
@@ -437,13 +528,103 @@
           "__guid": "1f55bd2f-baa7-466e-b07c-8a2c390ab6a0",
           "Amount": 1,
           "IsStatUpgrade": true,
-          "ItemName": "Speed Boost",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Rare"
+          "Model": "models/editor/iv_helper.vmdl"
         },
         {
           "__type": "HighlightOutline",
           "__guid": "7639ffae-58e1-4b9e-b318-dcd160316756",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        }
+      ]
+    },
+    {
+      "__guid": "ef4cb9bb-daee-4678-9432-4a178426d898",
+      "Name": "Bob (1)",
+      "Position": "-160,64,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "4103ca88-307b-46f7-a7b8-0dfe82d6647b",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_props/beachball.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "ae53585a-b6aa-492b-8c72-1d6fff0cab48",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "a6b18a1f-06d5-40d7-8c46-64e319cdd7ef"
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "a26349c0-1f4f-4e29-892e-86497bba5630",
+          "Amount": 1,
+          "IsStatUpgrade": true,
+          "Model": "models/editor/iv_helper.vmdl"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "9f659946-3609-4443-8f35-5198f8416795",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        }
+      ]
+    },
+    {
+      "__guid": "f3b5f48c-4e5b-44b3-82cf-d9f0848a7686",
+      "Name": "Bob (2)",
+      "Position": "-64,64,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "ebcdd466-d49f-4c89-b18e-05da610538ad",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_props/beachball.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "d1dfb10c-ef7b-4ba4-a4e0-6c6b3ba3ee1d",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "8bc0313f-b296-4be4-9342-347eec23f598"
+        },
+        {
+          "__type": "TestItem",
+          "__guid": "67b4172a-a6e6-42a2-91a0-6e62c0bc7f67",
+          "Amount": 1,
+          "IsStatUpgrade": true,
+          "Model": "models/editor/iv_helper.vmdl"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "2aef3713-8b50-4703-9302-ebe175f3440f",
           "Color": "1,1,1,1",
           "InsideColor": "0,0,0,0",
           "InsideObscuredColor": "0,0,0,0",
@@ -3501,7 +3682,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-26T21:01:10.2397961\u002B00:00",
+  "LastSaved": "2024-03-26T21:39:18.12109\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

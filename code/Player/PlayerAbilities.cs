@@ -16,10 +16,12 @@ public sealed class PlayerAbilities : Component
 	[Property, Group( "Utility" )] public string AbilityUtilityName { get; set; } = "Utility";
 	[Property, Group( "Utility" )] public string AbilityUtilityDescription { get; set; } = "Utility";
 	[Property, Group( "Utility" )] public string AbilityUtilityIcons { get; set; } = "ui/test/ability/ab3.png";
+	[Property, Group( "Utility" )] public BaseAbilityItem UtilityAbilityItem { get; set; }
 
 	[Property, Group( "Ultimate" )] public string AbilityUltimateName { get; set; } = "Ultimate";
 	[Property, Group( "Ultimate" )] public string AbilityUltimateDescription { get; set; } = "Ultimate";
 	[Property, Group( "Ultimate" )] public string AbilityUltimateIcons { get; set; } = "ui/test/ability/ab4.png";
+	[Property, Group( "Ultimate" )] public BaseAbilityItem UltimateAbilityItem { get; set; }
 
 	[Property, Group( "Passive" )] public string AbilityPassiveName { get; set; } = "Passive";
 	[Property, Group( "Passive" )] public string AbilityPassiveDescription { get; set; } = "Passive";

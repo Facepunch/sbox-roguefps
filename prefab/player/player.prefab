@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+    "__guid": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -8,63 +8,63 @@
     "Components": [
       {
         "__type": "PlayerController",
-        "__guid": "b6f05cde-92f7-4461-b846-b4ae8346311f",
+        "__guid": "ed182f4a-3ef6-4e07-9d5e-7b8b364ae141",
         "AnimationHelper": {
           "_type": "component",
-          "component_id": "85f25869-1a3a-4783-8dc9-94bfea03002d",
-          "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+          "component_id": "bd7bca4e-a68e-4780-8ea4-9bf54205c1a5",
+          "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
           "component_type": "AnimationHelper"
         },
         "Body": {
           "_type": "gameobject",
-          "go": "774d73e2-1039-4de3-91b1-c107c7108241"
+          "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef"
         },
         "CameraController": {
           "_type": "component",
-          "component_id": "7ec15c3b-8511-4498-bf92-1dd4d85cf12d",
-          "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+          "component_id": "ae619944-852a-404a-b1dd-ba8d5ad962de",
+          "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
           "component_type": "CameraController"
         },
         "CharacterController": {
           "_type": "component",
-          "component_id": "72f52037-8d40-4d85-a370-f490935e06e4",
-          "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+          "component_id": "00618c99-c737-441b-8b80-87cb43866597",
+          "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
           "component_type": "CharacterController"
         },
         "CurrentHoldType": "None",
         "Gravity": "0,0,800",
         "Head": {
           "_type": "gameobject",
-          "go": "99fb272d-df73-41fb-834a-40b57d62ff88"
+          "go": "1643a41d-4f7a-4fdd-8c10-5a9e81d33ee6"
         },
         "IsAiming": false,
         "ViewModelCamera": {
           "_type": "component",
-          "component_id": "a339518e-4c6c-41fc-b946-2fa05f285d3e",
-          "go": "3f7da407-b359-4538-ab73-b12d84b4e835",
+          "component_id": "94fa4eb5-3635-4452-a66b-4d7024c2f03c",
+          "go": "7ce1d5aa-d0e0-4131-a0c9-0560e5f2fcb5",
           "component_type": "CameraComponent"
         }
       },
       {
         "__type": "CameraController",
-        "__guid": "7ec15c3b-8511-4498-bf92-1dd4d85cf12d",
+        "__guid": "ae619944-852a-404a-b1dd-ba8d5ad962de",
         "Camera": {
           "_type": "component",
-          "component_id": "d2974fe6-6123-4ff3-80df-f6cecdb1d290",
-          "go": "dee485ba-f810-4a7b-a44e-6ccc4f9a14c2",
+          "component_id": "b94035bf-fc21-445c-816e-037b1191eca0",
+          "go": "fd9a79e8-1410-4a18-9e96-33ae7e5022d7",
           "component_type": "CameraComponent"
         },
         "HideBody": true,
         "PlayerController": {
           "_type": "component",
-          "component_id": "b6f05cde-92f7-4461-b846-b4ae8346311f",
-          "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+          "component_id": "ed182f4a-3ef6-4e07-9d5e-7b8b364ae141",
+          "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
           "component_type": "PlayerController"
         }
       },
       {
         "__type": "CharacterController",
-        "__guid": "72f52037-8d40-4d85-a370-f490935e06e4",
+        "__guid": "00618c99-c737-441b-8b80-87cb43866597",
         "Acceleration": 10,
         "Bounciness": 0.3,
         "GroundAngle": 45,
@@ -75,12 +75,12 @@
       },
       {
         "__type": "HealthComponent",
-        "__guid": "aada9ee4-0b5c-4660-ac3b-bcab1aa341c1",
+        "__guid": "2b5b2a25-e69c-446e-8ac8-2e8d95d29a68",
         "Health": 100
       },
       {
         "__type": "PlayerStats",
-        "__guid": "30cc36ab-0012-446e-b766-b75d47551800",
+        "__guid": "d8cd7488-9e43-410c-8033-f5d2e8fccc64",
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 1,
@@ -98,7 +98,7 @@
       },
       {
         "__type": "PlayerAbilities",
-        "__guid": "43b0745d-fcdf-4794-b6b2-b367fa857af0",
+        "__guid": "f963b446-86f4-484f-9311-45a79fed22f4",
         "AbilityPassiveDescription": "Passive",
         "AbilityPassiveIcons": "ui/test/ability/ab1.png",
         "AbilityPassiveName": "Passive",
@@ -116,28 +116,34 @@
         "AbilityUtilityName": "Utility",
         "PrimaryWeaponItem": {
           "_type": "component",
-          "component_id": "f2d413bd-8986-4a9c-8302-ac8191af68fa",
-          "go": "4ec45e88-fbbf-4e00-9dfa-44a54c5182c5",
+          "component_id": "f887a414-5bcb-4a63-95d5-d5fd599b319d",
+          "go": "836444bd-1465-45be-b931-21d8a2aad7a8",
           "component_type": "TestWeapon"
         },
         "SecondaryWeaponItem": {
           "_type": "component",
-          "component_id": "fceb01b9-20fb-4637-a2cf-0bf75ccbe6d2",
-          "go": "df51ea90-74c4-4d1f-a83c-78251a029c3d",
+          "component_id": "e62663ad-7965-4344-8a2d-757237aaa1a9",
+          "go": "6081a3ce-0e0b-4291-b7cc-78e562feb27f",
+          "component_type": "TestWeaponSecondary"
+        },
+        "UtilityAbilityItem": {
+          "_type": "component",
+          "component_id": "9657466b-c1c3-4864-9232-b5820e6bbbee",
+          "go": "e59025f7-c160-486b-9182-a78908813a3e",
           "component_type": "TestWeaponSecondary"
         }
       }
     ],
     "Children": [
       {
-        "__guid": "99fb272d-df73-41fb-834a-40b57d62ff88",
+        "__guid": "1643a41d-4f7a-4fdd-8c10-5a9e81d33ee6",
         "Name": "Head",
         "Position": "0,0,60",
         "Enabled": true,
         "NetworkMode": 2,
         "Children": [
           {
-            "__guid": "dee485ba-f810-4a7b-a44e-6ccc4f9a14c2",
+            "__guid": "fd9a79e8-1410-4a18-9e96-33ae7e5022d7",
             "Name": "Player Camera",
             "Position": "0,0,0",
             "Enabled": true,
@@ -145,7 +151,7 @@
             "Components": [
               {
                 "__type": "CameraComponent",
-                "__guid": "d2974fe6-6123-4ff3-80df-f6cecdb1d290",
+                "__guid": "b94035bf-fc21-445c-816e-037b1191eca0",
                 "BackgroundColor": "0.75478,0.83828,0.87624,1",
                 "ClearFlags": "All",
                 "FieldOfView": 90,
@@ -162,43 +168,43 @@
               },
               {
                 "__type": "AudioListener",
-                "__guid": "d1811010-2d32-4379-899d-e85f97c6beaa",
+                "__guid": "edbb8509-a218-4d31-804d-f79c6ac7a6b4",
                 "UseCameraDirection": true
               },
               {
                 "__type": "CameraBob",
-                "__guid": "e2425daf-a3ea-4827-838c-f916c7d1f332",
+                "__guid": "e312035b-240e-420d-ad73-77d13ccfb101",
                 "__enabled": false,
                 "PlayerController": {
                   "_type": "component",
-                  "component_id": "72f52037-8d40-4d85-a370-f490935e06e4",
-                  "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+                  "component_id": "00618c99-c737-441b-8b80-87cb43866597",
+                  "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
                   "component_type": "CharacterController"
                 }
               },
               {
                 "__type": "CameraFovChange",
-                "__guid": "99fdb43f-0f02-49d9-9c4d-0a507ec9340c",
+                "__guid": "1e3dd824-edba-47a6-bc53-31e37136e687",
                 "PlayerController": {
                   "_type": "component",
-                  "component_id": "72f52037-8d40-4d85-a370-f490935e06e4",
-                  "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+                  "component_id": "00618c99-c737-441b-8b80-87cb43866597",
+                  "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
                   "component_type": "CharacterController"
                 }
               },
               {
                 "__type": "CameraLean",
-                "__guid": "dadcb115-2087-4616-b1ff-0efc3e7fa210",
+                "__guid": "adbe75be-b0ef-4afc-8891-57e1e378e005",
                 "PlayerController": {
                   "_type": "component",
-                  "component_id": "72f52037-8d40-4d85-a370-f490935e06e4",
-                  "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+                  "component_id": "00618c99-c737-441b-8b80-87cb43866597",
+                  "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
                   "component_type": "CharacterController"
                 }
               },
               {
                 "__type": "Bloom",
-                "__guid": "8cef50ad-8c25-4a21-9a3a-db5c92c8a45e",
+                "__guid": "4096ef47-e510-4169-9957-b08cca1878e0",
                 "BloomColor": {
                   "color": [
                     {
@@ -227,12 +233,12 @@
               },
               {
                 "__type": "Highlight",
-                "__guid": "04a68e7a-805e-4e23-9a44-dbba41da13bf"
+                "__guid": "86c83989-9518-450d-bc2a-e43b221b51db"
               }
             ],
             "Children": [
               {
-                "__guid": "3f7da407-b359-4538-ab73-b12d84b4e835",
+                "__guid": "7ce1d5aa-d0e0-4131-a0c9-0560e5f2fcb5",
                 "Name": "ViewModel Camera",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -240,7 +246,7 @@
                 "Components": [
                   {
                     "__type": "CameraComponent",
-                    "__guid": "a339518e-4c6c-41fc-b946-2fa05f285d3e",
+                    "__guid": "94fa4eb5-3635-4452-a66b-4d7024c2f03c",
                     "BackgroundColor": "1,1,1,0",
                     "ClearFlags": "Depth, Stencil",
                     "FieldOfView": 75,
@@ -258,7 +264,7 @@
                 ],
                 "Children": [
                   {
-                    "__guid": "44edb22e-c68a-450b-b814-0ad9b315b561",
+                    "__guid": "fddd8270-53de-44be-a4bd-25fbd1c36e9e",
                     "Name": "VM",
                     "Position": "0,0,0",
                     "Tags": "viewmodel",
@@ -267,7 +273,7 @@
                     "Components": [
                       {
                         "__type": "SkinnedModelRenderer",
-                        "__guid": "719ceab1-5310-4c25-85d8-1cf9d1a42b3d",
+                        "__guid": "643efcd2-fedb-4ae1-99a0-2cbb1fc4ca1a",
                         "BodyGroups": 17685,
                         "CreateBoneObjects": false,
                         "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
@@ -276,11 +282,11 @@
                       },
                       {
                         "__type": "ViewModelAnimator",
-                        "__guid": "3de4d80c-9629-4eab-8b2b-7fb6de01f1d1",
+                        "__guid": "70b07866-bf9d-41f2-b228-787660485338",
                         "CameraComp": {
                           "_type": "component",
-                          "component_id": "a339518e-4c6c-41fc-b946-2fa05f285d3e",
-                          "go": "3f7da407-b359-4538-ab73-b12d84b4e835",
+                          "component_id": "94fa4eb5-3635-4452-a66b-4d7024c2f03c",
+                          "go": "7ce1d5aa-d0e0-4131-a0c9-0560e5f2fcb5",
                           "component_type": "CameraComponent"
                         },
                         "FiringMode": 0,
@@ -293,8 +299,8 @@
                         "LoweredWeapon": false,
                         "Player": {
                           "_type": "component",
-                          "component_id": "b6f05cde-92f7-4461-b846-b4ae8346311f",
-                          "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+                          "component_id": "ed182f4a-3ef6-4e07-9d5e-7b8b364ae141",
+                          "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
                           "component_type": "PlayerController"
                         },
                         "PosOffset": "0,0,0",
@@ -303,7 +309,7 @@
                     ]
                   },
                   {
-                    "__guid": "d294f8e6-a09d-4070-8856-fe5cf958bf29",
+                    "__guid": "fdb18ef8-3474-473a-8e63-7ce694b7a5b2",
                     "Name": "Object",
                     "Position": "0,0,0",
                     "Tags": "viewmodel",
@@ -312,13 +318,13 @@
                     "Components": [
                       {
                         "__type": "SkinnedModelRenderer",
-                        "__guid": "f7e18c15-b160-4984-9d0c-b66f15d867ee",
+                        "__guid": "024d5e7b-e2fd-4ef8-b411-4b5f29f36184",
                         "AnimationGraph": "models/first_person/first_person_arms_base.vanmgrph",
                         "BodyGroups": 21,
                         "BoneMergeTarget": {
                           "_type": "component",
-                          "component_id": "719ceab1-5310-4c25-85d8-1cf9d1a42b3d",
-                          "go": "44edb22e-c68a-450b-b814-0ad9b315b561",
+                          "component_id": "643efcd2-fedb-4ae1-99a0-2cbb1fc4ca1a",
+                          "go": "fddd8270-53de-44be-a4bd-25fbd1c36e9e",
                           "component_type": "SkinnedModelRenderer"
                         },
                         "CreateBoneObjects": false,
@@ -335,14 +341,14 @@
         ]
       },
       {
-        "__guid": "774d73e2-1039-4de3-91b1-c107c7108241",
+        "__guid": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
         "Name": "Body",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
-            "__guid": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
+            "__guid": "777f87aa-61d1-455d-bd32-f911b24a7106",
             "BodyGroups": 18446744073709551275,
             "CreateBoneObjects": false,
             "Model": "models/citizen/citizen.vmdl",
@@ -351,47 +357,47 @@
           },
           {
             "__type": "ModelHitboxes",
-            "__guid": "23baf5eb-955a-4705-bb32-eb90a7ebd697",
+            "__guid": "7aca3bc7-b7c8-487e-a2d2-b5829c88db6b",
             "Renderer": {
               "_type": "component",
-              "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-              "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+              "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+              "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
               "component_type": "SkinnedModelRenderer"
             },
             "Target": {
               "_type": "gameobject",
-              "go": "774d73e2-1039-4de3-91b1-c107c7108241"
+              "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef"
             }
           },
           {
             "__type": "AnimationHelper",
-            "__guid": "85f25869-1a3a-4783-8dc9-94bfea03002d",
+            "__guid": "bd7bca4e-a68e-4780-8ea4-9bf54205c1a5",
             "EyeSource": {
               "_type": "gameobject",
-              "go": "dee485ba-f810-4a7b-a44e-6ccc4f9a14c2"
+              "go": "fd9a79e8-1410-4a18-9e96-33ae7e5022d7"
             },
             "Height": 1,
             "LookAtObject": {
               "_type": "gameobject",
-              "go": "dee485ba-f810-4a7b-a44e-6ccc4f9a14c2"
+              "go": "fd9a79e8-1410-4a18-9e96-33ae7e5022d7"
             },
             "Target": {
               "_type": "component",
-              "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-              "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+              "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+              "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ],
         "Children": [
           {
-            "__guid": "b0178b2d-fb14-4608-ae4a-29654a7b6a55",
+            "__guid": "52991585-6a09-4b50-bea8-be72066f115f",
             "Name": "Clothes",
             "Enabled": true,
             "NetworkMode": 2,
             "Children": [
               {
-                "__guid": "0b342e1e-411b-427a-8490-fb8ee8d8f13f",
+                "__guid": "1d5b32f0-e1ab-4f48-a400-2671be7469d3",
                 "Name": "Helmet",
                 "Position": "242.6006,424.1199,-99.46105",
                 "Enabled": true,
@@ -399,12 +405,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "f339e991-208c-49b0-bda1-284aed2269bb",
+                    "__guid": "e5a57644-bb98-47c6-a6b0-f58faa700556",
                     "BodyGroups": 18446744073709551615,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-                      "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+                      "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+                      "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -415,19 +421,19 @@
                 ]
               },
               {
-                "__guid": "6cd8e7d8-d957-4532-bd32-38f683ed9eba",
+                "__guid": "d7ce754c-f777-4ef9-9853-06d280fb90ba",
                 "Name": "Tactical Vest",
                 "Enabled": true,
                 "NetworkMode": 2,
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "d3239f93-9b91-412a-aa92-b7a19467509a",
+                    "__guid": "404aa8d0-f85a-44b3-bdc0-cd7413034be0",
                     "BodyGroups": 18446744073709551615,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-                      "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+                      "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+                      "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -438,19 +444,19 @@
                 ]
               },
               {
-                "__guid": "9b42bbba-64a7-4c9f-abc7-ff93c3ae566f",
+                "__guid": "ba457ba9-2e8b-4567-b504-59c5b4808ecf",
                 "Name": "Top",
                 "Enabled": true,
                 "NetworkMode": 2,
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "1079e376-68ca-4d9d-b9bb-b56c765ad539",
+                    "__guid": "6ea71d8a-0d46-4b29-af1c-e6027f011c52",
                     "BodyGroups": 18446744073709551615,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-                      "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+                      "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+                      "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -461,7 +467,7 @@
                 ]
               },
               {
-                "__guid": "e27f5fd7-a76c-41d5-990f-f5bec05ac61f",
+                "__guid": "c84370fc-ca0d-4341-b96a-788a8de0b620",
                 "Name": "Gloves",
                 "Position": "242.6006,424.1199,-99.46105",
                 "Enabled": true,
@@ -469,12 +475,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "f4f9faf4-7a74-4d7e-a2a8-667a557cd021",
+                    "__guid": "e1588643-038d-408f-af6c-c1797137b1c0",
                     "BodyGroups": 18446744073709551615,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-                      "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+                      "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+                      "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -485,7 +491,7 @@
                 ]
               },
               {
-                "__guid": "e08e0d9b-05db-4a6d-9956-819d00642212",
+                "__guid": "34370558-b704-4120-88cd-86d6b50a3b26",
                 "Name": "Pants",
                 "Position": "242.6006,424.1199,-99.46105",
                 "Enabled": true,
@@ -493,12 +499,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "3d882a07-08ee-4501-8b7f-c9b1bb77a063",
+                    "__guid": "aec11cca-cb12-4641-b368-5fd72cf3c6d9",
                     "BodyGroups": 18446744073709551615,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-                      "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+                      "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+                      "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -509,7 +515,7 @@
                 ]
               },
               {
-                "__guid": "93228038-ab80-4fd6-9813-c403439062d8",
+                "__guid": "fd00157f-8e99-4b13-aedb-f249f542f2cf",
                 "Name": "Boots",
                 "Position": "242.6006,424.1199,-99.46105",
                 "Enabled": true,
@@ -517,12 +523,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "6f35651e-bc23-462c-b3ee-2a372d95c5d4",
+                    "__guid": "deed8367-5a7f-4c0f-bb91-fc926d86f07a",
                     "BodyGroups": 18446744073709551615,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "f7010a6e-5b9c-489e-bdad-c5ca54db7fec",
-                      "go": "774d73e2-1039-4de3-91b1-c107c7108241",
+                      "component_id": "777f87aa-61d1-455d-bd32-f911b24a7106",
+                      "go": "715c8d1d-43bc-42de-a04b-706bfca2d6ef",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -537,19 +543,19 @@
         ]
       },
       {
-        "__guid": "6012b36b-d000-4843-ae73-bc239acdd7d4",
+        "__guid": "1f65136f-0d0f-4274-a255-6a121680c619",
         "Name": "Mechanics",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "CrouchMechanic",
-            "__guid": "bc022aee-f46e-41fa-a569-acfb7fb1b806",
+            "__guid": "27e7a624-ac17-49d4-b681-2dda328dc103",
             "IsActive": false,
             "PlayerController": {
               "_type": "component",
-              "component_id": "b6f05cde-92f7-4461-b846-b4ae8346311f",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "ed182f4a-3ef6-4e07-9d5e-7b8b364ae141",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerController"
             },
             "Priority": 0,
@@ -558,17 +564,17 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 66.58428
+              "Relative": 2615.963
             }
           },
           {
             "__type": "SprintMechanic",
-            "__guid": "bac9e1ee-ecbd-4267-a3cb-3e27d4b4e773",
+            "__guid": "3ff5dece-23b2-4a72-9d5d-b5e98b613cba",
             "IsActive": false,
             "PlayerController": {
               "_type": "component",
-              "component_id": "b6f05cde-92f7-4461-b846-b4ae8346311f",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "ed182f4a-3ef6-4e07-9d5e-7b8b364ae141",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerController"
             },
             "Priority": 1,
@@ -577,20 +583,20 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 66.58428
+              "Relative": 2615.963
             }
           },
           {
             "__type": "SlideMechanic",
-            "__guid": "71d58e92-04cf-4550-869b-75600d46c552",
+            "__guid": "e1d43eaf-444f-4839-88b9-e8feadda8b26",
             "EyeHeight": -20,
             "IsActive": false,
             "MinimumSlideLength": 1,
             "NextSlideCooldown": 0.5,
             "PlayerController": {
               "_type": "component",
-              "component_id": "b6f05cde-92f7-4461-b846-b4ae8346311f",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "ed182f4a-3ef6-4e07-9d5e-7b8b364ae141",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerController"
             },
             "Priority": 100,
@@ -601,18 +607,18 @@
             "SpecialAbilityIcon": "ui/test/ability/ab3.jpg",
             "SpecialAbilityName": "Power Slide",
             "TimeSinceActiveChanged": {
-              "Relative": 66.58428
+              "Relative": 2615.963
             },
             "WishDirectionScale": 0.4
           },
           {
             "__type": "JumpMechanic",
-            "__guid": "27b18862-efca-41f4-92a7-a3c99a5fd439",
+            "__guid": "0fabf6b7-f81e-4057-bf8b-93b194cc0001",
             "IsActive": false,
             "PlayerStatsComponent": {
               "_type": "component",
-              "component_id": "30cc36ab-0012-446e-b766-b75d47551800",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "d8cd7488-9e43-410c-8033-f5d2e8fccc64",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerStats"
             },
             "Priority": 0,
@@ -621,13 +627,13 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 66.58428
+              "Relative": 2615.963
             }
           }
         ]
       },
       {
-        "__guid": "8e964a01-2288-4014-92c8-73186b8ff3f7",
+        "__guid": "8f836f3a-f8b7-476d-a540-472aafae7c3e",
         "Name": "Screen",
         "Position": "-978.0405,-1008.713,1398.33",
         "Enabled": true,
@@ -635,7 +641,7 @@
         "Components": [
           {
             "__type": "ScreenPanel",
-            "__guid": "2e680a34-f048-475b-9dff-b658d6b4086b",
+            "__guid": "216ab4b1-f924-4452-bf90-ed1010cab62e",
             "AutoScreenScale": true,
             "Opacity": 1,
             "Scale": 1,
@@ -643,58 +649,58 @@
           },
           {
             "__type": "AbilityUI",
-            "__guid": "f48943b2-8df4-4e74-99f0-591ebdc959e8",
+            "__guid": "2e66f9b6-b5fe-42ef-84a4-375802cbbd99",
             "MyStringValue": "Hello World!",
             "playerAbility": {
               "_type": "component",
-              "component_id": "43b0745d-fcdf-4794-b6b2-b367fa857af0",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "f963b446-86f4-484f-9311-45a79fed22f4",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerAbilities"
             },
             "playerStats": {
               "_type": "component",
-              "component_id": "30cc36ab-0012-446e-b766-b75d47551800",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "d8cd7488-9e43-410c-8033-f5d2e8fccc64",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerStats"
             }
           },
           {
             "__type": "ItemsUI",
-            "__guid": "ba2a8901-a895-4317-b0ba-a6ac49dc820f",
+            "__guid": "44d8200c-3ba9-4be6-88c0-0de9ce3d6231",
             "TargetObject": {
               "_type": "component",
-              "component_id": "30cc36ab-0012-446e-b766-b75d47551800",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "d8cd7488-9e43-410c-8033-f5d2e8fccc64",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerStats"
             }
           },
           {
             "__type": "HealthUI",
-            "__guid": "d7991664-dd8e-44fa-b46e-4ceed80f136d"
+            "__guid": "c92d2941-3528-4e03-a0d9-03ac8276986d"
           },
           {
             "__type": "CurrencyUI",
-            "__guid": "6033248a-8858-4590-affb-e70cb89e6e97",
+            "__guid": "d583c27d-8ede-4787-bf8e-0827687fdf41",
             "MyStringValue": "Hello World!"
           },
           {
             "__type": "PickedUpItemUI",
-            "__guid": "0f9f5362-3f77-499d-9f0e-4cdfb8887eb8"
+            "__guid": "abfa2043-4c1b-4aff-a974-03b6415a2c06"
           },
           {
             "__type": "StatsInfoUI",
-            "__guid": "2bc68b0f-3a2a-4370-9bc7-10e96b948494",
+            "__guid": "fcf0b980-85dd-4a07-b5bf-f0bc240ba68a",
             "PlayerStats": {
               "_type": "component",
-              "component_id": "30cc36ab-0012-446e-b766-b75d47551800",
-              "go": "e067668f-1a68-4960-bd0c-05bfe81ab7f6",
+              "component_id": "d8cd7488-9e43-410c-8033-f5d2e8fccc64",
+              "go": "95fa6772-223f-43fc-bb47-fc1802ea3d3e",
               "component_type": "PlayerStats"
             }
           }
         ]
       },
       {
-        "__guid": "9476a185-42a0-441b-ba93-e30f69a5347b",
+        "__guid": "88bf66dc-0d96-4479-8f9c-82aea1a0151e",
         "Name": "Object",
         "Position": "0,0,32.72334",
         "Enabled": true,
@@ -702,7 +708,7 @@
         "Components": [
           {
             "__type": "SphereCollider",
-            "__guid": "c6453ed8-6731-461d-9700-3c8283b0b2e1",
+            "__guid": "e3504fb7-e98e-4f6d-915c-5a958c989aa8",
             "Center": "0,0,0",
             "IsTrigger": false,
             "Radius": 16,
@@ -711,7 +717,7 @@
         ]
       },
       {
-        "__guid": "4ec45e88-fbbf-4e00-9dfa-44a54c5182c5",
+        "__guid": "836444bd-1465-45be-b931-21d8a2aad7a8",
         "Name": "PrimaryWeapon",
         "Position": "156.7419,216.0234,-57.01678",
         "Enabled": true,
@@ -719,26 +725,27 @@
         "Components": [
           {
             "__type": "TestWeapon",
-            "__guid": "f2d413bd-8986-4a9c-8302-ac8191af68fa",
+            "__guid": "f887a414-5bcb-4a63-95d5-d5fd599b319d",
+            "AbilityDescription": "Weapon",
+            "AbilityIcon": "ui/test/ability/ab1.png",
+            "AbilityName": "Weapon",
             "BulletTrace": {
               "_type": "gameobject",
               "prefab": "prefab/weapon/fx/bullettracer.prefab"
             },
-            "Icon": "ui/test/ability/ab1.png",
-            "MaxAmmoCount": 30,
-            "UsesAmmo": true,
+            "HasUses": true,
+            "MaxUseCount": 30,
+            "StatToUse": "ReloadTime",
             "ViewModelObject": {
               "_type": "gameobject",
-              "go": "44edb22e-c68a-450b-b814-0ad9b315b561"
+              "go": "fddd8270-53de-44be-a4bd-25fbd1c36e9e"
             },
-            "WeaponDescription": "Weapon",
-            "WeaponInputType": "Primary",
-            "WeaponName": "Primary"
+            "WeaponInputType": "Primary"
           }
         ]
       },
       {
-        "__guid": "df51ea90-74c4-4d1f-a83c-78251a029c3d",
+        "__guid": "6081a3ce-0e0b-4291-b7cc-78e562feb27f",
         "Name": "SecondaryWeapon",
         "Position": "156.7419,216.0234,-57.01678",
         "Enabled": true,
@@ -746,17 +753,42 @@
         "Components": [
           {
             "__type": "TestWeaponSecondary",
-            "__guid": "fceb01b9-20fb-4637-a2cf-0bf75ccbe6d2",
-            "Icon": "ui/test/ability/ab2.png",
-            "MaxAmmoCount": 30,
-            "UsesAmmo": false,
+            "__guid": "e62663ad-7965-4344-8a2d-757237aaa1a9",
+            "AbilityDescription": "Weapon",
+            "AbilityIcon": "ui/test/ability/ab1.png",
+            "AbilityName": "Weapon",
+            "HasUses": true,
+            "MaxUseCount": 30,
+            "StatToUse": "AttackSpeed",
             "ViewModelObject": {
               "_type": "gameobject",
-              "go": "44edb22e-c68a-450b-b814-0ad9b315b561"
+              "go": "fddd8270-53de-44be-a4bd-25fbd1c36e9e"
             },
-            "WeaponDescription": "Weapon",
-            "WeaponInputType": "Secondary",
-            "WeaponName": "Second"
+            "WeaponInputType": "Secondary"
+          }
+        ]
+      },
+      {
+        "__guid": "e59025f7-c160-486b-9182-a78908813a3e",
+        "Name": "SlideAbility",
+        "Position": "156.7419,216.0234,-57.01678",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "TestWeaponSecondary",
+            "__guid": "9657466b-c1c3-4864-9232-b5820e6bbbee",
+            "AbilityDescription": "Weapon",
+            "AbilityIcon": "ui/test/ability/ab1.png",
+            "AbilityName": "Weapon",
+            "HasUses": true,
+            "MaxUseCount": 1,
+            "StatToUse": "SkillOneCoolDown",
+            "ViewModelObject": {
+              "_type": "gameobject",
+              "go": "fddd8270-53de-44be-a4bd-25fbd1c36e9e"
+            },
+            "WeaponInputType": "Utility"
           }
         ]
       }

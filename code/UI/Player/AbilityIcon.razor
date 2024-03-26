@@ -16,8 +16,6 @@
 		<div class="icon @CooldownCheck" style="background-image: url('@AbilityImage')">
 		<div class="coolingdown @CooldownCheck" style="@CooldownTime"></div>
 		</div>
-
-@* 		<div class="title">@AbilityName</div> *@
 		<div class="input">@AbilityInput</div>
 	</div>	
 </root>
@@ -39,5 +37,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Time.Delta );
+	protected override int BuildHash() => System.HashCode.Combine(CooldownTime,Time.Now);
 }

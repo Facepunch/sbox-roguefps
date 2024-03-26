@@ -6,12 +6,13 @@
 
 <root>
 	<div class="abilities">
-	<AbilityIcon AbilityName="@playerAbility.PrimaryWeaponItem.WeaponName" AbilityImage="@playerAbility.PrimaryWeaponItem.Icon" AbilityInput="M1" hasAmmo="@playerAbility.PrimaryWeaponItem.UsesAmmo" AmmoCount="@playerAbility.PrimaryWeaponItem.CurrentAmmoCount"/>
+	<AbilityIcon AbilityName="@playerAbility.PrimaryWeaponItem.AbilityName" AbilityImage="@playerAbility.PrimaryWeaponItem.AbilityIcon" AbilityInput="M1" hasAmmo="@playerAbility.PrimaryWeaponItem.HasUses" AmmoCount="@playerAbility.PrimaryWeaponItem.CurrentUseCount"
+		CooldownTime="@CoolDownSecondaryBar(playerAbility.PrimaryWeaponItem.ReloadTime, playerAbility.PrimaryWeaponItem.StatToUse )" CooldownCheck="@CoolDownMessage(!playerAbility.PrimaryWeaponItem.IsReloading)"/>
 
-	<AbilityIcon AbilityName="@playerAbility.SecondaryWeaponItem.WeaponName" AbilityImage="@playerAbility.SecondaryWeaponItem.Icon" AbilityInput="M2"  hasAmmo="@playerAbility.SecondaryWeaponItem.UsesAmmo" weaponItem="@playerAbility.SecondaryWeaponItem"/>
+	<AbilityIcon AbilityName="@playerAbility.SecondaryWeaponItem.AbilityName" AbilityImage="@playerAbility.SecondaryWeaponItem.AbilityIcon" AbilityInput="M2"  hasAmmo="@playerAbility.SecondaryWeaponItem.HasUses" weaponItem="@playerAbility.SecondaryWeaponItem"/>
 	
-	<AbilityIcon AbilityName="@playerAbility.AbilityUtilityName" AbilityImage="@playerAbility.AbilityUtilityIcons" AbilityInput="C"	
-	CooldownTime="@CoolDownSecondaryBar(skillCoolDown)" CooldownCheck="@CoolDownMessage(isSkillOne)"/>
+	<AbilityIcon AbilityName="@playerAbility.UtilityAbilityItem.AbilityName" AbilityImage="@playerAbility.UtilityAbilityItem.AbilityIcon" AbilityInput="C" hasAmmo="@playerAbility.UtilityAbilityItem.HasUses" AmmoCount="@playerAbility.UtilityAbilityItem.CurrentUseCount"
+		CooldownTime="@CoolDownSecondaryBar(playerAbility.UtilityAbilityItem.ReloadTime, playerAbility.UtilityAbilityItem.StatToUse )" CooldownCheck="@CoolDownMessage(!playerAbility.UtilityAbilityItem.IsReloading)"/>
 	
 	<AbilityIcon AbilityName="@playerAbility.AbilityUltimateName" AbilityImage="@playerAbility.AbilityUltimateIcons" AbilityInput="R"/>
 	
@@ -72,9 +73,9 @@
 		}
 	}
 
-	public string CoolDownSecondaryBar(float currentCooldown)
+	public string CoolDownSecondaryBar(float currentCooldown, PlayerStats.PlayerUpgradedStats stat)
 	{
-		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SecondaryAttackCoolDown] * 100;
+		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[stat] * 100;
 		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
 		return $"bottom: {cooldownPercentage}%";
 	}
@@ -96,5 +97,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Time.Delta );
+	protected override int BuildHash() => System.HashCode.Combine(playerAbility.PrimaryWeaponItem.ReloadTime, Time.Now);
 }

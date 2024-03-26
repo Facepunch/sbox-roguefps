@@ -1,28 +1,23 @@
 using RogueFPS;
 using Sandbox;
 
-public class BaseWeaponItem : Component
+public class BaseWeaponItem : BaseAbilityItem
 {
-	[Property] public virtual string WeaponName { get; set; } = "Weapon";
-	[Property] public virtual string WeaponDescription { get; set; } = "Weapon";
-	[Property, ImageAssetPath] public virtual string Icon { get; set; } = "ui/test/ability/ab1.png";
-	[Property] public virtual bool UsesAmmo { get; set; } = true;
-	[Property,ShowIf( "UsesAmmo",true)] public virtual int MaxAmmoCount { get; set; } = 30;
-	public int CurrentAmmoCount { get; set; }
+	[Property] public override string AbilityName { get; set; } = "Weapon";
+	[Property] public override string AbilityDescription { get; set; } = "Weapon";
+	[Property, ImageAssetPath] public override string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
+	[Property] public override bool HasUses { get; set; } = true;
+	[Property,ShowIf( "UsesAmmo",true)] public override int MaxUseCount { get; set; } = 30;
 	public TimeSince LastFired { get; set; }
-	public TimeUntil ReloadTime { get; set; } = 1f;
-	public bool IsReloading { get; set; }
-	[Property] public virtual InputType WeaponInputType { get; set; } = InputType.Primary;
+	[Property] public override InputType WeaponInputType { get; set; } = InputType.Primary;
 	[Property] public GameObject ViewModelObject { get; set; }
 	public SkinnedModelRenderer ViewModel { get; set; }
-	public PlayerStats PlayerStats { get; set; }
-	public PlayerController PlayerController { get; set; }
 
 	protected override void OnAwake()
 	{
 		base.OnAwake();
 		PlayerStats = GameObject.Components.Get<PlayerStats>( FindMode.InParent );
-		CurrentAmmoCount = MaxAmmoCount;
+		CurrentUseCount = MaxUseCount;
 
 		ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
 		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
@@ -30,28 +25,8 @@ public class BaseWeaponItem : Component
 
 	protected override void OnUpdate()
 	{
+		base.OnUpdate();
 
-		if ( Input.Down( "attack1" ) && WeaponInputType == InputType.Primary )
-		{
-			if ( UsesAmmo && CurrentAmmoCount <= 0 )
-			{
-				Reload();
-				return;
-			}
-			else
-			{
-				if(LastFired >= PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed] )
-				{
-					LastFired = 0;
-					OnPrimaryFire();
-					var sprintcomp = PlayerController.Components.Get<SprintMechanic>(FindMode.EverythingInSelfAndChildren);
-					if ( sprintcomp != null )
-					{
-						sprintcomp.IsSprinting = false;
-					}
-				}
-			}
-		}
 
 		if ( Input.Down( "attack2" ) && WeaponInputType == InputType.Secondary )
 		{
@@ -59,14 +34,27 @@ public class BaseWeaponItem : Component
 		}
 
 	}
-	public virtual void Reload()
+
+	public override void DoFire()
 	{
-		Log.Info( $"Reloading: {GameObject.Name}" );
+		base.DoFire();
+
+		if ( LastFired >= PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed] )
+		{
+			LastFired = 0;
+			OnPrimaryFire();
+			var sprintcomp = PlayerController.Components.Get<SprintMechanic>( FindMode.EverythingInSelfAndChildren );
+			if ( sprintcomp != null )
+			{
+				sprintcomp.IsSprinting = false;
+			}
+		}
+
 	}
 
 	public virtual void OnPrimaryFire()
 	{
-		CurrentAmmoCount--;
+		CurrentUseCount--;
 
 		var items = PlayerStats.Components.GetAll<BaseItem>();
 		foreach ( var item in items )
@@ -93,12 +81,4 @@ public class BaseWeaponItem : Component
 	{
 		//DoNothing
 	}
-}
-public enum InputType
-{
-	Primary,
-	Secondary,
-	Utility,
-	Ultimate,
-	Passive
 }
