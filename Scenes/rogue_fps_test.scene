@@ -382,20 +382,6 @@
           "Static": false
         },
         {
-          "__type": "TestItem",
-          "__guid": "3b9c5c2d-2cb9-44bb-8025-b0a3f3f14b14",
-          "__enabled": false,
-          "Amount": 1,
-          "AsAPercent": false,
-          "ItemDescription": "Item Description",
-          "ItemName": "Test Item 1",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
-        },
-        {
           "__type": "RogueFPSItemAnimator",
           "__guid": "b695a2b7-de8e-48bf-9e04-f93fbbdb07e4"
         },
@@ -404,13 +390,14 @@
           "__guid": "37197b65-df65-4eb4-a729-0cbca7f06e64",
           "Amount": 1,
           "AsAPercent": false,
-          "ItemDescription": "Item 2 test",
+          "IsStatUpgrade": false,
+          "ItemDescription": "This is a test item 2",
           "ItemName": "Test Item 2",
           "Model": "models/editor/iv_helper.vmdl",
           "Rarity": "Common",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
+          "UpgradeAmount": 1,
+          "UpgradeIcon": "ui/test/items/hyper.png",
+          "UpgradeType": "AmountOfJumps"
         }
       ]
     },
@@ -439,20 +426,6 @@
           "Static": false
         },
         {
-          "__type": "TestItem",
-          "__guid": "56c2549c-1d70-4f39-a1f3-e2debac9bb5f",
-          "__enabled": false,
-          "Amount": 1,
-          "AsAPercent": false,
-          "ItemDescription": "Item Description",
-          "ItemName": "Test Item 1",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
-        },
-        {
           "__type": "RogueFPSItemAnimator",
           "__guid": "e318b895-6079-4ed0-85db-956f31a2ec3a"
         },
@@ -461,13 +434,14 @@
           "__guid": "0ae8ed98-0162-4d91-97ba-4fe9aeb7bf51",
           "Amount": 1,
           "AsAPercent": false,
-          "ItemDescription": "Item 2 test",
+          "IsStatUpgrade": false,
+          "ItemDescription": "This is a test item 2",
           "ItemName": "Test Item 2",
           "Model": "models/editor/iv_helper.vmdl",
           "Rarity": "Common",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
+          "UpgradeAmount": 1,
+          "UpgradeIcon": "ui/test/items/hyper.png",
+          "UpgradeType": "AmountOfJumps"
         }
       ]
     },
@@ -496,20 +470,6 @@
           "Static": false
         },
         {
-          "__type": "TestItem",
-          "__guid": "f7895f12-9b79-4d10-8693-6ffa361de86d",
-          "__enabled": false,
-          "Amount": 1,
-          "AsAPercent": false,
-          "ItemDescription": "Item Description",
-          "ItemName": "Test Item 1",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
-        },
-        {
           "__type": "RogueFPSItemAnimator",
           "__guid": "9833bb41-52da-434f-8072-9fd47b025b26"
         },
@@ -518,13 +478,14 @@
           "__guid": "cb17c1e8-bf76-49a8-9fe2-4c1bb4e4073f",
           "Amount": 1,
           "AsAPercent": false,
-          "ItemDescription": "Item 2 test",
+          "IsStatUpgrade": false,
+          "ItemDescription": "This is a test item 2",
           "ItemName": "Test Item 2",
           "Model": "models/editor/iv_helper.vmdl",
           "Rarity": "Common",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
+          "UpgradeAmount": 1,
+          "UpgradeIcon": "ui/test/items/hyper.png",
+          "UpgradeType": "AmountOfJumps"
         }
       ]
     },
@@ -3706,7 +3667,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-26T16:17:54.5906587\u002B00:00",
+  "LastSaved": "2024-03-26T17:46:19.7191025\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

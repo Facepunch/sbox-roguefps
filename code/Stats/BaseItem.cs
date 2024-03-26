@@ -27,7 +27,7 @@ public class BaseItem : Component, Component.ITriggerListener
 	private const float BaseChance = 10.0f; // 10%
 	private const float MaxChance = 80.0f; // 80%
 	public virtual float ChanceIncrementPerUpgrade { get; set; } = 5.0f; // 5%
-	//
+																		 //
 	private GameObject Player { get; set; }
 	//
 
@@ -40,28 +40,29 @@ public class BaseItem : Component, Component.ITriggerListener
 			var plyStatComp = Player.Components.Get<PlayerStats>();
 			if ( plyStatComp != null )
 			{
-					// Create an UpgradeHas object
-					//var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
-					//plyStatComp.AddUpgrade( pickedUpgrade );
+				// Create an UpgradeHas object
+				//var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
+				//plyStatComp.AddUpgrade( pickedUpgrade );
 
-					var typeDesc = TypeLibrary.GetType( GetType() );
-					//if player does not have the component, create it
-					if ( !plyStatComp.HasItem( this.ItemName ) )
-					{
-						plyStatComp.Components.Create( typeDesc );
-						plyStatComp.PickedUpItems.Add( this );
-					}
-					else
-					{
+				var typeDesc = TypeLibrary.GetType( GetType() );
+				//if player does not have the component, create it
+				if ( !plyStatComp.HasItem( this.ItemName ) )
+				{
+					plyStatComp.Components.Create( typeDesc );
+					plyStatComp.PickedUpItems.Add( this );
+				}
+				else
+				{
+					CalculateUpdgrade();
 					//if player already has the component, add the upgrade to the existing component
 					var upgradeComp = plyStatComp.GetItem( this.ItemName );
-						if ( upgradeComp != null )
-							upgradeComp.Amount++;
-					}
+					if ( upgradeComp != null )
+						upgradeComp.Amount++;
+				}
 
-				var pickupui = Player.Components.Get<PickedUpItemUI>(FindMode.EnabledInSelfAndDescendants);
-				pickupui.NewItem(ItemName, ItemDescription, UpgradeIcon, Rarity );
-				
+				var pickupui = Player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
+				pickupui.NewItem( ItemName, ItemDescription, UpgradeIcon, Rarity );
+
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
 				Log.Info( "Player picked up an upgrade" );
 				GameObject.Destroy();
@@ -79,15 +80,15 @@ public class BaseItem : Component, Component.ITriggerListener
 		//Log.Info( "Upgrade on Update" );
 	}
 
-	public virtual void DoAttackUpgrade(SceneTraceResult trace )
+	public virtual void DoAttackUpgrade( SceneTraceResult trace )
 	{
 		Log.Info( "Upgrade on Attack" );
 	}
 	public virtual void CalculateUpdgrade()
 	{
 		Log.Info( "Upgrade on Calculate" );
-
-		if( IsStatUpgrade )
+		Log.Info( IsStatUpgrade );
+		if ( IsStatUpgrade )
 		{
 			var plyStatComp = Player.Components.Get<PlayerStats>();
 
@@ -100,15 +101,39 @@ public class BaseItem : Component, Component.ITriggerListener
 				//Apply upgrade
 				if ( AsAPercent )
 				{
-					plyStatComp.ApplyUpgrade( UpgradeType.ToString(), baseStat + ( baseStat * ( UpgradeAmount / 100f ) ) );
+					plyStatComp.ApplyUpgrade( GetUpgradeStatFromBase(UpgradeType), baseStat + (baseStat * (UpgradeAmount / 100f)) );
 				}
 				else
 				{
-					plyStatComp.ApplyUpgrade( UpgradeType.ToString(), baseStat + UpgradeAmount );
+					plyStatComp.ApplyUpgrade( GetUpgradeStatFromBase(UpgradeType), baseStat + UpgradeAmount );
+					Log.Info( GetUpgradeStatFromBase( UpgradeType ) );
 				}
 			}
 
 		}
+	}
+
+	public PlayerStats.PlayerUpgradedStats GetUpgradeStatFromBase( PlayerStats.PlayerStartingStats stat)
+	{
+
+		switch ( stat )
+		{
+			case PlayerStats.PlayerStartingStats.Health:
+				return PlayerStats.PlayerUpgradedStats.Health;
+			case PlayerStats.PlayerStartingStats.WalkSpeed:
+				return PlayerStats.PlayerUpgradedStats.WalkSpeed;
+			case PlayerStats.PlayerStartingStats.JumpHeight:
+				return PlayerStats.PlayerUpgradedStats.JumpHeight;
+			case PlayerStats.PlayerStartingStats.AmountOfJumps:
+				return PlayerStats.PlayerUpgradedStats.AmountOfJumps;
+			case PlayerStats.PlayerStartingStats.AttackSpeed:
+				return PlayerStats.PlayerUpgradedStats.AttackSpeed;
+			case PlayerStats.PlayerStartingStats.SprintMultiplier:
+				return PlayerStats.PlayerUpgradedStats.SprintMultiplier;
+			default:
+				return PlayerStats.PlayerUpgradedStats.Health;
+		}
+
 	}
 
 	public bool ShouldEffectTrigger( int upgradeAmount )
@@ -128,31 +153,3 @@ public class BaseItem : Component, Component.ITriggerListener
 		//Log.Info( "OnTriggerExit" );
 	}
 }
-//keeping this around might be useful later.
-/*
-if ( other.GameObject.Tags.Has( "player" ) )
-{
-	Player = other.GameObject.Parent;
-	Log.Info( "apply" );
-	var stats = Player.GetComponent<RogueFPSPlayerStats>();
-	if ( stats != null )
-	{
-		var current = TypeLibrary.GetPropertyValue( stats, UpgradeType.ToString() );
-
-		if ( AsAPercent )
-		{
-			stats.ApplyUpgrade( UpgradeType.ToString(), (float)current + (float)current * (UpgradeAmount / 100f) );
-		}
-		else
-		{
-			stats.ApplyUpgrade( UpgradeType.ToString(), (float)current + UpgradeAmount );
-		}
-
-		GameObject.Parent.Destroy();
-	}
-	else
-	{
-		Log.Warning( "RogueFPSPlayerStats component not found on the player." );
-	}
-}
-*/

@@ -124,10 +124,16 @@ public sealed class PlayerStats : Component
 		Components.Create( typeDesc );
 	}
 
-	public void ApplyUpgrade( string upgradeName, float upgradeAmount )
+	//public void ApplyUpgrade( string upgradeName, float upgradeAmount )
+	//{
+	//	TypeLibrary.SetProperty( this, upgradeName, upgradeAmount );
+	//	Log.Info( $"Applied {upgradeName} upgrade to {upgradeAmount}." );
+	//}
+
+	public void ApplyUpgrade( PlayerUpgradedStats stat, float amount )
 	{
-		TypeLibrary.SetProperty( this, upgradeName, upgradeAmount );
-		//Log.Info( $"Applied {upgradeName} upgrade to {upgradeAmount}." );
+		UpgradedStats[stat] += amount;
+		Log.Info( $"Applied {stat} upgrade to {amount}." );
 	}
 
 	//public void AddUpgrade( UpgradeHas upgrade )
