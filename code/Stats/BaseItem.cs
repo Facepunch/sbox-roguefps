@@ -28,9 +28,16 @@ public class BaseItem : Component, Component.ITriggerListener
 	private const float MaxChance = 80.0f; // 80%
 	public virtual float ChanceIncrementPerUpgrade { get; set; } = 5.0f; // 5%
 																		 //
-	private GameObject Player { get; set; }
+	public GameObject Player { get; set; }
 	//
 
+	protected override void OnAwake()
+	{
+		base.OnAwake();
+		var highlight = Components.Get<HighlightOutline>();
+		if ( highlight != null )
+		highlight.Color = PlayerStats.GetRarityColor( Rarity );
+	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
 	{
@@ -48,23 +55,24 @@ public class BaseItem : Component, Component.ITriggerListener
 				//if player does not have the component, create it
 				if ( !plyStatComp.HasItem( this.ItemName ) )
 				{
+					CalculateUpdgrade();
 					plyStatComp.Components.Create( typeDesc );
 					plyStatComp.PickedUpItems.Add( this );
 				}
 				else
 				{
-					CalculateUpdgrade();
 					//if player already has the component, add the upgrade to the existing component
 					var upgradeComp = plyStatComp.GetItem( this.ItemName );
 					if ( upgradeComp != null )
 						upgradeComp.Amount++;
+
+					CalculateUpdgrade();
 				}
 
 				var pickupui = Player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
 				pickupui.NewItem( ItemName, ItemDescription, UpgradeIcon, Rarity );
 
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
-				Log.Info( "Player picked up an upgrade" );
 				GameObject.Destroy();
 			}
 
@@ -87,53 +95,40 @@ public class BaseItem : Component, Component.ITriggerListener
 	public virtual void CalculateUpdgrade()
 	{
 		Log.Info( "Upgrade on Calculate" );
-		Log.Info( IsStatUpgrade );
+
 		if ( IsStatUpgrade )
 		{
 			var plyStatComp = Player.Components.Get<PlayerStats>();
 
+			var item = plyStatComp.GetItem(ItemName);
+
 			if ( plyStatComp != null )
 			{
-				//Get base stat value
-
-				var baseStat = plyStatComp.GetStartingStat( UpgradeType );
-
-				//Apply upgrade
 				if ( AsAPercent )
 				{
-					plyStatComp.ApplyUpgrade( GetUpgradeStatFromBase(UpgradeType), baseStat + (baseStat * (UpgradeAmount / 100f)) );
+					if ( item != null )
+					{
+						plyStatComp.UpgradedStats[plyStatComp.ConvertToUpgradedStat( UpgradeType )] = plyStatComp.GetStartingStat( UpgradeType ) + (UpgradeAmount / 100) * item.Amount;
+					}
+					else
+					{
+						plyStatComp.UpgradedStats[plyStatComp.ConvertToUpgradedStat( UpgradeType )] = plyStatComp.GetStartingStat( UpgradeType ) + (plyStatComp.GetStartingStat( UpgradeType ) * (UpgradeAmount / 100));
+					}
 				}
 				else
 				{
-					plyStatComp.ApplyUpgrade( GetUpgradeStatFromBase(UpgradeType), baseStat + UpgradeAmount );
-					Log.Info( GetUpgradeStatFromBase( UpgradeType ) );
+					if ( item != null )
+					{
+						plyStatComp.UpgradedStats[plyStatComp.ConvertToUpgradedStat( UpgradeType )] = plyStatComp.GetStartingStat( UpgradeType ) + UpgradeAmount * item.Amount;
+					}
+					else
+					{
+						plyStatComp.UpgradedStats[plyStatComp.ConvertToUpgradedStat( UpgradeType )] = plyStatComp.GetStartingStat( UpgradeType ) + UpgradeAmount;
+					}
 				}
 			}
 
 		}
-	}
-
-	public PlayerStats.PlayerUpgradedStats GetUpgradeStatFromBase( PlayerStats.PlayerStartingStats stat)
-	{
-
-		switch ( stat )
-		{
-			case PlayerStats.PlayerStartingStats.Health:
-				return PlayerStats.PlayerUpgradedStats.Health;
-			case PlayerStats.PlayerStartingStats.WalkSpeed:
-				return PlayerStats.PlayerUpgradedStats.WalkSpeed;
-			case PlayerStats.PlayerStartingStats.JumpHeight:
-				return PlayerStats.PlayerUpgradedStats.JumpHeight;
-			case PlayerStats.PlayerStartingStats.AmountOfJumps:
-				return PlayerStats.PlayerUpgradedStats.AmountOfJumps;
-			case PlayerStats.PlayerStartingStats.AttackSpeed:
-				return PlayerStats.PlayerUpgradedStats.AttackSpeed;
-			case PlayerStats.PlayerStartingStats.SprintMultiplier:
-				return PlayerStats.PlayerUpgradedStats.SprintMultiplier;
-			default:
-				return PlayerStats.PlayerUpgradedStats.Health;
-		}
-
 	}
 
 	public bool ShouldEffectTrigger( int upgradeAmount )

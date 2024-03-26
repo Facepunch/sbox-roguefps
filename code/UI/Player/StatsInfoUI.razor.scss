@@ -1,0 +1,40 @@
+StatsInfoUI {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+
+	.stats {
+		display: flex;
+		flex-direction: column;
+		padding: 50px;
+		right: 0;
+		position: absolute;
+		font-family: Poppins;
+		color: white;
+	}
+
+	.stat {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 4px;
+		padding: 4px;
+		background-color: rgb(0, 0, 0, 0.32);
+	}
+
+	.name {
+		font-weight: bold;
+		font-size: 10px;
+	}
+
+	.value {
+		font-style: italic;
+		font-size: 18px;
+		padding-left:30px;
+	}
+}

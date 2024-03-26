@@ -387,105 +387,20 @@
         },
         {
           "__type": "TestTwoItem",
-          "__guid": "37197b65-df65-4eb4-a729-0cbca7f06e64",
+          "__guid": "2f46bd7f-8abb-4984-a246-4f783231a81b",
           "Amount": 1,
           "AsAPercent": false,
-          "IsStatUpgrade": false,
-          "ItemDescription": "This is a test item 2",
-          "ItemName": "Test Item 2",
           "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        }
-      ]
-    },
-    {
-      "__guid": "acd9ed0a-346a-4030-a391-13136dff4cb5",
-      "Name": "Sphere (2)",
-      "Position": "-224,160,32",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "0a2d39ee-6afa-47c9-a49f-042f59aa4a4d",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Rarity": "Uncommon"
         },
         {
-          "__type": "SphereCollider",
-          "__guid": "ccc63f66-f2a2-4132-8083-edb2c90cff2c",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "RogueFPSItemAnimator",
-          "__guid": "e318b895-6079-4ed0-85db-956f31a2ec3a"
-        },
-        {
-          "__type": "TestTwoItem",
-          "__guid": "0ae8ed98-0162-4d91-97ba-4fe9aeb7bf51",
-          "Amount": 1,
-          "AsAPercent": false,
-          "IsStatUpgrade": false,
-          "ItemDescription": "This is a test item 2",
-          "ItemName": "Test Item 2",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
-        }
-      ]
-    },
-    {
-      "__guid": "ed7552fa-90e1-40eb-9100-000ae8da9cd8",
-      "Name": "Sphere (3)",
-      "Position": "-160,160,32",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "c1f051db-b637-4bbe-adc3-0cdad5cf1074",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "31e1d286-cd93-4e33-910f-3c896bc11fe5",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "RogueFPSItemAnimator",
-          "__guid": "9833bb41-52da-434f-8072-9fd47b025b26"
-        },
-        {
-          "__type": "TestTwoItem",
-          "__guid": "cb17c1e8-bf76-49a8-9fe2-4c1bb4e4073f",
-          "Amount": 1,
-          "AsAPercent": false,
-          "IsStatUpgrade": false,
-          "ItemDescription": "This is a test item 2",
-          "ItemName": "Test Item 2",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Common",
-          "UpgradeAmount": 1,
-          "UpgradeIcon": "ui/test/items/hyper.png",
-          "UpgradeType": "AmountOfJumps"
+          "__type": "HighlightOutline",
+          "__guid": "f05f4fd3-a41f-4db5-b825-12839e5f8424",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
         }
       ]
     },
@@ -519,102 +434,21 @@
         },
         {
           "__type": "TestItem",
-          "__guid": "2c03df0f-cdbf-4cc4-942e-4642be84ac4d",
+          "__guid": "1f55bd2f-baa7-466e-b07c-8a2c390ab6a0",
           "Amount": 1,
-          "AsAPercent": false,
-          "ItemDescription": "Item Description",
-          "ItemName": "Test Item 1",
+          "IsStatUpgrade": true,
+          "ItemName": "Speed Boost",
           "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Uncommon",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
-        }
-      ]
-    },
-    {
-      "__guid": "dc0c4df1-804e-45ff-9840-b71454480ab4",
-      "Name": "Bob (1)",
-      "Position": "-224,64,32",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "4fd9ac82-e25d-462b-9327-3331e374da77",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_props/beachball.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Rarity": "Rare"
         },
         {
-          "__type": "SphereCollider",
-          "__guid": "6d4759e8-f818-4dc0-8edf-60dc7857495b",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "RogueFPSItemAnimator",
-          "__guid": "ef496273-6b14-4462-b025-4dd451e0230e"
-        },
-        {
-          "__type": "TestItem",
-          "__guid": "45d6cd22-c0bc-4eb2-bcce-7c89bb0e68ba",
-          "Amount": 1,
-          "AsAPercent": false,
-          "ItemDescription": "Item Description",
-          "ItemName": "Test Item 1",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Uncommon",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
-        }
-      ]
-    },
-    {
-      "__guid": "e99368d3-5b0d-44fe-b8f6-7975e7ac9c9a",
-      "Name": "Bob (2)",
-      "Position": "-160,64,32",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "0f7b3d5f-689b-4224-804d-8c13f6327ca8",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_props/beachball.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "4541380e-87fb-45b7-9d59-fc7b5f094de5",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "RogueFPSItemAnimator",
-          "__guid": "fe992746-1507-488d-ae9c-317adff9839e"
-        },
-        {
-          "__type": "TestItem",
-          "__guid": "cf230f85-e452-41a3-a4f6-986bd8ea7bb2",
-          "Amount": 1,
-          "AsAPercent": false,
-          "ItemDescription": "Item Description",
-          "ItemName": "Test Item 1",
-          "Model": "models/editor/iv_helper.vmdl",
-          "Rarity": "Uncommon",
-          "UpgradeAmount": 100,
-          "UpgradeIcon": "materials/editor/upgrade.png",
-          "UpgradeType": "Health"
+          "__type": "HighlightOutline",
+          "__guid": "7639ffae-58e1-4b9e-b318-dcd160316756",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
         }
       ]
     },
@@ -3667,7 +3501,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-26T17:46:19.7191025\u002B00:00",
+  "LastSaved": "2024-03-26T21:01:10.2397961\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

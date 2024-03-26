@@ -8,7 +8,7 @@
  		@foreach (var upgrade in TargetObject.GetAllItems())
 		{
 			<div class="upgrade">
-				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.UpgradeIcon'); border: 2px solid @GetRarityColor(upgrade.Rarity)"></div>
+				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(upgrade.Rarity)"></div>
 				@* <div class="name">@upgrade.Name</div>*@
 				<div class="amount">@upgrade.Amount</div>
 			</div>
@@ -30,27 +30,6 @@
 @code
 {
 	[Property] PlayerStats TargetObject { get; set; }
-
-	//Returns the color of the rarity as Hex
-	string GetRarityColor(BaseItem.UpgradeRarity upgrade)
-	{
-		switch (upgrade)
-		{
-			case BaseItem.UpgradeRarity.Common:
-				return "#3A3A3C";
-			case BaseItem.UpgradeRarity.Uncommon:
-				return "#1DB954";
-			case BaseItem.UpgradeRarity.Rare:
-				return "#0077B5";
-			case BaseItem.UpgradeRarity.Epic:
-				return "#9B30FF";
-			case BaseItem.UpgradeRarity.Legendary:
-				return "#E00707";
-			default:
-				return "#FFFFFF";
-		}
-
-	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt

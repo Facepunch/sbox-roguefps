@@ -6,9 +6,9 @@
 	@if (CurrentItem != null)
 	{
 		<div class="container">
-			<div class="icon" style="background-image: url('@CurrentItem.Icon'); box-shadow: 0 0 50px 10px @GetRarityColor(CurrentItem.Rarity)"></div>
+			<div class="icon" style="background-image: url('@CurrentItem.Icon'); box-shadow: 0 0 50px 10px @PlayerStats.GetRarityColor(CurrentItem.Rarity)"></div>
 			<div class="text">
-				<div class="name" style="color:@GetRarityColor(CurrentItem.Rarity)">@CurrentItem.Name</div>
+				<div class="name" style="color:@PlayerStats.GetRarityColor(CurrentItem.Rarity)">@CurrentItem.Name</div>
 				<div class="description">@CurrentItem.Description</div>
 			</div>
 		</div>
@@ -70,25 +70,6 @@
 			{
 				var nextItem = Items.Peek(); // Peek at the next item without removing it
 			}
-		}
-	}
-
-	string GetRarityColor(BaseItem.UpgradeRarity upgrade)
-	{
-		switch (upgrade)
-		{
-			case BaseItem.UpgradeRarity.Common:
-				return "#3A3A3C";
-			case BaseItem.UpgradeRarity.Uncommon:
-				return "#1DB954";
-			case BaseItem.UpgradeRarity.Rare:
-				return "#0077B5";
-			case BaseItem.UpgradeRarity.Epic:
-				return "#9B30FF";
-			case BaseItem.UpgradeRarity.Legendary:
-				return "#E00707";
-			default:
-				return "#FFFFFF";
 		}
 	}
 

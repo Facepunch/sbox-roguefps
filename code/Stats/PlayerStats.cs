@@ -190,6 +190,11 @@ public sealed class PlayerStats : Component
 		return Enum.TryParse( upgradedStat.ToString(), out PlayerStartingStats startingStat ) ? startingStat : default;
 	}
 
+	public PlayerUpgradedStats ConvertToUpgradedStat( PlayerStartingStats startingStat )
+	{
+		return Enum.TryParse( startingStat.ToString(), out PlayerUpgradedStats upgradedStat ) ? upgradedStat : default;
+	}
+
 	public float GetStartingStat( PlayerStartingStats stat )
 	{
 		return StartingStats.ContainsKey( stat ) ? StartingStats[stat] : 0f;
@@ -299,5 +304,23 @@ public sealed class PlayerStats : Component
 		UpgradedStats[PlayerUpgradedStats.UltimateCoolDown] = UltimateCoolDown;
 		UpgradedStats[PlayerUpgradedStats.UltimateUses] = UltimateUses;
 
+	}
+	public static string GetRarityColor( UpgradeRarity upgrade )
+	{
+		switch ( upgrade )
+		{
+			case UpgradeRarity.Common:
+				return "#3A3A3C";
+			case UpgradeRarity.Uncommon:
+				return "#1DB954";
+			case UpgradeRarity.Rare:
+				return "#0077B5";
+			case UpgradeRarity.Epic:
+				return "#9B30FF";
+			case UpgradeRarity.Legendary:
+				return "#E00707";
+			default:
+				return "#FFFFFF";
+		}
 	}
 }

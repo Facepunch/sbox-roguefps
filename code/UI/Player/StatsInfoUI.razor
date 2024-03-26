@@ -1,0 +1,42 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="stats">
+@* 		@foreach (var stat in PlayerStats.StartingStats)
+		{
+			<div class="stat">
+				<div class="name">@stat.Key</div>
+				<div class="value">@stat.Value</div>
+			</div>
+		} *@
+		@foreach (var stat in PlayerStats.UpgradedStats)
+		{
+			<div class="stat">
+				<div class="name">@stat.Key</div>
+				<div class="value">@stat.Value</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	[Property] public PlayerStats PlayerStats { get; set; } // You'll need to set this from your game code
+
+	protected override void OnAwake()
+	{
+		base.OnAwake();
+
+		// Here, you would typically find and set the PlayerStats component.
+		// This might involve finding the player entity and then accessing its PlayerStats component.
+		// For example:
+		// PlayerStats = FindPlayer().Components.Get<PlayerStats>();
+	}
+
+	/// <summary>
+	/// The hash determines if the system should be rebuilt. If it changes, it will be rebuilt.
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
+}
