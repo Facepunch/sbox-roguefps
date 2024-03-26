@@ -24,9 +24,6 @@ public sealed class PlayerStats : Component
 	[Property, Group( "Skill" )] public float UltimateUses { get; set; } = 1f;
 	//
 	public List<BaseItem> PickedUpItems { get; set; } = new List<BaseItem>();
-
-	//Keep Track of the Items Player has
-	public Dictionary<string, UpgradeHas> PickedUpUpgrades { get; private set; }
 	//
 
 	//Coin and XP
@@ -114,7 +111,7 @@ public sealed class PlayerStats : Component
 	protected override void OnStart()
 	{
 		base.OnStart();
-		PickedUpUpgrades = new Dictionary<string, UpgradeHas>();
+		//PickedUpUpgrades = new Dictionary<string, UpgradeHas>();
 
 		//	StartingStats = new Dictionary<PlayerStartingStats, float>();
 		//	UpgradedStats = new Dictionary<PlayerUpgradedStats, float>();
@@ -133,21 +130,21 @@ public sealed class PlayerStats : Component
 		//Log.Info( $"Applied {upgradeName} upgrade to {upgradeAmount}." );
 	}
 
-	public void AddUpgrade( UpgradeHas upgrade )
-	{
-		if ( PickedUpUpgrades.TryGetValue( upgrade.Name, out UpgradeHas existingUpgrade ) )
-		{
-			existingUpgrade.Amount++;
-			PickedUpUpgrades[upgrade.Name] = existingUpgrade;
-		}
-		else
-		{
-			upgrade.Amount = 1;
-			PickedUpUpgrades.Add( upgrade.Name, upgrade );
-		}
+	//public void AddUpgrade( UpgradeHas upgrade )
+	//{
+	//	if ( PickedUpUpgrades.TryGetValue( upgrade.Name, out UpgradeHas existingUpgrade ) )
+	//	{
+	//		existingUpgrade.Amount++;
+	//		PickedUpUpgrades[upgrade.Name] = existingUpgrade;
+	//	}
+	//	else
+	//	{
+	//		upgrade.Amount = 1;
+	//		PickedUpUpgrades.Add( upgrade.Name, upgrade );
+	//	}
 
-		Log.Info( $"Picked up upgrade: {upgrade.Name}, Total: {PickedUpUpgrades[upgrade.Name].Amount}" );
-	}
+	//	Log.Info( $"Picked up upgrade: {upgrade.Name}, Total: {PickedUpUpgrades[upgrade.Name].Amount}" );
+	//}
 
 	public void AddCoin( int amount )
 	{
@@ -175,8 +172,12 @@ public sealed class PlayerStats : Component
 	}
 	public BaseItem GetItem( string item )
 	{
-		//get the component with the item name
 		return Components.GetAll<BaseItem>().FirstOrDefault( x => x.ItemName == item );
+	}
+
+	public List<BaseItem> GetAllItems()
+	{
+		return Components.GetAll<BaseItem>().ToList();
 	}
 	public PlayerStartingStats ConvertToStartingStat( PlayerUpgradedStats upgradedStat )
 	{

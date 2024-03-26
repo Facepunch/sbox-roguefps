@@ -11,21 +11,6 @@ namespace RogueFPS;
 [EditorHandle( "materials/editor/upgrade.png" )]
 public class BaseItem : Component, Component.ITriggerListener
 {
-	public struct UpgradeHas
-	{
-		public string Icon;
-		public string Name;
-		public int Amount;
-		public UpgradeRarity Rarity;
-
-		public UpgradeHas( string icon, string name, int amount, UpgradeRarity rarity )
-		{
-			Icon = icon;
-			Name = name;
-			Amount = amount;
-			Rarity = rarity;
-		}
-	}
 	public enum UpgradeRarity
 	{ Common, Uncommon, Rare, Epic, Legendary }
 
@@ -56,22 +41,20 @@ public class BaseItem : Component, Component.ITriggerListener
 			if ( plyStatComp != null )
 			{
 					// Create an UpgradeHas object
-					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
-					plyStatComp.AddUpgrade( pickedUpgrade );
+					//var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
+					//plyStatComp.AddUpgrade( pickedUpgrade );
 
 					var typeDesc = TypeLibrary.GetType( GetType() );
 					//if player does not have the component, create it
 					if ( !plyStatComp.HasItem( this.ItemName ) )
 					{
-						var comp = plyStatComp.Components.Create( typeDesc );
-						//plyStatComp.AddItem( comp );
+						plyStatComp.Components.Create( typeDesc );
 						plyStatComp.PickedUpItems.Add( this );
 					}
 					else
 					{
 					//if player already has the component, add the upgrade to the existing component
 					var upgradeComp = plyStatComp.GetItem( this.ItemName );
-					Log.Info( $"Upgrade component: {upgradeComp}" );
 						if ( upgradeComp != null )
 							upgradeComp.Amount++;
 					}

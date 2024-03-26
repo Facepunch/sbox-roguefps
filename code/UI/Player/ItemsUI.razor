@@ -5,10 +5,10 @@
 <root>
 	<div class="upgrades">
 
- 		@foreach (var upgrade in TargetObject.PickedUpUpgrades.Values)
+ 		@foreach (var upgrade in TargetObject.GetAllItems())
 		{
 			<div class="upgrade">
-				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.Icon'); border: 2px solid @GetRarityColor(upgrade.Rarity)"></div>
+				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.UpgradeIcon'); border: 2px solid @GetRarityColor(upgrade.Rarity)"></div>
 				@* <div class="name">@upgrade.Name</div>*@
 				<div class="amount">@upgrade.Amount</div>
 			</div>
