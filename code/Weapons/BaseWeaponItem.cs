@@ -68,7 +68,7 @@ public class BaseWeaponItem : Component
 	{
 		CurrentAmmoCount--;
 
-		var items = PlayerStats.Components.GetAll<PlayerUpgrade>();
+		var items = PlayerStats.Components.GetAll<BaseItem>();
 		foreach ( var item in items )
 		{
 			item.DoAttackUpgrade( TraceBullet( Scene.Camera.Transform.Position, Scene.Camera.Transform.Position + Scene.Camera.Transform.Rotation.Forward * 1000f ) );

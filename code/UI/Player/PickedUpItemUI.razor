@@ -21,9 +21,9 @@
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public string Icon { get; set; }
-		public PlayerUpgrade.UpgradeRarity Rarity { get; set; }
+		public BaseItem.UpgradeRarity Rarity { get; set; }
 
-		public Item(string name, string description, string icon, PlayerUpgrade.UpgradeRarity rarity)
+		public Item(string name, string description, string icon, BaseItem.UpgradeRarity rarity)
 		{
 			Name = name;
 			Description = description;
@@ -55,7 +55,7 @@
 		}
 	}
 
-	public void NewItem(string name, string description, string icon, PlayerUpgrade.UpgradeRarity rarity)
+	public void NewItem(string name, string description, string icon, BaseItem.UpgradeRarity rarity)
 	{
 		var newItem = new Item(name, description, icon, rarity);
 		Items.Enqueue(newItem); // Add new items to the end of the queue
@@ -69,24 +69,23 @@
 			if (Items.Any())
 			{
 				var nextItem = Items.Peek(); // Peek at the next item without removing it
-				Log.Info($"Next item: {nextItem.Name}");
 			}
 		}
 	}
 
-	string GetRarityColor(PlayerUpgrade.UpgradeRarity upgrade)
+	string GetRarityColor(BaseItem.UpgradeRarity upgrade)
 	{
 		switch (upgrade)
 		{
-			case PlayerUpgrade.UpgradeRarity.Common:
+			case BaseItem.UpgradeRarity.Common:
 				return "#3A3A3C";
-			case PlayerUpgrade.UpgradeRarity.Uncommon:
+			case BaseItem.UpgradeRarity.Uncommon:
 				return "#1DB954";
-			case PlayerUpgrade.UpgradeRarity.Rare:
+			case BaseItem.UpgradeRarity.Rare:
 				return "#0077B5";
-			case PlayerUpgrade.UpgradeRarity.Epic:
+			case BaseItem.UpgradeRarity.Epic:
 				return "#9B30FF";
-			case PlayerUpgrade.UpgradeRarity.Legendary:
+			case BaseItem.UpgradeRarity.Legendary:
 				return "#E00707";
 			default:
 				return "#FFFFFF";

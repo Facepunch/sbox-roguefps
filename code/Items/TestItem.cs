@@ -1,7 +1,8 @@
 ﻿using RogueFPS;
 
-public class TestItem : PlayerUpgrade
+public class TestItem : BaseItem
 {
+	[Property] public override string ItemName {get; set; } = "Test Item 1";
 	private GameObject BulletTrace { get; set; } = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/weapon/fx/bullettracertest.prefab" ) );
 	public override bool IsStatUpgrade { get; set; } = false;
 

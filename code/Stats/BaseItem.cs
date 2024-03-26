@@ -5,11 +5,11 @@ using static RogueFPS.PlayerStats;
 
 namespace RogueFPS;
 
-[Title( "Upgrade" )]
-[Category( "Player Upgrade" )]
+[Title( "Base Item" )]
+[Category( "Item" )]
 [Icon( "upgrade", "red", "white" )]
 [EditorHandle( "materials/editor/upgrade.png" )]
-public class PlayerUpgrade : Component, Component.ITriggerListener
+public class BaseItem : Component, Component.ITriggerListener
 {
 	public struct UpgradeHas
 	{
@@ -31,14 +31,14 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 
 	[Property, ImageAssetPath] public virtual string UpgradeIcon { get; set; } = "materials/editor/upgrade.png";
 	[Property] public virtual bool IsStatUpgrade { get; set; } = true;
-	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual PlayerStats.PlayerUpgradedStats UpgradeType { get; set; } = PlayerStats.PlayerUpgradedStats.Health;
+	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual PlayerStats.PlayerStartingStats UpgradeType { get; set; } = PlayerStats.PlayerStartingStats.Health;
 	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual float UpgradeAmount { get; set; } = 100f;
 	[Property, ShowIf( nameof( IsStatUpgrade ), true )] public virtual bool AsAPercent { get; set; } = false;
 	[Property] public virtual UpgradeRarity Rarity { get; set; } = UpgradeRarity.Common;
 	[Property] public virtual string ItemName { get; set; } = "Item Name";
 	[Property, TextArea] public virtual string ItemDescription { get; set; } = "Item Description";
 	[Property] public virtual Model Model { get; set; } = Model.Load( "models/editor/iv_helper.vmdl_c" );
-	public int Amount { get; set; } = 1;
+	[Property] public int Amount { get; set; } = 1;
 	private const float BaseChance = 10.0f; // 10%
 	private const float MaxChance = 80.0f; // 80%
 	public virtual float ChanceIncrementPerUpgrade { get; set; } = 5.0f; // 5%
@@ -55,41 +55,26 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 			var plyStatComp = Player.Components.Get<PlayerStats>();
 			if ( plyStatComp != null )
 			{
-				if ( IsStatUpgrade )
-				{
-					// Convert upgraded stat to starting stat
-					PlayerStartingStats startingStatType = plyStatComp.ConvertToStartingStat( UpgradeType );
-
-					// Get the starting stat value
-					float startingStatValue = plyStatComp.GetStartingStat( startingStatType );
-					float upgradeValue = AsAPercent ? startingStatValue * (UpgradeAmount / 100f) : UpgradeAmount;
-
-					// Apply the upgrade
-					plyStatComp.Modify( UpgradeType, upgradeValue );
-
-					// Create an UpgradeHas object
-					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
-					plyStatComp.AddUpgrade( pickedUpgrade );
-				}
-				else
-				{
 					// Create an UpgradeHas object
 					var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
 					plyStatComp.AddUpgrade( pickedUpgrade );
 
 					var typeDesc = TypeLibrary.GetType( GetType() );
 					//if player does not have the component, create it
-					if ( plyStatComp.Components.Get<PlayerUpgrade>() == null )
+					if ( !plyStatComp.HasItem( this.ItemName ) )
 					{
-						Player.Components.Create( typeDesc );
+						var comp = plyStatComp.Components.Create( typeDesc );
+						//plyStatComp.AddItem( comp );
+						plyStatComp.PickedUpItems.Add( this );
 					}
 					else
 					{
-						//if player already has the component, add the upgrade to the existing component
-						var upgradeComp = plyStatComp.Components.Get<PlayerUpgrade>();
-						upgradeComp.Amount++;
+					//if player already has the component, add the upgrade to the existing component
+					var upgradeComp = plyStatComp.GetItem( this.ItemName );
+					Log.Info( $"Upgrade component: {upgradeComp}" );
+						if ( upgradeComp != null )
+							upgradeComp.Amount++;
 					}
-				}
 
 				var pickupui = Player.Components.Get<PickedUpItemUI>(FindMode.EnabledInSelfAndDescendants);
 				pickupui.NewItem(ItemName, ItemDescription, UpgradeIcon, Rarity );
@@ -114,6 +99,33 @@ public class PlayerUpgrade : Component, Component.ITriggerListener
 	public virtual void DoAttackUpgrade(SceneTraceResult trace )
 	{
 		Log.Info( "Upgrade on Attack" );
+	}
+	public virtual void CalculateUpdgrade()
+	{
+		Log.Info( "Upgrade on Calculate" );
+
+		if( IsStatUpgrade )
+		{
+			var plyStatComp = Player.Components.Get<PlayerStats>();
+
+			if ( plyStatComp != null )
+			{
+				//Get base stat value
+
+				var baseStat = plyStatComp.GetStartingStat( UpgradeType );
+
+				//Apply upgrade
+				if ( AsAPercent )
+				{
+					plyStatComp.ApplyUpgrade( UpgradeType.ToString(), baseStat + ( baseStat * ( UpgradeAmount / 100f ) ) );
+				}
+				else
+				{
+					plyStatComp.ApplyUpgrade( UpgradeType.ToString(), baseStat + UpgradeAmount );
+				}
+			}
+
+		}
 	}
 
 	public bool ShouldEffectTrigger( int upgradeAmount )

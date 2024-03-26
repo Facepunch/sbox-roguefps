@@ -32,19 +32,19 @@
 	[Property] PlayerStats TargetObject { get; set; }
 
 	//Returns the color of the rarity as Hex
-	string GetRarityColor(PlayerUpgrade.UpgradeRarity upgrade)
+	string GetRarityColor(BaseItem.UpgradeRarity upgrade)
 	{
 		switch (upgrade)
 		{
-			case PlayerUpgrade.UpgradeRarity.Common:
+			case BaseItem.UpgradeRarity.Common:
 				return "#3A3A3C";
-			case PlayerUpgrade.UpgradeRarity.Uncommon:
+			case BaseItem.UpgradeRarity.Uncommon:
 				return "#1DB954";
-			case PlayerUpgrade.UpgradeRarity.Rare:
+			case BaseItem.UpgradeRarity.Rare:
 				return "#0077B5";
-			case PlayerUpgrade.UpgradeRarity.Epic:
+			case BaseItem.UpgradeRarity.Epic:
 				return "#9B30FF";
-			case PlayerUpgrade.UpgradeRarity.Legendary:
+			case BaseItem.UpgradeRarity.Legendary:
 				return "#E00707";
 			default:
 				return "#FFFFFF";
