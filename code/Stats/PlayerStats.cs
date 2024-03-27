@@ -220,18 +220,6 @@ public sealed class PlayerStats : Component
 		}
 		
 	}
-	
-	//Handle Ability Stuff
-	public void HandleAbilityCoolDown(float cooldownTime)
-	{
-		AbilityCooldown = cooldownTime;
-	}
-
-	//Handle Ability Uses
-	public void HandleAbilityUses( float abilityused )
-	{
-		AbilityUsed = abilityused;
-	}
 
 	public void AddAbility( string indx, string abilityName, string abilityIcon )
 	{

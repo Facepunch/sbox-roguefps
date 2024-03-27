@@ -4,61 +4,40 @@
 
 @namespace RogueFPS
 
-<root>
-	<div class="abilities">
-	<AbilityIcon AbilityName="@playerAbility.PrimaryWeaponItem.AbilityName" AbilityImage="@playerAbility.PrimaryWeaponItem.AbilityIcon" AbilityInput="M1" hasAmmo="@playerAbility.PrimaryWeaponItem.HasUses" AmmoCount="@playerAbility.PrimaryWeaponItem.CurrentUseCount"
-		CooldownTime="@CoolDownSecondaryBar(playerAbility.PrimaryWeaponItem.ReloadTime, playerAbility.PrimaryWeaponItem.StatToUse )" CooldownCheck="@CoolDownMessage(!playerAbility.PrimaryWeaponItem.IsReloading)"/>
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
 
-	<AbilityIcon AbilityName="@playerAbility.SecondaryWeaponItem.AbilityName" AbilityImage="@playerAbility.SecondaryWeaponItem.AbilityIcon" AbilityInput="M2"  hasAmmo="@playerAbility.SecondaryWeaponItem.HasUses" weaponItem="@playerAbility.SecondaryWeaponItem"/>
-	
-	<AbilityIcon AbilityName="@playerAbility.UtilityAbilityItem.AbilityName" AbilityImage="@playerAbility.UtilityAbilityItem.AbilityIcon" AbilityInput="C" hasAmmo="@playerAbility.UtilityAbilityItem.HasUses" AmmoCount="@playerAbility.UtilityAbilityItem.CurrentUseCount"
-		CooldownTime="@CoolDownSecondaryBar(playerAbility.UtilityAbilityItem.ReloadTime, playerAbility.UtilityAbilityItem.StatToUse )" CooldownCheck="@CoolDownMessage(!playerAbility.UtilityAbilityItem.IsReloading)"/>
-	
-	<AbilityIcon AbilityName="@playerAbility.AbilityUltimateName" AbilityImage="@playerAbility.AbilityUltimateIcons" AbilityInput="R"/>
-	
-	</div>
-	
+@namespace RogueFPS
+
+<root>
+    <div class="abilities">
+		@foreach (var abilityItem in playerStats.Components.Get<PlayerAbilities>().Abilities)
+        {
+			@if (abilityItem != null)
+			{
+				<AbilityIcon AbilityName="@abilityItem.AbilityName" 
+				AbilityImage="@abilityItem.AbilityIcon" 
+				AbilityInput="@abilityItem.InputName" 
+				hasAmmo="true"
+				AmmoCount="@abilityItem.CurrentUseCount" 
+				CooldownTime="@CoolDownBar(abilityItem.ReloadTime, abilityItem.StatToUse)" 
+				CooldownCheck="@CoolDownMessage(!abilityItem.IsReloading)"/>
+			}
+		}
+    </div>
 </root>
 
 @code
 {
 	[Property] PlayerAbilities playerAbility { get; set; }
 	[Property] PlayerStats playerStats { get; set; }
-	[Property] public string MyStringValue { get; set; } = "Hello World!";
-
-	public string secondaryCooldown;
-	public string skillOneCooldown;
-	public string skillUltCooldown;
-
-	public int secCool;
-	public int skilloneCool;
-	public int skillUltCool;
-
-	private float secCoolDown;
-	private float skillCoolDown;
-	private float skillUltCoolDown;
-
-	public bool isPrimaryAttacking = false;
-	public bool isSecondaryAttacking = false;
-	public bool isSkillOne = false;
-	public bool isSkillUlt = false;
 
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
 
-		if (playerStats.AbilityCooldown >= 0)
-		{
-			skillCoolDown = playerStats.AbilityCooldown;
-			skilloneCool = (int)playerStats.AbilityCooldown + 1;
-			skillOneCooldown = skilloneCool.ToString();
-			isSkillOne = false;
-		}
-		else
-		{
-			skillOneCooldown = "Shift";
-			isSkillOne = true;
-		}
+
 	}
 
 	public string CoolDownMessage(bool isUsing)
@@ -73,29 +52,16 @@
 		}
 	}
 
-	public string CoolDownSecondaryBar(float currentCooldown, PlayerStats.PlayerUpgradedStats stat)
+	public string CoolDownBar(float currentCooldown, PlayerStats.PlayerUpgradedStats stat)
 	{
 		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[stat] * 100;
 		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
 		return $"bottom: {cooldownPercentage}%";
 	}
 
-	public string CoolDownSkill1Bar(float currentCooldown)
-	{
-		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown] * 100;
-		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
-		return $"bottom: {cooldownPercentage}%";
-	}
-
-	public string CoolDownUltiBar(float currentCooldown)
-	{
-		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.UltimateCoolDown] * 100;
-		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
-		return $"bottom: {cooldownPercentage}%";
-	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine(playerAbility.PrimaryWeaponItem.ReloadTime, Time.Now);
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now);
 }
