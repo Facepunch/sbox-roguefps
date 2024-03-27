@@ -557,7 +557,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 1103.0483
+              "Relative": 1276.0355
             }
           },
           {
@@ -576,7 +576,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 1103.0483
+              "Relative": 1276.0355
             }
           },
           {
@@ -600,7 +600,7 @@
             "SpecialAbilityIcon": "ui/test/ability/ab3.jpg",
             "SpecialAbilityName": "Power Slide",
             "TimeSinceActiveChanged": {
-              "Relative": 1103.0483
+              "Relative": 1276.0355
             },
             "WishDirectionScale": 0.4
           },
@@ -620,7 +620,7 @@
             "SpecialAbilityIcon": "None",
             "SpecialAbilityName": "None",
             "TimeSinceActiveChanged": {
-              "Relative": 1103.0483
+              "Relative": 1276.0355
             }
           }
         ]
@@ -796,7 +796,7 @@
             "AbilityDescription": "Weapon",
             "AbilityIcon": "ui/test/ability/ab4.png",
             "AbilityName": "Big",
-            "MaxUseCount": 30,
+            "MaxUseCount": 1,
             "StatToUse": "UltimateCoolDown",
             "WeaponInputType": "Ultimate"
           }

@@ -19,7 +19,7 @@
 				<AbilityIcon AbilityName="@abilityItem.AbilityName" 
 				AbilityImage="@abilityItem.AbilityIcon" 
 				AbilityInput="@abilityItem.InputName" 
-				hasAmmo="true"
+				hasAmmo="@HasAmmo(abilityItem)" 
 				AmmoCount="@abilityItem.CurrentUseCount" 
 				CooldownTime="@CoolDownBar(abilityItem.ReloadTime, abilityItem.StatToUse)" 
 				CooldownCheck="@CoolDownMessage(!abilityItem.IsReloading)"/>
@@ -36,8 +36,6 @@
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
-
-
 	}
 
 	public string CoolDownMessage(bool isUsing)
@@ -52,6 +50,18 @@
 		}
 	}
 
+	public bool HasAmmo(BaseAbilityItem ability)
+	{
+		if (ability.MaxUseCount > 1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	public string CoolDownBar(float currentCooldown, PlayerStats.PlayerUpgradedStats stat)
 	{
 		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[stat] * 100;
@@ -63,5 +73,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Time.Now);
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now,Time.Delta);
 }
