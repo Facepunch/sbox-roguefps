@@ -7,7 +7,6 @@ public class TestWeapon : BaseWeaponItem
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
-
 	}
 
 	public override void DoReloadAnimation( bool should )

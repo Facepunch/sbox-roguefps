@@ -82,14 +82,6 @@ public partial class SlideMechanic : BasePlayerControllerMechanic
 		return base.ShouldBecomeInactive();
 	}
 
-	protected override void OnUpdate()
-	{
-		base.OnUpdate();
-		PlayerStatsComponent.HandleAbilityCoolDown( slideCoolDown );
-		PlayerStatsComponent.HandleAbilityUses( slideCharges );
-
-	}
-
 	public override IEnumerable<string> GetTags()
 	{
 		yield return "slide";

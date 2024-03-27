@@ -6,7 +6,6 @@ public class BaseAbilityItem : Component
 	[Property] public virtual string AbilityName { get; set; } = "Weapon";
 	[Property] public virtual string AbilityDescription { get; set; } = "Weapon";
 	[Property, ImageAssetPath] public virtual string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
-	[Property] public virtual bool HasUses { get; set; } = true;
 	[Property] public virtual int MaxUseCount { get; set; } = 1;
 	public int CurrentUseCount { get; set; }
 	public TimeSince LastUsed { get; set; }
@@ -34,16 +33,7 @@ public class BaseAbilityItem : Component
 		if( Input.Down( InputName ) )
 		{
 			DoAction();
-			if ( MaxUseCount <= 1)
-			{
-
-				return;
-			}
 		}
-
-	}
-	public void DoCoolDown()
-	{
 
 	}
 
@@ -73,20 +63,22 @@ public class BaseAbilityItem : Component
 
 	public virtual void DoAction()
 	{
-		if ( HasUses && CurrentUseCount <= 0 )
+		if ( CurrentUseCount <= 0 )
 		{
 			DoCooldown();
 			return;
 		}
 		else
 		{
+			Log.Info( "Firing" );
+
 			DoFire();
 		}
 	}
 
 	public virtual void DoFire()
 	{
-
+		CurrentUseCount--;
 	}
 
 	private static string GetInputName( InputType type)
