@@ -3,16 +3,16 @@ using Sandbox;
 
 public class BaseWeaponItem : BaseAbilityItem
 {
-	[Property] public override string AbilityName { get; set; } = "Weapon";
-	[Property] public override string AbilityDescription { get; set; } = "Weapon";
-	[Property, ImageAssetPath] public override string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
-	[Property] public override int MaxUseCount { get; set; } = 30;
+	[Property, Group("Info")] public override string AbilityName { get; set; } = "Weapon";
+	[Property, Group( "Info" )] public override string AbilityDescription { get; set; } = "Weapon";
+	[Property, ImageAssetPath, Group( "Info" )] public override string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
+	[Property, Group( "Stats" )] public override int MaxUseCount { get; set; } = 30;
 	public TimeSince LastFired { get; set; }
-	[Property] public override InputType WeaponInputType { get; set; } = InputType.Primary;
-	[Property] public GameObject ViewModelObject { get; set; }
+	[Property, Group( "Input" )] public override InputType WeaponInputType { get; set; } = InputType.Primary;
+	[Property, Group( "Visual" )] public GameObject ViewModelObject { get; set; }
 	public SkinnedModelRenderer ViewModel { get; set; }
-	[Property] public CameraShake CameraShake { get; set; }
-	[Property, ImageAssetPath] public string Crosshair { get; set; } = "ui/crosshair/crosshair001.png";
+	[Property, Group( "Visual" )] public CameraShake CameraShake { get; set; }
+	[Property, ImageAssetPath, Group( "Visual" )] public string Crosshair { get; set; } = "ui/crosshair/crosshair001.png";
 
 	protected override void OnAwake()
 	{

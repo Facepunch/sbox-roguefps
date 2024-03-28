@@ -22,7 +22,6 @@ public class BaseItem : Component, Component.ITriggerListener
 	[Property] public virtual UpgradeRarity Rarity { get; set; } = UpgradeRarity.Common;
 	[Property] public virtual string ItemName { get; set; } = "Item Name";
 	[Property, TextArea] public virtual string ItemDescription { get; set; } = "Item Description";
-	[Property] public virtual Model Model { get; set; } = Model.Load( "models/editor/iv_helper.vmdl_c" );
 	[Property] public int Amount { get; set; } = 1;
 	private const float BaseChance = 10.0f; // 10%
 	private const float MaxChance = 80.0f; // 80%

@@ -3,16 +3,16 @@ using Sandbox;
 
 public class BaseAbilityItem : Component
 {
-	[Property] public virtual string AbilityName { get; set; } = "Weapon";
-	[Property] public virtual string AbilityDescription { get; set; } = "Weapon";
-	[Property, ImageAssetPath] public virtual string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
-	[Property] public virtual int MaxUseCount { get; set; } = 1;
+	[Property, Group( "Info" )] public virtual string AbilityName { get; set; } = "Weapon";
+	[Property, Group( "Info" )] public virtual string AbilityDescription { get; set; } = "Weapon";
+	[Property, ImageAssetPath, Group( "Info" )] public virtual string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
+	[Property, Group( "Stats" )] public virtual int MaxUseCount { get; set; } = 1;
 	public int CurrentUseCount { get; set; }
 	public TimeSince LastUsed { get; set; }
 	public TimeUntil ReloadTime { get; set; } = 1f;
 	public bool IsReloading { get; set; }
-	[Property] public virtual InputType WeaponInputType { get; set; } = InputType.Primary;
-	[Property] public virtual PlayerStats.PlayerUpgradedStats StatToUse { get; set; } = PlayerStats.PlayerUpgradedStats.AttackSpeed;
+	[Property, Group( "Input" )] public virtual InputType WeaponInputType { get; set; } = InputType.Primary;
+	[Property, Group( "Stats" )] public virtual PlayerStats.PlayerUpgradedStats StatToUse { get; set; } = PlayerStats.PlayerUpgradedStats.AttackSpeed;
 	public PlayerStats PlayerStats { get; set; }
 	public PlayerController PlayerController { get; set; }
 	public string InputName { get; set; }
