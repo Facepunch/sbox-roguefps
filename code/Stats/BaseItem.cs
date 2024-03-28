@@ -55,9 +55,10 @@ public class BaseItem : Component, Component.ITriggerListener
 				//if player does not have the component, create it
 				if ( !plyStatComp.HasItem( this.ItemName ) )
 				{
-					CalculateUpdgrade();
 					plyStatComp.Components.Create( typeDesc );
 					plyStatComp.PickedUpItems.Add( this );
+
+					CalculateUpdgrade();
 				}
 				else
 				{
