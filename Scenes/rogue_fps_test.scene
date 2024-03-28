@@ -542,6 +542,141 @@
       ]
     },
     {
+      "__guid": "b161ac4a-7a9e-4099-9af2-a21bca8778c0",
+      "Name": "Bob (5)",
+      "Position": "-256,416,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "b1fe6787-99ab-4a3d-a324-0b787e9340c0",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_props/coffeemug01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "d60ca6b3-a99d-47c4-9ff2-dd24fc1e1185",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "23f94ba2-7ed5-432f-9d34-ba0652d0f871"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "e90dadd3-481c-4fbb-b25a-4f1e4ff06323",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "TestThreeItem",
+          "__guid": "cd7a652b-1788-43d1-80ef-4b4df1c1dedd",
+          "Amount": 1,
+          "Model": "models/editor/iv_helper.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "2380a5c1-7ef6-4246-848c-a4f9c6a9d007",
+      "Name": "Bob (3)",
+      "Position": "-160,416,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "602d58f4-eaab-4427-981c-0e901c028912",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_props/coffeemug01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "41cc4a50-a811-487f-95e2-57f66625617d",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "62b9c34a-6843-4229-9bf0-381ae931263f"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "060995c2-a775-4404-a520-0f1134493787",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "TestThreeItem",
+          "__guid": "ee679756-d6cb-45d7-a69e-2ab5d624d617",
+          "Amount": 1,
+          "Model": "models/editor/iv_helper.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "64ecd6af-86b6-45ad-98d8-45adde8f3cc7",
+      "Name": "Bob (4)",
+      "Position": "-64,416,32",
+      "Tags": "trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "d1105170-fa1e-4238-a912-60a3322d4050",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/citizen_props/coffeemug01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "5c0b9082-5557-4ab6-b541-1abfa7122aa3",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        },
+        {
+          "__type": "RogueFPSItemAnimator",
+          "__guid": "5ce41bed-c75b-45b7-9aae-135274d264b0"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "d9f79c2d-521c-4f4f-8445-969a60ab207e",
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "TestThreeItem",
+          "__guid": "35c0fe21-2069-48c1-bf0b-d0e9f55b9f8e",
+          "Amount": 1,
+          "Model": "models/editor/iv_helper.vmdl"
+        }
+      ]
+    },
+    {
       "__guid": "ef4cb9bb-daee-4678-9432-4a178426d898",
       "Name": "Bob (1)",
       "Position": "-160,64,32",
@@ -3682,7 +3817,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-27T00:49:36.1173899\u002B00:00",
+  "LastSaved": "2024-03-28T15:43:48.6301726\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
