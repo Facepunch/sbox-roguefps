@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="crosshair" style="background-image:url('@GetCrosshair()')"></div>
+</root>
+
+@code
+{
+	string GetCrosshair()
+	{
+		var ob = GameObject.Parent.Components.Get<PlayerAbilities>().Abilities[0];
+		if(ob is BaseWeaponItem weapon)
+		{
+			return weapon.Crosshair;
+		}
+		return "ui/crosshair/crosshair012.png";
+	
+	}
+}

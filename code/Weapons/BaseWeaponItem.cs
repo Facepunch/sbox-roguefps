@@ -11,6 +11,8 @@ public class BaseWeaponItem : BaseAbilityItem
 	[Property] public override InputType WeaponInputType { get; set; } = InputType.Primary;
 	[Property] public GameObject ViewModelObject { get; set; }
 	public SkinnedModelRenderer ViewModel { get; set; }
+	[Property] public CameraShake CameraShake { get; set; }
+	[Property, ImageAssetPath] public string Crosshair { get; set; } = "ui/crosshair/crosshair001.png";
 
 	protected override void OnAwake()
 	{
@@ -20,6 +22,7 @@ public class BaseWeaponItem : BaseAbilityItem
 
 		ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
 		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
+
 	}
 
 	protected override void OnUpdate()
@@ -43,6 +46,7 @@ public class BaseWeaponItem : BaseAbilityItem
 			LastFired = 0;
 			OnPrimaryFire();
 			base.DoFire();
+			CameraShake.Shake();
 			var sprintcomp = PlayerController.Components.Get<SprintMechanic>( FindMode.EverythingInSelfAndChildren );
 			if ( sprintcomp != null )
 			{
