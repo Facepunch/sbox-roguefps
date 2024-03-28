@@ -2,9 +2,9 @@
 
 public class TestTwoItem : BaseItem
 {
-	public override string ItemName { get; set; } = "Test Item 2";
-	public override string UpgradeIcon { get; set; } = "ui/test/items/hyper.png";
-	public override string ItemDescription { get; set; } = "This is a test item 2";
+	public override string ItemName { get; set; } = "Monkey Time";
+	public override string UpgradeIcon { get; set; } = "ui/test/items/icecream.png";
+	public override string ItemDescription { get; set; } = "+1 Jumps";
 	public override PlayerStats.PlayerStartingStats UpgradeType { get; set; } = PlayerStats.PlayerStartingStats.AmountOfJumps;
 	public override UpgradeRarity Rarity { get; set; } = UpgradeRarity.Rare;
 	public override float UpgradeAmount { get; set; } = 1;

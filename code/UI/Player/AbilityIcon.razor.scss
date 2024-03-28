@@ -7,6 +7,15 @@ AbilityIcon {
         align-items: center;
         flex-direction: column;
 
+        InputHint, InputAnalogHint {
+            margin-top: 10px;
+            position: absolute;
+            bottom: -15px;
+            width: 75px;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
         .title {
             font-size: 15px;
             font-family: Poppins;
@@ -40,6 +49,7 @@ AbilityIcon {
             aspect-ratio: 1;
             background-size: contain;
             border: 2px solid rgba(255,255,255,1);
+            z-index:12;
 
             &.cooldown {
                 background-tint: rgba(100,50,200,100);
