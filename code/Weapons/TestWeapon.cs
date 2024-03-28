@@ -21,7 +21,6 @@ public class TestWeapon : BaseWeaponItem
 		base.OnPrimaryFire();
 
 		Sound.Play( "ui.popup.message.close", GameObject.Parent.Transform.Position );
-		DoBulletTrace(Scene.Camera.Transform.Position, Scene.Camera.Transform.Rotation.Forward * 1000f );
 		
 		var tr = TraceBullet( Scene.Camera.Transform.Position, Scene.Camera.Transform.Position + Scene.Camera.Transform.Rotation.Forward * 1000f );
 
