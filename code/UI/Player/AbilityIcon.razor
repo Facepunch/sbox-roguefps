@@ -13,8 +13,10 @@
 		}else{
 			<div class="ammo"></div>
 		}
-		<div class="icon @CooldownCheck" style="background-image: url('@AbilityImage')">
-		<div class="coolingdown @CooldownCheck" style="@CooldownTime"></div>
+			<div class="cooldowntext @CooldownCheck">@CooldownTimer</div>
+			<div class="icon @CooldownCheck" style="background-image: url('@AbilityImage')">
+			<div class="coolingdown @CooldownCheck" style="@CooldownTime"></div>
+
 		</div>
 		<InputHint Size=@InputGlyphSize.Small @Action="@AbilityInput" />
 	</div>	
@@ -28,14 +30,21 @@
 	public bool hasCoolDown { get; set; } = false;
 	public bool hasAmmo { get; set; } = false;
 	public string CooldownTime { get; set; } = "";
+	public string CooldownTimer { get; set; } = "";
 	public string CooldownCheck { get; set; } = "";
 	public float coolDownMax { get; set; } = 0.0f;
 	public int AmmoCount { get; set; }
 
 	private float skillCoolDown;
 
+	public override void Tick()
+	{
+		base.Tick();
+
+	}
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine(Time.Now, AmmoCount);
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now, AmmoCount, @CooldownTime);
 }

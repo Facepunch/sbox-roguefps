@@ -22,7 +22,8 @@
 				hasAmmo="@HasAmmo(abilityItem)" 
 				AmmoCount="@abilityItem.CurrentUseCount" 
 				CooldownTime="@CoolDownBar(abilityItem.ReloadTime, abilityItem.StatToUse)" 
-				CooldownCheck="@CoolDownMessage(!abilityItem.IsReloading)"/>
+				CooldownCheck="@CoolDownMessage(!abilityItem.IsReloading)"
+				CooldownTimer="@FormatTimeSince(abilityItem.ReloadTime)"/>
 			}
 		}
     </div>
@@ -36,6 +37,11 @@
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
+	}
+
+	string FormatTimeSince(float time)
+	{
+		return TimeSpan.FromSeconds(time).ToString(@"\ s");
 	}
 
 	public string CoolDownMessage(bool isUsing)

@@ -6,6 +6,7 @@ AbilityIcon {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        align-content: center;
 
         InputHint, InputAnalogHint {
             margin-top: 10px;
@@ -49,7 +50,7 @@ AbilityIcon {
             aspect-ratio: 1;
             background-size: contain;
             border: 2px solid rgba(255,255,255,1);
-            z-index:12;
+            z-index: 12;
 
             &.cooldown {
                 background-tint: rgba(100,50,200,100);
@@ -67,6 +68,22 @@ AbilityIcon {
             height: 100%;
             bottom: 100%;
             z-index: 5;
+        }
+
+        .cooldowntext {
+            text-shadow: 2px 2px 2px #000000;
+            font-size: 30px;
+            display: none;
+            color: white;
+            font-family: Poppins;
+            font-weight: 800;
+            position:absolute;
+            z-index: 15;
+            top:48%;
+
+            &.cooldown {
+                display: flex;
+            }
         }
     }
 }
