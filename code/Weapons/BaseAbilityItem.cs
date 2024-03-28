@@ -30,11 +30,16 @@ public class BaseAbilityItem : Component
 
 	protected override void OnUpdate()
 	{
-		if( Input.Down( InputName ) )
+		if ( CurrentUseCount <= 0 )
+		{
+			DoCooldown();
+			return;
+		}
+
+		if ( Input.Down( InputName ) && !IsReloading )
 		{
 			DoAction();
 		}
-
 	}
 
 	public virtual void DoCooldown()
@@ -45,35 +50,23 @@ public class BaseAbilityItem : Component
 			IsReloading = true;
 			DoReloadAnimation( true );
 		}
-
-		if ( IsReloading )
+		
+		if(CurrentUseCount != MaxUseCount && ReloadTime <= 0)
 		{
-			if ( ReloadTime <= 0 )
-			{
-				CurrentUseCount = MaxUseCount;
-				IsReloading = false;
-				DoReloadAnimation( false );
-			}
+			CurrentUseCount = MaxUseCount;
+			IsReloading = false;
+			DoReloadAnimation( false );
 		}
 	}
 	public virtual void DoReloadAnimation(bool should)
 	{
 		Log.Info( "Reloading" );
+
 	}
 
 	public virtual void DoAction()
 	{
-		if ( CurrentUseCount <= 0 )
-		{
-			DoCooldown();
-			return;
-		}
-		else
-		{
-			Log.Info( "Firing" );
-
-			DoFire();
-		}
+		DoFire();
 	}
 
 	public virtual void DoFire()
