@@ -7,8 +7,8 @@
 
  		@foreach (var upgrade in TargetObject.GetAllItems())
 		{
-			<div class="upgrade">
-				<div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(upgrade.Rarity)"></div>
+			<div class="upgrade" onmouseover="@(() => OnItemHover(upgrade))" onmouseout="@(() => OnItemHoverOut())">
+				<div class="icon" style="background-image: url('@upgrade.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(upgrade.Rarity)"></div>
 				@* <div class="name">@upgrade.Name</div>*@
 				<div class="amount">@upgrade.Amount</div>
 			</div>
@@ -29,8 +29,42 @@
 
 @code
 {
-	[Property] PlayerStats TargetObject { get; set; }
+	ItemsUIToolTip itemsUIToolTip;
 
+	public void OnItemHover(BaseItem item)
+	{
+		if(item != null)
+		{
+			itemsUIToolTip = new ItemsUIToolTip(item);
+			Panel.AddChild(itemsUIToolTip);
+		}
+		else
+		{
+			itemsUIToolTip?.Delete();
+		}
+	}
+	public void OnItemHoverOut()
+	{
+
+		Panel.DeleteChildren();
+		itemsUIToolTip?.Delete();
+		
+	}
+
+	[Property] PlayerStats TargetObject { get; set; }
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+
+		if (Input.Down("score"))
+		{
+			AddClass("open");
+		}
+		else
+		{
+			RemoveClass("open");
+		}
+	}
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>

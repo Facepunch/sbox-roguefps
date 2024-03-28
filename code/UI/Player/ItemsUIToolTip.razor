@@ -1,0 +1,54 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+@namespace RogueFPS
+<root>
+		@*
+		@for (int i = 0; i < 19; i++)
+		{
+			<div class="upgrade">
+				<div class="icon" onmouseout="" onmouseover=""></div>
+				@* <div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.Icon')"></div> *@
+				@* <div class="name">@upgrade.Name</div>	
+				<div class="amount">x10</div>
+			</div>
+		}
+	*@
+	<div class="container">
+		<div class="info"
+		<div class="icon" style="background-image: url('@_item.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(_item.Rarity)"></div>
+				<div class="title">@_item.ItemName</div>
+		<div class="description">@_item.ItemDescription</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+
+	public BaseItem _item;
+
+	public ItemsUIToolTip(BaseItem item)
+	{
+		_item = item;
+	}
+
+	public override void Tick()
+	{
+		base.Tick();
+		
+		var mousePos = Mouse.Position;
+
+		var mousePosRelative = Mouse.Position / Screen.Size;
+
+		Style.Left = Length.Fraction(mousePosRelative.x);
+		Style.Top = Length.Fraction(mousePosRelative.y);
+	
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(Time.Delta);
+}
