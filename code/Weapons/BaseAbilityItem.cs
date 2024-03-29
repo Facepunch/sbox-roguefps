@@ -40,6 +40,10 @@ public class BaseAbilityItem : Component
 		{
 			DoAction();
 		}
+		else
+		{
+			DoReleaseAction();
+		}
 	}
 
 	public virtual void DoCooldown()
@@ -69,9 +73,18 @@ public class BaseAbilityItem : Component
 		DoFire();
 	}
 
+	public virtual void DoReleaseAction()
+	{
+		DoReleaseFire();
+	}
+
 	public virtual void DoFire()
 	{
 		CurrentUseCount--;
+	}
+
+	public virtual void DoReleaseFire()
+	{
 	}
 
 	private static string GetInputName( InputType type)
