@@ -64,6 +64,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 				SpawnItem();
 
 				IsOpen = true;
+				DestroyUI();
 			}
 			else
 			{
@@ -117,6 +118,18 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 			PlayerInside = null;
 
 			var parent = other.GameObject.Parent;
+			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
+			var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
+
+			itemUI.Panel.DeleteChildren();
+		}
+	}
+
+	void DestroyUI()
+	{
+		if ( PlayerInside != null )
+		{
+			var parent = PlayerInside.Parent;
 			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
 			var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
 
