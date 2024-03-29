@@ -1,0 +1,22 @@
+ItemPickUp {
+    position: absolute;
+    bottom: 40%;
+    right: 20%;
+    background-color: rgba(0,0,0,0.5);
+
+    .item {
+        font-size: 24px;
+        font-family: Poppins;
+        color: white;
+        align-items: center;
+    }
+
+    .itemname {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    InputHint, InputAnalogHint {
+        z-index: 10;
+    }
+}

@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+
+@namespace RogueFPS
+
+<root class="ItemPickUp">
+	<div class="item">
+			<InputHint Size=@InputGlyphSize.Small @Action="use" />
+			<div class="ItemName">Open Chest</div>
+		<div class="ItemName" style="color:orange;">$@_Cost</div>
+		</div>
+
+	</div>	
+</root>
+
+@code
+{
+	public BaseItem _Item { get; set; }
+	public int _Cost { get; set; }
+
+	public ItemPickUp(BaseItem item, int cost)
+	{
+		_Item = item;
+		_Cost = cost;
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
+}
