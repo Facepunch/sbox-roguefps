@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "6ef3cf13-a55e-4db8-8e95-48b7929c5297",
+    "__guid": "93235c7a-c62e-43ae-b836-2da9bafa99c8",
     "Name": "testattackspeed",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "BoxCollider",
-        "__guid": "5986569b-20de-4109-b892-a8c15495451f",
+        "__guid": "7a4cf37d-9c48-4a5f-aa8e-54c43def6a4f",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
@@ -15,7 +15,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "82a9c0e6-e4f2-4ee1-be7e-d467a765f8d5",
+        "__guid": "083241ea-4ed9-42e3-b2ba-e6094ac2901f",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -32,7 +32,7 @@
     ],
     "Children": [
       {
-        "__guid": "810f53b7-da94-4dbc-b59d-a4aefdb76d2f",
+        "__guid": "a32d5f37-31d2-4f69-bd4a-8cb652c7060d",
         "Name": "testattackspeed",
         "Tags": "trigger",
         "Enabled": true,
@@ -40,7 +40,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "71ca4827-6056-4d2a-99ab-38d3b1db051a",
+            "__guid": "ac2cf42e-5bdd-472e-a532-89ba1068e0e3",
             "BodyGroups": 18446744073709551615,
             "Model": "models/citizen_props/beachball.vmdl",
             "RenderType": "On",
@@ -48,25 +48,25 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "770ddd8c-9ef1-4680-9583-cf6ebfe0cceb",
+            "__guid": "cc3c1aae-e44c-49fb-ad38-87e53aa1fa0a",
             "Center": "0,0,0",
             "IsTrigger": true,
-            "Radius": 100,
+            "Radius": 20,
             "Static": false
           },
           {
             "__type": "RogueFPSItemAnimator",
-            "__guid": "6d88f7a0-2ba0-42df-8047-84e62f71481e"
+            "__guid": "b0eacdde-e6e8-46e4-9f08-fbacbb322014"
           },
           {
             "__type": "TestItem",
-            "__guid": "f34dc9f3-263d-43f7-9ea0-cc1854b1b0db",
+            "__guid": "381a159e-be04-4cb7-a9f4-9a9133e43d8c",
             "Amount": 1,
             "IsStatUpgrade": true
           },
           {
             "__type": "HighlightOutline",
-            "__guid": "c3b7eca6-6e5c-41e0-91b4-e9236aab44f7",
+            "__guid": "6e45c0ec-ad07-4ec5-9810-671d66e5eeeb",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",

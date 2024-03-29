@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "312235b6-5f34-4ac2-8233-d51a20d8f986",
+    "__guid": "05a16bfb-a2ad-4e22-ba20-ccb8652cab56",
     "Name": "testsprint",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "BoxCollider",
-        "__guid": "5986569b-20de-4109-b892-a8c15495451f",
+        "__guid": "a52b5060-5daf-43fe-94a6-29e7a0ec630b",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
@@ -15,7 +15,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "82a9c0e6-e4f2-4ee1-be7e-d467a765f8d5",
+        "__guid": "208ba819-6818-463a-9d9a-dd305b87b328",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -32,7 +32,7 @@
     ],
     "Children": [
       {
-        "__guid": "c22c4200-69cc-499a-9907-fba5209913f0",
+        "__guid": "cf5604da-dae5-436c-b7cd-5642c95e7405",
         "Name": "testsprint",
         "Tags": "trigger",
         "Enabled": true,
@@ -40,7 +40,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "8b9de466-2284-473b-a366-57d5520c92d4",
+            "__guid": "8cb5a43c-11c2-47b6-869a-5965d13a8350",
             "BodyGroups": 18446744073709551615,
             "Model": "models/citizen_props/coffeemug01.vmdl",
             "RenderType": "On",
@@ -48,19 +48,19 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "6548b5ae-12ee-4a5f-86cf-cb8f87cd3383",
+            "__guid": "b321db6a-9490-47e9-85e5-29a5f31684cc",
             "Center": "0,0,0",
             "IsTrigger": true,
-            "Radius": 100,
+            "Radius": 20,
             "Static": false
           },
           {
             "__type": "RogueFPSItemAnimator",
-            "__guid": "679b5b37-fdde-42e2-81cc-c0643f79cbcb"
+            "__guid": "db6016c9-180a-435f-8174-a9760ee1a5e5"
           },
           {
             "__type": "HighlightOutline",
-            "__guid": "451c48d0-dbfc-4224-be93-75b771eaa184",
+            "__guid": "41cc1c57-44d4-41ec-9b07-36295ee09bfa",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",
@@ -69,7 +69,7 @@
           },
           {
             "__type": "TestThreeItem",
-            "__guid": "c67cfb82-f2ec-407f-9db5-4d1db5a571a1",
+            "__guid": "58da182e-022e-4534-a180-c4057b8e0722",
             "Amount": 1
           }
         ]

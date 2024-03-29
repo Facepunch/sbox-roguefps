@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "7c1945be-afae-4544-bdc6-9a36ead595d6",
+    "__guid": "e48384e2-647f-4877-b172-06996587fdd1",
     "Name": "testjump",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Rigidbody",
-        "__guid": "64df02b5-4a42-4dc5-8858-ccbd243be691",
+        "__guid": "b071e21b-6901-46ef-a39e-b3ee02ddc6fb",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -23,7 +23,7 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "5986569b-20de-4109-b892-a8c15495451f",
+        "__guid": "95de4a6d-cf2a-400e-a91c-0c3c857c9a37",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
@@ -32,7 +32,7 @@
     ],
     "Children": [
       {
-        "__guid": "7d76d558-70c0-47b6-9043-b1dd9d439829",
+        "__guid": "5e28e82c-da51-4669-8fea-4900a132c79a",
         "Name": "testjump",
         "Tags": "trigger",
         "Enabled": true,
@@ -40,7 +40,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "7770f195-804e-47ea-8979-613458a22a37",
+            "__guid": "3356f263-7eb3-494a-9b1c-530625f4bdcc",
             "BodyGroups": 18446744073709551615,
             "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
             "RenderType": "On",
@@ -48,25 +48,25 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "faafd5b1-ad5a-4feb-ac40-3708e7a5ced5",
+            "__guid": "f3e41e3c-e2e2-48c0-97c1-87f26621bbe1",
             "Center": "0,0,0",
             "IsTrigger": true,
-            "Radius": 100,
+            "Radius": 20,
             "Static": false
           },
           {
             "__type": "RogueFPSItemAnimator",
-            "__guid": "7c537107-da12-45ce-bf2e-565fe11e6cd9"
+            "__guid": "9a481bff-b4f4-4e61-bc5b-1ef803208e12"
           },
           {
             "__type": "TestTwoItem",
-            "__guid": "060288d4-1422-4713-b2bd-1367f2a85278",
+            "__guid": "e0cba1f0-ff8d-4fa6-ba5c-0652de2cabef",
             "Amount": 1,
             "AsAPercent": false
           },
           {
             "__type": "HighlightOutline",
-            "__guid": "204c548c-0040-46c5-a380-6a9e4d20edc8",
+            "__guid": "f03bd422-36e0-4768-a4bb-bee7c8d2c93b",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",
