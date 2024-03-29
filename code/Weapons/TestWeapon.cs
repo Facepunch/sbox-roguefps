@@ -4,6 +4,10 @@ public class TestWeapon : BaseWeaponItem
 {
 	[Property]
 	public GameObject BulletTrace { get; set; }
+
+	public override bool RandomSpread { get; set; } = true;
+	public override float Spread { get; set; } = 15.0f;
+
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
