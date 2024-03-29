@@ -63,7 +63,7 @@
           "IsMultiplayer": true,
           "PlayerPrefab": {
             "_type": "gameobject",
-            "prefab": "prefab/player/player.prefab"
+            "prefab": "prefab/player and camera.prefab"
           },
           "SpawnPoint": {
             "_type": "gameobject",
@@ -3783,6 +3783,13 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "5eaaee32-6c36-4c5c-8f09-d624a335d7fe",
+      "Name": "player and camera",
+      "Position": "-32,1536,68",
+      "NetworkMode": 2,
+      "__Prefab": "prefab/player and camera.prefab"
     }
   ],
   "SceneProperties": {
@@ -3808,7 +3815,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-29T01:12:49.3141115\u002B00:00",
+  "LastSaved": "2024-03-29T15:42:44.8881237\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

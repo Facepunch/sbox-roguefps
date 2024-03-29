@@ -51,7 +51,7 @@ public sealed class ViewModelAnimator : Component
 	//
 	[Property]
 	[Group( "Don't worry about these" )]
-	private PlayerController Player { get; set; }
+	private Controller Player { get; set; }
 
 	[Property]
 	[Group( "Don't worry about these" )]
@@ -91,7 +91,7 @@ public sealed class ViewModelAnimator : Component
 		YawInertia += yawDelta;
 		PitchInertia += pitchDelta;
 
-		var dir = Player.WishVelocity;
+		var dir = Player.InputVector;
 		var forward = Player.Transform.Rotation.Forward.Dot( dir );
 		var sideward = Player.Transform.Rotation.Right.Dot( dir );
 
@@ -114,14 +114,14 @@ public sealed class ViewModelAnimator : Component
 		//Movement
 		anim.Set( "b_jump", !Player.AnimationHelper.IsGrounded );
 		anim.Set( "move_direction", angle );
-		anim.Set( "move_speed", Player.WishVelocity.Length );
-		anim.Set( "move_groundspeed", Player.WishVelocity.WithZ( 0 ).Length );
+		anim.Set( "move_speed", Player.InputVector.Length );
+		anim.Set( "move_groundspeed", Player.InputVector.WithZ( 0 ).Length );
 		anim.Set( "move_y", sideward );
 		anim.Set( "move_x", forward );
-		anim.Set( "move_z", Player.WishVelocity.z );
+		anim.Set( "move_z", Player.InputVector.z );
 		anim.Set( "b_grounded", Player.AnimationHelper.IsGrounded );
-		anim.Set( "move_sprint", Player.HasTag( "sprint" ) );
-		anim.Set( "b_sprint", Player.HasTag("sprint"));
+		//anim.Set( "move_sprint", Player.HasTag( "sprint" ) );
+		//anim.Set( "b_sprint", Player.HasTag("sprint"));
 		anim.Set( "b_crouch", Input.Down( "duck" ) );
 
 		//Fire

@@ -8,19 +8,20 @@ using System;
 public class CameraLean : Component
 {
 	[Property]
-	public CharacterController PlayerController { get; set; }
+	public Controller PlayerController { get; set; }
 	public float StrafeTiltAmount { get; set; } = 5.0f;
 	private float currentTilt = 0.0f;
 
 	protected override void OnUpdate()
 	{
 
-		var strafeSpeed = PlayerController.Velocity.Length;
-		if ( strafeSpeed <= 20 ) return;
+		var strafeSpeed = PlayerController.Rigidbody.Velocity.LengthSquared;
+		//if ( strafeSpeed <= 20 ) return;
 
 		float targetTilt = 0.0f;
 		if ( Input.Down( "Left" ) ) targetTilt -= StrafeTiltAmount;
 		if ( Input.Down( "Right" ) ) targetTilt += StrafeTiltAmount;
+
 
 		currentTilt = MathX.Lerp( currentTilt, targetTilt, Time.Delta * 5.0f );
 

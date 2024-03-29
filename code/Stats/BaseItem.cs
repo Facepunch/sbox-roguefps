@@ -43,7 +43,7 @@ public class BaseItem : Component, Component.ITriggerListener
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			Player = other.GameObject.Parent;
-			var plyStatComp = Player.Components.Get<PlayerStats>();
+			var plyStatComp = Player.Components.Get<PlayerStats>(FindMode.EverythingInSelfAndParent);
 			if ( plyStatComp != null )
 			{
 				// Create an UpgradeHas object
@@ -75,9 +75,9 @@ public class BaseItem : Component, Component.ITriggerListener
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
 				GameObject.Destroy();
 			}
-
 			else
 			{
+				Log.Info( other );
 				Log.Warning( "RogueFPSPlayerStats component not found on the player." );
 			}
 		}

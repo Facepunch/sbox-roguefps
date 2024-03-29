@@ -6,7 +6,7 @@ using Sandbox;
 public sealed class CameraFovChange : Component
 {
 	[Property]
-	public CharacterController PlayerController { get; set; }
+	public Controller PlayerController { get; set; }
 
 	private float _fov;
 
@@ -21,7 +21,7 @@ public sealed class CameraFovChange : Component
 	protected override void OnUpdate()
 	{
 		var camera = GameObject.Components.Get<CameraComponent>();
-		var playerSpeed = PlayerController.Velocity.Length;
+		var playerSpeed = PlayerController.Rigidbody.Velocity.Length;
 
 		camera.FieldOfView = camera.FieldOfView.LerpTo( _fov + playerSpeed * 0.05f, Time.Delta * 10f ).Clamp( _fov, _fov + 40f );
 		

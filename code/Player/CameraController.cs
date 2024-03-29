@@ -12,7 +12,7 @@ public sealed class CameraController : Component
 	/// </summary>
 	[Property] public bool HideBody { get; set; } = true;
 
-	[Property] public PlayerController PlayerController { get; set; }
+	[Property] public Controller PlayerController { get; set; }
 
 	/// <summary>
 	/// Constructs a ray using the camera's GameObject
@@ -28,11 +28,11 @@ public sealed class CameraController : Component
 		// If the camera is enabled, let's get rid of the player's body, otherwise it's gonna be in the way.
 		if ( Camera.Enabled && HideBody )
 		{
-			var playerController = Components.Get<PlayerController>();
+			var playerController = PlayerController;
 			//if ( playerController == null ) throw new ComponentNotFoundException( "CameraController - couldn't find PlayerController component." );
 
 			// Disable the player's body so it doesn't render.
-			var skinnedModels = playerController.Body.Components.GetAll<SkinnedModelRenderer>( FindMode.EnabledInSelfAndDescendants );
+			var skinnedModels = playerController.Components.GetAll<SkinnedModelRenderer>( FindMode.EverythingInSelfAndChildren );
 
 			foreach ( var skinnedModel in skinnedModels )
 			{
