@@ -389,8 +389,7 @@
           "__type": "TestTwoItem",
           "__guid": "2f46bd7f-8abb-4984-a246-4f783231a81b",
           "Amount": 1,
-          "AsAPercent": false,
-          "Model": "models/editor/iv_helper.vmdl"
+          "AsAPercent": false
         },
         {
           "__type": "HighlightOutline",
@@ -435,8 +434,7 @@
           "__type": "TestTwoItem",
           "__guid": "0fa296cc-3643-4537-9f7c-fb9329f4ab05",
           "Amount": 1,
-          "AsAPercent": false,
-          "Model": "models/editor/iv_helper.vmdl"
+          "AsAPercent": false
         },
         {
           "__type": "HighlightOutline",
@@ -481,8 +479,7 @@
           "__type": "TestTwoItem",
           "__guid": "aab07e3f-2053-4236-bd09-077ff3433ad2",
           "Amount": 1,
-          "AsAPercent": false,
-          "Model": "models/editor/iv_helper.vmdl"
+          "AsAPercent": false
         },
         {
           "__type": "HighlightOutline",
@@ -527,8 +524,7 @@
           "__type": "TestItem",
           "__guid": "1f55bd2f-baa7-466e-b07c-8a2c390ab6a0",
           "Amount": 1,
-          "IsStatUpgrade": true,
-          "Model": "models/editor/iv_helper.vmdl"
+          "IsStatUpgrade": true
         },
         {
           "__type": "HighlightOutline",
@@ -581,8 +577,7 @@
         {
           "__type": "TestThreeItem",
           "__guid": "cd7a652b-1788-43d1-80ef-4b4df1c1dedd",
-          "Amount": 1,
-          "Model": "models/editor/iv_helper.vmdl"
+          "Amount": 1
         }
       ]
     },
@@ -626,8 +621,7 @@
         {
           "__type": "TestThreeItem",
           "__guid": "ee679756-d6cb-45d7-a69e-2ab5d624d617",
-          "Amount": 1,
-          "Model": "models/editor/iv_helper.vmdl"
+          "Amount": 1
         }
       ]
     },
@@ -671,8 +665,7 @@
         {
           "__type": "TestThreeItem",
           "__guid": "35c0fe21-2069-48c1-bf0b-d0e9f55b9f8e",
-          "Amount": 1,
-          "Model": "models/editor/iv_helper.vmdl"
+          "Amount": 1
         }
       ]
     },
@@ -708,8 +701,7 @@
           "__type": "TestItem",
           "__guid": "a26349c0-1f4f-4e29-892e-86497bba5630",
           "Amount": 1,
-          "IsStatUpgrade": true,
-          "Model": "models/editor/iv_helper.vmdl"
+          "IsStatUpgrade": true
         },
         {
           "__type": "HighlightOutline",
@@ -754,8 +746,7 @@
           "__type": "TestItem",
           "__guid": "67b4172a-a6e6-42a2-91a0-6e62c0bc7f67",
           "Amount": 1,
-          "IsStatUpgrade": true,
-          "Model": "models/editor/iv_helper.vmdl"
+          "IsStatUpgrade": true
         },
         {
           "__type": "HighlightOutline",
@@ -3817,7 +3808,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-28T20:33:42.5159515\u002B00:00",
+  "LastSaved": "2024-03-29T01:12:49.3141115\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

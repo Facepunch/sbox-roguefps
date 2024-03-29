@@ -138,7 +138,7 @@ public class BaseItem : Component, Component.ITriggerListener
 
 		float randomChance = Random.Shared.Float( 0.0f, 100.0f );
 
-		Log.Info( $"Current chance: {currentChance}, Random chance: {randomChance}" );
+		//Log.Info( $"Current chance: {currentChance}, Random chance: {randomChance}" );
 
 		return randomChance <= currentChance;
 	}

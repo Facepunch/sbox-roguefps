@@ -56,7 +56,7 @@ public partial class SlideMechanic : BasePlayerControllerMechanic
 					slideCoolDown = PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
 				}
 
-				Log.Info( "Slide charge replenished. Current charges: " + slideCharges );
+				//Log.Info( "Slide charge replenished. Current charges: " + slideCharges );
 			}
 		}
 		else

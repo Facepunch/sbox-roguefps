@@ -7,7 +7,7 @@ public class TestItem : BaseItem
 	public override PlayerStats.PlayerStartingStats UpgradeType { get; set; } = PlayerStats.PlayerStartingStats.AttackSpeed;
 	public override float UpgradeAmount { get; set; } = -0.1f;
 	public override string UpgradeIcon { get; set; } = "ui/test/items/hyper.png";
-	public override string ItemDescription { get; set; } = "Increases attack speed by 10%";
+	public override string ItemDescription { get; set; } = "Increases attack speed by 10% + CRIT";
 	public override UpgradeRarity Rarity { get; set; } = UpgradeRarity.Common;
 	private GameObject BulletTrace { get; set; } = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/weapon/fx/bullettracertest.prefab" ) );
 	//public override bool IsStatUpgrade { get; set; } = false;

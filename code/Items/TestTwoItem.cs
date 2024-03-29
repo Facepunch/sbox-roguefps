@@ -14,7 +14,6 @@ public class TestTwoItem : BaseItem
 	{
 		var stats = Player.Components.Get<PlayerStats>();
 		var item = Player.Components.Get<TestTwoItem>();
-		Log.Info( Amount );
 
 		if ( stats != null && item != null )
 		{
