@@ -3441,7 +3441,7 @@
         {
           "__type": "ItemChest",
           "__guid": "9c7c30e5-5683-4ef2-af7f-c41db67b4147",
-          "Cost": 251,
+          "Cost": 250,
           "ItemSpawnLocation": {
             "_type": "gameobject",
             "go": "70a1cb0b-99c1-48ce-bdc0-0e28f13b753d"
@@ -3563,6 +3563,114 @@
           "NetworkMode": 2
         }
       ]
+    },
+    {
+      "__guid": "95e4be5f-316a-4c8d-9841-037d6c25899f",
+      "Name": "Coin",
+      "Position": "-448,832,32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpriteRenderer",
+          "__guid": "df37b45c-ac28-4e59-a0eb-a7a6db6357be",
+          "Additive": false,
+          "CastShadows": true,
+          "Color": "1,0.9,0,1",
+          "DepthFeather": 0,
+          "FlipHorizontal": false,
+          "FlipVertical": false,
+          "FogStrength": 1,
+          "Opaque": true,
+          "Size": "10,10",
+          "Texture": "materials/particles/shapes/circle1.vtex"
+        },
+        {
+          "__type": "RogueFPSCoin",
+          "__guid": "8cc093e5-52a7-4bd9-b60d-139f63542b37",
+          "CoinAmount": 100
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "98319a0a-0cae-4dbf-9327-4d72a13fbe65",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 50,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "c9ba6565-7084-4f28-9208-bb662eb0aeec",
+      "Name": "Coin (1)",
+      "Position": "-496,832,32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpriteRenderer",
+          "__guid": "99fc3b9c-5f76-4fc9-b722-c4e25e3c7d43",
+          "Additive": false,
+          "CastShadows": true,
+          "Color": "1,0.9,0,1",
+          "DepthFeather": 0,
+          "FlipHorizontal": false,
+          "FlipVertical": false,
+          "FogStrength": 1,
+          "Opaque": true,
+          "Size": "10,10",
+          "Texture": "materials/particles/shapes/circle1.vtex"
+        },
+        {
+          "__type": "RogueFPSCoin",
+          "__guid": "93e71f03-635d-49a1-8165-957b83fde1b3",
+          "CoinAmount": 50
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "626adad0-c655-4e4b-8e29-39cfaa959fff",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 50,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "6a3e07cf-ebdc-491f-9cf4-dfe0c28df847",
+      "Name": "Coin (2)",
+      "Position": "-560,832,32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpriteRenderer",
+          "__guid": "264a121b-ad02-4936-b53e-6fba2094e9bb",
+          "Additive": false,
+          "CastShadows": true,
+          "Color": "1,0.9,0,1",
+          "DepthFeather": 0,
+          "FlipHorizontal": false,
+          "FlipVertical": false,
+          "FogStrength": 1,
+          "Opaque": true,
+          "Size": "10,10",
+          "Texture": "materials/particles/shapes/circle1.vtex"
+        },
+        {
+          "__type": "RogueFPSCoin",
+          "__guid": "494895c2-9114-432b-bb6c-1a6cd712e080",
+          "CoinAmount": 75
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "eb349a07-72c0-4aa7-8e61-048c06b7b0c3",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 50,
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3588,7 +3696,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-29T22:49:39.9801843\u002B00:00",
+  "LastSaved": "2024-03-29T23:20:00.6590168\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
