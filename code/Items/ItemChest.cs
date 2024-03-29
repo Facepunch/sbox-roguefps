@@ -20,7 +20,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 	int Cost { get; set; } = 100;
 	PrefabScene RandomItem { get; set; }
 
-	bool PlayerInside { get; set; }
+	GameObject PlayerInside { get; set; }
 
 	protected override void OnStart()
 	{
@@ -41,9 +41,21 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 	{
 		base.OnUpdate();
 
-		if ( PlayerInside && Input.Pressed( "use" ) )
+		if ( PlayerInside != null && Input.Pressed( "use" ) )
 		{
-			SpawnItem();
+			//Check if the player has enough coins
+			var stats = PlayerInside.Parent.Components.Get<PlayerStats>();
+
+			if ( stats != null && stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] >= Cost )
+			{
+				stats.AddCoin( -Cost );
+				SpawnItem();
+			}else
+			{
+				Log.Info( stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] );
+			}
+
+			//SpawnItem();
 		}
 	}
 
@@ -69,7 +81,8 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
-			PlayerInside = true;
+			PlayerInside = other.GameObject;
+
 			var parent = other.GameObject.Parent;
 			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
 			var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
@@ -86,7 +99,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
-			PlayerInside = false;
+			PlayerInside = null;
 
 			var parent = other.GameObject.Parent;
 			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
