@@ -359,48 +359,12 @@
     },
     {
       "__guid": "f125ba90-2560-420a-9436-3284f0411f5f",
-      "Name": "Sphere (10)",
+      "Name": "TestJump",
       "Position": "-256,224,32",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "95db57a2-de7c-4849-bcb0-cec7da3b93ff",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "7ecbbaa5-ad93-4830-9ad9-1c2936c0c84f",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "RogueFPSItemAnimator",
-          "__guid": "b695a2b7-de8e-48bf-9e04-f93fbbdb07e4"
-        },
-        {
-          "__type": "TestTwoItem",
-          "__guid": "2f46bd7f-8abb-4984-a246-4f783231a81b",
-          "Amount": 1,
-          "AsAPercent": false
-        },
-        {
-          "__type": "HighlightOutline",
-          "__guid": "f05f4fd3-a41f-4db5-b825-12839e5f8424",
-          "Color": "1,1,1,1",
-          "InsideColor": "0,0,0,0",
-          "InsideObscuredColor": "0,0,0,0",
-          "ObscuredColor": "0,0,0,0",
-          "Width": 0.25
-        }
-      ]
+      "__Prefab": "prefab/items/common/testjump.prefab"
     },
     {
       "__guid": "6dbe7bdd-5bf3-4419-9723-1d8242f2cb08",
@@ -494,92 +458,20 @@
     },
     {
       "__guid": "0c5b83e7-9857-448e-8ef2-319ccc9efc68",
-      "Name": "Bob",
-      "Position": "-256,64,32",
-      "Tags": "trigger",
+      "Name": "TestAttackSpeed",
+      "Position": "-256,64,288",
       "Enabled": true,
       "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "42e5c599-fc8c-4838-bf11-fa222376180b",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_props/beachball.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "3050f380-5a6b-4ef1-b9b5-3e70c9a158e1",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "RogueFPSItemAnimator",
-          "__guid": "cae4de22-ff02-4ebc-9afe-29e6c41b0450"
-        },
-        {
-          "__type": "TestItem",
-          "__guid": "1f55bd2f-baa7-466e-b07c-8a2c390ab6a0",
-          "Amount": 1,
-          "IsStatUpgrade": true
-        },
-        {
-          "__type": "HighlightOutline",
-          "__guid": "7639ffae-58e1-4b9e-b318-dcd160316756",
-          "Color": "1,1,1,1",
-          "InsideColor": "0,0,0,0",
-          "InsideObscuredColor": "0,0,0,0",
-          "ObscuredColor": "0,0,0,0",
-          "Width": 0.25
-        }
-      ]
+      "__Prefab": "prefab/items/common/testattackspeed.prefab"
     },
     {
       "__guid": "b161ac4a-7a9e-4099-9af2-a21bca8778c0",
-      "Name": "Bob (5)",
+      "Name": "TestSprint",
       "Position": "-256,416,32",
       "Tags": "trigger",
       "Enabled": true,
       "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "b1fe6787-99ab-4a3d-a324-0b787e9340c0",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/citizen_props/coffeemug01.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "d60ca6b3-a99d-47c4-9ff2-dd24fc1e1185",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 100,
-          "Static": false
-        },
-        {
-          "__type": "RogueFPSItemAnimator",
-          "__guid": "23f94ba2-7ed5-432f-9d34-ba0652d0f871"
-        },
-        {
-          "__type": "HighlightOutline",
-          "__guid": "e90dadd3-481c-4fbb-b25a-4f1e4ff06323",
-          "Color": "1,1,1,1",
-          "InsideColor": "0,0,0,0",
-          "InsideObscuredColor": "0,0,0,0",
-          "ObscuredColor": "0,0,0,0",
-          "Width": 0.25
-        },
-        {
-          "__type": "TestThreeItem",
-          "__guid": "cd7a652b-1788-43d1-80ef-4b4df1c1dedd",
-          "Amount": 1
-        }
-      ]
+      "__Prefab": "prefab/items/common/testsprint.prefab"
     },
     {
       "__guid": "2380a5c1-7ef6-4246-848c-a4f9c6a9d007",
@@ -3783,6 +3675,55 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "0dfb2343-08b4-43a4-bd04-5f4413529064",
+      "Name": "Object (1)",
+      "Position": "-224,736,16",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a96e56db-2af2-4535-9ebc-f226feb5dbe2",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/chest/temp_chest.vmdl",
+          "RenderType": "On",
+          "Tint": "0.17047,0.91628,0.5558,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "89ec187e-3603-47f4-8d5a-b59bbc3724cd",
+          "IsTrigger": false,
+          "Model": "models/temp/chest/temp_chest.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "c767aa43-07d4-4269-9f2f-3e4b6f0d60ab",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 131.46661,
+          "Static": false
+        },
+        {
+          "__type": "ItemChest",
+          "__guid": "9c7c30e5-5683-4ef2-af7f-c41db67b4147",
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "70a1cb0b-99c1-48ce-bdc0-0e28f13b753d"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "70a1cb0b-99c1-48ce-bdc0-0e28f13b753d",
+          "Name": "Object",
+          "Position": "0,0,24",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3808,7 +3749,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-29T01:12:49.3141115\u002B00:00",
+  "LastSaved": "2024-03-29T21:44:24.590322\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

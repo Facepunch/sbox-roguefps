@@ -48,9 +48,6 @@ public class BaseWeaponItem : BaseAbilityItem
 	{
 		base.OnUpdate();
 
-
-		Gizmo.Draw.SolidSphere( Muzzle, 10.1f );
-
 		if ( Input.Down( "attack2" ) && WeaponInputType == InputType.Secondary )
 		{
 			OnSecondaryFire();

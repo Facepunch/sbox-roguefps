@@ -74,6 +74,10 @@ public class BaseItem : Component, Component.ITriggerListener
 
 				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
 				GameObject.Destroy();
+				if(GameObject.Parent != Scene )
+				{
+					GameObject.Parent.Destroy();
+				}
 			}
 
 			else
