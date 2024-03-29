@@ -1,0 +1,86 @@
+{
+  "RootObject": {
+    "__guid": "7c1945be-afae-4544-bdc6-9a36ead595d6",
+    "Name": "testjump",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Rigidbody",
+        "__guid": "64df02b5-4a42-4dc5-8858-ccbd243be691",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": "DisableCollisionSounds",
+        "StartAsleep": false
+      },
+      {
+        "__type": "BoxCollider",
+        "__guid": "5986569b-20de-4109-b892-a8c15495451f",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "20,20,20",
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "7d76d558-70c0-47b6-9043-b1dd9d439829",
+        "Name": "testjump",
+        "Tags": "trigger",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "7770f195-804e-47ea-8979-613458a22a37",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "SphereCollider",
+            "__guid": "faafd5b1-ad5a-4feb-ac40-3708e7a5ced5",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Radius": 100,
+            "Static": false
+          },
+          {
+            "__type": "RogueFPSItemAnimator",
+            "__guid": "7c537107-da12-45ce-bf2e-565fe11e6cd9"
+          },
+          {
+            "__type": "TestTwoItem",
+            "__guid": "060288d4-1422-4713-b2bd-1367f2a85278",
+            "Amount": 1,
+            "AsAPercent": false
+          },
+          {
+            "__type": "HighlightOutline",
+            "__guid": "204c548c-0040-46c5-a380-6a9e4d20edc8",
+            "Color": "1,1,1,1",
+            "InsideColor": "0,0,0,0",
+            "InsideObscuredColor": "0,0,0,0",
+            "ObscuredColor": "0,0,0,0",
+            "Width": 0.25
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

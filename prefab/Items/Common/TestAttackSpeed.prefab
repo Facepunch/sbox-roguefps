@@ -1,0 +1,86 @@
+{
+  "RootObject": {
+    "__guid": "6ef3cf13-a55e-4db8-8e95-48b7929c5297",
+    "Name": "testattackspeed",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "BoxCollider",
+        "__guid": "5986569b-20de-4109-b892-a8c15495451f",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "20,20,20",
+        "Static": false
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "82a9c0e6-e4f2-4ee1-be7e-d467a765f8d5",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": "DisableCollisionSounds",
+        "StartAsleep": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "810f53b7-da94-4dbc-b59d-a4aefdb76d2f",
+        "Name": "testattackspeed",
+        "Tags": "trigger",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "71ca4827-6056-4d2a-99ab-38d3b1db051a",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/citizen_props/beachball.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "SphereCollider",
+            "__guid": "770ddd8c-9ef1-4680-9583-cf6ebfe0cceb",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Radius": 100,
+            "Static": false
+          },
+          {
+            "__type": "RogueFPSItemAnimator",
+            "__guid": "6d88f7a0-2ba0-42df-8047-84e62f71481e"
+          },
+          {
+            "__type": "TestItem",
+            "__guid": "f34dc9f3-263d-43f7-9ea0-cc1854b1b0db",
+            "Amount": 1,
+            "IsStatUpgrade": true
+          },
+          {
+            "__type": "HighlightOutline",
+            "__guid": "c3b7eca6-6e5c-41e0-91b4-e9236aab44f7",
+            "Color": "1,1,1,1",
+            "InsideColor": "0,0,0,0",
+            "InsideObscuredColor": "0,0,0,0",
+            "ObscuredColor": "0,0,0,0",
+            "Width": 0.25
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
