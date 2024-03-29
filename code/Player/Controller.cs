@@ -18,6 +18,9 @@ public partial class Controller : Component
 	public SkinnedModelRenderer Citizen { get; set; }
 	[Property]
 	public float Acceleration { get; set; } = 4.0f;
+	[Property] 
+	public PlayerStats PlayerStatsComponent { get; set; }
+
 
 	[Property] public CameraController CameraController { get; set; }
 
@@ -25,6 +28,7 @@ public partial class Controller : Component
 
 	public Ray AimRay => CameraController.AimRay;
 
+	public bool IsSprinting;
 	public TimeUntil TimeUntilRespawn { get; private set; }
 	public bool IsDead { get; private set; }
 	public bool IsAlive { get; private set; }
@@ -104,12 +108,14 @@ public partial class Controller : Component
 			MomentumVelocity = 0;
 		}
 
+		if ( Input.Pressed( "Run" ) )
+		{
+			IsSprinting = !IsSprinting;
+		}
+
 		InputVector = Vector3.Zero;
 
-		if ( Input.Down( "Left" ) ) InputVector.y += 1;
-		if ( Input.Down( "Right" ) ) InputVector.y += -1;
-		if ( Input.Down( "Forward" ) ) InputVector.x += 1;
-		if ( Input.Down( "Backward" ) ) InputVector.x += -1;
+		InputVector = Input.AnalogMove.Normal;
 
 		var moveVec = Vector3.Zero;
 
@@ -117,7 +123,8 @@ public partial class Controller : Component
 		{
 			var cameraFwdish = Camera.Transform.Rotation.Angles().WithPitch( 0 ).WithRoll( 0 ).ToRotation();
 			var dir = cameraFwdish * InputVector;
-			var speed = MoveSpeed;
+			var speed = GetSpeed();
+			Log.Info( $"Speed: {speed}" );
 			var inputVelocity = dir.Normal * speed;
 
 			if ( Grounded )
@@ -334,6 +341,18 @@ public partial class Controller : Component
 				Grounded = true;
 				break;
 			}
+		}
+	}
+
+	protected float GetSpeed()
+	{
+		if(IsSprinting)
+		{
+			return PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed] * PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SprintMultiplier];
+		}
+		else
+		{
+			return PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed];
 		}
 	}
 

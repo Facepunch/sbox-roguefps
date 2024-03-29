@@ -302,7 +302,13 @@
               "go": "525f0695-e8e8-42b3-acd1-2416935f2cea",
               "component_type": "SkinnedModelRenderer"
             },
-            "MoveSpeed": 260
+            "MoveSpeed": 260,
+            "PlayerStatsComponent": {
+              "_type": "component",
+              "component_id": "117076aa-649b-4b16-a3df-77ad477faa91",
+              "go": "5eaaee32-6c36-4c5c-8f09-d624a335d7fe",
+              "component_type": "PlayerStats"
+            }
           },
           {
             "__type": "CitizenAnimationHelper",
