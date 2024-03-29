@@ -159,6 +159,11 @@ public sealed class PlayerStats : Component
 			// If the player already has some coins, add to the existing amount
 			PlayerCoinsAndXp[CoinsAndXp.Coins] += amount;
 		}
+		//Don't go below 0
+		else if ( PlayerCoinsAndXp[CoinsAndXp.Coins] < 0 )
+		{
+			PlayerCoinsAndXp[CoinsAndXp.Coins] = 0;
+		}
 		else
 		{
 			// If this is the first time the player is getting coins
