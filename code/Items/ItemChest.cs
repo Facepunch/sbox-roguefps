@@ -16,11 +16,16 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 	bool UseRandomItem { get; set; } = true;
 
 	[Property]
+	GameObject Top { get; set; }
+
+	[Property]
 	[Group( "Item Chest" )]
 	int Cost { get; set; } = 100;
 	PrefabScene RandomItem { get; set; }
 
 	GameObject PlayerInside { get; set; }
+
+	bool IsOpen { get; set; }
 
 	protected override void OnStart()
 	{
@@ -41,6 +46,13 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 	{
 		base.OnUpdate();
 
+
+		if ( IsOpen )
+		{
+			Top.Transform.Rotation = Rotation.Slerp( Top.Transform.Rotation, Rotation.From( new Angles( 0, 0, -120 ) + Transform.Rotation.Angles() ), Time.Delta * 5f );
+			return;
+		}
+
 		if ( PlayerInside != null && Input.Pressed( "use" ) )
 		{
 			//Check if the player has enough coins
@@ -50,12 +62,13 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 			{
 				stats.AddCoin( -Cost );
 				SpawnItem();
-			}else
+
+				IsOpen = true;
+			}
+			else
 			{
 				Log.Info( stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] );
 			}
-
-			//SpawnItem();
 		}
 	}
 
@@ -70,14 +83,16 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 		var rb = item.Components.Get<Rigidbody>( FindMode.EnabledInSelfAndChildren );
 		if ( rb != null )
 		{
-			rb.ApplyForce( Vector3.Up * 5000000000f );
-			rb.ApplyForce( Vector3.Left * Random.Shared.Float( -500000000f, 500000000f ) );
-			rb.ApplyForce( Vector3.Forward * Random.Shared.Float( -500000000f, 500000000f ) );
+			rb.ApplyForce( Vector3.Up * 5000000f * 10 );
+			rb.ApplyForce( Vector3.Left * Random.Shared.Float( -5000f, 5000f ) );
+			rb.ApplyForce( Vector3.Forward * Random.Shared.Float( -5000f, 5000f ) );
 		}
 	}
 	void ITriggerListener.OnTriggerEnter( Collider other )
 	{
 		Log.Info( "OnTriggerEnter" );
+
+		if ( IsOpen ) return;
 
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
