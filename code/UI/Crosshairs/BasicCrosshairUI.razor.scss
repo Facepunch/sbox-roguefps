@@ -1,0 +1,43 @@
+BasicCrosshairUI {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+
+    .crosshair {
+        width: 48px;
+        height: 48px;
+        background-size: contain;
+    }
+
+    .block {
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        background-color: rgba(255,255,255,0.5);
+        box-shadow: 0px 0px 0px 1px #00000080;
+    }
+
+    .right {
+        transform: rotate(-90 deg) translateY(30);
+    }
+
+    .top {
+        transform: rotate(0 deg) translateY(30);
+    }
+
+    .bottom {
+        transform: rotate(180 deg) translateY(30);
+    }
+
+    .center {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: rgba(255,255,255,0.5);
+    }
+}

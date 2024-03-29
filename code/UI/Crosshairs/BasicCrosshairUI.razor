@@ -1,0 +1,65 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@* <div class="crosshair" style="background-image:url('@GetCrosshair()')"></div> *@
+	<div class="block" style=" transform: rotate(90 deg) @GetTranslate();"></div>
+	<div class="block" style=" transform: rotate(-90 deg) @GetTranslate();"></div>
+	<div class="block" style=" transform: rotate(0 deg) @GetTranslate();"></div>
+	<div class="block" style=" transform: rotate(180 deg) @GetTranslate();"></div>
+	<div class="block center"></div>
+</root>
+
+@code
+{
+	TimeSince timeSinceFired;
+	bool isPressing = false;
+
+	private const float MaxTranslateY = 40; // Maximum translateY value for the growth effect
+	private const float BaseTranslateY = 20; // Base translateY value when not shooting
+	private const float GrowSpeedMultiplier = 50.0f; // Increase this value to make the crosshair grow faster
+	private const float ResetSpeedMultiplier = 10.0f; // Control speed of contraction
+
+	float Size = 30;
+
+	public void OnShoot()
+	{
+Log.Info("OnShoot");
+		isPressing = true;
+		timeSinceFired = 0;
+	}
+
+	public void StopShoot()
+	{
+		Log.Info("StopShoot");
+		isPressing = false;
+	}
+
+	string GetTranslate()
+	{
+		if (isPressing)
+		{
+			// Increase growth rate by multiplying by GrowSpeedMultiplier
+			var translateYIncrease = Math.Clamp(timeSinceFired * GrowSpeedMultiplier, 2, MaxTranslateY - BaseTranslateY);
+			return $"translateY({BaseTranslateY + translateYIncrease}px)";
+		}
+		else
+		{
+			// Resets to base size when not pressing
+			return $"translateY({BaseTranslateY}px)";
+		}
+	}
+
+	string GetCrosshair()
+	{
+		var ob = GameObject.Parent.Components.Get<PlayerAbilities>().Abilities[0];
+		if(ob is BaseWeaponItem weapon)
+		{
+			return weapon.Crosshair;
+		}
+		return "ui/crosshair/crosshair012.png";
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now, Time.Delta);
+}
