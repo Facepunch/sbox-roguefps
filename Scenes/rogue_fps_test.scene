@@ -358,32 +358,6 @@
       ]
     },
     {
-      "__guid": "f125ba90-2560-420a-9436-3284f0411f5f",
-      "Name": "TestJump",
-      "Position": "-256,224,32",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefab/items/common/testjump.prefab"
-    },
-    {
-      "__guid": "0c5b83e7-9857-448e-8ef2-319ccc9efc68",
-      "Name": "TestAttackSpeed",
-      "Position": "-256,64,76",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefab/items/common/testattackspeed.prefab"
-    },
-    {
-      "__guid": "b161ac4a-7a9e-4099-9af2-a21bca8778c0",
-      "Name": "TestSprint",
-      "Position": "-256,416,32",
-      "Tags": "trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefab/items/common/testsprint.prefab"
-    },
-    {
       "__guid": "ec153541-e1cb-491d-b933-fdcff29ff89e",
       "Name": "Box",
       "Position": "2176,1024,-0.0005125767",
@@ -3409,160 +3383,12 @@
       ]
     },
     {
-      "__guid": "0dfb2343-08b4-43a4-bd04-5f4413529064",
-      "Name": "Object (1)",
-      "Position": "-224,576,16",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "a96e56db-2af2-4535-9ebc-f226feb5dbe2",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/temp/chest/temp_chest.vmdl",
-          "RenderType": "On",
-          "Tint": "0.17047,0.91628,0.5558,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__guid": "89ec187e-3603-47f4-8d5a-b59bbc3724cd",
-          "IsTrigger": false,
-          "Model": "models/temp/chest/temp_chest.vmdl",
-          "Static": false
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "c767aa43-07d4-4269-9f2f-3e4b6f0d60ab",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 131.46661,
-          "Static": false
-        },
-        {
-          "__type": "ItemChest",
-          "__guid": "9c7c30e5-5683-4ef2-af7f-c41db67b4147",
-          "Cost": 250,
-          "ItemSpawnLocation": {
-            "_type": "gameobject",
-            "go": "70a1cb0b-99c1-48ce-bdc0-0e28f13b753d"
-          },
-          "Rarity": "Common",
-          "UseRandomItem": true
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "70a1cb0b-99c1-48ce-bdc0-0e28f13b753d",
-          "Name": "Object",
-          "Position": "0,0,24",
-          "Enabled": true,
-          "NetworkMode": 2
-        }
-      ]
-    },
-    {
-      "__guid": "122cc5ad-3401-493a-8d67-95541399d1a6",
-      "Name": "Object (2)",
-      "Position": "-224,896,16",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "7444eda9-1e7b-4b5b-beee-4acdc23c2f41",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/temp/chest/temp_chest.vmdl",
-          "RenderType": "On",
-          "Tint": "0.17047,0.91628,0.5558,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__guid": "2fa9afa7-7886-43cf-a6aa-52f363a884ef",
-          "IsTrigger": false,
-          "Model": "models/temp/chest/temp_chest.vmdl",
-          "Static": false
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "0bd1fbf2-9550-4d11-8656-80b0e258bd60",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 131.46661,
-          "Static": false
-        },
-        {
-          "__type": "ItemChest",
-          "__guid": "a0e16fb8-2f64-49f6-95f9-e4eb736b8451",
-          "Cost": 54,
-          "ItemSpawnLocation": {
-            "_type": "gameobject",
-            "go": "761b7d08-8ff3-45af-9f1c-e1bf87f4dbfc"
-          },
-          "Rarity": "Common",
-          "UseRandomItem": true
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "761b7d08-8ff3-45af-9f1c-e1bf87f4dbfc",
-          "Name": "Object",
-          "Position": "0,0,24",
-          "Enabled": true,
-          "NetworkMode": 2
-        }
-      ]
-    },
-    {
       "__guid": "10fdbf11-c844-4f86-b822-89604c9966c7",
-      "Name": "Object (3)",
-      "Position": "-224,1216,16",
+      "Name": "LootBox",
+      "Position": "0,1056,-0.000008201306",
       "Enabled": true,
       "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "ed0ce593-8ac8-4f6e-8ee2-e5e590c0d024",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/temp/chest/temp_chest.vmdl",
-          "RenderType": "On",
-          "Tint": "0.17047,0.91628,0.5558,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__guid": "1b18d926-bba1-4b4d-be6d-bd405eea3bcc",
-          "IsTrigger": false,
-          "Model": "models/temp/chest/temp_chest.vmdl",
-          "Static": false
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "2909f1f6-0adb-4d1f-8a38-7b2dd163788e",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 131.46661,
-          "Static": false
-        },
-        {
-          "__type": "ItemChest",
-          "__guid": "95772087-49cf-4919-9a1f-ad39adc66ac9",
-          "Cost": 25,
-          "ItemSpawnLocation": {
-            "_type": "gameobject",
-            "go": "3f7a18d2-ab63-4ce4-9bc1-87ac605be90b"
-          },
-          "Rarity": "Common",
-          "UseRandomItem": true
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "3f7a18d2-ab63-4ce4-9bc1-87ac605be90b",
-          "Name": "Object",
-          "Position": "0,0,24",
-          "Enabled": true,
-          "NetworkMode": 2
-        }
-      ]
+      "__Prefab": "prefab/lootbox/testlootbox.prefab"
     },
     {
       "__guid": "95e4be5f-316a-4c8d-9841-037d6c25899f",
@@ -3671,6 +3497,99 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "46b9a819-a52d-44d7-a42b-250268ed3077",
+      "Name": "LootSpawner",
+      "Position": "-160,384,96",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "LootBoxSpawner",
+          "__guid": "e2f34c32-bdcf-4a99-853d-1a89169d7e1a",
+          "currentSpawned": 0,
+          "LootBoxPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/testlootbox.prefab"
+          },
+          "SpawnAmount": 20
+        }
+      ]
+    },
+    {
+      "__guid": "88d2bfa1-0ee5-4517-8a40-eabf3990f9a9",
+      "Name": "Box",
+      "Position": "16.00095,1431.966,32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MeshComponent",
+          "__guid": "14a04a00-a378-409d-aca5-038a002bd5d9",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk3QCQ7CMBBD0bAUylp2uP9J8ZMmUkb6ysTjOGnn1tov7MI9rMI3TOEZDuEdLqHXunzTcEZta7YJr\u002BqVbJq5bP1YfI\u002BayzpWtr036OnnIetTPf0a9uXzVj19Ht50K11vVfy\u002BSx59KT/6nWanuqtrVno/x\u002B8/KXfKMaPx/wEMd\u002BZ5ZAEAAA==",
+            "TextureOrigin": "16.00095,1431.966,32",
+            "Positions": [
+              "-112.001,-119.9663,-32",
+              "112.0009,-119.9663,-32",
+              "112.0009,23.96631,32",
+              "-112.0009,23.96631,32",
+              "-112.0009,23.96631,-32",
+              "112.0009,23.96631,-32",
+              "112.0009,-119.9663,-96",
+              "-112.001,-119.9663,-96"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "Static": true
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3682,9 +3601,9 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
-      "IncludeKeyframedBodies": true,
+      "IncludeKeyframedBodies": false,
       "EditorAutoUpdate": true,
       "AgentHeight": 64,
       "AgentRadius": 16,
@@ -3696,7 +3615,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-29T23:20:00.6590168\u002B00:00",
+  "LastSaved": "2024-03-30T00:46:29.6403174\u002B00:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
