@@ -22,10 +22,10 @@ public sealed class RogueFPSCoin : Component, Component.ITriggerListener
 
 		if ( timeSinceSpawned > 0.40f && timeSinceSpawned < 0.45f )
 		{
-			var physbody = GameObject.Components.Get<Rigidbody>();
+			/*var physbody = GameObject.Components.Get<Rigidbody>();
 			physbody.Velocity = 0;
 			physbody.AngularVelocity = 0;
-
+			*/
 			Log.Info( "Coin spawned." );
 		}
 
