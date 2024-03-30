@@ -30,12 +30,6 @@ public class BaseWeaponItem : BaseAbilityItem
 		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
 
 		CrosshairUI = GameObject.Parent.Components.Get<BasicCrosshairUI>(FindMode.EverythingInChildren);
-
-		if(ViewModelObject != null)
-		{
-
-			Log.Info( $"Muzzle: {Muzzle}" );
-		}
 	}
 
 	protected override void DrawGizmos()

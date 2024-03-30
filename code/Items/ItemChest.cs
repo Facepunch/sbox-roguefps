@@ -34,8 +34,6 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 		//Load the items from a folder.
 		Items = ResourceLibrary.GetAll<PrefabFile>().Where( x => x.ResourcePath.StartsWith( GetPath( Rarity ) ) ).ToList();
 
-		Log.Info( $"Items: {Items.Count}" );
-
 		if(UseRandomItem)
 		{
 			RandomItem = SceneUtility.GetPrefabScene( Items[Random.Shared.Int( 0, Items.Count - 1 )] );
@@ -91,7 +89,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 	}
 	void ITriggerListener.OnTriggerEnter( Collider other )
 	{
-		Log.Info( "OnTriggerEnter" );
+		//Log.Info( "OnTriggerEnter" );
 
 		if ( IsOpen ) return;
 
@@ -111,7 +109,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 
 	void ITriggerListener.OnTriggerExit( Collider other )
 	{
-		Log.Info( "OnTriggerExit" );
+		//Log.Info( "OnTriggerExit" );
 
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
