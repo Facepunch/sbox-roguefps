@@ -7,6 +7,8 @@ namespace RogueFPS;
 [Icon( "analytics", "yellow", "white" )]
 public sealed class PlayerStats : Component
 {
+	public static PlayerStats Local { get; private set; }
+
 	//Default Stats Property
 	[Property] public float Health { get; set; } = 100f;
 	[Property] public float Armor { get; set; } = 0f;
@@ -116,6 +118,7 @@ public sealed class PlayerStats : Component
 		//	StartingStats = new Dictionary<PlayerStartingStats, float>();
 		//	UpgradedStats = new Dictionary<PlayerUpgradedStats, float>();
 		//	GetStatingStats();
+		Local = this;
 	}
 
 	public void AddItemComponent( BaseItem comp )
@@ -315,5 +318,14 @@ public sealed class PlayerStats : Component
 			default:
 				return "#FFFFFF";
 		}
+	}
+
+	[ConCmd("Rogue_GiveCoins")]
+	public static void GiveCoins( int amount )
+	{
+
+		var stat = PlayerStats.Local;
+		stat.AddCoin( amount );
+
 	}
 }
