@@ -62,7 +62,8 @@
             "__type": "TestTwoItem",
             "__guid": "e0cba1f0-ff8d-4fa6-ba5c-0652de2cabef",
             "Amount": 1,
-            "AsAPercent": false
+            "AsAPercent": false,
+            "SpawnChance": 0
           },
           {
             "__type": "HighlightOutline",

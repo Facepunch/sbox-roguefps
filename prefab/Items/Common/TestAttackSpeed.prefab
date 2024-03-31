@@ -62,7 +62,8 @@
             "__type": "TestItem",
             "__guid": "381a159e-be04-4cb7-a9f4-9a9133e43d8c",
             "Amount": 1,
-            "IsStatUpgrade": true
+            "IsStatUpgrade": true,
+            "SpawnChance": 0
           },
           {
             "__type": "HighlightOutline",

@@ -26,7 +26,7 @@ public class BaseItem : Component, Component.ITriggerListener
 	private const float BaseChance = 10.0f; // 10%
 	private const float MaxChance = 80.0f; // 80%
 	public virtual float ChanceIncrementPerUpgrade { get; set; } = 5.0f; // 5%
-																		 //
+	[Property] public float SpawnChance { get; set; } = 100.0f;
 	public GameObject Player { get; set; }
 	//
 
