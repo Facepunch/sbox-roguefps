@@ -54,6 +54,16 @@
         "HasPrice": true,
         "IsOpen": false,
         "Name": "Interactable"
+      },
+      {
+        "__type": "HighlightOutline",
+        "__guid": "22ddc8a5-0b16-411a-85a1-e777450b0a15",
+        "__enabled": false,
+        "Color": "0.99496,1,0.69767,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "ObscuredColor": "0,0,0,0",
+        "Width": 0.25
       }
     ],
     "Children": [

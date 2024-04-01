@@ -2,6 +2,8 @@ using Sandbox;
 
 public sealed class InteractorUse : Component
 {
+	GameObject InteractObject { get; set; }
+
 	protected override void OnUpdate()
 	{
 
@@ -39,6 +41,10 @@ public sealed class InteractorUse : Component
 				var pickupui = new ItemPickUp( interactor.Cost );
 
 				itemUI.Panel.AddChild( pickupui );
+
+				InteractObject = tr.GameObject;
+
+				interactor.CreateGlow();
 			}
 		}
 		else
@@ -47,13 +53,47 @@ public sealed class InteractorUse : Component
 		}
 	}
 
+	void CreateGlow()
+	{
+		if(InteractObject == null) return;
+
+		foreach (var child in InteractObject.Children)
+		{
+			if (child.Components.Get<HighlightOutline>() != null)
+			{
+				var outline = child.Components.Get<HighlightOutline>();
+				outline.Enabled = true;
+			}
+		}
+	}
+
+	void DestroyGlow()
+	{
+		if(InteractObject == null) return;
+
+		foreach (var child in InteractObject.Children)
+		{
+			if (child.Components.Get<HighlightOutline>() != null)
+			{
+				var outline = child.Components.Get<HighlightOutline>();
+				outline.Enabled = false;
+			}
+		}
+	}
+
 
 	void DestroyUI()
 	{
+		var interactor = InteractObject?.Components.Get<Interactable>();
+		if (interactor == null) return;
+		interactor.DestroyGlow();
+
 		var parent = GameObject.Parent;
 		var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
 		var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
 
 		itemUI.Panel.Children.FirstOrDefault( x => x is ItemPickUp )?.Delete();
+
+		//InteractObject = null;
 	}
 }

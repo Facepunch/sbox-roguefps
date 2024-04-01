@@ -19,4 +19,23 @@ public class Interactable : Component
 	{
 		Log.Info( "Interacted with " + player.Name );
 	}
+
+	public void CreateGlow()
+	{
+		var glow = GameObject.Components.Get<HighlightOutline>(FindMode.EverythingInSelf);
+		if ( glow != null )
+		{
+			glow.Enabled = true;
+		}
+	}
+	public void DestroyGlow()
+	{
+		Log.Info( "Destroying glow" );
+
+		var glow = GameObject.Components.Get<HighlightOutline>();
+		if ( glow != null )
+		{
+			glow.Enabled = false;
+		}
+	}
 }
