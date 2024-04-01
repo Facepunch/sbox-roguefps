@@ -7,6 +7,8 @@ AbilityIcon {
         align-items: center;
         flex-direction: column;
         align-content: center;
+        font-family: "Quantico";
+        font-weight: 200;
 
         InputHint, InputAnalogHint {
             margin-top: 10px;
@@ -19,14 +21,12 @@ AbilityIcon {
 
         .title {
             font-size: 15px;
-            font-family: Poppins;
             color: #FF0000;
             position: absolute;
         }
 
         .input {
             font-size: 15px;
-            font-family: Roboto;
             font-weight: 800;
             color: white;
             position: absolute;
@@ -36,11 +36,9 @@ AbilityIcon {
 
         .ammo {
             font-size: 28px;
-            font-family: Roboto;
             font-weight: 800;
             color: white;
             height: 26px;
-            font-family: "Major Mono Display";
             text-align: center;
             text-shadow: 2px 2px 2px #000000;
         }
@@ -75,11 +73,11 @@ AbilityIcon {
             font-size: 30px;
             display: none;
             color: white;
-            font-family: Poppins;
+            font-family: "Quantico";
             font-weight: 800;
-            position:absolute;
+            position: absolute;
             z-index: 15;
-            top:48%;
+            top: 48%;
 
             &.cooldown {
                 display: flex;

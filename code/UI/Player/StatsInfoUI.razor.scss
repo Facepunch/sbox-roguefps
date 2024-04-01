@@ -15,7 +15,8 @@ StatsInfoUI {
 		padding: 50px;
 		right: 0;
 		position: absolute;
-		font-family: Poppins;
+		font-family: "Quantico";
+		font-weight: 200;
 		color: white;
 	}
 
@@ -35,6 +36,6 @@ StatsInfoUI {
 	.value {
 		font-style: italic;
 		font-size: 18px;
-		padding-left:30px;
+		padding-left: 30px;
 	}
 }

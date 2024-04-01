@@ -15,10 +15,10 @@ HealthUI {
     width: 100%;
     margin:5px;
 }
-.lvltxt
-{
+.lvltxt {
     font-size: 18px;
-    font-family: "Major Mono Display";
+    font-family: "Quantico";
+    font-weight: 800;
     color: white;
     width: 100%;
     text-align: center;
@@ -47,7 +47,8 @@ HealthUI {
     color: #fff; /* Text color */
     font-size: 24;
     text-shadow: 2px 2px 2px #000000;
-    font-family: "Major Mono Display";
+    font-family: "Quantico";
+    font-weight: 800;
     text-align: center;
     align-content: center;
     justify-content: center;

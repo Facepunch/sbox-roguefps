@@ -4,10 +4,11 @@ ItemsUIToolTip {
 	right: 400px;
 	min-width: 300px;
 	padding: 20px;
-	font-family: Nunito;
+	font-family: "Quantico";
+	font-weight: 200;	
 	font-weight: 800;
 	pointer-events: none;
-	transition: all 0.2s ease-in-out;		
+	transition: all 0.2s ease-in-out;
 
 	.container {
 		left: 10px;
