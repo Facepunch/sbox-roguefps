@@ -2,10 +2,10 @@ using Sandbox;
 using System.Numerics;
 using System;
 
-[Title( "Rogue FPS Item Animator" )]
+[Title( "Item Animator" )]
 [Category( "Rogue FPS" )]
 [Icon( "swap_horizontal_circle", "red", "white" )]
-public sealed class RogueFPSItemAnimator : Component
+public sealed class ItemAnimator : Component
 {
 	private ModelRenderer Model;
 
