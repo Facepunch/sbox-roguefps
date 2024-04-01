@@ -55,10 +55,6 @@
             "Static": false
           },
           {
-            "__type": "RogueFPSItemAnimator",
-            "__guid": "b0eacdde-e6e8-46e4-9f08-fbacbb322014"
-          },
-          {
             "__type": "TestItem",
             "__guid": "381a159e-be04-4cb7-a9f4-9a9133e43d8c",
             "Amount": 1,
@@ -73,6 +69,10 @@
             "InsideObscuredColor": "0,0,0,0",
             "ObscuredColor": "0,0,0,0",
             "Width": 0.25
+          },
+          {
+            "__type": "ItemAnimator",
+            "__guid": "ab27a189-cddb-4cf1-8433-c62e68e61aac"
           }
         ]
       }

@@ -9,7 +9,7 @@
 	<div class="item">
 			<InputHint Size=@InputGlyphSize.Small @Action="use" />
 			<div class="ItemName">Open Chest</div>
-		<div class="ItemName" style="color:orange;">$@_Cost</div>
+		<div class="ItemName" style="color:orange;">[$@_Cost]</div>
 		</div>
 
 	</div>	
@@ -20,9 +20,8 @@
 	public BaseItem _Item { get; set; }
 	public int _Cost { get; set; }
 
-	public ItemPickUp(BaseItem item, int cost)
+	public ItemPickUp( int cost)
 	{
-		_Item = item;
 		_Cost = cost;
 	}
 

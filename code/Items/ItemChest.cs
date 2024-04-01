@@ -1,6 +1,6 @@
 using Sandbox;
 
-public sealed class ItemChest : Component, Component.ITriggerListener
+public sealed class ItemChest : Interactable, Component.ITriggerListener
 {
 	List<PrefabFile> Items;
 
@@ -18,14 +18,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 	[Property]
 	GameObject Top { get; set; }
 
-	[Property]
-	[Group( "Item Chest" )]
-	int Cost { get; set; } = 100;
 	PrefabScene RandomItem { get; set; }
-
-	GameObject PlayerInside { get; set; }
-
-	bool IsOpen { get; set; }
 
 	protected override void OnStart()
 	{
@@ -34,7 +27,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 		//Load the items from a folder.
 		Items = ResourceLibrary.GetAll<PrefabFile>().Where( x => x.ResourcePath.StartsWith( GetPath( Rarity ) ) ).ToList();
 
-		if(UseRandomItem)
+		if ( UseRandomItem )
 		{
 			RandomItem = SceneUtility.GetPrefabScene( Items[Random.Shared.Int( 0, Items.Count - 1 )] );
 		}
@@ -44,30 +37,34 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 	{
 		base.OnUpdate();
 
-
 		if ( IsOpen )
 		{
 			Top.Transform.Rotation = Rotation.Slerp( Top.Transform.Rotation, Rotation.From( new Angles( 0, 0, -120 ) + Transform.Rotation.Angles() ), Time.Delta * 5f );
 			return;
 		}
+	}
 
-		if ( PlayerInside != null && Input.Pressed( "use" ) )
+	public override void OnInteract(GameObject player)
+	{
+		OpenChest(player);
+	}
+
+	public void OpenChest(GameObject player )
+	{
+		//Check if the player has enough coins
+		var stats = player.Components.Get<PlayerStats>();
+
+		if ( stats != null && stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] >= Cost )
 		{
-			//Check if the player has enough coins
-			var stats = PlayerInside.Parent.Components.Get<PlayerStats>();
+			stats.AddCoin( -Cost );
+			SpawnItem();
 
-			if ( stats != null && stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] >= Cost )
-			{
-				stats.AddCoin( -Cost );
-				SpawnItem();
-
-				IsOpen = true;
-				DestroyUI();
-			}
-			else
-			{
-				Log.Info( stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] );
-			}
+			IsOpen = true;
+			//DestroyUI();
+		}
+		else
+		{
+			Log.Info( stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] );
 		}
 	}
 
@@ -92,7 +89,7 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 		//Log.Info( "OnTriggerEnter" );
 
 		if ( IsOpen ) return;
-
+		/*
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			PlayerInside = other.GameObject;
@@ -101,16 +98,17 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
 			var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
 
-			var pickupui = new ItemPickUp( RandomItem.Components.Get<BaseItem>(FindMode.EnabledInSelfAndChildren), Cost );
+			var pickupui = new ItemPickUp( Cost );
 
 			itemUI.Panel.AddChild( pickupui );
 		}
+		*/
 	}
 
 	void ITriggerListener.OnTriggerExit( Collider other )
 	{
 		//Log.Info( "OnTriggerExit" );
-
+		/*
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			PlayerInside = null;
@@ -121,21 +119,10 @@ public sealed class ItemChest : Component, Component.ITriggerListener
 
 			itemUI.Panel.DeleteChildren();
 		}
+		*/
 	}
 
-	void DestroyUI()
-	{
-		if ( PlayerInside != null )
-		{
-			var parent = PlayerInside.Parent;
-			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
-			var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
-
-			itemUI.Panel.DeleteChildren();
-		}
-	}
-
-	string GetPath(ItemRarity rarity)
+	string GetPath( ItemRarity rarity )
 	{
 		switch ( rarity )
 		{

@@ -55,10 +55,6 @@
             "Static": false
           },
           {
-            "__type": "RogueFPSItemAnimator",
-            "__guid": "db6016c9-180a-435f-8174-a9760ee1a5e5"
-          },
-          {
             "__type": "HighlightOutline",
             "__guid": "41cc1c57-44d4-41ec-9b07-36295ee09bfa",
             "Color": "1,1,1,1",
@@ -70,7 +66,12 @@
           {
             "__type": "TestThreeItem",
             "__guid": "58da182e-022e-4534-a180-c4057b8e0722",
-            "Amount": 1
+            "Amount": 1,
+            "SpawnChance": 100
+          },
+          {
+            "__type": "ItemAnimator",
+            "__guid": "ab27a189-cddb-4cf1-8433-c62e68e61aac"
           }
         ]
       }
