@@ -18,6 +18,11 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 	[Property]
 	GameObject Top { get; set; }
 
+	[Property] PrefabScene WorldUI { get; set; }
+
+	GameObject _UI;
+	WorldCostPanel _Panel;
+
 	PrefabScene RandomItem { get; set; }
 
 	protected override void OnStart()
@@ -40,6 +45,8 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		if ( IsOpen )
 		{
 			Top.Transform.Rotation = Rotation.Slerp( Top.Transform.Rotation, Rotation.From( new Angles( 0, 0, -120 ) + Transform.Rotation.Angles() ), Time.Delta * 5f );
+			if ( _UI != null )
+				_UI.Destroy();
 			return;
 		}
 	}
@@ -89,37 +96,25 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		//Log.Info( "OnTriggerEnter" );
 
 		if ( IsOpen ) return;
-		/*
+	
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
-			PlayerInside = other.GameObject;
-
-			var parent = other.GameObject.Parent;
-			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
-			var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
-
-			var pickupui = new ItemPickUp( Cost );
-
-			itemUI.Panel.AddChild( pickupui );
+			_UI = WorldUI.Clone();
+			_UI.Transform.Position = Transform.Position + Vector3.Up * 35;
+			_Panel = _UI.Components.Get<WorldCostPanel>();
+			_Panel.Value = Cost;
 		}
-		*/
 	}
 
 	void ITriggerListener.OnTriggerExit( Collider other )
 	{
 		//Log.Info( "OnTriggerExit" );
-		/*
+		
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
-			PlayerInside = null;
-
-			var parent = other.GameObject.Parent;
-			var ui = parent.Components.Get<ScreenPanel>( FindMode.EnabledInSelfAndDescendants );
-			var itemUI = ui.Components.Get<ItemsUI>( FindMode.EnabledInSelfAndDescendants );
-
-			itemUI.Panel.DeleteChildren();
-		}
-		*/
+			if ( _UI != null )
+				_UI.Destroy();
+		}	
 	}
 
 	string GetPath( ItemRarity rarity )

@@ -18,6 +18,8 @@ public class Interactable : Component
 	public virtual void OnInteract( GameObject player)
 	{
 		Log.Info( "Interacted with " + player.Name );
+
+		Player = player;
 	}
 
 	public void CreateGlow()
@@ -30,7 +32,7 @@ public class Interactable : Component
 	}
 	public void DestroyGlow()
 	{
-		Log.Info( "Destroying glow" );
+		//Log.Info( "Destroying glow" );
 
 		var glow = GameObject.Components.Get<HighlightOutline>();
 		if ( glow != null )

@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="container">
+		<div class="cost @(Near? "broke" : "")">$@Value</div>
+	</div>
+</root>
+
+@code
+{
+	public bool Near { get; set; }
+
+	public int Value { get; set; } = 1;
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(Value);
+}

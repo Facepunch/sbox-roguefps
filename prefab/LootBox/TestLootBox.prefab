@@ -32,8 +32,8 @@
       {
         "__type": "ItemChest",
         "__guid": "6a62f83a-ffdb-484f-9e3e-14fde49c26d2",
-        "Cost": 100,
-        "HasPrice": false,
+        "Cost": 25,
+        "HasPrice": true,
         "IsOpen": false,
         "ItemSpawnLocation": {
           "_type": "gameobject",
@@ -45,15 +45,11 @@
           "_type": "gameobject",
           "go": "9d08705d-21a8-457b-bc30-1604e70d8ab3"
         },
-        "UseRandomItem": true
-      },
-      {
-        "__type": "Interactable",
-        "__guid": "ae170139-ea86-497e-8881-071e9729042d",
-        "Cost": 100,
-        "HasPrice": true,
-        "IsOpen": false,
-        "Name": "Interactable"
+        "UseRandomItem": true,
+        "WorldUI": {
+          "_type": "gameobject",
+          "prefab": "prefab/lootbox/costworldpanel.prefab"
+        }
       },
       {
         "__type": "HighlightOutline",
@@ -70,7 +66,7 @@
       {
         "__guid": "2bd0f55b-ea60-4fe6-940f-610d2bf6d2f6",
         "Name": "SpawnPoint",
-        "Position": "0,-2,20",
+        "Position": "0,-6.09114,20",
         "Enabled": true,
         "NetworkMode": 2
       },

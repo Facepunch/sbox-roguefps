@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "93235c7a-c62e-43ae-b836-2da9bafa99c8",
+    "__guid": "5b48eddb-dc9a-41d6-b370-cf47693a285c",
     "Name": "testattackspeed",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "BoxCollider",
-        "__guid": "7a4cf37d-9c48-4a5f-aa8e-54c43def6a4f",
+        "__guid": "3a6cd4c8-b8c3-4e8e-b281-942e033dd026",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
@@ -15,7 +15,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "083241ea-4ed9-42e3-b2ba-e6094ac2901f",
+        "__guid": "f9e0a3ac-f5d0-4671-a280-a9cb046b2589",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -32,7 +32,7 @@
     ],
     "Children": [
       {
-        "__guid": "a32d5f37-31d2-4f69-bd4a-8cb652c7060d",
+        "__guid": "53f49bd4-d34a-4b3d-b9f5-beb464ad3420",
         "Name": "testattackspeed",
         "Tags": "trigger",
         "Enabled": true,
@@ -40,7 +40,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "ac2cf42e-5bdd-472e-a532-89ba1068e0e3",
+            "__guid": "d4155ae2-5d9d-4370-993d-08cfea8b3b40",
             "BodyGroups": 18446744073709551615,
             "Model": "models/citizen_props/beachball.vmdl",
             "RenderType": "On",
@@ -48,7 +48,7 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "cc3c1aae-e44c-49fb-ad38-87e53aa1fa0a",
+            "__guid": "fe357d24-8948-444e-abe8-c24231fd593a",
             "Center": "0,0,0",
             "IsTrigger": true,
             "Radius": 20,
@@ -56,14 +56,14 @@
           },
           {
             "__type": "TestItem",
-            "__guid": "381a159e-be04-4cb7-a9f4-9a9133e43d8c",
+            "__guid": "f049eb2e-2dfd-4eb9-adaf-77d850a67250",
             "Amount": 1,
             "IsStatUpgrade": true,
             "SpawnChance": 0
           },
           {
             "__type": "HighlightOutline",
-            "__guid": "6e45c0ec-ad07-4ec5-9810-671d66e5eeeb",
+            "__guid": "287cfa11-be38-46e6-b77a-8083f900d8f6",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",
@@ -72,7 +72,7 @@
           },
           {
             "__type": "ItemAnimator",
-            "__guid": "ab27a189-cddb-4cf1-8433-c62e68e61aac"
+            "__guid": "ca5b10e0-c2ad-4e6b-96fa-2b2b38280c54"
           }
         ]
       }

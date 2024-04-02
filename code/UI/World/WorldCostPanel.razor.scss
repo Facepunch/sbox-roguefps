@@ -1,0 +1,38 @@
+WorldCostPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: "Quantico";
+    font-weight: 800;
+
+    .container {
+
+        .title {
+            font-size: 128px;
+            color: #ffd800;
+            text-shadow: 5px 5px 0px #000000;
+        }
+
+        .cost {
+            font-size: 128px;
+            color: orange;
+            text-shadow: 5px 5px 0px #000000;
+        }
+
+        .broke {
+            font-size: 128px;
+            color: #ff0000;
+            text-shadow: 5px 5px 0px #000000;
+        }
+
+        &:intro {
+            transform: translateX(-132px);
+            opacity: 0;
+        }
+    }
+}

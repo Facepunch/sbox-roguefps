@@ -49,10 +49,11 @@ public sealed class LootBoxSpawner : Component
 			if ( pos.HasValue )
 			{
 				lootBox.Transform.Position = pos.Value;
-				lootBox.Transform.Rotation = Rotation.FromYaw(Random.Shared.Float( -360, 360 ));
+
 				lootBox.Transform.Rotation = Rotation.FromPitch(Random.Shared.Float( -10, 10 ));
 				lootBox.Transform.Rotation = Rotation.FromRoll(Random.Shared.Float( -10, 10 ));
-				lootBox.BreakFromPrefab();
+				lootBox.Transform.Rotation = Rotation.FromYaw( Random.Shared.Float( -360, 360 ) );
+				//lootBox.BreakFromPrefab();
 			}
 		}
 	}
