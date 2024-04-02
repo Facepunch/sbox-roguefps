@@ -25,6 +25,7 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 
 	PrefabScene RandomItem { get; set; }
 
+	public override string Name { get; set; } = "Open Chest";
 	protected override void OnStart()
 	{
 		base.OnStart();

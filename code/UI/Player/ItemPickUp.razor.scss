@@ -17,6 +17,11 @@ ItemPickUp {
         margin-right: 10px;
     }
 
+    .priced
+        {
+        display:none;
+    }
+
     InputHint, InputAnalogHint {
         z-index: 10;
     }

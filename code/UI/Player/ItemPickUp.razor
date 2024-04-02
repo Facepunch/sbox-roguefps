@@ -8,8 +8,8 @@
 <root class="ItemPickUp">
 	<div class="item">
 			<InputHint Size=@InputGlyphSize.Small @Action="use" />
-			<div class="ItemName">Open Chest</div>
-		<div class="ItemName" style="color:orange;">[$@_Cost]</div>
+		<div class="ItemName">@_ItemName</div>
+		<div class="ItemName @(_HasPrice? "":"priced")" style="color:orange;">[$@_Cost]</div>
 		</div>
 
 	</div>	
@@ -18,11 +18,16 @@
 @code
 {
 	public BaseItem _Item { get; set; }
+	public string _ItemName { get; set; }
 	public int _Cost { get; set; }
+	public bool _HasPrice { get; set; }
 
-	public ItemPickUp( int cost)
+
+	public ItemPickUp(string item, int cost, bool hasprice)
 	{
+		_ItemName = item;
 		_Cost = cost;
+		_HasPrice = hasprice;
 	}
 
 	/// <summary>
