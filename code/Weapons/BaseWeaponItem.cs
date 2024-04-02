@@ -108,6 +108,18 @@ public class BaseWeaponItem : BaseAbilityItem
 		return tr;
 	}
 
+	public virtual void OnHit(GameObject obj)
+	{
+		if(obj != null)
+		{
+			var health = obj.Components.Get<Npcbase>();
+			{
+				health.OnDamage(25);
+			}
+
+		}
+	}
+
 	public void DoBulletTrace( Vector3 start, Vector3 end )
 	{
 		//DoNothing

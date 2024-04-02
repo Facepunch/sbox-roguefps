@@ -34,5 +34,13 @@ public class TestWeapon : BaseWeaponItem
 		var tracerParticle = tracer.Components.Get<TracerBulletParticle>();
 		tracerParticle.Start.Transform.Position = tr.StartPosition + Scene.Camera.Transform.Rotation.Forward * 10f;
 		tracerParticle.End.Transform.Position = tr.EndPosition;
+
+		if ( tr.Hit )
+		{
+			if ( tr.GameObject.Components.Get<Npcbase>() != null )
+			{
+				OnHit( tr.GameObject );
+			}
+		}
 	}
 }

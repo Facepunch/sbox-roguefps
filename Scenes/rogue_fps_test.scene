@@ -160,7 +160,7 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -192,7 +192,7 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -225,7 +225,7 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -257,7 +257,7 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -289,7 +289,7 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -321,7 +321,7 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -353,7 +353,7 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -3518,6 +3518,25 @@
       ]
     },
     {
+      "__guid": "03388dc8-c755-438a-8313-a2463ebf2f23",
+      "Name": "LootSpawner (1)",
+      "Position": "-288,384,96",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "LootBoxSpawner",
+          "__guid": "a16a2208-c2f4-49bb-9017-f5e4d5381397",
+          "currentSpawned": 0,
+          "LootBoxPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefab/npc/test/groundnpctest.prefab"
+          },
+          "SpawnAmount": 20
+        }
+      ]
+    },
+    {
       "__guid": "88d2bfa1-0ee5-4517-8a40-eabf3990f9a9",
       "Name": "Box",
       "Position": "16.00095,1431.966,32",
@@ -3590,6 +3609,14 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "94520009-8ab0-4aaf-be8c-116c5d0af9b1",
+      "Name": "Object",
+      "Position": "-128,192,32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefab/npc/test/groundnpctest.prefab"
     }
   ],
   "SceneProperties": {
@@ -3615,7 +3642,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-02T13:46:50.7004747\u002B01:00",
+  "LastSaved": "2024-04-02T15:20:32.5846463\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

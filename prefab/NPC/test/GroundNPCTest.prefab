@@ -1,0 +1,88 @@
+{
+  "RootObject": {
+    "__guid": "de62a55d-38a1-431b-bfc1-3d1490e545dd",
+    "Name": "groundnpctest",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__guid": "870f0b29-3d4f-4f8d-b0b0-fbc47b8aad50",
+        "BodyGroups": 18446744073709551615,
+        "Model": "feathersmcgraw.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "BoxCollider",
+        "__guid": "a48fc3c7-83e0-4c5a-85ad-df1d5367458c",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "50,50,50",
+        "Static": false
+      },
+      {
+        "__type": "Npcbase",
+        "__guid": "c905270c-9bac-497d-a4b9-71f8f5153534",
+        "Agent": {
+          "_type": "component",
+          "component_id": "0964d8a5-bc36-446b-803e-5d1ae68cf419",
+          "go": "de62a55d-38a1-431b-bfc1-3d1490e545dd",
+          "component_type": "NavMeshAgent"
+        },
+        "Stats": {
+          "_type": "component",
+          "component_id": "8e1d9cdb-9e39-488f-8025-fa7b4d9d13c9",
+          "go": "de62a55d-38a1-431b-bfc1-3d1490e545dd",
+          "component_type": "PlayerStats"
+        }
+      },
+      {
+        "__type": "NavMeshAgent",
+        "__guid": "0964d8a5-bc36-446b-803e-5d1ae68cf419",
+        "Acceleration": 100,
+        "Height": 64,
+        "MaxSpeed": 120,
+        "Radius": 12.666682,
+        "Separation": 1,
+        "UpdatePosition": true,
+        "UpdateRotation": true
+      },
+      {
+        "__type": "SphereCollider",
+        "__guid": "7a2ada79-d11c-4d08-928d-d5f4280c2bea",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 1000,
+        "Static": false
+      },
+      {
+        "__type": "PlayerStats",
+        "__guid": "8e1d9cdb-9e39-488f-8025-fa7b4d9d13c9",
+        "AmountOfJumps": 1,
+        "Armor": 0,
+        "AttackDamage": 1,
+        "AttackSpeed": 1,
+        "Health": 100,
+        "JumpHeight": 1,
+        "ReloadTime": 1,
+        "SecondaryAttackCoolDown": 5,
+        "SkillOneCoolDown": 5,
+        "SkillOneUses": 1,
+        "SprintMultiplier": 1.45,
+        "UltimateCoolDown": 50,
+        "UltimateUses": 1,
+        "WalkSpeed": 180
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "marauders.feathersmcgraw"
+  ]
+}
