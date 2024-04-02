@@ -16,9 +16,14 @@
 		}
 	*@
 	<div class="container">
-		<div class="info"
-		<div class="icon" style="background-image: url('@_item.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(_item.Rarity)"></div>
+		<div class="info">
+			<div class="header">
+				<div class="icon" style="background-image: url('@_item.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(_item.Rarity)"></div>
+				<div class="text">
 				<div class="title">@_item.ItemName</div>
+				<div class="rarity">@_item.Rarity</div>
+				</div>
+			</div>
 		<div class="description">@_item.ItemDescription</div>
 		</div>
 	</div>
