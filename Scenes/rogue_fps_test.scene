@@ -3396,35 +3396,7 @@
       "Position": "-448,832,32",
       "Enabled": true,
       "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "SpriteRenderer",
-          "__guid": "df37b45c-ac28-4e59-a0eb-a7a6db6357be",
-          "Additive": false,
-          "CastShadows": true,
-          "Color": "1,0.9,0,1",
-          "DepthFeather": 0,
-          "FlipHorizontal": false,
-          "FlipVertical": false,
-          "FogStrength": 1,
-          "Opaque": true,
-          "Size": "10,10",
-          "Texture": "materials/particles/shapes/circle1.vtex"
-        },
-        {
-          "__type": "SphereCollider",
-          "__guid": "98319a0a-0cae-4dbf-9327-4d72a13fbe65",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Radius": 50,
-          "Static": false
-        },
-        {
-          "__type": "CoinItem",
-          "__guid": "c533fc25-25cd-47a2-a916-b19015963524",
-          "CoinAmount": 10
-        }
-      ]
+      "__Prefab": "prefab/coinandxp/coinitem.prefab"
     },
     {
       "__guid": "c9ba6565-7084-4f28-9208-bb662eb0aeec",
@@ -3642,7 +3614,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-02T16:30:11.4830007\u002B01:00",
+  "LastSaved": "2024-04-02T16:36:04.3766481\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

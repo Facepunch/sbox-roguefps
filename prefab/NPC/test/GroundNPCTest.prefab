@@ -30,6 +30,10 @@
           "go": "21e5571a-7686-4bc2-86ff-3254636fb3df",
           "component_type": "NavMeshAgent"
         },
+        "Coin": {
+          "_type": "gameobject",
+          "prefab": "prefab/coinandxp/coinitem.prefab"
+        },
         "Stats": {
           "_type": "component",
           "component_id": "ac2ad97b-e2d5-4407-9061-36a5ad0d64ba",
@@ -67,7 +71,7 @@
         "Armor": 0,
         "AttackDamage": 1,
         "AttackSpeed": 1,
-        "Health": 100,
+        "Health": 25,
         "JumpHeight": 1,
         "ReloadTime": 1,
         "SecondaryAttackCoolDown": 5,

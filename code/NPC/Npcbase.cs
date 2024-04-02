@@ -8,6 +8,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 
 	[Property] public PlayerStats Stats { get; set; }
 	[Property] GameObject Xp { get; set; }
+	[Property] GameObject Coin { get; set; }
 	float Health { get; set; } = 100f;
 
 	protected override void OnAwake()
@@ -48,8 +49,12 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 				for( int i = 0; i < 2; i++ )
 				{
 					var xp = Xp.Clone();
-					xp.Transform.Position = Transform.Position + new Vector3(0, 0, 50f);
+					xp.Transform.Position = Transform.Position + new Vector3(0, 0, 50f) + Vector3.Random * 10;
 					xp.Components.Get<XpItem>().TargetPlayer = Target;
+
+					var coin = Coin.Clone();
+					coin.Transform.Position = Transform.Position + new Vector3(0, 0, 50f) + Vector3.Random * 10;
+					coin.Components.Get<CoinItem>().TargetPlayer = Target;
 				}
 			}
 
