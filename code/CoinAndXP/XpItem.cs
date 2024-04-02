@@ -26,13 +26,13 @@ public sealed class XpItem : Component, Component.ITriggerListener
 			physbody.Velocity = 0;
 			physbody.AngularVelocity = 0;
 			*/
-			Log.Info( "Coin spawned." );
+			//Log.Info( "Coin spawned." );
 		}
 
 		// Move the coin towards the target player
 		if ( TargetPlayer != null && timeSinceSpawned > 0.50f )
 		{
-			Log.Info( "Coin moving towards player." );
+			//Log.Info( "Coin moving towards player." );
 
 			Vector3 direction = (TargetPlayer.Transform.Position - GameObject.Transform.Position).Normal;
 			GameObject.Transform.Position += direction * moveSpeed * Time.Delta;
@@ -49,8 +49,8 @@ public sealed class XpItem : Component, Component.ITriggerListener
 			if ( plyStatComp != null )
 			{
 				plyStatComp.AddXP( CoinAmount );
-				Log.Info(plyStatComp.CurrentLevel);
-				Log.Info( plyStatComp.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp]);
+				//Log.Info(plyStatComp.CurrentLevel);
+				//Log.Info( plyStatComp.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp]);
 				GameObject.Destroy();
 			}
 		}

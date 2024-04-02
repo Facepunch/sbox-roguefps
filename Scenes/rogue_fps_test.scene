@@ -3505,14 +3505,16 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "LootBoxSpawner",
-          "__guid": "a16a2208-c2f4-49bb-9017-f5e4d5381397",
-          "currentSpawned": 0,
-          "LootBoxPrefab": {
+          "__type": "WaveSpawner",
+          "__guid": "510a2e70-6468-47da-9d71-18b8f76d9a00",
+          "spawnedEntities": 0,
+          "EntityPrefab": {
             "_type": "gameobject",
             "prefab": "prefab/npc/test/groundnpctest.prefab"
           },
-          "SpawnAmount": 20
+          "MaxEntities": 10,
+          "SpawnPerWave": 5,
+          "WaveInterval": 20000
         }
       ]
     },
@@ -3614,7 +3616,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-02T16:36:04.3766481\u002B01:00",
+  "LastSaved": "2024-04-02T20:49:56.5276386\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

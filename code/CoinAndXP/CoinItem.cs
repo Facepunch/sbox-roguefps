@@ -26,13 +26,13 @@ public sealed class CoinItem : Component, Component.ITriggerListener
 			physbody.Velocity = 0;
 			physbody.AngularVelocity = 0;
 			*/
-			Log.Info( "Coin spawned." );
+			//Log.Info( "Coin spawned." );
 		}
 
 		// Move the coin towards the target player
 		if ( TargetPlayer != null && timeSinceSpawned > 0.50f )
 		{
-			Log.Info( "Coin moving towards player." );
+			//Log.Info( "Coin moving towards player." );
 
 			Vector3 direction = (TargetPlayer.Transform.Position - GameObject.Transform.Position).Normal;
 			GameObject.Transform.Position += direction * moveSpeed * Time.Delta;

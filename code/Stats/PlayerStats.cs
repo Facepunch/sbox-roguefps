@@ -174,7 +174,7 @@ public sealed class PlayerStats : Component
 			PlayerCoinsAndXp[CoinsAndXp.Coins] = amount;
 		}
 
-		Log.Info( $"Added {amount} coins. Total coins: {PlayerCoinsAndXp[CoinsAndXp.Coins]}" );
+		//Log.Info( $"Added {amount} coins. Total coins: {PlayerCoinsAndXp[CoinsAndXp.Coins]}" );
 	}
 
 	public void AddXP( int amount )
@@ -184,7 +184,7 @@ public sealed class PlayerStats : Component
 		{
 			CurrentLevel++;
 			PlayerCoinsAndXp[CoinsAndXp.Xp] = 0;
-			Log.Info( $"Level Up! Current Level: {CurrentLevel}" );
+			//Log.Info( $"Level Up! Current Level: {CurrentLevel}" );
 
 			UpgradedStats[PlayerUpgradedStats.Health] = GetStartingStat( PlayerStartingStats.Health ) * CurrentLevel * 0.15f;
 			UpgradedStats[PlayerUpgradedStats.AttackDamage] = GetStartingStat( PlayerStartingStats.AttackDamage ) * CurrentLevel * 0.5f;

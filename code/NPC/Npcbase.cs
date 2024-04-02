@@ -10,7 +10,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 	[Property] GameObject Xp { get; set; }
 	[Property] GameObject Coin { get; set; }
 	float Health { get; set; } = 100f;
-
+	public WaveSpawner WaveSpawner { get; set; }
 	protected override void OnAwake()
 	{
 		Health = Stats.Health;
@@ -57,7 +57,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 					coin.Components.Get<CoinItem>().TargetPlayer = Target;
 				}
 			}
-
+			WaveSpawner.spawnedEntities--;
 			GameObject.Destroy();
 		}
 
