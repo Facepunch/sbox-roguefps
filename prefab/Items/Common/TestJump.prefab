@@ -1,13 +1,14 @@
 {
   "RootObject": {
-    "__guid": "e48384e2-647f-4877-b172-06996587fdd1",
+    "__guid": "4bf290ec-89a5-4e5e-b8df-2a832aa9d767",
     "Name": "testjump",
+    "Tags": "interactable",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Rigidbody",
-        "__guid": "b071e21b-6901-46ef-a39e-b3ee02ddc6fb",
+        "__guid": "3b460990-7e32-4f63-84aa-c6f972cf5791",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -23,16 +24,24 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "95de4a6d-cf2a-400e-a91c-0c3c857c9a37",
+        "__guid": "d4825df2-7716-4b67-9711-b79221bceb01",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
         "Static": false
+      },
+      {
+        "__type": "Interactable",
+        "__guid": "fbcebfcd-1ced-48d8-937e-835abb17668f",
+        "Cost": 100,
+        "HasPrice": false,
+        "IsOpen": false,
+        "Name": "Interactable"
       }
     ],
     "Children": [
       {
-        "__guid": "5e28e82c-da51-4669-8fea-4900a132c79a",
+        "__guid": "5713f99f-6935-4ba3-b49a-3c267d7c8980",
         "Name": "testjump",
         "Tags": "trigger",
         "Enabled": true,
@@ -40,7 +49,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "3356f263-7eb3-494a-9b1c-530625f4bdcc",
+            "__guid": "fa1fd83b-0363-428b-850d-463ca8de411d",
             "BodyGroups": 18446744073709551615,
             "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
             "RenderType": "On",
@@ -48,22 +57,22 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "f3e41e3c-e2e2-48c0-97c1-87f26621bbe1",
+            "__guid": "36db584d-6c22-4d24-89c3-a21824c812f4",
             "Center": "0,0,0",
             "IsTrigger": true,
-            "Radius": 20,
+            "Radius": 32,
             "Static": false
           },
           {
             "__type": "TestTwoItem",
-            "__guid": "e0cba1f0-ff8d-4fa6-ba5c-0652de2cabef",
+            "__guid": "cbe55f38-8a71-4840-a5ad-55163279c9a7",
             "Amount": 1,
             "AsAPercent": false,
             "SpawnChance": 0
           },
           {
             "__type": "HighlightOutline",
-            "__guid": "f03bd422-36e0-4768-a4bb-bee7c8d2c93b",
+            "__guid": "d53663fb-24a8-4669-bc08-fc245ebfed29",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",
@@ -72,7 +81,7 @@
           },
           {
             "__type": "ItemAnimator",
-            "__guid": "ab27a189-cddb-4cf1-8433-c62e68e61aac"
+            "__guid": "79f52334-626d-4004-8a6f-4605b3b4f867"
           }
         ]
       }

@@ -1,13 +1,14 @@
 {
   "RootObject": {
-    "__guid": "5b48eddb-dc9a-41d6-b370-cf47693a285c",
+    "__guid": "4e31fd75-69a1-4519-8702-8007b45e153a",
     "Name": "testattackspeed",
+    "Tags": "interactable",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "BoxCollider",
-        "__guid": "3a6cd4c8-b8c3-4e8e-b281-942e033dd026",
+        "__guid": "42f38224-ec21-44f5-901b-df7b952bc322",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
@@ -15,7 +16,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "f9e0a3ac-f5d0-4671-a280-a9cb046b2589",
+        "__guid": "c2e8f682-e1eb-4bc6-a98d-35f86a956c03",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -28,11 +29,19 @@
         "MotionEnabled": true,
         "RigidbodyFlags": "DisableCollisionSounds",
         "StartAsleep": false
+      },
+      {
+        "__type": "Interactable",
+        "__guid": "fbcebfcd-1ced-48d8-937e-835abb17668f",
+        "Cost": 100,
+        "HasPrice": false,
+        "IsOpen": false,
+        "Name": "Interactable"
       }
     ],
     "Children": [
       {
-        "__guid": "53f49bd4-d34a-4b3d-b9f5-beb464ad3420",
+        "__guid": "f8e34397-ec78-4e8a-be73-8907fa8deaf0",
         "Name": "testattackspeed",
         "Tags": "trigger",
         "Enabled": true,
@@ -40,7 +49,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "d4155ae2-5d9d-4370-993d-08cfea8b3b40",
+            "__guid": "8bac61e5-1e82-429a-9da4-18ea730d33b0",
             "BodyGroups": 18446744073709551615,
             "Model": "models/citizen_props/beachball.vmdl",
             "RenderType": "On",
@@ -48,22 +57,22 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "fe357d24-8948-444e-abe8-c24231fd593a",
+            "__guid": "8bb1d9fc-62a5-424c-9458-c0d55e788bca",
             "Center": "0,0,0",
             "IsTrigger": true,
-            "Radius": 20,
+            "Radius": 32,
             "Static": false
           },
           {
             "__type": "TestItem",
-            "__guid": "f049eb2e-2dfd-4eb9-adaf-77d850a67250",
+            "__guid": "5db73b62-3745-4c20-94fb-61585ac989ad",
             "Amount": 1,
             "IsStatUpgrade": true,
             "SpawnChance": 0
           },
           {
             "__type": "HighlightOutline",
-            "__guid": "287cfa11-be38-46e6-b77a-8083f900d8f6",
+            "__guid": "a5c5c1d1-f7fa-48ca-942f-00e0b28861f1",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",
@@ -72,7 +81,7 @@
           },
           {
             "__type": "ItemAnimator",
-            "__guid": "ca5b10e0-c2ad-4e6b-96fa-2b2b38280c54"
+            "__guid": "a91eb111-8b9b-4174-bdb4-5fd2bb63f42f"
           }
         ]
       }

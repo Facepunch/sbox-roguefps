@@ -46,43 +46,55 @@ public class BaseItem : Component, Component.ITriggerListener
 			var plyStatComp = Player.Components.Get<PlayerStats>();
 			if ( plyStatComp != null )
 			{
-				// Create an UpgradeHas object
-				//var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
-				//plyStatComp.AddUpgrade( pickedUpgrade );
-
-				var typeDesc = TypeLibrary.GetType( GetType() );
-				//if player does not have the component, create it
-				if ( !plyStatComp.HasItem( this.ItemName ) )
-				{
-					plyStatComp.Components.Create( typeDesc );
-					plyStatComp.PickedUpItems.Add( this );
-
-					CalculateUpdgrade();
-				}
-				else
-				{
-					//if player already has the component, add the upgrade to the existing component
-					var upgradeComp = plyStatComp.GetItem( this.ItemName );
-					if ( upgradeComp != null )
-						upgradeComp.Amount++;
-
-					CalculateUpdgrade();
-				}
-
-				var pickupui = Player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
-				pickupui.NewItem( ItemName, ItemDescription, UpgradeIcon, Rarity );
-
-				//Player.AddComponent<RogueFPSSlideUpgrade>( true );
-				GameObject.Destroy();
-				if(GameObject.Parent != Scene )
-				{
-					GameObject.Parent.Destroy();
-				}
+				PickUpItem();
 			}
 
 			else
 			{
 				Log.Warning( "RogueFPSPlayerStats component not found on the player." );
+			}
+		}
+	}
+
+	public void PickUpItem()
+	{
+		var plyStatComp = Player.Components.Get<PlayerStats>();
+		if ( plyStatComp != null )
+		{
+			// Create an UpgradeHas object
+			//var pickedUpgrade = new UpgradeHas( UpgradeIcon, ItemName, 0, Rarity ); // Initial amount set to 0
+			//plyStatComp.AddUpgrade( pickedUpgrade );
+
+			var typeDesc = TypeLibrary.GetType( GetType() );
+			//if player does not have the component, create it
+			if ( !plyStatComp.HasItem( this.ItemName ) )
+			{
+				plyStatComp.Components.Create( typeDesc );
+				plyStatComp.PickedUpItems.Add( this );
+
+				CalculateUpdgrade();
+			}
+			else
+			{
+				//if player already has the component, add the upgrade to the existing component
+				var upgradeComp = plyStatComp.GetItem( this.ItemName );
+				if ( upgradeComp != null )
+					upgradeComp.Amount++;
+
+				CalculateUpdgrade();
+			}
+
+			var pickupui = Player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
+			pickupui.NewItem( ItemName, ItemDescription, UpgradeIcon, Rarity );
+
+			var interact = Player.Components.Get<InteractorUse>( FindMode.EnabledInSelfAndDescendants );
+			interact.DestroyUI();
+
+			//Player.AddComponent<RogueFPSSlideUpgrade>( true );
+			GameObject.Destroy();
+			if ( GameObject.Parent != Scene )
+			{
+				GameObject.Parent.Destroy();
 			}
 		}
 	}

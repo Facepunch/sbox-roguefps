@@ -38,9 +38,19 @@ public sealed class InteractorUse : Component
 
 				if(itemUI.Panel.Children.FirstOrDefault( x => x is ItemPickUp ) != null) return;
 
-				var pickupui = new ItemPickUp( interactor.Cost );
-
-				itemUI.Panel.AddChild( pickupui );
+				var item = interactor.Components.Get<BaseItem>(FindMode.EnabledInSelfAndChildren);
+				if ( item != null )
+				{
+					Log.Info( "Item component found" );
+					var pickupui = new ItemPickUp( $"Get {item.ItemName}", interactor.Cost, false );
+					itemUI.Panel.AddChild( pickupui );
+				}
+				else
+				{
+					Log.Info( "No item component found" );
+					var pickupui = new ItemPickUp( interactor.Name, interactor.Cost, interactor.HasPrice );
+					itemUI.Panel.AddChild( pickupui );
+				}
 
 				InteractObject = tr.GameObject;
 
@@ -82,7 +92,7 @@ public sealed class InteractorUse : Component
 	}
 
 
-	void DestroyUI()
+	public void DestroyUI()
 	{
 		var interactor = InteractObject?.Components.Get<Interactable>();
 		if (interactor == null) return;

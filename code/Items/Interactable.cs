@@ -3,7 +3,7 @@ using Sandbox;
 public class Interactable : Component
 {
 
-	[Property] public string Name { get; set; } = "Interactable";
+	[Property] public virtual string Name { get; set; } = "Interactable";
 	[Property] public bool HasPrice { get; set; } = false;
 	[Property] public int Cost { get; set; } = 100;
 	[Property] public bool IsOpen { get; set; } = false;
@@ -20,6 +20,18 @@ public class Interactable : Component
 		Log.Info( "Interacted with " + player.Name );
 
 		Player = player;
+
+		var item = Components.Get<BaseItem>(FindMode.EnabledInSelfAndChildren);
+		if ( item != null )
+		{
+			item.Player = player;
+			item.PickUpItem();
+
+		}
+		else
+		{
+			Log.Info( "No item component found" );
+		}
 	}
 
 	public void CreateGlow()
