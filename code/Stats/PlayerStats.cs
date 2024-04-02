@@ -17,7 +17,7 @@ public sealed class PlayerStats : Component
 	[Property, Group( "Jump" )] public float AmountOfJumps { get; set; } = 1;
 	[Property, Group( "Jump" )] public float JumpHeight { get; set; } = 1f;
 	[Property, Group( "Attack" )] public float AttackSpeed { get; set; } = 1f;
-	[Property, Group( "Attack" )] public float AttackDamage { get; set; } = 1f;
+	[Property, Group( "Attack" )] public float AttackDamage { get; set; } = 10f;
 	[Property, Group( "Attack" )] public float ReloadTime { get; set; } = 1f;
 	[Property, Group( "Attack" )] public float SecondaryAttackCoolDown { get; set; } = 5f;
 	[Property, Group( "Skill" )] public float SkillOneCoolDown { get; set; } = 5f;
@@ -30,6 +30,7 @@ public sealed class PlayerStats : Component
 
 	//Coin and XP
 	public enum CoinsAndXp { Coins, Xp }
+	public int CurrentLevel { get; set; } = 1;
 	
 	public IDictionary<CoinsAndXp, int> PlayerCoinsAndXp { get; private set; }
 	//
@@ -174,6 +175,24 @@ public sealed class PlayerStats : Component
 		}
 
 		Log.Info( $"Added {amount} coins. Total coins: {PlayerCoinsAndXp[CoinsAndXp.Coins]}" );
+	}
+
+	public void AddXP( int amount )
+	{
+		// If the player has 10 xp add a level, then double the amount needed for the next level
+		if ( PlayerCoinsAndXp[CoinsAndXp.Xp] >= 10 )
+		{
+			CurrentLevel++;
+			PlayerCoinsAndXp[CoinsAndXp.Xp] = 0;
+			Log.Info( $"Level Up! Current Level: {CurrentLevel}" );
+
+			UpgradedStats[PlayerUpgradedStats.Health] = GetStartingStat( PlayerStartingStats.Health ) * CurrentLevel * 0.15f;
+			UpgradedStats[PlayerUpgradedStats.AttackDamage] = GetStartingStat( PlayerStartingStats.AttackDamage ) * CurrentLevel * 0.5f;
+		}
+		else
+		{
+			PlayerCoinsAndXp[CoinsAndXp.Xp] += amount;
+		}
 	}
 	public void AddItem( BaseItem comp )
 	{

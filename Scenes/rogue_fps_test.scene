@@ -3412,17 +3412,17 @@
           "Texture": "materials/particles/shapes/circle1.vtex"
         },
         {
-          "__type": "RogueFPSCoin",
-          "__guid": "8cc093e5-52a7-4bd9-b60d-139f63542b37",
-          "CoinAmount": 100
-        },
-        {
           "__type": "SphereCollider",
           "__guid": "98319a0a-0cae-4dbf-9327-4d72a13fbe65",
           "Center": "0,0,0",
           "IsTrigger": true,
           "Radius": 50,
           "Static": false
+        },
+        {
+          "__type": "CoinItem",
+          "__guid": "c533fc25-25cd-47a2-a916-b19015963524",
+          "CoinAmount": 10
         }
       ]
     },
@@ -3448,17 +3448,17 @@
           "Texture": "materials/particles/shapes/circle1.vtex"
         },
         {
-          "__type": "RogueFPSCoin",
-          "__guid": "93e71f03-635d-49a1-8165-957b83fde1b3",
-          "CoinAmount": 50
-        },
-        {
           "__type": "SphereCollider",
           "__guid": "626adad0-c655-4e4b-8e29-39cfaa959fff",
           "Center": "0,0,0",
           "IsTrigger": true,
           "Radius": 50,
           "Static": false
+        },
+        {
+          "__type": "CoinItem",
+          "__guid": "0c5c2ced-bdc9-433b-9060-09dbee1c6932",
+          "CoinAmount": 10
         }
       ]
     },
@@ -3484,19 +3484,27 @@
           "Texture": "materials/particles/shapes/circle1.vtex"
         },
         {
-          "__type": "RogueFPSCoin",
-          "__guid": "494895c2-9114-432b-bb6c-1a6cd712e080",
-          "CoinAmount": 75
-        },
-        {
           "__type": "SphereCollider",
           "__guid": "eb349a07-72c0-4aa7-8e61-048c06b7b0c3",
           "Center": "0,0,0",
           "IsTrigger": true,
           "Radius": 50,
           "Static": false
+        },
+        {
+          "__type": "CoinItem",
+          "__guid": "9113f91f-da79-4a59-a610-a1d55cca1518",
+          "CoinAmount": 10
         }
       ]
+    },
+    {
+      "__guid": "b8310c48-cfbf-45b1-bc27-bf4687800eb0",
+      "Name": "XP",
+      "Position": "-672,896,31.99999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefab/coinandxp/xpitem.prefab"
     },
     {
       "__guid": "46b9a819-a52d-44d7-a42b-250268ed3077",
@@ -3609,14 +3617,6 @@
           "Static": true
         }
       ]
-    },
-    {
-      "__guid": "94520009-8ab0-4aaf-be8c-116c5d0af9b1",
-      "Name": "Object",
-      "Position": "-128,192,32",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefab/npc/test/groundnpctest.prefab"
     }
   ],
   "SceneProperties": {
@@ -3642,7 +3642,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-02T15:20:32.5846463\u002B01:00",
+  "LastSaved": "2024-04-02T16:30:11.4830007\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

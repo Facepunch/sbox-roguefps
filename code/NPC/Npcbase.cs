@@ -7,6 +7,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 	[Property] public NavMeshAgent Agent { get; set; }
 
 	[Property] public PlayerStats Stats { get; set; }
+	[Property] GameObject Xp { get; set; }
 	float Health { get; set; } = 100f;
 
 	protected override void OnAwake()
@@ -42,6 +43,16 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 		Health -= damage;
 		if ( Health <= 0 )
 		{
+			if( Xp != null )
+			{
+				for( int i = 0; i < 2; i++ )
+				{
+					var xp = Xp.Clone();
+					xp.Transform.Position = Transform.Position + new Vector3(0, 0, 50f);
+					xp.Components.Get<XpItem>().TargetPlayer = Target;
+				}
+			}
+
 			GameObject.Destroy();
 		}
 

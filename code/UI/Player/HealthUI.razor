@@ -7,8 +7,10 @@
 		<div class="health-bar">
 			<div class="bg"></div>
 			<div class="lvl">
-				<div class="lvltxt">LV: 16</div>
-				<div class="lvlbar"></div>
+				<div class="lvltxt">LV: @_playerStats.CurrentLevel</div>
+				<div class="lvlbar">
+					<div class="inner" style="@GetXpBar()"></div>
+				</div>
 			</div>
 			<div class="bar">50/100</div>
 		</div>
@@ -17,6 +19,20 @@
 
 @code
 {
+	PlayerStats _playerStats;
+
+	protected override void OnAwake()
+	{
+		_playerStats = Components.Get<PlayerStats>(FindMode.InParent);
+
+		Log.Info(_playerStats);
+	}
+
+	string GetXpBar()
+	{
+		//Turn the current xp into the width of the bar
+		return $"width: {(_playerStats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp] * 10)}%";
+	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt

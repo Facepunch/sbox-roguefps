@@ -27,8 +27,17 @@ HealthUI {
 .lvlbar {
     width: 1000px;
     height: 20px;
-    background-color: #0099ff; /* Red health bar */
-    border-top: 2px solid #5cbeff; /* Black border */
+    /*background-color: #0099ff;*/ /* Red health bar */
+    /*border-top: 2px solid #5cbeff;*/ /* Black border */
+    background-color: rgba(0,0,0,0.5);
+
+    .inner {
+        width: 100%; /* Start with full health */
+        height: 100%;
+        background-color: #0099ff;
+        border-top: 2px solid #5cbeff;
+        transition: all 0.2s;
+    }
 }
 
 .health-bar {
@@ -41,15 +50,15 @@ HealthUI {
 
 .bar {
     width: 100%; /* Start with full health */
-    min-height: 30px;
-    background-color: #6fff00; /* Red health bar */
-    border-top: 4px solid #a3ff5c; /* Black border */
-    color: #fff; /* Text color */
-    font-size: 24;
-    text-shadow: 2px 2px 2px #000000;
-    font-family: "Quantico";
-    font-weight: 800;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-}
+        min-height: 30px;
+        background-color: #6fff00; /* Red health bar */
+        border-top: 4px solid #a3ff5c; /* Black border */
+        color: #fff; /* Text color */
+        font-size: 24;
+        text-shadow: 2px 2px 2px #000000;
+        font-family: "Quantico";
+        font-weight: 800;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+    }

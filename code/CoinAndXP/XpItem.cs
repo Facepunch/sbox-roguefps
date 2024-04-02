@@ -2,12 +2,12 @@ using Sandbox;
 
 namespace RogueFPS;
 
-[Title( "Rogue FPS Coin" )]
+[Title( "Xp Item" )]
 [Category( "Rogue FPS" )]
 [Icon( "savings", "red", "white" )]
-public sealed class RogueFPSCoin : Component, Component.ITriggerListener
+public sealed class XpItem : Component, Component.ITriggerListener
 {
-	[Property] public int CoinAmount { get; set; } = 10;
+	[Property] public int CoinAmount { get; set; } = 2;
 	[Property] public GameObject TargetPlayer { get; set; }
 
 	private float moveSpeed = 5000f; // Adjust the speed as needed
@@ -48,7 +48,9 @@ public sealed class RogueFPSCoin : Component, Component.ITriggerListener
 			var plyStatComp = Player.Components.Get<PlayerStats>();
 			if ( plyStatComp != null )
 			{
-				plyStatComp.AddCoin( CoinAmount );
+				plyStatComp.AddXP( CoinAmount );
+				Log.Info(plyStatComp.CurrentLevel);
+				Log.Info( plyStatComp.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp]);
 				GameObject.Destroy();
 			}
 		}
