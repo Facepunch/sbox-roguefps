@@ -9,8 +9,10 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 	[Property] public PlayerStats Stats { get; set; }
 	[Property] GameObject Xp { get; set; }
 	[Property] GameObject Coin { get; set; }
-	float Health { get; set; } = 100f;
+	public float Health { get; set; } = 100f;
 	public WaveSpawner WaveSpawner { get; set; }
+
+	public TimeSince timeSinceLastDamaged { get; set; }
 	protected override void OnAwake()
 	{
 		Health = Stats.Health;
@@ -47,7 +49,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 		txt.Rotation = Rotation.LookAt( Target.Transform.Position - Transform.Position ).Angles().WithPitch(0);
 		txt.Text = damage.ToString();
 		txt.ColorTint = Color.Random;
-
+		timeSinceLastDamaged = 0;
 		Health -= damage;
 		if ( Health <= 0 )
 		{

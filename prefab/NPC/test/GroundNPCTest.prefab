@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "ada6a634-053e-498b-b37e-49256a44bda5",
+    "__guid": "8a6352cd-2dc8-43b8-87c5-708c27d1d3b4",
     "Name": "groundnpctest",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "ec06b0be-c359-4604-be2c-a3a96503231d",
+        "__guid": "ec6c61b8-2417-456c-93ed-c3d1a2fd049a",
         "BodyGroups": 18446744073709551615,
         "Model": "feathersmcgraw.vmdl",
         "RenderType": "On",
@@ -15,7 +15,7 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "1da37aae-9af0-4f4a-b485-3e5b3a4d0339",
+        "__guid": "ddc0c5bb-1dd0-4f09-8685-4bd558e4b1ef",
         "Center": "0,0,32.80003",
         "IsTrigger": false,
         "Scale": "27.46667,27.26667,68.99994",
@@ -23,11 +23,11 @@
       },
       {
         "__type": "Npcbase",
-        "__guid": "785839d5-53ae-4861-a17b-737a1b4e917e",
+        "__guid": "942d5fa4-9226-474c-8674-01ae560646bd",
         "Agent": {
           "_type": "component",
-          "component_id": "8f37299e-7cef-40ec-813e-810dc50a8c00",
-          "go": "ada6a634-053e-498b-b37e-49256a44bda5",
+          "component_id": "9b948654-219f-4275-8ea2-d9f4651b540c",
+          "go": "8a6352cd-2dc8-43b8-87c5-708c27d1d3b4",
           "component_type": "NavMeshAgent"
         },
         "Coin": {
@@ -36,8 +36,8 @@
         },
         "Stats": {
           "_type": "component",
-          "component_id": "d5b0cb54-43f4-47d1-8bbb-7158e65242ea",
-          "go": "ada6a634-053e-498b-b37e-49256a44bda5",
+          "component_id": "982bcda7-207c-42b6-bdf4-b0aae9f9da5c",
+          "go": "8a6352cd-2dc8-43b8-87c5-708c27d1d3b4",
           "component_type": "PlayerStats"
         },
         "Xp": {
@@ -47,7 +47,7 @@
       },
       {
         "__type": "NavMeshAgent",
-        "__guid": "8f37299e-7cef-40ec-813e-810dc50a8c00",
+        "__guid": "9b948654-219f-4275-8ea2-d9f4651b540c",
         "Acceleration": 100,
         "Height": 64,
         "MaxSpeed": 120,
@@ -58,7 +58,7 @@
       },
       {
         "__type": "SphereCollider",
-        "__guid": "7ae4df40-f3d2-4b7f-abd2-7464aebc356e",
+        "__guid": "f1615c37-09d4-497e-afbf-39ee133d97e0",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 1000,
@@ -66,12 +66,12 @@
       },
       {
         "__type": "PlayerStats",
-        "__guid": "d5b0cb54-43f4-47d1-8bbb-7158e65242ea",
+        "__guid": "982bcda7-207c-42b6-bdf4-b0aae9f9da5c",
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 1,
         "AttackSpeed": 1,
-        "Health": 25,
+        "Health": 150,
         "JumpHeight": 1,
         "ReloadTime": 1,
         "SecondaryAttackCoolDown": 5,

@@ -64,7 +64,7 @@ public class BaseAbilityItem : Component
 	}
 	public virtual void DoReloadAnimation(bool should)
 	{
-		Log.Info( "Reloading" );
+		//Log.Info( "Reloading" );
 
 	}
 

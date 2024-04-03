@@ -1,0 +1,45 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+@foreach(var npc in Scene.Components.GetAll<Npcbase>())
+{
+	if(!IsOffScreen(npc)) continue;
+		<div class="enemy-health-bar" style="@GetEnemyPos(npc)">
+		<div class="bg"></div>
+		<div class="bar-delay" style="@GetEnemyHealth(npc)"></div>
+		<div class="bar" style="@GetEnemyHealth(npc)"></div>
+	</div>
+}
+</root>
+
+@code
+{
+
+	[Property] public CameraComponent MainCamera { get; set; }
+
+	bool IsOffScreen(Npcbase npc)
+	{
+		var screenpos = MainCamera.PointToScreenNormal(npc.GameObject.Transform.Position, out bool isBehind);
+		var stat = npc.Components.Get<PlayerStats>();
+		return !isBehind && npc.Health != stat.Health && npc.timeSinceLastDamaged < 5;
+	}
+
+	string GetEnemyPos(Npcbase npc)
+	{
+		var screenpos = MainCamera.PointToScreenNormal(npc.GameObject.Transform.Position + Vector3.Up * 65);
+		return $"top: {screenpos.y * 100}%; left: {screenpos.x * 100}%;";
+	}
+
+	string GetEnemyHealth(Npcbase npc)
+	{
+		var stat = npc.Components.Get<PlayerStats>();
+		return $"width: {npc.Health / stat.Health * 100}%;";
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Delta );
+}
