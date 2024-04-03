@@ -1,14 +1,13 @@
 {
   "RootObject": {
-    "__guid": "95e4be5f-316a-4c8d-9841-037d6c25899f",
-    "Name": "Coin",
-    "Position": "-448,832,32",
+    "__guid": "852585e0-ae3a-462c-b48c-d4486e7d789a",
+    "Name": "coinitem",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "SpriteRenderer",
-        "__guid": "df37b45c-ac28-4e59-a0eb-a7a6db6357be",
+        "__guid": "de4cd38b-dc6e-4b34-aff4-a515417568a4",
         "Additive": false,
         "CastShadows": true,
         "Color": "1,0.9,0,1",
@@ -22,7 +21,7 @@
       },
       {
         "__type": "SphereCollider",
-        "__guid": "98319a0a-0cae-4dbf-9327-4d72a13fbe65",
+        "__guid": "7bf796a2-192d-4836-b074-a511b29c0ed5",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 50,
@@ -30,10 +29,11 @@
       },
       {
         "__type": "CoinItem",
-        "__guid": "c533fc25-25cd-47a2-a916-b19015963524",
+        "__guid": "136e5e9c-ed62-47cb-a814-5be8c4700f3b",
         "CoinAmount": 10
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "21e5571a-7686-4bc2-86ff-3254636fb3df",
+    "__guid": "ada6a634-053e-498b-b37e-49256a44bda5",
     "Name": "groundnpctest",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "313f0d0e-5c4f-44b6-975e-23c58c81b362",
+        "__guid": "ec06b0be-c359-4604-be2c-a3a96503231d",
         "BodyGroups": 18446744073709551615,
         "Model": "feathersmcgraw.vmdl",
         "RenderType": "On",
@@ -15,19 +15,19 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "444c8771-ba21-4943-9671-e93fc4bc83ed",
-        "Center": "0,0,0",
+        "__guid": "1da37aae-9af0-4f4a-b485-3e5b3a4d0339",
+        "Center": "0,0,32.80003",
         "IsTrigger": false,
-        "Scale": "50,50,50",
+        "Scale": "27.46667,27.26667,68.99994",
         "Static": false
       },
       {
         "__type": "Npcbase",
-        "__guid": "a80a59c8-63b4-4adf-b4a8-9e9ff082123d",
+        "__guid": "785839d5-53ae-4861-a17b-737a1b4e917e",
         "Agent": {
           "_type": "component",
-          "component_id": "bce41d42-8c72-4c1e-9890-f7c6fde33d84",
-          "go": "21e5571a-7686-4bc2-86ff-3254636fb3df",
+          "component_id": "8f37299e-7cef-40ec-813e-810dc50a8c00",
+          "go": "ada6a634-053e-498b-b37e-49256a44bda5",
           "component_type": "NavMeshAgent"
         },
         "Coin": {
@@ -36,8 +36,8 @@
         },
         "Stats": {
           "_type": "component",
-          "component_id": "ac2ad97b-e2d5-4407-9061-36a5ad0d64ba",
-          "go": "21e5571a-7686-4bc2-86ff-3254636fb3df",
+          "component_id": "d5b0cb54-43f4-47d1-8bbb-7158e65242ea",
+          "go": "ada6a634-053e-498b-b37e-49256a44bda5",
           "component_type": "PlayerStats"
         },
         "Xp": {
@@ -47,18 +47,18 @@
       },
       {
         "__type": "NavMeshAgent",
-        "__guid": "bce41d42-8c72-4c1e-9890-f7c6fde33d84",
+        "__guid": "8f37299e-7cef-40ec-813e-810dc50a8c00",
         "Acceleration": 100,
         "Height": 64,
         "MaxSpeed": 120,
         "Radius": 12.666682,
-        "Separation": 1,
+        "Separation": 10,
         "UpdatePosition": true,
         "UpdateRotation": true
       },
       {
         "__type": "SphereCollider",
-        "__guid": "e8caf6f2-51c4-46e4-b1b0-35cf9f8b7d07",
+        "__guid": "7ae4df40-f3d2-4b7f-abd2-7464aebc356e",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 1000,
@@ -66,7 +66,7 @@
       },
       {
         "__type": "PlayerStats",
-        "__guid": "ac2ad97b-e2d5-4407-9061-36a5ad0d64ba",
+        "__guid": "d5b0cb54-43f4-47d1-8bbb-7158e65242ea",
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 1,

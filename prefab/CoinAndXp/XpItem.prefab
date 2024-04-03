@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "6d46e222-93e0-45db-a3fe-7077b7dad8b5",
+    "__guid": "f7dbf517-d902-44ee-b34c-3b800b70f3c2",
     "Name": "xpitem",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "SpriteRenderer",
-        "__guid": "0fe66883-d612-4405-bb1a-afae043477e7",
+        "__guid": "56a59330-f1d0-4f12-80a0-9b414ce7312d",
         "Additive": false,
         "CastShadows": true,
         "Color": "0,0.81667,1,1",
@@ -21,7 +21,7 @@
       },
       {
         "__type": "SphereCollider",
-        "__guid": "63ee9661-c38c-43be-9884-6a7d9616e332",
+        "__guid": "296a28a9-e46a-4e39-85fc-00d5126346c9",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 32,
@@ -29,32 +29,8 @@
       },
       {
         "__type": "XpItem",
-        "__guid": "c204b92f-89c5-4765-90bf-a6b159e76520",
+        "__guid": "67e9b9ad-e57e-4048-95eb-378eb3805898",
         "CoinAmount": 1
-      },
-      {
-        "__type": "BoxCollider",
-        "__guid": "70bebdde-8dfa-4628-8d3a-c8c8c2f84641",
-        "Center": "0,0,0",
-        "IsTrigger": false,
-        "Scale": "10,10,10",
-        "Static": false
-      },
-      {
-        "__type": "Rigidbody",
-        "__guid": "c37787eb-0f62-488e-9712-3e69f0e30e24",
-        "AngularDamping": 0,
-        "Gravity": true,
-        "LinearDamping": 10,
-        "Locking": {
-          "Pitch": true,
-          "Yaw": true,
-          "Roll": true
-        },
-        "MassOverride": 0,
-        "MotionEnabled": true,
-        "RigidbodyFlags": 0,
-        "StartAsleep": false
       }
     ],
     "Children": []

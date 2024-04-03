@@ -3500,7 +3500,7 @@
     {
       "__guid": "03388dc8-c755-438a-8313-a2463ebf2f23",
       "Name": "LootSpawner (1)",
-      "Position": "-288,384,96",
+      "Position": "-128,-512,32",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -3512,8 +3512,8 @@
             "_type": "gameobject",
             "prefab": "prefab/npc/test/groundnpctest.prefab"
           },
-          "MaxEntities": 10,
-          "SpawnPerWave": 5,
+          "MaxEntities": 20,
+          "SpawnPerWave": 10,
           "WaveInterval": 20000
         }
       ]
@@ -3591,6 +3591,110 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "9976603f-ee7b-42b3-ab11-4b65c7214a44",
+      "Name": "Object",
+      "Position": "-193.3533,184.2712,82.48573",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "__guid": "bf55c322-0634-40ce-ab60-3722d86d00a5",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 32,
+          "Scale": 1,
+          "Text": "Hello! \u2764"
+        }
+      ]
+    },
+    {
+      "__guid": "91732fe1-35e0-4369-8d91-6f7e14022844",
+      "Name": "Object",
+      "Position": "-128,-160,32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "b50ca9ee-6d20-4639-9ea1-09ae702238cb",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/editor/cordon_helper.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "33de7ed1-dc4e-4a11-8fc8-8b2002d072d1",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Npcbase",
+          "__guid": "f5b56365-64f7-460f-a169-2f42017db739",
+          "Agent": {
+            "_type": "component",
+            "component_id": "c1ab44fd-35a9-4503-af59-776a2df3b9f6",
+            "go": "91732fe1-35e0-4369-8d91-6f7e14022844",
+            "component_type": "NavMeshAgent"
+          },
+          "Coin": {
+            "_type": "gameobject",
+            "prefab": "prefab/coinandxp/coinitem.prefab"
+          },
+          "Stats": {
+            "_type": "component",
+            "component_id": "fce09c05-cf9d-4bd9-aa8a-64057d2cac81",
+            "go": "91732fe1-35e0-4369-8d91-6f7e14022844",
+            "component_type": "PlayerStats"
+          },
+          "Xp": {
+            "_type": "gameobject",
+            "prefab": "prefab/coinandxp/xpitem.prefab"
+          }
+        },
+        {
+          "__type": "PlayerStats",
+          "__guid": "fce09c05-cf9d-4bd9-aa8a-64057d2cac81",
+          "AmountOfJumps": 1,
+          "Armor": 0,
+          "AttackDamage": 10,
+          "AttackSpeed": 1,
+          "Health": "Infinity",
+          "JumpHeight": 1,
+          "ReloadTime": 1,
+          "SecondaryAttackCoolDown": 5,
+          "SkillOneCoolDown": 5,
+          "SkillOneUses": 1,
+          "SprintMultiplier": 1.45,
+          "UltimateCoolDown": 50,
+          "UltimateUses": 1,
+          "WalkSpeed": 280
+        },
+        {
+          "__type": "NavMeshAgent",
+          "__guid": "c1ab44fd-35a9-4503-af59-776a2df3b9f6",
+          "Acceleration": 0,
+          "Height": 64,
+          "MaxSpeed": 0,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": false,
+          "UpdateRotation": false
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "4f7526e8-4f2a-4531-a9f2-f925a8dcdc97",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Radius": 1000,
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3616,7 +3720,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-02T20:49:56.5276386\u002B01:00",
+  "LastSaved": "2024-04-03T04:37:39.6867597\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
