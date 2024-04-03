@@ -32,7 +32,7 @@
 	string GetXpBar()
 	{
 		//Turn the current xp into the width of the bar
-		return $"width: {(_playerStats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp] * 10)}%";
+		return $"width: {(_playerStats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp] / (float)PlayerStats.MaxExperienceForLevel(_playerStats.CurrentLevel)) * 100}%";
 	}
 
 	/// <summary>

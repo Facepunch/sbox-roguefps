@@ -177,10 +177,15 @@ public sealed class PlayerStats : Component
 		//Log.Info( $"Added {amount} coins. Total coins: {PlayerCoinsAndXp[CoinsAndXp.Coins]}" );
 	}
 
+	public static int MaxExperienceForLevel( int level )
+	{
+		return (int)(10f + MathF.Pow( level + 1, 2.7f ));
+	}
+
 	public void AddXP( int amount )
 	{
 		// If the player has 10 xp add a level, then double the amount needed for the next level
-		if ( PlayerCoinsAndXp[CoinsAndXp.Xp] >= 10 )
+		if ( PlayerCoinsAndXp[CoinsAndXp.Xp] >= MaxExperienceForLevel(CurrentLevel) )
 		{
 			CurrentLevel++;
 			PlayerCoinsAndXp[CoinsAndXp.Xp] = 0;

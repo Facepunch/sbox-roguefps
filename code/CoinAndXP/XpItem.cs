@@ -26,7 +26,7 @@ public sealed class XpItem : Component, Component.ITriggerListener
 			physbody.Velocity = 0;
 			physbody.AngularVelocity = 0;
 			*/
-			//Log.Info( "Coin spawned." );
+			//log.Info( "Coin spawned." );
 		}
 
 		// Move the coin towards the target player
