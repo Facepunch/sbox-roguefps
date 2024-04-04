@@ -36,11 +36,13 @@ public class FireHit : ItemDef
 			if ( target.Components.Get<FireComponent>() == null )
 			{
 				target.Components.Create<FireComponent>().Length += 5;
+				target.Components.Get<FireComponent>().Damage = .05f * GetAmountFromInventory();
 			}
 			else
 			{
 				target.Components.Get<FireComponent>().Length += 5;
 				target.Components.Get<FireComponent>().Hit();
+				target.Components.Get<FireComponent>().Damage = .05f * GetAmountFromInventory();
 			}
 		}
 	}

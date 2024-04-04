@@ -7,6 +7,8 @@ public sealed class FireComponent : Component
 	public PrefabScene fireParticle { get; set; } = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/particles/items/uncommon/fireeffect.prefab" ) );
 	GameObject fire;
 	bool spawned = false;
+
+	public float Damage { get; set; } = 0.1f;
 	protected override void OnStart()
 	{
 		base.OnStart();
@@ -31,7 +33,7 @@ public sealed class FireComponent : Component
 		{
 			if ( npc.Health > 0 )
 			{
-				npc.OnDamage( 0.1f );
+				npc.OnDamage( Damage );
 				if(!spawned)
 				{
 					spawned = true;
