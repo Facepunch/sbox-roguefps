@@ -12,7 +12,7 @@
 	public override void ApplyUpgrade()
 	{
 		Log.Info( $"!!!!!!{Owner.Inventory.GetItemOwner( this )}!!!!!!" );
-		Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
+		Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = GetAmountFromInventory() + 1;
 	}
 
 	public override void RemoveUpgrade()
@@ -23,7 +23,7 @@
 		}
 		else
 		{
-			Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
+			Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = GetAmountFromInventory();
 		}
 
 		//Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
@@ -35,6 +35,6 @@
 
 		Log.Info( "Jumpy OnShoot" );
 
-		Owner.Components.Get<CharacterController>().Punch( Owner.Transform.Rotation.Up * 500f );
+		Owner.Components.Get<PlayerController>().CharacterController.Punch(-Owner.Components.Get<PlayerController>().EyeAngles.Forward * 100f * GetAmountFromInventory());
 	}
 }

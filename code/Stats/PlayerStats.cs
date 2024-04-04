@@ -1,5 +1,3 @@
-using static RogueFPS.BaseItem;
-
 namespace RogueFPS;
 
 [Title( "Player Stats" )]
@@ -24,8 +22,6 @@ public sealed class PlayerStats : Component
 	[Property, Group( "Skill" )] public float SkillOneUses { get; set; } = 1f;
 	[Property, Group( "Skill" )] public float UltimateCoolDown { get; set; } = 50f;
 	[Property, Group( "Skill" )] public float UltimateUses { get; set; } = 1f;
-	//
-	public List<BaseItem> PickedUpItems { get; set; } = new List<BaseItem>();
 	//
 
 	//Coin and XP
@@ -128,12 +124,6 @@ public sealed class PlayerStats : Component
 		Local = this;
 	}
 
-	public void AddItemComponent( BaseItem comp )
-	{
-		var typeDesc = TypeLibrary.GetType( GetType() );
-		Components.Create( typeDesc );
-	}
-
 	//public void ApplyUpgrade( string upgradeName, float upgradeAmount )
 	//{
 	//	TypeLibrary.SetProperty( this, upgradeName, upgradeAmount );
@@ -211,24 +201,7 @@ public sealed class PlayerStats : Component
 			PlayerCoinsAndXp[CoinsAndXp.Xp] += amount;
 		}
 	}
-	public void AddItem( BaseItem comp )
-	{
-		//var comp = Components.Create( type );
-		//PickedUpItems.Add( comp );
-	}
-	public bool HasItem( string item )
-	{
-		return PickedUpItems.Contains( PickedUpItems.FirstOrDefault( x => x.ItemName == item ) );
-	}
-	public BaseItem GetItem( string item )
-	{
-		return Components.GetAll<BaseItem>().FirstOrDefault( x => x.ItemName == item );
-	}
 
-	public List<BaseItem> GetAllItems()
-	{
-		return Components.GetAll<BaseItem>().ToList();
-	}
 	public PlayerStartingStats ConvertToStartingStat( PlayerUpgradedStats upgradedStat )
 	{
 		return Enum.TryParse( upgradedStat.ToString(), out PlayerStartingStats startingStat ) ? startingStat : default;
@@ -247,15 +220,6 @@ public sealed class PlayerStats : Component
 	public void Modify( PlayerUpgradedStats stat, float amount )
 	{
 		UpgradedStats[stat] += amount;
-	}
-
-	protected override void OnUpdate()
-	{
-		var items = Components.GetAll<BaseItem>();
-		foreach ( var item in items )
-		{
-			item.DoUpgradeUpdate();
-		}
 	}
 
 	public void AddAbility( string indx, string abilityName, string abilityIcon )
@@ -329,24 +293,6 @@ public sealed class PlayerStats : Component
 		UpgradedStats[PlayerUpgradedStats.UltimateCoolDown] = UltimateCoolDown;
 		UpgradedStats[PlayerUpgradedStats.UltimateUses] = UltimateUses;
 
-	}
-	public static string GetRarityColor( UpgradeRarity upgrade )
-	{
-		switch ( upgrade )
-		{
-			case UpgradeRarity.Common:
-				return "#3A3A3C";
-			case UpgradeRarity.Uncommon:
-				return "#1DB954";
-			case UpgradeRarity.Rare:
-				return "#0077B5";
-			case UpgradeRarity.Epic:
-				return "#9B30FF";
-			case UpgradeRarity.Legendary:
-				return "#E00707";
-			default:
-				return "#FFFFFF";
-		}
 	}
 
 	[ConCmd("Rogue_GiveCoins")]
