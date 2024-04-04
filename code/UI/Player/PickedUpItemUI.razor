@@ -76,6 +76,6 @@
 	/// <summary>
 	/// The hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine(Time.Now, Items.Count > 0 ? Items.Peek().Name : string.Empty);
+	protected override int BuildHash() => System.HashCode.Combine(Time.Delta, Items.Count > 0 ? Items.Peek().Name : string.Empty);
 }
 

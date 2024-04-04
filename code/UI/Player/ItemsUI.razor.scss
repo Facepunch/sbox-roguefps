@@ -16,7 +16,7 @@ ItemsUI {
 		align-content: center;
 		width: 50%;
 		height: 12%;
-		border-image: url( ui/mainui/border_ui_01.png ) 25;
+		background-color: rgba(0, 0, 0, 0.25);
 	}
 
 	&.open {
