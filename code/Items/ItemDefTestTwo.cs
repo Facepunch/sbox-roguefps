@@ -28,4 +28,13 @@
 
 		//Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
 	}
+
+	public override void OnShoot()
+	{
+		base.OnShoot();
+
+		Log.Info( "Jumpy OnShoot" );
+
+		Owner.Components.Get<CharacterController>().Punch( Owner.Transform.Rotation.Up * 500f );
+	}
 }

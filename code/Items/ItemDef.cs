@@ -56,4 +56,7 @@
 			Owner.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed] = Owner.GetStartingStat( PlayerStats.PlayerStartingStats.AttackSpeed ) + StatUpgradeAmount * itemAmount;
 		}
 	}
+
+
+	public virtual void OnShoot() { }
 }

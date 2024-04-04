@@ -35,6 +35,13 @@ public class TestWeapon : BaseWeaponItem
 		tracerParticle.Start.Transform.Position = tr.StartPosition + Scene.Camera.Transform.Rotation.Forward * 10f;
 		tracerParticle.End.Transform.Position = tr.EndPosition;
 
+		var inventory = PlayerStats.Inventory;
+
+		foreach ( var item in inventory.itemPickUps )
+		{
+			item.Item.OnShoot();
+		}
+
 		if ( tr.Hit )
 		{
 			if ( tr.GameObject.Components.Get<Npcbase>() != null )
