@@ -1,17 +1,17 @@
 ﻿public class ItemDef
 {
-	public string Icon { get; set; }
-	public string Name { get; set; }
-	public string Description { get; set; }
-	public GameObject PickUpPrefab { get; set; }
-	public ItemTier ItemTier { get; set; }
-	public Model Model { get; set; } = Model.Load( "models/citizen_props/balloonears01.vmdl_c" );
-	public string ItemColor { get; set; }
+	public virtual string Name { get; }
+	public virtual string Description { get; }
+	public virtual string Icon { get; }
+	public virtual ItemTier ItemTier { get; }
+	public virtual Model Model { get; }
+	public virtual string ItemColor {get;}
+	public virtual int StatUpgradeAmount { get; }
+	public virtual GameObject PickUpPrefab { get; }
 	public PlayerStats Owner { get; set; }
-	public int StatUpgradeAmount { get; set; } = 1;
 	int ItemAmount { get; set; }
 
-	public PrefabScene GetPickUpPrefab(string prefabPath)
+	public static PrefabScene GetPickUpPrefab(string prefabPath)
 	{
 		if (string.IsNullOrEmpty(prefabPath))
 		{

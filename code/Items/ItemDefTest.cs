@@ -1,14 +1,11 @@
 ﻿public class ItemDefTest : ItemDef
 {
-	public ItemDefTest()
-	{
-		Name = "Test Item";
-		Description = "A test item.";
-		Icon = "ui/test/items/chips.png";
-		ItemTier = ItemTier.Rare;
-		ItemColor = ColorSelection.GetRarityColor( ItemTier );
-		Model = Model.Load( "models/citizen_props/balloonheart01.vmdl_c" );
-		StatUpgradeAmount = 1;
-		PickUpPrefab = GetPickUpPrefab( "prefab/weapon/fx/bullettracer.prefab" );
-	}
+	public override string Name => "Test Item";
+	public override string Description => "A test item.";
+	public override string Icon => "ui/test/items/chips.png";
+	public override ItemTier ItemTier => ItemTier.Legendary;
+	public override string ItemColor => ColorSelection.GetRarityColor( ItemTier.Legendary );
+	public override Model Model => Model.Load("models/citizen_props/balloonheart01.vmdl_c");
+	public override int StatUpgradeAmount => 1;
+	public override GameObject PickUpPrefab => GetPickUpPrefab("prefab/weapon/fx/bullettracer.prefab");
 }
