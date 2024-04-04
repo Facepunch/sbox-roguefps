@@ -1,8 +1,7 @@
-public sealed class ItemHelper : Component
+public sealed class ItemHelper : Component, Component.ITriggerListener
 {
 	[Property]
 	public ItemDef Item { get; set; }
-
 	protected override void OnPreRender()
 	{
 		base.OnPreRender();
@@ -20,6 +19,22 @@ public sealed class ItemHelper : Component
 
 	}
 
+	void ITriggerListener.OnTriggerEnter( Collider other )
+	{
+		if ( other.GameObject.Tags.Has( "player" ) )
+		{
+			var player = other.GameObject.Components.Get<PlayerStats>(FindMode.InParent).GameObject;
+			if ( player != null )
+			{
+				OnPickedUp( player );
+			}
+			else
+			{
+				Log.Warning( "PlayerStats component not found on the player." );
+			}
+		}
+	}
+
 	public void OnPickedUp(GameObject player)
 	{
 		// This is called when the item is picked up by the player.
@@ -28,6 +43,9 @@ public sealed class ItemHelper : Component
 		var stats = player.Components.Get<PlayerStats>();
 		if ( stats != null )
 		{
+			var inventory = stats.Inventory;
+			inventory.AddItem( Item );
+
 			var pickupui = player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
 			pickupui.NewItem( Item.Name, Item.Description, Item.Icon, Item.ItemColor );
 

@@ -25,7 +25,7 @@ public class Interactable : Component
 		if ( item != null )
 		{
 			var inventory = player.Components.Get<PlayerStats>().Inventory;
-			inventory.AddItem( item.Item );
+			//inventory.AddItem( item.Item );
 			item.OnPickedUp( player );
 			//Log.Info( "Added item to inventory" );
 		}
