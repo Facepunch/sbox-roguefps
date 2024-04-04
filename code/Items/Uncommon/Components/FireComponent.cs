@@ -20,12 +20,18 @@ public sealed class FireComponent : Component
 
 	protected override void OnUpdate()
 	{
+		var npc = GameObject.Components.Get<Npcbase>();
+
+		if( npc.Health == 0 && fire != null)
+		{
+			fire.Destroy();
+		}
+
 		if ( timeSinceSpawned < Length )
 		{
-			var health = GameObject.Components.Get<Npcbase>();
-			if ( health.Health > 0 )
+			if ( npc.Health > 0 )
 			{
-				health.OnDamage( 0.1f );
+				npc.OnDamage( 0.1f );
 				if(!spawned)
 				{
 					spawned = true;

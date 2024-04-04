@@ -1,22 +1,16 @@
 ﻿public class ColorSelection
-{	public static string GetRarityColor( ItemTier upgrade )
+{	
+	public static string GetRarityColor( ItemTier upgrade )
 	{
-		switch ( upgrade )
+		return upgrade switch
 		{
-			case ItemTier.Common:
-				return "#3A3A3C";
-			case ItemTier.Uncommon:
-				return "#1DB954";
-			case ItemTier.Rare:
-				return "#0077B5";
-			case ItemTier.Epic:
-				return "#9B30FF";
-			case ItemTier.Legendary:
-				return "#E00707";
-			case ItemTier.None:
-				return "#FFFFFF";
-			default:
-				return "#FFFFFF";
-		}
+			ItemTier.Common => "#3A3A3C",
+			ItemTier.Uncommon => "#1DB954",
+			ItemTier.Rare => "#0077B5",
+			ItemTier.Epic => "#9B30FF",
+			ItemTier.Legendary => "#E00707",
+			ItemTier.None => "#FFFFFF",
+			_ => "#FFFFFF",
+		};
 	}
 }
