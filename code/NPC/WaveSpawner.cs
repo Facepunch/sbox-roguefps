@@ -51,7 +51,7 @@ public sealed class WaveSpawner : Component
 		var entity = EntityPrefab.Clone();
 		var spawnPos = Scene.NavMesh.GetRandomPoint( Transform.Position, 2000 );
 		entity.Components.Get<Npcbase>().WaveSpawner = this;
-
+		entity.BreakFromPrefab();
 		if ( spawnPos.HasValue )
 		{
 			entity.Transform.Position = spawnPos.Value;
