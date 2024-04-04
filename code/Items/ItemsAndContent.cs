@@ -6,7 +6,8 @@
 	{
 	//	new ItemDefTest(),
 		new AddJump(),
-		new LaunchJump()
+		new LaunchJump(),
+		new FireHit()
 	//	new ItemDefTestThree()
 	};
 
