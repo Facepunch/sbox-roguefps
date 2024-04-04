@@ -1,0 +1,375 @@
+{
+  "RootObject": {
+    "__guid": "98043d63-e027-462a-bd04-f6d0509b88b8",
+    "Name": "Multishop",
+    "Position": "-208,-352,-0.00003550948",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__guid": "8ab3a9ce-03a7-4aba-8b05-79ae57addecb",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/temp/multishop/multishop.vmdl",
+        "RenderType": "On",
+        "Tint": "0.63831,0.20677,0.82326,1"
+      },
+      {
+        "__type": "MultShopManager",
+        "__guid": "0f51fc57-3661-4dd5-b562-6fefedd3132f",
+        "Cost": 25,
+        "PriceLocation": {
+          "_type": "gameobject",
+          "go": "21bd75ac-ed03-4f22-959a-1686505d8d97"
+        },
+        "Slot1": {
+          "_type": "component",
+          "component_id": "bdea6095-ec93-4002-ac3a-aeb751d6f95e",
+          "go": "be98f712-6c3b-435f-8c90-9386dfa4c6e3",
+          "component_type": "MultiShopItem"
+        },
+        "Slot2": {
+          "_type": "component",
+          "component_id": "35d0846d-9aeb-4495-93ba-bda326ac0e3d",
+          "go": "f4979e5a-d057-4425-adf9-598245d30be0",
+          "component_type": "MultiShopItem"
+        },
+        "Slot3": {
+          "_type": "component",
+          "component_id": "787202a3-6f76-48f1-aaca-9207b04d84c3",
+          "go": "e25d394f-5012-42fc-81e5-d7e8dd38b67d",
+          "component_type": "MultiShopItem"
+        },
+        "WorldUI": {
+          "_type": "gameobject",
+          "prefab": "prefab/lootbox/costworldpanel.prefab"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "be98f712-6c3b-435f-8c90-9386dfa4c6e3",
+        "Name": "multishop_single_1",
+        "Position": "16,0,20.00002",
+        "Tags": "interactable",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "13ba8b9a-cfaf-4165-bc7b-6413e716c910",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/temp/multishop/multishop_single.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "MultiShopItem",
+            "__guid": "bdea6095-ec93-4002-ac3a-aeb751d6f95e",
+            "Cost": 100,
+            "Door": {
+              "_type": "gameobject",
+              "go": "2b433115-7db8-4e8f-8588-b4217a529755"
+            },
+            "HasPrice": true,
+            "IsOpen": false,
+            "ItemLocationOne": {
+              "_type": "gameobject",
+              "go": "716de472-26c4-4bc1-b0ac-94f7735c6164"
+            },
+            "ItemSpawnLocation": {
+              "_type": "gameobject",
+              "go": "459695a4-c54e-4594-99da-835c09f889ff"
+            },
+            "Name": "Open Shop"
+          },
+          {
+            "__type": "BoxCollider",
+            "__guid": "15d8cf62-3d2c-4089-8488-ed176655b251",
+            "Center": "0,0,30.33335",
+            "IsTrigger": false,
+            "Scale": "2,2,60.86674",
+            "Static": false
+          },
+          {
+            "__type": "HighlightOutline",
+            "__guid": "2ec7d1c2-8272-417d-b6bc-f62785f3905d",
+            "__enabled": false,
+            "Color": "1,1,1,1",
+            "InsideColor": "0,0,0,0",
+            "InsideObscuredColor": "0,0,0,0",
+            "ObscuredColor": "0,0,0,0",
+            "Width": 0.5
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "716de472-26c4-4bc1-b0ac-94f7735c6164",
+            "Name": "ItemSlot",
+            "Position": "4,0.000007629395,28",
+            "Scale": "0.5,0.5,0.5",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "ModelRenderer",
+                "__guid": "2a7b9d8a-593d-4a9f-83dd-a80c27ed31ac",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/item/baseitem.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "__guid": "459695a4-c54e-4594-99da-835c09f889ff",
+            "Name": "SpawnLocation",
+            "Position": "16,0,28.00001",
+            "Enabled": true,
+            "NetworkMode": 2
+          },
+          {
+            "__guid": "2b433115-7db8-4e8f-8588-b4217a529755",
+            "Name": "multishop_single_door",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "ModelRenderer",
+                "__guid": "a66d4e34-79ae-4781-8155-90eafc9990c3",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/temp/multishop/multishop_single_door.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "f4979e5a-d057-4425-adf9-598245d30be0",
+        "Name": "multishop_single_2",
+        "Position": "-8.343597,14.64099,20.00002",
+        "Rotation": "0,0,0.8660254,0.5000001",
+        "Tags": "interactable",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "a3d24d50-1937-428f-829c-92f9ee1311dc",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/temp/multishop/multishop_single.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "MultiShopItem",
+            "__guid": "35d0846d-9aeb-4495-93ba-bda326ac0e3d",
+            "Cost": 100,
+            "Door": {
+              "_type": "gameobject",
+              "go": "42c5df31-e87a-4027-a643-cb85208ba179"
+            },
+            "HasPrice": true,
+            "IsOpen": false,
+            "ItemLocationOne": {
+              "_type": "gameobject",
+              "go": "a8bc98d0-1c37-432f-90c0-b74d160afda5"
+            },
+            "ItemSpawnLocation": {
+              "_type": "gameobject",
+              "go": "534f061e-e313-4d00-a210-8d4cb3295d34"
+            },
+            "Name": "Open Shop"
+          },
+          {
+            "__type": "Interactable",
+            "__guid": "33b7f502-52bf-4ade-928b-3598f1ab2410",
+            "Cost": 100,
+            "HasPrice": true,
+            "IsOpen": false,
+            "Name": "Open Shop"
+          },
+          {
+            "__type": "BoxCollider",
+            "__guid": "f1462bbb-e984-4808-9fb3-65b409628602",
+            "Center": "0,0,30.33335",
+            "IsTrigger": false,
+            "Scale": "2,2,60.86674",
+            "Static": false
+          },
+          {
+            "__type": "HighlightOutline",
+            "__guid": "22e2df73-b65e-4006-98c3-582070544feb",
+            "__enabled": false,
+            "Color": "1,1,1,1",
+            "InsideColor": "0,0,0,0",
+            "InsideObscuredColor": "0,0,0,0",
+            "ObscuredColor": "0,0,0,0",
+            "Width": 0.5
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "a8bc98d0-1c37-432f-90c0-b74d160afda5",
+            "Name": "ItemSlot",
+            "Position": "4,0.000007629395,28",
+            "Scale": "0.5,0.5,0.5",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "ModelRenderer",
+                "__guid": "193c68da-e936-4452-9244-5f254e21c880",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/item/baseitem.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "__guid": "534f061e-e313-4d00-a210-8d4cb3295d34",
+            "Name": "SpawnLocation",
+            "Position": "16,0,28.00001",
+            "Enabled": true,
+            "NetworkMode": 2
+          },
+          {
+            "__guid": "42c5df31-e87a-4027-a643-cb85208ba179",
+            "Name": "multishop_single_door",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "ModelRenderer",
+                "__guid": "4a5243e9-c1e3-4e2c-b17c-937db42efd0a",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/temp/multishop/multishop_single_door.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "e25d394f-5012-42fc-81e5-d7e8dd38b67d",
+        "Name": "multishop_single_3",
+        "Position": "-8.135864,-15.10443,20.00002",
+        "Rotation": "0,0,-0.8660254,0.5",
+        "Tags": "interactable",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "a738ecde-86ad-4be2-b16b-1eb63b05be94",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/temp/multishop/multishop_single.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "MultiShopItem",
+            "__guid": "787202a3-6f76-48f1-aaca-9207b04d84c3",
+            "Cost": 100,
+            "Door": {
+              "_type": "gameobject",
+              "go": "e1e50b50-d129-474c-8338-f3a653adb76d"
+            },
+            "HasPrice": true,
+            "IsOpen": false,
+            "ItemLocationOne": {
+              "_type": "gameobject",
+              "go": "18bc0aaa-84fc-416f-9766-b139f39c152e"
+            },
+            "ItemSpawnLocation": {
+              "_type": "gameobject",
+              "go": "1f917313-4415-49a1-95dd-5b074c7560c5"
+            },
+            "Name": "Open Shop"
+          },
+          {
+            "__type": "BoxCollider",
+            "__guid": "282f2972-e192-4426-8c00-1ae66a2db855",
+            "Center": "0,0,30.33335",
+            "IsTrigger": false,
+            "Scale": "2,2,60.86674",
+            "Static": false
+          },
+          {
+            "__type": "HighlightOutline",
+            "__guid": "9cb7c175-1e8a-42b8-aa1f-1ede63121133",
+            "__enabled": false,
+            "Color": "1,1,1,1",
+            "InsideColor": "0,0,0,0",
+            "InsideObscuredColor": "0,0,0,0",
+            "ObscuredColor": "0,0,0,0",
+            "Width": 0.5
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "18bc0aaa-84fc-416f-9766-b139f39c152e",
+            "Name": "ItemSlot",
+            "Position": "4,0.000007629395,28",
+            "Scale": "0.5,0.5,0.5",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "ModelRenderer",
+                "__guid": "4dd9af90-973a-4a1e-b1bb-ff75ce2c2425",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/item/baseitem.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "__guid": "1f917313-4415-49a1-95dd-5b074c7560c5",
+            "Name": "SpawnLocation",
+            "Position": "16,0,28.00001",
+            "Enabled": true,
+            "NetworkMode": 2
+          },
+          {
+            "__guid": "e1e50b50-d129-474c-8338-f3a653adb76d",
+            "Name": "multishop_single_door",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "ModelRenderer",
+                "__guid": "b8d023c5-607f-46c2-a13c-346e5b276648",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/temp/multishop/multishop_single_door.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "21bd75ac-ed03-4f22-959a-1686505d8d97",
+        "Name": "PriceLocation",
+        "Position": "0,0,102",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

@@ -3493,6 +3493,10 @@
             "_type": "gameobject",
             "prefab": "prefab/lootbox/testlootbox.prefab"
           },
+          "MultiShopPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefab/shop_chest/multishop.prefab"
+          },
           "SpawnAmount": 20
         }
       ]
@@ -3589,24 +3593,6 @@
             ]
           },
           "Static": true
-        }
-      ]
-    },
-    {
-      "__guid": "9976603f-ee7b-42b3-ab11-4b65c7214a44",
-      "Name": "Object",
-      "Position": "-193.3533,184.2712,82.48573",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "TextRenderer",
-          "__guid": "bf55c322-0634-40ce-ab60-3722d86d00a5",
-          "Color": "1,1,1,1",
-          "FontFamily": "Poppins",
-          "FontSize": 32,
-          "Scale": 1,
-          "Text": "Hello! \u2764"
         }
       ]
     },
@@ -3720,7 +3706,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-04T16:23:20.1623504\u002B01:00",
+  "LastSaved": "2024-04-05T00:26:01.2643457\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
