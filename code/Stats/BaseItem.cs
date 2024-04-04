@@ -85,7 +85,7 @@ public class BaseItem : Component, Component.ITriggerListener
 			}
 
 			var pickupui = Player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
-			pickupui.NewItem( ItemName, ItemDescription, UpgradeIcon, Rarity );
+			//pickupui.NewItem( ItemName, ItemDescription, UpgradeIcon, Rarity );
 
 			var interact = Player.Components.Get<InteractorUse>( FindMode.EnabledInSelfAndDescendants );
 			interact.DestroyUI();

@@ -107,9 +107,9 @@ public partial class PlayerController : Component
 		if ( Input.Down( "use" ) )
 		{
 			//Get a random item from the list
-			var item = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
-			item.Owner = PlayerStatsComponent;
-			PlayerStatsComponent.Inventory.AddItem( item );
+			//var item = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
+			//tem.Owner = PlayerStatsComponent;
+			//PlayerStatsComponent.Inventory.AddItem( item );
 		}
 		if ( Input.Down( "reload" ) )
 		{

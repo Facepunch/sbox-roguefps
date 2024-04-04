@@ -38,11 +38,11 @@ public sealed class InteractorUse : Component
 
 				if(itemUI.Panel.Children.FirstOrDefault( x => x is ItemPickUp ) != null) return;
 
-				var item = interactor.Components.Get<BaseItem>(FindMode.EnabledInSelfAndChildren);
+				var item = interactor.Components.Get<ItemHelper>(FindMode.EverythingInChildren);
 				if ( item != null )
 				{
 					Log.Info( "Item component found" );
-					var pickupui = new ItemPickUp( $"Get {item.ItemName}", interactor.Cost, false );
+					var pickupui = new ItemPickUp( $"Get {item.Item.Name}", interactor.Cost, false );
 					itemUI.Panel.AddChild( pickupui );
 				}
 				else

@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "897edc40-6f98-490a-9e5d-d9f4b8bf3d07",
+    "__guid": "7bd26661-c1d2-418d-9a01-bee2d7891ff9",
     "Name": "groundnpctest",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "e41a9b76-e179-4717-a956-f37a604bbd80",
+        "__guid": "e45ae34c-7c02-4a3a-a244-558d5ba53f63",
         "BodyGroups": 18446744073709551615,
         "Model": "feathersmcgraw.vmdl",
         "RenderType": "On",
@@ -15,7 +15,7 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "6a434f74-403e-414c-8252-482f190e1231",
+        "__guid": "d971687a-e2dc-4f19-85aa-b5086cb7c7e6",
         "Center": "0,0,32.80003",
         "IsTrigger": false,
         "Scale": "27.46667,27.26667,68.99994",
@@ -23,11 +23,11 @@
       },
       {
         "__type": "Npcbase",
-        "__guid": "1e2e0a73-4bfc-42a9-8671-1d6649238cc9",
+        "__guid": "bb93d594-9098-4fc2-9f97-5aab1dac5504",
         "Agent": {
           "_type": "component",
-          "component_id": "76e1d0e7-f68e-485b-855d-6918626a0567",
-          "go": "897edc40-6f98-490a-9e5d-d9f4b8bf3d07",
+          "component_id": "281102db-c074-4486-9b23-ff7ecd3ebe8d",
+          "go": "7bd26661-c1d2-418d-9a01-bee2d7891ff9",
           "component_type": "NavMeshAgent"
         },
         "Coin": {
@@ -36,8 +36,8 @@
         },
         "Stats": {
           "_type": "component",
-          "component_id": "43e00f6e-4c68-45be-b61d-6f2218942918",
-          "go": "897edc40-6f98-490a-9e5d-d9f4b8bf3d07",
+          "component_id": "051f96ef-1c38-4a2d-b4a7-296771c4de1c",
+          "go": "7bd26661-c1d2-418d-9a01-bee2d7891ff9",
           "component_type": "PlayerStats"
         },
         "Xp": {
@@ -47,7 +47,7 @@
       },
       {
         "__type": "NavMeshAgent",
-        "__guid": "76e1d0e7-f68e-485b-855d-6918626a0567",
+        "__guid": "281102db-c074-4486-9b23-ff7ecd3ebe8d",
         "Acceleration": 100,
         "Height": 64,
         "MaxSpeed": 120,
@@ -58,7 +58,7 @@
       },
       {
         "__type": "SphereCollider",
-        "__guid": "e79328a0-bbc3-4b80-b423-d26c55a4cf20",
+        "__guid": "918ebcb8-99f0-4ec3-953f-5ca7c8dd058c",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 1000,
@@ -66,7 +66,7 @@
       },
       {
         "__type": "PlayerStats",
-        "__guid": "43e00f6e-4c68-45be-b61d-6f2218942918",
+        "__guid": "051f96ef-1c38-4a2d-b4a7-296771c4de1c",
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 1,
@@ -83,7 +83,25 @@
         "WalkSpeed": 180
       }
     ],
-    "Children": []
+    "Children": [
+      {
+        "__guid": "8744852e-800f-4f20-a348-c477de6c7f0b",
+        "Name": "Object",
+        "Position": "8,-11,22",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "a1f1645b-e944-4dbf-826e-cadb6a50d69e",
+            "BodyGroups": 171,
+            "Model": "models/weapons/sbox_assault_m4a1/w_m4a1.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,
@@ -91,6 +109,7 @@
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "facepunch.w_m4a1",
     "marauders.feathersmcgraw"
   ]
 }

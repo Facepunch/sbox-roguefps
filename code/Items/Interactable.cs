@@ -17,20 +17,21 @@ public class Interactable : Component
 
 	public virtual void OnInteract( GameObject player)
 	{
-		Log.Info( "Interacted with " + player.Name );
+		//Log.Info( "Interacted with " + player.Name );
 
 		Player = player;
 
-		var item = Components.Get<BaseItem>(FindMode.EnabledInSelfAndChildren);
+		var item = Components.Get<ItemHelper>(FindMode.EverythingInChildren);
 		if ( item != null )
 		{
-			item.Player = player;
-			item.PickUpItem();
-
+			var inventory = player.Components.Get<PlayerStats>().Inventory;
+			inventory.AddItem( item.Item );
+			item.OnPickedUp( player );
+			//Log.Info( "Added item to inventory" );
 		}
 		else
 		{
-			Log.Info( "No item component found" );
+			//Log.Info( "No item component found" );
 		}
 	}
 

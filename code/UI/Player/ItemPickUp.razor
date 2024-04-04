@@ -8,11 +8,9 @@
 <root class="ItemPickUp">
 	<div class="item">
 			<InputHint Size=@InputGlyphSize.Small @Action="use" />
-		<div class="ItemName">@_ItemName</div>
-		<div class="ItemName @(_HasPrice? "":"priced")" style="color:orange;">[$@_Cost]</div>
-		</div>
-
-	</div>	
+			<div class="ItemName">@_ItemName</div>
+			<div class="ItemName @(_HasPrice? "":"priced")" style="color:orange;">[$@_Cost]</div>
+	</div>
 </root>
 
 @code
