@@ -59,4 +59,5 @@
 
 	public virtual void OnJump() { }
 	public virtual void OnShoot() { }
+	public virtual void OnHit(GameObject target) { }
 }

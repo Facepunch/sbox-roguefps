@@ -47,6 +47,11 @@ public class TestWeapon : BaseWeaponItem
 			if ( tr.GameObject.Components.Get<Npcbase>() != null )
 			{
 				OnHit( tr.GameObject );
+
+				foreach ( var item in inventory.itemPickUps )
+				{
+					item.Item.OnHit( tr.GameObject );
+				}
 			}
 		}
 	}
