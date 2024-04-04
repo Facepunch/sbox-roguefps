@@ -83,7 +83,9 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		var go = prefab.Clone();
 		var itemGet = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
 		go.BreakFromPrefab();
+		go.Name = itemGet.Name;
 		go.Components.Get<ModelRenderer>(FindMode.InChildren).Model = itemGet.Model;
+		go.Components.Get<ModelRenderer>( FindMode.InChildren ).Tint = itemGet.ItemColor;
 		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = itemGet;
 		var interactable = go.Components.Get<Interactable>( );
 		interactable.Name = itemGet.Name;
@@ -95,6 +97,7 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 
 		if ( rb != null )
 		{
+			//This seems dumb
 			rb.ApplyForce( Vector3.Up * 1000f * 20f );
 			rb.ApplyForce( Transform.Rotation * Vector3.Forward * 1000f * 10f);
 		}

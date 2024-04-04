@@ -1,14 +1,14 @@
 {
   "RootObject": {
-    "__guid": "4e31fd75-69a1-4519-8702-8007b45e153a",
-    "Name": "BaseItem",
-    "Tags": "interactable",
+    "__guid": "43907a1a-a1f4-4930-91b3-fda07a8106a0",
+    "Name": "baseitem",
+    "Tags": "interactable,item",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "BoxCollider",
-        "__guid": "42f38224-ec21-44f5-901b-df7b952bc322",
+        "__guid": "a1b67739-ffc1-4ed6-abe5-9bd27d35aaac",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
@@ -16,7 +16,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "c2e8f682-e1eb-4bc6-a98d-35f86a956c03",
+        "__guid": "f3c28fd6-ea22-46dc-9957-19b0fe30e10a",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -32,7 +32,7 @@
       },
       {
         "__type": "Interactable",
-        "__guid": "fbcebfcd-1ced-48d8-937e-835abb17668f",
+        "__guid": "f7d81bb5-d197-439f-b8a6-bc6d5aefebeb",
         "Cost": 100,
         "HasPrice": false,
         "IsOpen": false,
@@ -41,7 +41,7 @@
     ],
     "Children": [
       {
-        "__guid": "f8e34397-ec78-4e8a-be73-8907fa8deaf0",
+        "__guid": "4c16b9dc-99c2-4e10-ba8c-cf87740ffcae",
         "Name": "BaseItem",
         "Tags": "trigger",
         "Enabled": true,
@@ -49,7 +49,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "8bac61e5-1e82-429a-9da4-18ea730d33b0",
+            "__guid": "fb7f7163-f549-42fa-9fbd-05712c00d88b",
             "BodyGroups": 18446744073709551615,
             "Model": "models/citizen_props/beachball.vmdl",
             "RenderType": "On",
@@ -57,7 +57,7 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "8bb1d9fc-62a5-424c-9458-c0d55e788bca",
+            "__guid": "18e7e2b3-b062-418f-a1e3-371d97a2638e",
             "Center": "0,0,0",
             "IsTrigger": true,
             "Radius": 32,
@@ -65,7 +65,7 @@
           },
           {
             "__type": "TestItem",
-            "__guid": "5db73b62-3745-4c20-94fb-61585ac989ad",
+            "__guid": "fe92448e-397e-489e-adce-b73279e0f052",
             "__enabled": false,
             "Amount": 1,
             "IsStatUpgrade": true,
@@ -73,7 +73,7 @@
           },
           {
             "__type": "HighlightOutline",
-            "__guid": "a5c5c1d1-f7fa-48ca-942f-00e0b28861f1",
+            "__guid": "21c39352-7e5f-4ae2-b683-dd00cf292d10",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",
@@ -82,11 +82,11 @@
           },
           {
             "__type": "ItemAnimator",
-            "__guid": "a91eb111-8b9b-4174-bdb4-5fd2bb63f42f"
+            "__guid": "650ab828-c608-430d-87ab-f21856202714"
           },
           {
             "__type": "ItemHelper",
-            "__guid": "933223eb-0711-4917-8d2c-5f2dd41d0dad",
+            "__guid": "c1e1eaaa-acb1-4376-918e-4d59ffddca48",
             "Item": {
               "Model": "models/citizen_props/balloonears01.vmdl",
               "StatUpgradeAmount": 1
