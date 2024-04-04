@@ -50,7 +50,9 @@ public class BaseWeaponItem : BaseAbilityItem
 
 	public override void DoFire()
 	{
-		if ( LastFired >= PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed] )
+		float firingInterval = 1f / PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed];
+
+		if ( LastFired >= firingInterval )
 		{
 			LastFired = 0;
 			OnPrimaryFire();

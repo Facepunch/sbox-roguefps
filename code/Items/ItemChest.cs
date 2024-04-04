@@ -45,7 +45,7 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 
 		if ( IsOpen )
 		{
-			Top.Transform.Rotation = Rotation.Slerp( Top.Transform.Rotation, Rotation.From( new Angles( 0, 0, -120 ) + Transform.Rotation.Angles() ), Time.Delta * 5f );
+			Top.Transform.Rotation = Rotation.Slerp( Top.Transform.Rotation, Rotation.From( new Angles( -120, 0, 0 ) + Transform.Rotation.Angles() ), Time.Delta * 5f );
 			if ( _UI != null )
 				_UI.Destroy();
 			return;
@@ -79,17 +79,24 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 	void SpawnItem()
 	{
 		//var randomItem = SceneUtility.GetPrefabScene( Items[Random.Shared.Int( 0, Items.Count - 1 )] );
-
-		var item = RandomItem.Clone();
+		var prefab = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/items/baseitem.prefab" ) );
+		var go = prefab.Clone();
+		var itemGet = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
+		go.BreakFromPrefab();
+		go.Components.Get<ModelRenderer>(FindMode.InChildren).Model = itemGet.Model;
+		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = itemGet;
+		var interactable = go.Components.Get<Interactable>( );
+		interactable.Name = itemGet.Name;
+		//var item = RandomItem.Clone();
 		if ( ItemSpawnLocation != null )
-			item.Transform.Position = ItemSpawnLocation.Transform.Position;
+			go.Transform.Position = ItemSpawnLocation.Transform.Position;
 
-		var rb = item.Components.Get<Rigidbody>( FindMode.EnabledInSelfAndChildren );
+		var rb = go.Components.Get<Rigidbody>(FindMode.EnabledInSelf);
+
 		if ( rb != null )
 		{
-			rb.ApplyForce( Vector3.Up * 5000000f * 10 );
-			rb.ApplyForce( Vector3.Left * Random.Shared.Float( -5000f, 5000f ) );
-			rb.ApplyForce( Vector3.Forward * Random.Shared.Float( -5000f, 5000f ) );
+			rb.ApplyForce( Vector3.Up * 1000f * 20f );
+			rb.ApplyForce( Transform.Rotation * Vector3.Forward * 1000f * 10f);
 		}
 	}
 	void ITriggerListener.OnTriggerEnter( Collider other )

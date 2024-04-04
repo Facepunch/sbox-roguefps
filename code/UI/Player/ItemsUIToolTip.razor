@@ -18,13 +18,13 @@
 	<div class="container">
 		<div class="info">
 			<div class="header">
-				<div class="icon" style="background-image: url('@_item.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(_item.Rarity)"></div>
+				<div class="icon" style="background-image: url('@_item.Icon'); border: 2px solid @_item.ItemColor"></div>
 				<div class="text">
-				<div class="title">@_item.ItemName</div>
-				<div class="rarity">@_item.Rarity</div>
+				<div class="title">@_item.Name</div>
+					<div class="rarity">@_item.ItemTier</div>
 				</div>
 			</div>
-		<div class="description">@_item.ItemDescription</div>
+		<div class="description">@_item.Description</div>
 		</div>
 	</div>
 </root>
@@ -32,9 +32,9 @@
 @code
 {
 
-	public BaseItem _item;
+	public ItemDef _item;
 
-	public ItemsUIToolTip(BaseItem item)
+	public ItemsUIToolTip(ItemDef item)
 	{
 		_item = item;
 	}

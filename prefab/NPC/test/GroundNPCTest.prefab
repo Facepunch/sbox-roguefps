@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "8a6352cd-2dc8-43b8-87c5-708c27d1d3b4",
+    "__guid": "897edc40-6f98-490a-9e5d-d9f4b8bf3d07",
     "Name": "groundnpctest",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "ec6c61b8-2417-456c-93ed-c3d1a2fd049a",
+        "__guid": "e41a9b76-e179-4717-a956-f37a604bbd80",
         "BodyGroups": 18446744073709551615,
         "Model": "feathersmcgraw.vmdl",
         "RenderType": "On",
@@ -15,7 +15,7 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "ddc0c5bb-1dd0-4f09-8685-4bd558e4b1ef",
+        "__guid": "6a434f74-403e-414c-8252-482f190e1231",
         "Center": "0,0,32.80003",
         "IsTrigger": false,
         "Scale": "27.46667,27.26667,68.99994",
@@ -23,11 +23,11 @@
       },
       {
         "__type": "Npcbase",
-        "__guid": "942d5fa4-9226-474c-8674-01ae560646bd",
+        "__guid": "1e2e0a73-4bfc-42a9-8671-1d6649238cc9",
         "Agent": {
           "_type": "component",
-          "component_id": "9b948654-219f-4275-8ea2-d9f4651b540c",
-          "go": "8a6352cd-2dc8-43b8-87c5-708c27d1d3b4",
+          "component_id": "76e1d0e7-f68e-485b-855d-6918626a0567",
+          "go": "897edc40-6f98-490a-9e5d-d9f4b8bf3d07",
           "component_type": "NavMeshAgent"
         },
         "Coin": {
@@ -36,8 +36,8 @@
         },
         "Stats": {
           "_type": "component",
-          "component_id": "982bcda7-207c-42b6-bdf4-b0aae9f9da5c",
-          "go": "8a6352cd-2dc8-43b8-87c5-708c27d1d3b4",
+          "component_id": "43e00f6e-4c68-45be-b61d-6f2218942918",
+          "go": "897edc40-6f98-490a-9e5d-d9f4b8bf3d07",
           "component_type": "PlayerStats"
         },
         "Xp": {
@@ -47,7 +47,7 @@
       },
       {
         "__type": "NavMeshAgent",
-        "__guid": "9b948654-219f-4275-8ea2-d9f4651b540c",
+        "__guid": "76e1d0e7-f68e-485b-855d-6918626a0567",
         "Acceleration": 100,
         "Height": 64,
         "MaxSpeed": 120,
@@ -58,7 +58,7 @@
       },
       {
         "__type": "SphereCollider",
-        "__guid": "f1615c37-09d4-497e-afbf-39ee133d97e0",
+        "__guid": "e79328a0-bbc3-4b80-b423-d26c55a4cf20",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 1000,
@@ -66,7 +66,7 @@
       },
       {
         "__type": "PlayerStats",
-        "__guid": "982bcda7-207c-42b6-bdf4-b0aae9f9da5c",
+        "__guid": "43e00f6e-4c68-45be-b61d-6f2218942918",
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 1,

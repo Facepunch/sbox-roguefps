@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "5be7686b-80dc-40d9-8b19-c51ffcc229f4",
+    "__guid": "9373028e-1886-42ed-946d-bc9b39a8a046",
     "Name": "testlootbox",
     "Tags": "interactable",
     "Enabled": true,
@@ -8,7 +8,7 @@
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "c640af1c-3dbd-4002-94ce-6c902c139816",
+        "__guid": "21ffc3b8-61e1-442b-8ce5-682e324dfdbc",
         "BodyGroups": 18446744073709551615,
         "Model": "models/temp/chest/temp_chest.vmdl",
         "RenderType": "On",
@@ -16,14 +16,14 @@
       },
       {
         "__type": "ModelCollider",
-        "__guid": "6814eb88-810e-4e16-9f15-70c8ff75b859",
+        "__guid": "9b7591ab-30f7-46fc-9d3f-74a6178913bf",
         "IsTrigger": false,
         "Model": "models/temp/chest/temp_chest.vmdl",
         "Static": false
       },
       {
         "__type": "SphereCollider",
-        "__guid": "0c3a1808-071b-4dd6-b8f9-4c7b61e150ae",
+        "__guid": "e63c2ceb-bb22-457c-9a6a-3ef2ece75691",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 131.46661,
@@ -31,19 +31,18 @@
       },
       {
         "__type": "ItemChest",
-        "__guid": "6a62f83a-ffdb-484f-9e3e-14fde49c26d2",
+        "__guid": "c80183a6-9b9c-4e8d-8524-817a97d75311",
         "Cost": 25,
         "HasPrice": true,
         "IsOpen": false,
         "ItemSpawnLocation": {
           "_type": "gameobject",
-          "go": "2bd0f55b-ea60-4fe6-940f-610d2bf6d2f6"
+          "go": "c3524fb1-0b56-4dba-8703-c344b04fd41c"
         },
-        "Name": "Interactable",
         "Rarity": "Common",
         "Top": {
           "_type": "gameobject",
-          "go": "9d08705d-21a8-457b-bc30-1604e70d8ab3"
+          "go": "5d843e5a-8312-4787-9fc4-3a99acb0ecd2"
         },
         "UseRandomItem": true,
         "WorldUI": {
@@ -53,7 +52,7 @@
       },
       {
         "__type": "HighlightOutline",
-        "__guid": "22ddc8a5-0b16-411a-85a1-e777450b0a15",
+        "__guid": "ce72ad52-d1b2-484a-9f9d-aca16a232715",
         "__enabled": false,
         "Color": "0.99496,1,0.69767,1",
         "InsideColor": "0,0,0,0",
@@ -64,22 +63,22 @@
     ],
     "Children": [
       {
-        "__guid": "2bd0f55b-ea60-4fe6-940f-610d2bf6d2f6",
+        "__guid": "c3524fb1-0b56-4dba-8703-c344b04fd41c",
         "Name": "SpawnPoint",
-        "Position": "0,-6.09114,20",
+        "Position": "0,0,20",
         "Enabled": true,
         "NetworkMode": 2
       },
       {
-        "__guid": "9d08705d-21a8-457b-bc30-1604e70d8ab3",
+        "__guid": "5d843e5a-8312-4787-9fc4-3a99acb0ecd2",
         "Name": "temp_chest_top",
-        "Position": "0,9,12",
+        "Position": "-8.999999,0.000001055209,12",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "34aa1107-da1f-4726-bf05-1cebd526eff7",
+            "__guid": "44c97849-113e-4c64-9a00-651ecba91e56",
             "BodyGroups": 18446744073709551615,
             "Model": "models/temp/chest/temp_chest_top.vmdl",
             "RenderType": "On",

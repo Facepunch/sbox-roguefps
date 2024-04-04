@@ -5,11 +5,10 @@
 <root>
 	<div class="upgrades">
 
- 		@foreach (var upgrade in TargetObject.GetAllItems())
+		@foreach (var upgrade in TargetObject.Inventory.itemPickUps)
 		{
-			<div class="upgrade" onmouseover="@(() => OnItemHover(upgrade))" onmouseout="@(() => OnItemHoverOut())">
-				<div class="icon" style="background-image: url('@upgrade.UpgradeIcon'); border: 2px solid @PlayerStats.GetRarityColor(upgrade.Rarity)"></div>
-				@* <div class="name">@upgrade.Name</div>*@
+			<div class="upgrade" onmouseover="@(() => OnItemHover(upgrade.Item))" onmouseout="@(() => OnItemHoverOut())">
+				<div class="icon" style="background-image: url('@upgrade.Item.Icon'); border: 2px solid @upgrade.Item.ItemColor"></div>
 				<div class="amount">@upgrade.Amount</div>
 			</div>
 		}
@@ -31,7 +30,7 @@
 {
 	ItemsUIToolTip itemsUIToolTip;
 
-	public void OnItemHover(BaseItem item)
+	public void OnItemHover(ItemDef item)
 	{
 		if(item != null)
 		{

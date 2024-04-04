@@ -1,0 +1,105 @@
+{
+  "RootObject": {
+    "__guid": "4e31fd75-69a1-4519-8702-8007b45e153a",
+    "Name": "BaseItem",
+    "Tags": "interactable",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "BoxCollider",
+        "__guid": "42f38224-ec21-44f5-901b-df7b952bc322",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "20,20,20",
+        "Static": false
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "c2e8f682-e1eb-4bc6-a98d-35f86a956c03",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassOverride": 1,
+        "MotionEnabled": true,
+        "RigidbodyFlags": "DisableCollisionSounds",
+        "StartAsleep": false
+      },
+      {
+        "__type": "Interactable",
+        "__guid": "fbcebfcd-1ced-48d8-937e-835abb17668f",
+        "Cost": 100,
+        "HasPrice": false,
+        "IsOpen": false,
+        "Name": "Interactable"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "f8e34397-ec78-4e8a-be73-8907fa8deaf0",
+        "Name": "BaseItem",
+        "Tags": "trigger",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "8bac61e5-1e82-429a-9da4-18ea730d33b0",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/citizen_props/beachball.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "SphereCollider",
+            "__guid": "8bb1d9fc-62a5-424c-9458-c0d55e788bca",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Radius": 32,
+            "Static": false
+          },
+          {
+            "__type": "TestItem",
+            "__guid": "5db73b62-3745-4c20-94fb-61585ac989ad",
+            "__enabled": false,
+            "Amount": 1,
+            "IsStatUpgrade": true,
+            "SpawnChance": 0
+          },
+          {
+            "__type": "HighlightOutline",
+            "__guid": "a5c5c1d1-f7fa-48ca-942f-00e0b28861f1",
+            "Color": "1,1,1,1",
+            "InsideColor": "0,0,0,0",
+            "InsideObscuredColor": "0,0,0,0",
+            "ObscuredColor": "0,0,0,0",
+            "Width": 0.25
+          },
+          {
+            "__type": "ItemAnimator",
+            "__guid": "a91eb111-8b9b-4174-bdb4-5fd2bb63f42f"
+          },
+          {
+            "__type": "ItemHelper",
+            "__guid": "933223eb-0711-4917-8d2c-5f2dd41d0dad",
+            "Item": {
+              "Model": "models/citizen_props/balloonears01.vmdl",
+              "StatUpgradeAmount": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

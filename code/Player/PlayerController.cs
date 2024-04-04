@@ -85,13 +85,13 @@ public partial class PlayerController : Component
 	}
 
 	float SmoothEyeHeight = 0f;
-
 	protected override void OnAwake()
 	{
 		baseAcceleration = CharacterController.Acceleration;
 
 		PlayerStatsComponent = Components.Get<PlayerStats>( FindMode.EverythingInSelfAndAncestors );
 	}
+
 
 	protected override void OnUpdate()
 	{
@@ -103,6 +103,20 @@ public partial class PlayerController : Component
 		}
 		*/
 		// Eye input
+
+		if ( Input.Down( "use" ) )
+		{
+			//Get a random item from the list
+			var item = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
+			item.Owner = PlayerStatsComponent;
+			PlayerStatsComponent.Inventory.AddItem( item );
+		}
+		if ( Input.Down( "reload" ) )
+		{
+			var item = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
+			PlayerStatsComponent.Inventory.RemoveItem( item );
+		}
+
 		if ( !IsProxy && cc != null )
 		{
 			var cameraGameObject = CameraController.Camera.GameObject;

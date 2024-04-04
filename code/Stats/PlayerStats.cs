@@ -59,6 +59,9 @@ public sealed class PlayerStats : Component
 	//
 
 	// Keep track of what ability the player has
+
+	public ItemInventory Inventory = new ItemInventory();
+
 	public struct AbiliyHas
 	{
 		public string Icon;
@@ -138,6 +141,12 @@ public sealed class PlayerStats : Component
 	{
 		UpgradedStats[stat] += amount;
 		Log.Info( $"Applied {stat} upgrade to {amount}." );
+	}
+
+	public void RemoveUpgrade( PlayerUpgradedStats stat, float amount )
+	{
+		UpgradedStats[stat] -= amount;
+		Log.Info( $"Removed {stat} upgrade to {amount}." );
 	}
 
 	//public void AddUpgrade( UpgradeHas upgrade )
@@ -239,18 +248,11 @@ public sealed class PlayerStats : Component
 
 	protected override void OnUpdate()
 	{
-		if ( Input.Pressed( "slot1" ) )
-		{
-			Log.Info( PickedUpAbilities.FirstOrDefault() );
-
-		}
-
 		var items = Components.GetAll<BaseItem>();
 		foreach ( var item in items )
 		{
 			item.DoUpgradeUpdate();
 		}
-		
 	}
 
 	public void AddAbility( string indx, string abilityName, string abilityIcon )
