@@ -2,6 +2,15 @@
 {
 	public List<InvetoryItem> itemPickUps = new List<InvetoryItem>();
 
+	public PlayerStats playerStats;
+
+	public ItemInventory( PlayerStats stats )
+	{
+		playerStats = stats;
+
+		Log.Info( "Inventory Created" );
+	}
+
 	public void AddItem( ItemDef item )
 	{
 		int index = itemPickUps.FindIndex( x => x.Item.Name == item.Name );
@@ -12,14 +21,14 @@
 			existingItem.Amount++; // Increment amount on the copy
 			itemPickUps[index] = existingItem; // Put the modified copy back in the list
 			existingItem.Item.ApplyUpgrade(); // Apply the upgrade to the player
-			//Log.Info( $"Added {item.Name} to inventory. Amount: {existingItem.Amount}" );
+			Log.Info( $"Added {item.Name} to inventory. Amount: {existingItem.Amount}" );
 		}
 		else
 		{
 			// Item not found, add new
-			itemPickUps.Add( new InvetoryItem { Item = item, Amount = 1 } );
+			itemPickUps.Add( new InvetoryItem { Item = item, Amount = 1, OwnerStat = playerStats } );
+			item.OnPickUp( playerStats ); // Set the owner of the item
 			item.ApplyUpgrade(); // Apply the upgrade to the player
-			//Log.Info( $"Added New {item.Name} to inventory. Amount: 1" );
 		}
 	}
 
@@ -60,6 +69,21 @@
 		else
 		{
 			return 0;
+		}
+	}
+
+	//Get the owner of the item
+	public PlayerStats GetItemOwner(ItemDef item)
+	{
+		var itemPickUp = itemPickUps.Find(x => x.Item.Name == item.Name);
+
+		if (itemPickUp.Item != null)
+		{
+			return itemPickUp.OwnerStat;
+		}
+		else
+		{
+			return null;
 		}
 	}
 }

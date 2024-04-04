@@ -38,7 +38,7 @@ public sealed class InteractorUse : Component
 
 				if(itemUI.Panel.Children.FirstOrDefault( x => x is ItemPickUp ) != null) return;
 
-				var item = interactor.Components.Get<ItemHelper>(FindMode.EverythingInChildren);
+				var item = interactor.Components.Get<ItemHelper>(FindMode.EnabledInSelfAndChildren);
 				if ( item != null )
 				{
 					Log.Info( "Item component found" );

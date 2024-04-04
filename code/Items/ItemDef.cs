@@ -29,7 +29,7 @@
 		return Owner.Inventory.GetItemCount(this);
 	}
 
-	public void ApplyUpgrade()
+	public virtual void ApplyUpgrade()
 	{
 		// Get the current amount from the inventory
 		int itemAmount = GetAmountFromInventory();
@@ -39,7 +39,7 @@
 	}
 
 
-	public void RemoveUpgrade()
+	public virtual void RemoveUpgrade()
 	{
 		// Get the current amount from the inventory
 		int itemAmount = GetAmountFromInventory();

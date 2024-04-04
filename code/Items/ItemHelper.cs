@@ -46,6 +46,9 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 			var inventory = stats.Inventory;
 			inventory.AddItem( Item );
 
+			Item.OnPickUp( stats );
+			Item.Owner = stats;
+
 			var pickupui = player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
 			pickupui.NewItem( Item.Name, Item.Description, Item.Icon, Item.ItemColor );
 

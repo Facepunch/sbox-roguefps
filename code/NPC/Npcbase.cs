@@ -70,7 +70,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 			GameObject.Destroy();
 		}
 
-		Log.Info( "Health: " + Health );
+		//Log.Info( "Health: " + Health );
 	}
 }
 

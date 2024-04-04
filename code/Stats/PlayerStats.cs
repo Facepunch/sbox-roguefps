@@ -60,7 +60,7 @@ public sealed class PlayerStats : Component
 
 	// Keep track of what ability the player has
 
-	public ItemInventory Inventory = new ItemInventory();
+	public ItemInventory Inventory;
 
 	public struct AbiliyHas
 	{
@@ -117,6 +117,9 @@ public sealed class PlayerStats : Component
 	protected override void OnStart()
 	{
 		base.OnStart();
+
+		Inventory = new ItemInventory(this);
+
 		//PickedUpUpgrades = new Dictionary<string, UpgradeHas>();
 
 		//	StartingStats = new Dictionary<PlayerStartingStats, float>();
