@@ -17,6 +17,13 @@ public partial class JumpMechanic : BasePlayerControllerMechanic
 	{
 		base.OnActiveUpdate();
 
+		var inventory = PlayerController.PlayerStatsComponent.Inventory;
+		foreach ( var item in inventory.itemPickUps )
+		{
+			item.Item.OnJump();
+		}
+
+
 		PlayerController.CharacterController.IsOnGround = false;
 		PlayerController.CharacterController.Velocity = PlayerController.CharacterController.Velocity.WithZ( 0 );
 		float jumpForce = CalculateJumpForce( PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.JumpHeight] );

@@ -57,6 +57,6 @@
 		}
 	}
 
-
+	public virtual void OnJump() { }
 	public virtual void OnShoot() { }
 }

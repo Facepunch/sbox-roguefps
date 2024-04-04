@@ -1,4 +1,4 @@
-﻿public class ItemDefTestTwo : ItemDef
+﻿public class AddJump : ItemDef
 {
 	public override string Name => "Jumpy";
 	public override string Description => "+1 Jump.";
@@ -7,7 +7,6 @@
 	public override string ItemColor => ColorSelection.GetRarityColor( ItemTier.Uncommon );
 	public override Model Model => Model.Load("models/citizen_props/balloonears01.vmdl_c");
 	public override int StatUpgradeAmount => 1;
-	public override GameObject PickUpPrefab => GetPickUpPrefab("prefab/weapon/fx/bullettracer.prefab");
 
 	public override void ApplyUpgrade()
 	{
@@ -27,14 +26,5 @@
 		}
 
 		//Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
-	}
-
-	public override void OnShoot()
-	{
-		base.OnShoot();
-
-		Log.Info( "Jumpy OnShoot" );
-
-		Owner.Components.Get<PlayerController>().CharacterController.Punch(-Owner.Components.Get<PlayerController>().EyeAngles.Forward * 100f * GetAmountFromInventory());
 	}
 }

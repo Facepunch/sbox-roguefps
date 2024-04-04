@@ -5,7 +5,8 @@
 	public static List<ItemDef> Items = new List<ItemDef>
 	{
 	//	new ItemDefTest(),
-		new ItemDefTestTwo()
+		new AddJump(),
+		new LaunchJump()
 	//	new ItemDefTestThree()
 	};
 
