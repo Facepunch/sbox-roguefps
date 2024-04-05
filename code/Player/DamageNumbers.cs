@@ -58,6 +58,11 @@ public partial class DamageNumbers : Component
 		{
 			var screenPos = camera.ToScreen( number.WorldPosition );
 
+			Scene.Camera.PointToScreenNormal( number.WorldPosition, out bool isBehind );
+		
+			if(isBehind )
+				continue;
+
 			// Piss around with different Easing methods
 			var ease = Easing.ExpoOut( number.TimeSince / TimeToLive );
 			screenPos -= Vector2.Up * ease * 64;
