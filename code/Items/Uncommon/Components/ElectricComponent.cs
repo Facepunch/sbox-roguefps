@@ -1,6 +1,6 @@
-public sealed class FireComponent : EffectBaseComponent
+public sealed class ElectricComponent : EffectBaseComponent
 {
-	public override DamageTypes DamageType { get; set; } = DamageTypes.Fire;
+	public override DamageTypes DamageType { get; set; } = DamageTypes.Electric;
 	public int Length { get; set; } = 1;
 	public TimeSince timeSinceSpawned { get; set; } = 0;
 	public PrefabScene fireParticle { get; set; } = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/particles/items/uncommon/fireeffect.prefab" ) );
@@ -32,7 +32,9 @@ public sealed class FireComponent : EffectBaseComponent
 		{
 			if ( npc.Health > 0 )
 			{
-				npc.OnDamage( Damage, DamageType );
+				npc.OnDamage( 0, DamageType );
+				var model = Components.Get<ModelRenderer>();
+				model.Tint = Color.Blue;
 				if(!spawned)
 				{
 					spawned = true;
@@ -46,6 +48,8 @@ public sealed class FireComponent : EffectBaseComponent
 		{
 			Destroy();
 			fire.Destroy();
+			var model = Components.Get<ModelRenderer>();
+			model.Tint = Color.White;
 		}
 
 		if(fire != null )
