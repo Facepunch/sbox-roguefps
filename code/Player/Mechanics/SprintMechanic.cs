@@ -3,7 +3,7 @@ namespace RogueFPS;
 /// <summary>
 /// A sprinting mechanic with a toggle feature, stops sprinting when not moving.
 /// </summary>
-public partial class SprintMechanic : BasePlayerControllerMechanic
+public partial class SprintMechanic : PlayerMechanic
 {
 	public bool IsSprinting = false;
 
@@ -38,6 +38,6 @@ public partial class SprintMechanic : BasePlayerControllerMechanic
 
 	public override float? GetSpeed()
 	{
-		return PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed] * PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SprintMultiplier];
+		return Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed] * Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SprintMultiplier];
 	}
 }

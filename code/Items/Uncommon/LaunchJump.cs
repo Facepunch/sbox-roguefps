@@ -31,7 +31,7 @@
 	public override void OnJump()
 	{
 		Log.Info( "Jump Launch" );
-		if ( Owner.Components.Get<PlayerController>().CharacterController.IsOnGround && Owner.Components.Get<PlayerController>().HasAnyTag( "sprint" ) )
+		if ( Owner.Components.Get<PlayerController>().CharacterController.IsOnGround && Owner.Components.Get<PlayerController>().MechanicTags.Has( "sprint" ) )
 			Owner.Components.Get<PlayerController>().CharacterController.Punch(Owner.Components.Get<PlayerController>().EyeAngles.Forward * 100f * GetAmountFromInventory());
 	}
 }

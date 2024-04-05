@@ -3,7 +3,7 @@ namespace RogueFPS;
 /// <summary>
 /// A basic sliding mechanic.
 /// </summary>
-public partial class SlideMechanic : BasePlayerControllerMechanic
+public partial class SlideMechanic : PlayerMechanic
 {
 	[Property] public float NextSlideCooldown { get; set; } = 0.5f;
 	[Property] public float MinimumSlideLength { get; set; } = 1.0f;
@@ -20,7 +20,7 @@ public partial class SlideMechanic : BasePlayerControllerMechanic
 
 		if ( CanSlide && Input.Pressed( "Slide" ) )
 		{
-			slideCoolDown = PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
+			slideCoolDown = Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
 			return true;
 		}
 
@@ -41,7 +41,7 @@ public partial class SlideMechanic : BasePlayerControllerMechanic
 	private float timeSinceLastSlide = 0f; // Time since last slide
 	private void RechargeSlideCharges()
 	{
-		if ( slideCharges < PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
+		if ( slideCharges < Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
 		{
 			timeSinceLastSlide += Time.Delta;
 
@@ -51,9 +51,9 @@ public partial class SlideMechanic : BasePlayerControllerMechanic
 				slideCharges++;
 				timeSinceLastSlide = 0f;
 
-				if ( slideCharges < PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
+				if ( slideCharges < Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
 				{
-					slideCoolDown = PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
+					slideCoolDown = Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
 				}
 
 				//Log.Info( "Slide charge replenished. Current charges: " + slideCharges );

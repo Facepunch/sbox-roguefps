@@ -1,6 +1,6 @@
 namespace RogueFPS;
 
-public partial class PlayerController : Component
+public partial class PlayerController : Actor
 {
 	/// <summary>
 	/// A reference to the player's body (the GameObject)
@@ -23,14 +23,12 @@ public partial class PlayerController : Component
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
 
 	/// <summary>
-	/// The current character controller for this player.
-	/// </summary>
-	[Property] public CharacterController CharacterController { get; set; }
-
-	/// <summary>
 	/// The current camera controller for this player.
 	/// </summary>
 	[Property] public CameraController CameraController { get; set; }
+
+	// Actor
+	public override GameObject CameraObject => CameraController.Camera.GameObject;
 
 	/// <summary>
 	/// A reference to the View Model's camera. This will be disabled by the View Model.
@@ -73,7 +71,6 @@ public partial class PlayerController : Component
 	[Property] public Action OnJump { get; set; }
 
 	// Properties used only in this component.
-	public Vector3 WishVelocity;
 	public Angles EyeAngles;
 
 	public bool IsGrounded { get; set; }
@@ -91,7 +88,6 @@ public partial class PlayerController : Component
 
 		PlayerStatsComponent = Components.Get<PlayerStats>( FindMode.EverythingInSelfAndAncestors );
 	}
-
 
 	protected override void OnUpdate()
 	{
@@ -162,7 +158,7 @@ public partial class PlayerController : Component
 
 		if ( wasGrounded != IsGrounded )
 		{
-			GroundedChanged();
+			OnGroundedChanged();
 		}
 
 		if ( AnimationHelper is not null && cc is not null )
@@ -172,33 +168,24 @@ public partial class PlayerController : Component
 			AnimationHelper.IsGrounded = IsGrounded;
 			AnimationHelper.FootShuffle = rotateDifference;
 			AnimationHelper.WithLook( EyeAngles.Forward, 1, 1, 1.0f );
-			AnimationHelper.MoveStyle = HasTag( "sprint" ) ? AnimationHelper.MoveStyles.Run : AnimationHelper.MoveStyles.Walk;
-			AnimationHelper.DuckLevel = HasTag( "crouch" ) ? 100 : 0;
+			AnimationHelper.MoveStyle = MechanicTags.Has( "sprint" ) ? AnimationHelper.MoveStyles.Run : AnimationHelper.MoveStyles.Walk;
+			AnimationHelper.DuckLevel = MechanicTags.Has( "crouch" ) ? 100 : 0;
 			AnimationHelper.HoldType = CurrentHoldType;
-			AnimationHelper.SkidAmount = HasTag( "slide" ) ? 1 : 0;
+			AnimationHelper.SkidAmount = MechanicTags.Has( "slide" ) ? 1 : 0;
 		}
 	}
 
-	private void GroundedChanged()
+	private void OnGroundedChanged()
 	{
 		var nowOffGround = IsGrounded == false;
 	}
 
-	/// <summary>
-	/// A network message that lets other users that we've triggered a jump.
-	/// </summary>
-	[Broadcast]
-	public void BroadcastPlayerJumped()
-	{
-		AnimationHelper?.TriggerJump();
-		OnJump?.Invoke();
-	}
 
 	/// <summary>
 	/// Get the current friction.
 	/// </summary>
 	/// <returns></returns>
-	private float GetFriction()
+	protected override float GetFriction()
 	{
 		if ( !CharacterController.IsOnGround ) return 0.1f;
 		if ( CurrentFrictionOverride is not null ) return CurrentFrictionOverride.Value;
@@ -206,7 +193,6 @@ public partial class PlayerController : Component
 		return 4.0f;
 	}
 
-	private float baseAcceleration = 10;
 	private void ApplyAccceleration()
 	{
 		if ( CurrentAccelerationOverride is not null )
@@ -217,6 +203,11 @@ public partial class PlayerController : Component
 		{
 			CharacterController.Acceleration = baseAcceleration;
 		}
+	}
+
+	public override Angles GetEyeAngles()
+	{
+		return EyeAngles;
 	}
 
 	protected override void OnFixedUpdate()
@@ -230,22 +221,10 @@ public partial class PlayerController : Component
 
 		BuildWishInput();
 
-		// Wish direction could change here
-		OnUpdateMechanics();
+		// Mechanics
+		DoMechanicsUpdate();
 
 		BuildWishVelocity();
-
-		/*
-		if ( cc.IsOnGround && Input.Down( "Jump" ) )
-		{
-			float flGroundFactor = 1.0f;
-			float flMul = 268.3281572999747f * 1.2f;
-
-			cc.Punch( Vector3.Up * flMul * flGroundFactor );
-
-			BroadcastPlayerJumped();
-		}
-		*/
 
 		ApplyAccceleration();
 
@@ -273,7 +252,8 @@ public partial class PlayerController : Component
 		}
 	}
 
-	protected float GetWishSpeed()
+
+	protected override float GetWishSpeed()
 	{
 		if ( CurrentSpeedOverride is not null ) return CurrentSpeedOverride.Value;
 
@@ -281,23 +261,9 @@ public partial class PlayerController : Component
 		return PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed];
 	}
 
-	public Vector3 WishMove;
-
-	public void BuildWishInput()
+	protected override void BuildWishInput()
 	{
-		WishMove = 0;
 		WishMove = Input.AnalogMove.Normal;
-	}
-
-	public void BuildWishVelocity()
-	{
-		WishVelocity = 0;
-		
-		var rot = EyeAngles.WithPitch( 0f ).ToRotation();
-		var wishDirection = WishMove * rot;
-		wishDirection = wishDirection.WithZ( 0 );
-
-		WishVelocity = wishDirection * GetWishSpeed();
 	}
 
 	public void Write( ref ByteStream stream )

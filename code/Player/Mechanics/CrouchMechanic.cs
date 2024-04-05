@@ -1,6 +1,6 @@
 namespace RogueFPS;
 
-public partial class CrouchMechanic : BasePlayerControllerMechanic
+public partial class CrouchMechanic : PlayerMechanic
 {
 	public override bool ShouldBecomeActive()
 	{

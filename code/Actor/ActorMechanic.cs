@@ -1,39 +1,17 @@
 namespace RogueFPS;
 
-/// <summary>
-/// A base for a player controller mechanic.
-/// </summary>
-public abstract partial class BasePlayerControllerMechanic : Component
+public abstract class ActorMechanic : Component
 {
-	[Property, ToggleGroup( "SpecialAbility" )] public virtual bool SpecialAbility { get; set; } = false;
-	[Property, ToggleGroup( "SpecialAbility" )] public virtual string SpecialAbilityName { get; set; } = "None";
-	[Property, ToggleGroup( "SpecialAbility" )] public virtual string SpecialAbilityDescription { get; set; } = "None";
-	[Property, ToggleGroup( "SpecialAbility" ), ImageAssetPath] public virtual string SpecialAbilityIcon { get; set; } = "None";
+	[Property, Group( "Base" )] public Actor Actor { get; set; }
+	[Property, Group( "Base" )] public int Priority { get; set; } = 0;
+	[Property, Group( "Base" ), ReadOnly] public TimeSince TimeSinceActiveChanged { get; set; } = 1f;
 
-
-	/// <summary>
-	/// Player Controller
-	/// <summary>
-	[Property, Category( "Base" )] public PlayerController PlayerController { get; set; }
-
-	[Property] public PlayerStats PlayerStatsComponent { get; set; }
-
-	/// <summary>
-	/// A priority for the controller mechanic.
-	/// </summary>
-	[Property, Category( "Base" )] public virtual int Priority { get; set; } = 0;
-
-	/// <summary>
-	/// How long since <see cref="IsActive"/> changed.
-	/// </summary>
-	[Property, Category( "Base" ), System.ComponentModel.ReadOnly( true )] protected TimeSince TimeSinceActiveChanged { get; set; }
-
-	private bool isActive; 
-
+	private bool isActive;
 	/// <summary>
 	/// Is this mechanic active?
 	/// </summary>
-	[Property, Category( "Base" ), System.ComponentModel.ReadOnly( true )] public bool IsActive
+	[Property, Group( "Base" ), ReadOnly]
+	public bool IsActive
 	{
 		get => isActive;
 		set
@@ -49,15 +27,29 @@ public abstract partial class BasePlayerControllerMechanic : Component
 		}
 	}
 
+	/// <summary>
+	/// Try to forcefully activate the mechanic
+	/// </summary>
+	public virtual void Activate()
+	{	
+		IsActive = true;
+	}
+
+	/// <summary>
+	/// Try to forcefully deactivate the mechanic
+	/// </summary>
+	public virtual void Deactivate()
+	{
+		IsActive = false;
+	}
+
 	protected override void OnAwake()
 	{
 		// If we don't have the player controller defined, let's have a look for it
-		if ( !PlayerController.IsValid() )
+		if ( !Actor.IsValid() )
 		{
-			PlayerController = Components.Get<PlayerController>( FindMode.EverythingInSelfAndAncestors );
+			Actor = Components.Get<Actor>( FindMode.EverythingInSelfAndAncestors );
 		}
-
-		PlayerStatsComponent = PlayerController.Components.Get<PlayerStats>( FindMode.EverythingInSelfAndAncestors );
 	}
 
 	/// <summary>
@@ -68,27 +60,49 @@ public abstract partial class BasePlayerControllerMechanic : Component
 	{
 		return Enumerable.Empty<string>();
 	}
-	
+
 	/// <summary>
 	/// An accessor to see if the player controller has a tag.
 	/// </summary>
 	/// <param name="tag"></param>
 	/// <returns></returns>
-	public bool HasTag( string tag ) => PlayerController.HasTag( tag );
+	public bool HasTag( string tag ) => Actor.MechanicTags.Has( tag );
 
 	/// <summary>
 	/// An accessor to see if the player controller has all matched tags.
 	/// </summary>
 	/// <param name="tags"></param>
 	/// <returns></returns>
-	public bool HasAllTags( params string[] tags ) => PlayerController.HasAllTags( tags );
+	public bool HasAllTags( ITagSet tags ) => Actor.MechanicTags.HasAll( tags );
+
+	/// <inheritdoc cref="HasAllTags(ITagSet)"/>
+	public bool HasAllTags( params string[] tags )
+	{
+		var set = new TagSet();
+		foreach ( var tag in tags )
+		{
+			set.Add( tag );
+		}
+		return HasAllTags( set );
+	}
 
 	/// <summary>
 	/// An accessor to see if the player controller has any tag.
 	/// </summary>
 	/// <param name="tags"></param>
 	/// <returns></returns>
-	public bool HasAnyTag( params string[] tags ) => PlayerController.HasAnyTag( tags );
+	public bool HasAnyTag( ITagSet tags ) => Actor.Tags.HasAny( tags );
+	
+	/// <inheritdoc cref="HasAnyTag(ITagSet)"/>
+	public bool HasAnyTag( params string[] tags )
+	{
+		var set = new TagSet();
+		foreach ( var tag in tags )
+		{
+			set.Add( tag );
+		}
+		return HasAnyTag( set );
+	}
 
 	/// <summary>
 	/// Called when <see cref="IsActive"/> changes.
@@ -162,9 +176,24 @@ public abstract partial class BasePlayerControllerMechanic : Component
 	}
 
 	/// <summary>
+	/// Do we lock movement?
+	/// </summary>
+	public virtual bool LockMovement { get; } = false;
+
+
+	/// <summary>
+	/// Do we lock mouse movement?
+	/// </summary>
+	public virtual bool LockMouseMovement { get; } = false;
+
+	/// <summary>
 	/// Mechanics can override the player's wish input direction.
 	/// </summary>
 	public virtual void BuildWishInput( ref Vector3 wish )
+	{
+	}
+
+	public virtual void OnEvent( string eventName, params object[] obj )
 	{
 	}
 }

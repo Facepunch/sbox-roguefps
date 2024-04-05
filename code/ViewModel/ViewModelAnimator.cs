@@ -120,8 +120,8 @@ public sealed class ViewModelAnimator : Component
 		anim.Set( "move_x", forward );
 		anim.Set( "move_z", Player.WishVelocity.z );
 		anim.Set( "b_grounded", Player.AnimationHelper.IsGrounded );
-		anim.Set( "move_sprint", Player.HasTag( "sprint" ) );
-		anim.Set( "b_sprint", Player.HasTag("sprint"));
+		anim.Set( "move_sprint", Player.MechanicTags.Has( "sprint" ) );
+		anim.Set( "b_sprint", Player.MechanicTags.Has( "sprint" ) );
 		anim.Set( "b_crouch", Input.Down( "duck" ) );
 
 		//Fire
