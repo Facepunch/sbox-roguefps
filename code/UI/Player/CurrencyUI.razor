@@ -6,7 +6,7 @@
 	<div class="items">
 		<div class="item coingradient">
 			<div class="icon" style="background-image: url(ui/mainui/coin.png)"></div>
-			<div class="amount">@Stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins]</div>
+			<div class="amount">@Stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins]</div>
 		</div>
 		<div class="item hxrgradient">
 			<div class="icon" style="background-image: url(ui/mainui/hrkcoin.png)"></div>
@@ -17,10 +17,10 @@
 
 @code
 {
-	[Property] public PlayerStats Stats { get; set; }
+	[Property] public Stats Stats { get; set; }
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine(Stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins]);
+	protected override int BuildHash() => System.HashCode.Combine(Stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins]);
 }

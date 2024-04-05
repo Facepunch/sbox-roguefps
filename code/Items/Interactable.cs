@@ -17,7 +17,7 @@ public class Interactable : Component
 		var item = Components.Get<ItemHelper>(FindMode.EverythingInChildren);
 		if ( item != null )
 		{
-			var inventory = player.Components.Get<PlayerStats>().Inventory;
+			var inventory = player.Components.Get<Stats>().Inventory;
 			//inventory.AddItem( item.Item );
 			item.OnPickedUp( player );
 			//Log.Info( "Added item to inventory" );

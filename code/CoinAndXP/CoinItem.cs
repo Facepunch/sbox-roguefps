@@ -45,7 +45,7 @@ public sealed class CoinItem : Component, Component.ITriggerListener
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			var Player = other.GameObject.Parent;
-			var plyStatComp = Player.Components.Get<PlayerStats>();
+			var plyStatComp = Player.Components.Get<Stats>();
 			if ( plyStatComp != null )
 			{
 				plyStatComp.AddCoin( CoinAmount );

@@ -24,14 +24,14 @@
 	</div>
 	<div class="stat"
 <div class="name">Experience</div>
-		<div class="value">@PlayerStats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp]</div>
+		<div class="value">@PlayerStats.PlayerCoinsAndXp[Stats.CoinsAndXp.Xp]</div>
 	</div>
 	</div>
 </root>
 
 @code
 {
-	[Property] public PlayerStats PlayerStats { get; set; } // You'll need to set this from your game code
+	[Property] public Stats PlayerStats { get; set; } // You'll need to set this from your game code
 
 	protected override void OnAwake()
 	{

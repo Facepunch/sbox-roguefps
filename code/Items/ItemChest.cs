@@ -60,9 +60,9 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 	public void OpenChest(GameObject player )
 	{
 		//Check if the player has enough coins
-		var stats = player.Components.Get<PlayerStats>();
+		var stats = player.Components.Get<Stats>();
 
-		if ( stats != null && stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] >= Cost )
+		if ( stats != null && stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins] >= Cost )
 		{
 			stats.AddCoin( -Cost );
 			SpawnItem();
@@ -72,7 +72,7 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		}
 		else
 		{
-			Log.Info( stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] );
+			Log.Info( stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins] );
 		}
 	}
 

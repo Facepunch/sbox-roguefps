@@ -32,7 +32,7 @@ public sealed class FireComponent : EffectBaseComponent
 		{
 			if ( npc.Health > 0 )
 			{
-				npc.OnDamage( Damage, DamageType );
+				npc.OnDamage( Damage, DamageType, GameObject.Parent );
 				if(!spawned)
 				{
 					spawned = true;

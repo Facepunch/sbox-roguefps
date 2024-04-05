@@ -2,9 +2,9 @@
 {
 	public List<InvetoryItem> itemPickUps = new List<InvetoryItem>();
 
-	public PlayerStats playerStats;
+	public Stats playerStats;
 
-	public ItemInventory( PlayerStats stats )
+	public ItemInventory( Stats stats )
 	{
 		playerStats = stats;
 
@@ -73,7 +73,7 @@
 	}
 
 	//Get the owner of the item
-	public PlayerStats GetItemOwner(ItemDef item)
+	public Stats GetItemOwner(ItemDef item)
 	{
 		var itemPickUp = itemPickUps.Find(x => x.Item.Name == item.Name);
 
@@ -90,6 +90,6 @@
 public struct InvetoryItem
 {
 	public ItemDef Item;
-	public PlayerStats OwnerStat;
+	public Stats OwnerStat;
 	public int Amount;
 }

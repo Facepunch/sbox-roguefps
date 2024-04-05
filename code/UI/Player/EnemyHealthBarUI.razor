@@ -33,7 +33,7 @@
 	bool IsOffScreen(Npcbase npc)
 	{
 		var screenpos = MainCamera.PointToScreenNormal(npc.GameObject.Transform.Position, out bool isBehind);
-		var stat = npc.Components.Get<PlayerStats>();
+		var stat = npc.Components.Get<Stats>();
 		return !isBehind && npc.Health != stat.Health && npc.timeSinceLastDamaged < 5;
 	}
 
@@ -45,7 +45,7 @@
 
 	string GetEnemyHealth(Npcbase npc)
 	{
-		var stat = npc.Components.Get<PlayerStats>();
+		var stat = npc.Components.Get<Stats>();
 		return $"width: {npc.Health / stat.Health * 100}%;";
 	}
 

@@ -32,7 +32,7 @@
 @code
 {
 	[Property] PlayerAbilities playerAbility { get; set; }
-	[Property] PlayerStats playerStats { get; set; }
+	[Property] Stats playerStats { get; set; }
 
 	protected override void OnUpdate()
 	{
@@ -68,7 +68,7 @@
 		}
 	}
 
-	public string CoolDownBar(float currentCooldown, PlayerStats.PlayerUpgradedStats stat)
+	public string CoolDownBar(float currentCooldown, Stats.PlayerUpgradedStats stat)
 	{
 		float cooldownPercentage = currentCooldown / playerStats.UpgradedStats[stat] * 100;
 		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
@@ -79,5 +79,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Time.Now,Time.Delta);
+	protected override int BuildHash() => System.HashCode.Combine( Time.Delta);
 }

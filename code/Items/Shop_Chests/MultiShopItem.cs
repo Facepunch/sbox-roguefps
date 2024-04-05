@@ -67,9 +67,9 @@ public sealed class MultiShopItem : Interactable
 	public void OpenItem( GameObject player )
 	{
 		//Check if the player has enough coins
-		var stats = player.Components.Get<PlayerStats>();
+		var stats = player.Components.Get<Stats>();
 
-		if ( stats != null && stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] >= Cost )
+		if ( stats != null && stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins] >= Cost )
 		{
 			stats.AddCoin( -Cost );
 			OnPurchase();
@@ -82,7 +82,7 @@ public sealed class MultiShopItem : Interactable
 		}
 		else
 		{
-			Log.Info( stats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Coins] );
+			Log.Info( stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins] );
 		}
 	}
 	public void OnPurchase()

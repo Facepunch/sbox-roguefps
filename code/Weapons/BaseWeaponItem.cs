@@ -23,7 +23,7 @@ public class BaseWeaponItem : BaseAbilityItem
 	protected override void OnAwake()
 	{
 		base.OnAwake();
-		PlayerStats = GameObject.Components.Get<PlayerStats>( FindMode.InParent );
+		PlayerStats = GameObject.Components.Get<Stats>( FindMode.InParent );
 		CurrentUseCount = MaxUseCount;
 
 		ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
@@ -50,7 +50,7 @@ public class BaseWeaponItem : BaseAbilityItem
 
 	public override void DoFire()
 	{
-		float firingInterval = 1f / PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed];
+		float firingInterval = 1f / PlayerStats.UpgradedStats[Stats.PlayerUpgradedStats.AttackSpeed];
 
 		if ( LastFired >= firingInterval )
 		{
@@ -111,7 +111,7 @@ public class BaseWeaponItem : BaseAbilityItem
 		{
 			var health = obj.Components.Get<Npcbase>();
 			{
-				health.OnDamage( PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackDamage], DamageTypes.None );
+				health.OnDamage( PlayerStats.UpgradedStats[Stats.PlayerUpgradedStats.AttackDamage], DamageTypes.None, GameObject.Parent );
 			}
 
 		}

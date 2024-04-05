@@ -23,7 +23,7 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 	{
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
-			var player = other.GameObject.Components.Get<PlayerStats>(FindMode.InParent).GameObject;
+			var player = other.GameObject.Components.Get<Stats>(FindMode.InParent).GameObject;
 			if ( player != null )
 			{
 				OnPickedUp( player );
@@ -40,7 +40,7 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 		// This is called when the item is picked up by the player.
 		// You can add any logic here that should be executed when the item is picked up.
 
-		var stats = player.Components.Get<PlayerStats>();
+		var stats = player.Components.Get<Stats>();
 		if ( stats != null )
 		{
 			var inventory = stats.Inventory;

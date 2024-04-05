@@ -10,7 +10,7 @@ public partial class JumpMechanic : PlayerMechanic
 	
 	public override bool ShouldBecomeActive()
 	{	
-		return Input.Pressed( "Jump" ) && !HasAnyTag( "slide" ) && jumpCount < Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps];
+		return Input.Pressed( "Jump" ) && !HasAnyTag( "slide" ) && jumpCount < Player.Stats.UpgradedStats[Stats.PlayerUpgradedStats.AmountOfJumps];
 	}
 
 	public override void OnActiveUpdate()
@@ -26,7 +26,7 @@ public partial class JumpMechanic : PlayerMechanic
 
 		Player.CharacterController.IsOnGround = false;
 		Player.CharacterController.Velocity = Player.CharacterController.Velocity.WithZ( 0 );
-		float jumpForce = CalculateJumpForce( Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.JumpHeight] );
+		float jumpForce = CalculateJumpForce( Player.Stats.UpgradedStats[Stats.PlayerUpgradedStats.JumpHeight] );
 		Player.CharacterController.Velocity += Vector3.Up * jumpForce;
 
 		jumpCount++;

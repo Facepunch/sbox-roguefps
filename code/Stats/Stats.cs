@@ -1,11 +1,11 @@
 namespace RogueFPS;
 
-[Title( "Player Stats" )]
+[Title( "Stats" )]
 [Category( "Stats" )]
 [Icon( "analytics", "yellow", "white" )]
-public sealed class PlayerStats : Component
+public sealed class Stats : Component
 {
-	public static PlayerStats Local { get; private set; }
+	public static Stats Local { get; private set; }
 
 	//Default Stats Property
 	[Property] public float Health { get; set; } = 100f;
@@ -300,7 +300,7 @@ public sealed class PlayerStats : Component
 	[ConCmd( "Rogue_GiveCoins" )]
 	public static void GiveCoins( int amount )
 	{
-		var stat = PlayerStats.Local;
+		var stat = Stats.Local;
 		stat.AddCoin( amount );
 	}
 }

@@ -8,7 +8,7 @@
 	public virtual string ItemColor {get;}
 	public virtual int StatUpgradeAmount { get; }
 	public virtual GameObject PickUpPrefab { get; }
-	public PlayerStats Owner { get; set; }
+	public Stats Owner { get; set; }
 	int ItemAmount { get; set; }
 
 	public static PrefabScene GetPickUpPrefab(string prefabPath)
@@ -19,7 +19,7 @@
 		}
 		return SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( prefabPath ) );
 	}
-	public void OnPickUp(PlayerStats player)
+	public void OnPickUp(Stats player)
 	{
 		Owner = player;
 	}
@@ -35,7 +35,7 @@
 		int itemAmount = GetAmountFromInventory();
 
 		// Adjust the stat based on the amount
-		Owner.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed] += StatUpgradeAmount * itemAmount;
+		Owner.UpgradedStats[Stats.PlayerUpgradedStats.AttackSpeed] += StatUpgradeAmount * itemAmount;
 	}
 
 
@@ -47,13 +47,13 @@
 		// Decrease the stat. If the itemAmount is 0, it means this was the last item, and we should remove all related upgrades.
 		if ( itemAmount == 0 )
 		{
-			Owner.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed] -= StatUpgradeAmount;
+			Owner.UpgradedStats[Stats.PlayerUpgradedStats.AttackSpeed] -= StatUpgradeAmount;
 		}
 		else
 		{
 			// If there are still items left, adjust the stat accordingly. This might not be necessary
 			// depending on your logic for when RemoveUpgrade is called.
-			Owner.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackSpeed] = Owner.GetStartingStat( PlayerStats.PlayerStartingStats.AttackSpeed ) + StatUpgradeAmount * itemAmount;
+			Owner.UpgradedStats[Stats.PlayerUpgradedStats.AttackSpeed] = Owner.GetStartingStat( Stats.PlayerStartingStats.AttackSpeed ) + StatUpgradeAmount * itemAmount;
 		}
 	}
 

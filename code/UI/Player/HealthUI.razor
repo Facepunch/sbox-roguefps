@@ -20,11 +20,11 @@
 
 @code
 {
-	PlayerStats _playerStats;
+	Stats _playerStats;
 
 	protected override void OnAwake()
 	{
-		_playerStats = Components.Get<PlayerStats>(FindMode.InParent);
+		_playerStats = Components.Get<Stats>(FindMode.InParent);
 
 		Log.Info(_playerStats);
 	}
@@ -32,7 +32,7 @@
 	string GetXpBar()
 	{
 		//Turn the current xp into the width of the bar
-		return $"width: {(_playerStats.PlayerCoinsAndXp[PlayerStats.CoinsAndXp.Xp] / (float)PlayerStats.MaxExperienceForLevel(_playerStats.CurrentLevel)) * 100}%";
+		return $"width: {(_playerStats.PlayerCoinsAndXp[Stats.CoinsAndXp.Xp] / (float)Stats.MaxExperienceForLevel(_playerStats.CurrentLevel)) * 100}%";
 	}
 
 	/// <summary>

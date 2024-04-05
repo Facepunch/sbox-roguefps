@@ -36,7 +36,7 @@ public sealed class Npcbase : Agent, Component.ITriggerListener
 		}
 	}
 
-	public void OnDamage(float damage, DamageTypes dmgType)
+	public void OnDamage(float damage, DamageTypes dmgType, GameObject dmgDealer)
 	{
 		DamageNumbers.Add( (int)damage, Transform.Position + new Vector3( Random.Shared.Float( -20f, 20f ), Random.Shared.Float( -20f, 20f ), Random.Shared.Float( 10, 50f ) ) );
 
@@ -51,11 +51,11 @@ public sealed class Npcbase : Agent, Component.ITriggerListener
 				{
 					var xp = Xp.Clone();
 					xp.Transform.Position = Transform.Position + new Vector3(0, 0, 50f) + Vector3.Random * 10;
-					xp.Components.Get<XpItem>().TargetPlayer = Target;
+					xp.Components.Get<XpItem>().TargetPlayer = dmgDealer;
 
 					var coin = Coin.Clone();
 					coin.Transform.Position = Transform.Position + new Vector3(0, 0, 50f) + Vector3.Random * 10;
-					coin.Components.Get<CoinItem>().TargetPlayer = Target;
+					coin.Components.Get<CoinItem>().TargetPlayer = dmgDealer;
 				}
 			}
 			WaveSpawner.spawnedEntities--;

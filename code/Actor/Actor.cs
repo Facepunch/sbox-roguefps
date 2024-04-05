@@ -18,7 +18,7 @@ public partial class Actor : Component, Component.IDamageable
 	/// <summary>
 	/// The stats for this actor. TODO: RENAME ME
 	/// </summary>
-	[Property] public PlayerStats Stats { get; set; }
+	[Property] public Stats Stats { get; set; }
 
 	/// <summary>
 	/// The GameObject for this actor's Camera (if any)

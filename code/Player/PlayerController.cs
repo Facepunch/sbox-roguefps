@@ -84,7 +84,7 @@ public partial class PlayerController : Actor
 	{
 		baseAcceleration = CharacterController.Acceleration;
 
-		Stats = Components.Get<PlayerStats>( FindMode.EverythingInSelfAndAncestors );
+		Stats = Components.Get<Stats>( FindMode.EverythingInSelfAndAncestors );
 	}
 
 	protected override void OnUpdate()
@@ -256,7 +256,7 @@ public partial class PlayerController : Actor
 		if ( CurrentSpeedOverride is not null ) return CurrentSpeedOverride.Value;
 
 		// Default speed
-		return Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed];
+		return Stats.UpgradedStats[Stats.PlayerUpgradedStats.WalkSpeed];
 	}
 
 	protected override void BuildWishInput()

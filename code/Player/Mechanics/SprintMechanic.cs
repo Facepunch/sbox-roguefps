@@ -38,6 +38,6 @@ public partial class SprintMechanic : PlayerMechanic
 
 	public override float? GetSpeed()
 	{
-		return Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed] * Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SprintMultiplier];
+		return Player.Stats.UpgradedStats[Stats.PlayerUpgradedStats.WalkSpeed] * Player.Stats.UpgradedStats[Stats.PlayerUpgradedStats.SprintMultiplier];
 	}
 }

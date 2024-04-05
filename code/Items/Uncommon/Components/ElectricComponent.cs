@@ -32,7 +32,7 @@ public sealed class ElectricComponent : EffectBaseComponent
 		{
 			if ( npc.Health > 0 )
 			{
-				npc.OnDamage( 0, DamageType );
+				npc.OnDamage( 0, DamageType, GameObject.Parent );
 				var model = Components.Get<ModelRenderer>();
 				model.Tint = Color.Blue;
 				if(!spawned)
