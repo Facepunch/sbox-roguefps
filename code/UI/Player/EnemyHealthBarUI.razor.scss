@@ -22,6 +22,18 @@ EnemyHealthBarUI {
 		justify-content: flex-start;
 		background-color: rgba(0,0,0,0.5);
 
+		.damage-icon-container {
+            width: 100%;
+            height: 100%;
+        
+			.damage-icon {
+				width: 28px;
+				height: 28px;
+				background-size: cover;
+				top: -30px;
+			}
+		}
+
 		.bg {
 			position: absolute;
 			width: 100%;

@@ -3,21 +3,33 @@
 @inherits PanelComponent
 
 <root>
-@foreach(var npc in Scene.Components.GetAll<Npcbase>())
-{
-	if(!IsOffScreen(npc)) continue;
+	@foreach (var npc in Scene.Components.GetAll<Npcbase>())
+	{
+		if (!IsOffScreen(npc)) continue;
 		<div class="enemy-health-bar" style="@GetEnemyPos(npc)">
-		<div class="bg"></div>
-		<div class="bar-delay" style="@GetEnemyHealth(npc)"></div>
-		<div class="bar" style="@GetEnemyHealth(npc)"></div>
-	</div>
-}
+			<div class="damage-icon-container">
+				@foreach (var damage in npc.Components.GetAll<EffectBaseComponent>())
+				{
+					<div class="damage-icon" style="background-image: url('@GetDamageIcon(damage.DamageType)')"></div>
+					Log.Info(damage.DamageType);
+				}
+			</div>
+			<div class="bg"></div>
+			<div class="bar-delay" style="@GetEnemyHealth(npc)"></div>
+			<div class="bar" style="@GetEnemyHealth(npc)"></div>
+		</div>
+	}
 </root>
 
 @code
 {
 
 	[Property] public CameraComponent MainCamera { get; set; }
+
+	public string GetDamageIcon(DamageTypes dmg)
+	{
+		return DamageType.GetDamageTypeIcon(dmg);
+	}
 
 	bool IsOffScreen(Npcbase npc)
 	{
@@ -41,5 +53,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Time.Delta );
+	protected override int BuildHash() => System.HashCode.Combine(Time.Delta);
 }

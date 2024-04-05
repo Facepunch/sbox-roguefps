@@ -121,6 +121,7 @@ public sealed class PlayerStats : Component
 		//	StartingStats = new Dictionary<PlayerStartingStats, float>();
 		//	UpgradedStats = new Dictionary<PlayerUpgradedStats, float>();
 		//	GetStatingStats();
+		if ( IsProxy ) return;
 		Local = this;
 	}
 
@@ -295,12 +296,11 @@ public sealed class PlayerStats : Component
 
 	}
 
-	[ConCmd("Rogue_GiveCoins")]
+
+	[ConCmd( "Rogue_GiveCoins" )]
 	public static void GiveCoins( int amount )
 	{
-
 		var stat = PlayerStats.Local;
 		stat.AddCoin( amount );
-
 	}
 }

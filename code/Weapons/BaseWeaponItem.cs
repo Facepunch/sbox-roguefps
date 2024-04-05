@@ -111,7 +111,7 @@ public class BaseWeaponItem : BaseAbilityItem
 		{
 			var health = obj.Components.Get<Npcbase>();
 			{
-				health.OnDamage( PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackDamage] );
+				health.OnDamage( PlayerStats.UpgradedStats[PlayerStats.PlayerUpgradedStats.AttackDamage], DamageTypes.None );
 			}
 
 		}

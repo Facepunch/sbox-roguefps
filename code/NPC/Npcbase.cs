@@ -13,6 +13,13 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 	public WaveSpawner WaveSpawner { get; set; }
 
 	public TimeSince timeSinceLastDamaged { get; set; }
+
+	public DamageTypes DamageType { get; set; }
+
+	private const float DamageCooldownPeriod = 1.0f; // Time in seconds to consider the player has stopped being damaged
+	public bool HasStoppedBeingDamaged => timeSinceLastDamaged > DamageCooldownPeriod;
+
+
 	protected override void OnAwake()
 	{
 		Health = Stats.Health;
@@ -22,6 +29,11 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 	
 	protected override void OnUpdate()
 	{
+		if ( HasStoppedBeingDamaged )
+		{
+			DamageType = DamageTypes.None;
+		}
+
 		if ( Target != null )
 			if ( Target.Transform.Position.Distance( GameObject.Transform.Position ) >= 200f )
 			{
@@ -31,6 +43,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 			{
 				Transform.Rotation = Rotation.LookAt( Target.Transform.Position - Transform.Position ).Angles().WithPitch(0);
 			}
+
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
@@ -41,7 +54,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 		}
 	}
 
-	public void OnDamage(float damage)
+	public void OnDamage(float damage, DamageTypes dmgType)
 	{
 		var txt = new TextObject(Scene.SceneWorld);
 		txt.Transform = Transform.World.WithScale(Transform.Scale * 0.2f * Target.Transform.Position.Distance( Transform.Position ) / 200f);
@@ -50,6 +63,7 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 		txt.Text = damage.ToString();
 		txt.ColorTint = Color.Random;
 		timeSinceLastDamaged = 0;
+		DamageType = dmgType;
 		Health -= damage;
 		if ( Health <= 0 )
 		{
