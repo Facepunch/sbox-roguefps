@@ -11,7 +11,6 @@
 				@foreach (var damage in npc.Components.GetAll<EffectBaseComponent>())
 				{
 					<div class="damage-icon" style="background-image: url('@GetDamageIcon(damage.DamageType)')"></div>
-					Log.Info(damage.DamageType);
 				}
 			</div>
 			<div class="bg"></div>

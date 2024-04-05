@@ -10,22 +10,12 @@
 
 	public override void ApplyUpgrade()
 	{
-		Log.Info( $"!!!!!!{Owner.Inventory.GetItemOwner( this )}!!!!!!" );
-		Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = GetAmountFromInventory() + 1;
+
 	}
 
 	public override void RemoveUpgrade()
 	{
-		if(GetAmountFromInventory() == 0)
-		{
-			Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps];
-		}
-		else
-		{
-			Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = GetAmountFromInventory();
-		}
 
-		//Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
 	}
 
 	public override void OnJump()
