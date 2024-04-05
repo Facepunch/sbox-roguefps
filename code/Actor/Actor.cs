@@ -16,6 +16,11 @@ public partial class Actor : Component, Component.IDamageable
 	[Property] public bool IsAlive { get; set; } = true;
 
 	/// <summary>
+	/// The stats for this actor. TODO: RENAME ME
+	/// </summary>
+	[Property] public PlayerStats Stats { get; set; }
+
+	/// <summary>
 	/// The GameObject for this actor's Camera (if any)
 	/// This can also be known as the actor's eyes. So where they're looking from.
 	/// </summary>

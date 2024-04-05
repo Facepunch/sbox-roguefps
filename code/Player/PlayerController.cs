@@ -35,8 +35,6 @@ public partial class PlayerController : Actor
 	/// </summary>
 	[Property] public CameraComponent ViewModelCamera { get; set; }
 
-	[Property] public PlayerStats PlayerStatsComponent { get; set; }
-
 	/// <summary>
 	/// Get a quick reference to the real Camera GameObject.
 	/// </summary>
@@ -86,7 +84,7 @@ public partial class PlayerController : Actor
 	{
 		baseAcceleration = CharacterController.Acceleration;
 
-		PlayerStatsComponent = Components.Get<PlayerStats>( FindMode.EverythingInSelfAndAncestors );
+		Stats = Components.Get<PlayerStats>( FindMode.EverythingInSelfAndAncestors );
 	}
 
 	protected override void OnUpdate()
@@ -110,7 +108,7 @@ public partial class PlayerController : Actor
 		if ( Input.Down( "reload" ) )
 		{
 			var item = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
-			PlayerStatsComponent.Inventory.RemoveItem( item );
+			Stats.Inventory.RemoveItem( item );
 		}
 
 		if ( !IsProxy && cc != null )
@@ -258,7 +256,7 @@ public partial class PlayerController : Actor
 		if ( CurrentSpeedOverride is not null ) return CurrentSpeedOverride.Value;
 
 		// Default speed
-		return PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed];
+		return Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed];
 	}
 
 	protected override void BuildWishInput()

@@ -20,7 +20,7 @@ public partial class SlideMechanic : PlayerMechanic
 
 		if ( CanSlide && Input.Pressed( "Slide" ) )
 		{
-			slideCoolDown = Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
+			slideCoolDown = Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
 			return true;
 		}
 
@@ -41,7 +41,7 @@ public partial class SlideMechanic : PlayerMechanic
 	private float timeSinceLastSlide = 0f; // Time since last slide
 	private void RechargeSlideCharges()
 	{
-		if ( slideCharges < Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
+		if ( slideCharges < Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
 		{
 			timeSinceLastSlide += Time.Delta;
 
@@ -51,9 +51,9 @@ public partial class SlideMechanic : PlayerMechanic
 				slideCharges++;
 				timeSinceLastSlide = 0f;
 
-				if ( slideCharges < Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
+				if ( slideCharges < Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneUses] )
 				{
-					slideCoolDown = Player.PlayerStatsComponent.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
+					slideCoolDown = Player.Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.SkillOneCoolDown];
 				}
 
 				//Log.Info( "Slide charge replenished. Current charges: " + slideCharges );
