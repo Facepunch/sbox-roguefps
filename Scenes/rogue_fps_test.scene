@@ -3401,7 +3401,7 @@
     {
       "__guid": "c9ba6565-7084-4f28-9208-bb662eb0aeec",
       "Name": "Coin (1)",
-      "Position": "-496,832,32",
+      "Position": "16,480,31.99988",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -3416,8 +3416,8 @@
           "FlipVertical": false,
           "FogStrength": 1,
           "Opaque": true,
-          "Size": "10,10",
-          "Texture": "materials/particles/shapes/circle1.vtex"
+          "Size": "30,30",
+          "Texture": "ui/test/debugcoin.vtex"
         },
         {
           "__type": "SphereCollider",
@@ -3430,7 +3430,7 @@
         {
           "__type": "CoinItem",
           "__guid": "0c5c2ced-bdc9-433b-9060-09dbee1c6932",
-          "CoinAmount": 10
+          "CoinAmount": 1000
         }
       ]
     },
@@ -3706,7 +3706,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-05T00:26:01.2643457\u002B01:00",
+  "LastSaved": "2024-04-05T00:40:40.4279044\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -37,6 +37,8 @@ public class FireHit : ItemDef
 			{
 				target.Components.Create<FireComponent>().Length += 5;
 				target.Components.Get<FireComponent>().Damage = .05f * GetAmountFromInventory();
+
+				target.Components.Create<ElectricComponent>().Length += 5;
 			}
 			else
 			{
