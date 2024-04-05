@@ -23,7 +23,7 @@ public class FootstepStimulus : Stimulus
 
 		float distance = Position.Distance( actor.Transform.Position );
 		distance *= Volume;
-		float maxRange = 128f;
+		float maxRange = 1024f;
 
 		return distance < maxRange;
 	}
