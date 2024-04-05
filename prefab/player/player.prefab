@@ -133,12 +133,12 @@
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 10,
-        "AttackSpeed": 5,
+        "AttackSpeed": 2,
         "Health": 100,
         "JumpHeight": 100,
         "ReloadTime": 1,
         "SecondaryAttackCoolDown": 5,
-        "SkillOneCoolDown": 5,
+        "SkillOneCoolDown": 3,
         "SkillOneUses": 1,
         "SprintMultiplier": 1.45,
         "UltimateCoolDown": 50,
@@ -586,7 +586,7 @@
             "IsActive": false,
             "Priority": 0,
             "TimeSinceActiveChanged": {
-              "Relative": 887.87994
+              "Relative": 1010.26794
             }
           },
           {
@@ -595,7 +595,7 @@
             "IsActive": false,
             "Priority": 1,
             "TimeSinceActiveChanged": {
-              "Relative": 887.87994
+              "Relative": 1010.26794
             }
           },
           {
@@ -609,7 +609,7 @@
             "SlideFriction": 0.01,
             "SlideSpeed": 600,
             "TimeSinceActiveChanged": {
-              "Relative": 887.87994
+              "Relative": 1010.26794
             },
             "WishDirectionScale": 0.4
           },
@@ -619,7 +619,7 @@
             "IsActive": false,
             "Priority": 0,
             "TimeSinceActiveChanged": {
-              "Relative": 887.87994
+              "Relative": 1010.26794
             }
           }
         ]

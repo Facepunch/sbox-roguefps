@@ -16,6 +16,7 @@ public sealed class Npcbase : Agent, Component.ITriggerListener
 	protected override void OnAwake()
 	{
 		Health = Stats.Health;
+		BaseMovementSpeed = Stats.WalkSpeed;
 	}
 	
 	protected override void OnUpdate()
