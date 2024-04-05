@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "7bd26661-c1d2-418d-9a01-bee2d7891ff9",
+    "__guid": "5024c63e-1202-435f-8516-8411e49e3038",
     "Name": "groundnpctest",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "e45ae34c-7c02-4a3a-a244-558d5ba53f63",
+        "__guid": "4f897fd0-43f2-4af5-9573-e7ea24f91622",
         "BodyGroups": 18446744073709551615,
         "Model": "feathersmcgraw.vmdl",
         "RenderType": "On",
@@ -15,7 +15,7 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "d971687a-e2dc-4f19-85aa-b5086cb7c7e6",
+        "__guid": "8da14da7-83ab-448e-8bb6-57d627472d74",
         "Center": "0,0,32.80003",
         "IsTrigger": false,
         "Scale": "27.46667,27.26667,68.99994",
@@ -23,23 +23,39 @@
       },
       {
         "__type": "Npcbase",
-        "__guid": "bb93d594-9098-4fc2-9f97-5aab1dac5504",
+        "__guid": "b3818c93-504b-4a34-8615-04a2a9948995",
         "Agent": {
           "_type": "component",
-          "component_id": "281102db-c074-4486-9b23-ff7ecd3ebe8d",
-          "go": "7bd26661-c1d2-418d-9a01-bee2d7891ff9",
+          "component_id": "34f61f71-0ee4-400b-a23b-95bec53f9212",
+          "go": "5024c63e-1202-435f-8516-8411e49e3038",
           "component_type": "NavMeshAgent"
+        },
+        "BaseMovementSpeed": 100,
+        "CameraGameObject": {
+          "_type": "gameobject",
+          "go": "683f3a64-b047-49a8-aa9c-1f5e1727bd44"
+        },
+        "CharacterController": {
+          "_type": "component",
+          "component_id": "52226a02-42e0-4f46-97ab-bcac03343185",
+          "go": "5024c63e-1202-435f-8516-8411e49e3038",
+          "component_type": "CharacterController"
         },
         "Coin": {
           "_type": "gameobject",
           "prefab": "prefab/coinandxp/coinitem.prefab"
         },
+        "Health": 100,
+        "IsAlive": true,
+        "LineOfSightRange": -1,
+        "NoReactionToSound": false,
         "Stats": {
           "_type": "component",
-          "component_id": "051f96ef-1c38-4a2d-b4a7-296771c4de1c",
-          "go": "7bd26661-c1d2-418d-9a01-bee2d7891ff9",
+          "component_id": "b1b87a76-9e9a-42e4-b414-5ecf0e63802d",
+          "go": "5024c63e-1202-435f-8516-8411e49e3038",
           "component_type": "PlayerStats"
         },
+        "WishVelocity": "0,0,0",
         "Xp": {
           "_type": "gameobject",
           "prefab": "prefab/coinandxp/xpitem.prefab"
@@ -47,7 +63,7 @@
       },
       {
         "__type": "NavMeshAgent",
-        "__guid": "281102db-c074-4486-9b23-ff7ecd3ebe8d",
+        "__guid": "34f61f71-0ee4-400b-a23b-95bec53f9212",
         "Acceleration": 100,
         "Height": 64,
         "MaxSpeed": 120,
@@ -58,7 +74,7 @@
       },
       {
         "__type": "SphereCollider",
-        "__guid": "918ebcb8-99f0-4ec3-953f-5ca7c8dd058c",
+        "__guid": "75504481-1343-422e-b897-714bc6239591",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 1000,
@@ -66,7 +82,7 @@
       },
       {
         "__type": "PlayerStats",
-        "__guid": "051f96ef-1c38-4a2d-b4a7-296771c4de1c",
+        "__guid": "b1b87a76-9e9a-42e4-b414-5ecf0e63802d",
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 1,
@@ -81,11 +97,22 @@
         "UltimateCoolDown": 50,
         "UltimateUses": 1,
         "WalkSpeed": 180
+      },
+      {
+        "__type": "CharacterController",
+        "__guid": "52226a02-42e0-4f46-97ab-bcac03343185",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18
       }
     ],
     "Children": [
       {
-        "__guid": "8744852e-800f-4f20-a348-c477de6c7f0b",
+        "__guid": "a5edd316-6890-4f04-8d57-9d1aa46d26dd",
         "Name": "Object",
         "Position": "8,-11,22",
         "Enabled": true,
@@ -93,13 +120,20 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "a1f1645b-e944-4dbf-826e-cadb6a50d69e",
+            "__guid": "6dfc000d-d20c-4499-85c8-476a5f7dfccb",
             "BodyGroups": 171,
             "Model": "models/weapons/sbox_assault_m4a1/w_m4a1.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
           }
         ]
+      },
+      {
+        "__guid": "683f3a64-b047-49a8-aa9c-1f5e1727bd44",
+        "Name": "Eyes",
+        "Position": "6.660816,0,54.20493",
+        "Enabled": true,
+        "NetworkMode": 2
       }
     ]
   },

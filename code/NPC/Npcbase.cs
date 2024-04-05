@@ -1,15 +1,10 @@
-using Sandbox;
-using System.Numerics;
-
-public sealed class Npcbase : Component, Component.ITriggerListener
+public sealed class Npcbase : Agent, Component.ITriggerListener
 {
 	public GameObject Target { get; set; }
 	[Property] public NavMeshAgent Agent { get; set; }
 
-	[Property] public PlayerStats Stats { get; set; }
 	[Property] GameObject Xp { get; set; }
 	[Property] GameObject Coin { get; set; }
-	public float Health { get; set; } = 100f;
 	public WaveSpawner WaveSpawner { get; set; }
 
 	public TimeSince timeSinceLastDamaged { get; set; }
@@ -29,21 +24,12 @@ public sealed class Npcbase : Component, Component.ITriggerListener
 	
 	protected override void OnUpdate()
 	{
+		base.OnUpdate();
+
 		if ( HasStoppedBeingDamaged )
 		{
 			DamageType = DamageTypes.None;
 		}
-
-		if ( Target != null )
-			if ( Target.Transform.Position.Distance( GameObject.Transform.Position ) >= 200f )
-			{
-				Agent.MoveTo( Target.Transform.Position );
-			}
-			else
-			{
-				Transform.Rotation = Rotation.LookAt( Target.Transform.Position - Transform.Position ).Angles().WithPitch(0);
-			}
-
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )

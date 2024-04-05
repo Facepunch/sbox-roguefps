@@ -3600,7 +3600,6 @@
       "__guid": "91732fe1-35e0-4369-8d91-6f7e14022844",
       "Name": "Object",
       "Position": "-128,-160,32",
-      "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
@@ -3621,23 +3620,24 @@
         },
         {
           "__type": "Npcbase",
-          "__guid": "f5b56365-64f7-460f-a169-2f42017db739",
+          "__guid": "4347c6bf-c890-4980-98df-313f77aaa8f7",
+          "__enabled": false,
           "Agent": {
             "_type": "component",
             "component_id": "c1ab44fd-35a9-4503-af59-776a2df3b9f6",
             "go": "91732fe1-35e0-4369-8d91-6f7e14022844",
             "component_type": "NavMeshAgent"
           },
+          "BaseMovementSpeed": 100,
           "Coin": {
             "_type": "gameobject",
             "prefab": "prefab/coinandxp/coinitem.prefab"
           },
-          "Stats": {
-            "_type": "component",
-            "component_id": "fce09c05-cf9d-4bd9-aa8a-64057d2cac81",
-            "go": "91732fe1-35e0-4369-8d91-6f7e14022844",
-            "component_type": "PlayerStats"
-          },
+          "Health": 100,
+          "IsAlive": true,
+          "LineOfSightRange": -1,
+          "NoReactionToSound": false,
+          "WishVelocity": "0,0,0",
           "Xp": {
             "_type": "gameobject",
             "prefab": "prefab/coinandxp/xpitem.prefab"
@@ -3650,7 +3650,7 @@
           "Armor": 0,
           "AttackDamage": 10,
           "AttackSpeed": 1,
-          "Health": "Infinity",
+          "Health": 15,
           "JumpHeight": 1,
           "ReloadTime": 1,
           "SecondaryAttackCoolDown": 5,
@@ -3706,7 +3706,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-05T00:40:40.4279044\u002B01:00",
+  "LastSaved": "2024-04-05T15:00:34.7195774\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
