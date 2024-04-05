@@ -36,7 +36,6 @@ public abstract partial class StateMachine : Component
 		if ( state is not null )
 		{
 			CurrentState = state;
-			Log.Info( CurrentState );
 		}
 	}
 

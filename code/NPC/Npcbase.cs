@@ -1,7 +1,6 @@
 public sealed class Npcbase : Agent, Component.ITriggerListener
 {
 	public GameObject Target { get; set; }
-	[Property] public NavMeshAgent Agent { get; set; }
 
 	[Property] GameObject Xp { get; set; }
 	[Property] GameObject Coin { get; set; }
@@ -14,12 +13,9 @@ public sealed class Npcbase : Agent, Component.ITriggerListener
 	private const float DamageCooldownPeriod = 1.0f; // Time in seconds to consider the player has stopped being damaged
 	public bool HasStoppedBeingDamaged => timeSinceLastDamaged > DamageCooldownPeriod;
 
-
 	protected override void OnAwake()
 	{
 		Health = Stats.Health;
-		Agent.MaxSpeed = Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed];
-		Agent.Acceleration = Stats.UpgradedStats[PlayerStats.PlayerUpgradedStats.WalkSpeed] * 2;
 	}
 	
 	protected override void OnUpdate()

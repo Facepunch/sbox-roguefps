@@ -26,19 +26,14 @@ public partial class ChasingState : StateMachine.State
 		var path = Agent.GetPath( Agent.LastStimulus.Position );
 		var targetIndex = 0;
 
-		Log.Info( path.Count );
-
 		for ( int i = 0; i < path.Count; ++i )
 		{
-			var pDist = path[i].Distance( Transform.Position );
-			var pDistRaised = path[i].WithZ( Transform.Position.z ).Distance( Transform.Position );
-			var zDist = MathF.Abs( path[i].z - Transform.Position.z );
+			var pDist = path[i].Distance( Agent.Transform.Position );
+			var pDistRaised = path[i].WithZ( Agent.Transform.Position.z ).Distance( Agent.Transform.Position );
+			var zDist = MathF.Abs( path[i].z - Agent.Transform.Position.z );
 
 			if ( pDist > 4f )
 			{
-				if ( pDistRaised < 8 && zDist < 32 )
-					continue;
-
 				targetIndex = i;
 				break;
 			}

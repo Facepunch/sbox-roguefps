@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "5024c63e-1202-435f-8516-8411e49e3038",
+    "__guid": "4955d068-b459-4fc0-875f-1953e20af412",
     "Name": "groundnpctest",
     "Tags": "agent",
     "Enabled": true,
@@ -8,7 +8,7 @@
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "4f897fd0-43f2-4af5-9573-e7ea24f91622",
+        "__guid": "82c9f1bf-831d-4099-a3cd-6a545b925ce1",
         "BodyGroups": 18446744073709551615,
         "Model": "feathersmcgraw.vmdl",
         "RenderType": "On",
@@ -16,7 +16,7 @@
       },
       {
         "__type": "BoxCollider",
-        "__guid": "8da14da7-83ab-448e-8bb6-57d627472d74",
+        "__guid": "ef4097d7-7c0a-471f-bc42-d2bb5ff7adb1",
         "Center": "0,0,32.80003",
         "IsTrigger": false,
         "Scale": "27.46667,27.26667,68.99994",
@@ -24,22 +24,16 @@
       },
       {
         "__type": "Npcbase",
-        "__guid": "b3818c93-504b-4a34-8615-04a2a9948995",
-        "Agent": {
-          "_type": "component",
-          "component_id": "34f61f71-0ee4-400b-a23b-95bec53f9212",
-          "go": "5024c63e-1202-435f-8516-8411e49e3038",
-          "component_type": "NavMeshAgent"
-        },
+        "__guid": "45a0fafe-e5ef-41ad-8bc7-bd6ecb23521b",
         "BaseMovementSpeed": 100,
         "CameraGameObject": {
           "_type": "gameobject",
-          "go": "683f3a64-b047-49a8-aa9c-1f5e1727bd44"
+          "go": "48fd6b13-15f5-4fa1-8a62-6f31f9c299b8"
         },
         "CharacterController": {
           "_type": "component",
-          "component_id": "52226a02-42e0-4f46-97ab-bcac03343185",
-          "go": "5024c63e-1202-435f-8516-8411e49e3038",
+          "component_id": "c718a66a-cdb8-4fce-b96e-cd0f1b4941b6",
+          "go": "4955d068-b459-4fc0-875f-1953e20af412",
           "component_type": "CharacterController"
         },
         "Coin": {
@@ -52,14 +46,14 @@
         "NoReactionToSound": false,
         "StateMachine": {
           "_type": "component",
-          "component_id": "57f40b4c-0eb3-473f-b610-948946beabc8",
-          "go": "5024c63e-1202-435f-8516-8411e49e3038",
+          "component_id": "3407415d-d30a-4137-995b-939bf84b26eb",
+          "go": "4955d068-b459-4fc0-875f-1953e20af412",
           "component_type": "SimpleEnemyStateMachine"
         },
         "Stats": {
           "_type": "component",
-          "component_id": "b1b87a76-9e9a-42e4-b414-5ecf0e63802d",
-          "go": "5024c63e-1202-435f-8516-8411e49e3038",
+          "component_id": "dd22467b-53c0-44f3-9f9e-dc784798c346",
+          "go": "4955d068-b459-4fc0-875f-1953e20af412",
           "component_type": "PlayerStats"
         },
         "WishVelocity": "0,0,0",
@@ -69,27 +63,8 @@
         }
       },
       {
-        "__type": "NavMeshAgent",
-        "__guid": "34f61f71-0ee4-400b-a23b-95bec53f9212",
-        "Acceleration": 100,
-        "Height": 64,
-        "MaxSpeed": 120,
-        "Radius": 12.666682,
-        "Separation": 10,
-        "UpdatePosition": true,
-        "UpdateRotation": true
-      },
-      {
-        "__type": "SphereCollider",
-        "__guid": "75504481-1343-422e-b897-714bc6239591",
-        "Center": "0,0,0",
-        "IsTrigger": true,
-        "Radius": 1000,
-        "Static": false
-      },
-      {
         "__type": "PlayerStats",
-        "__guid": "b1b87a76-9e9a-42e4-b414-5ecf0e63802d",
+        "__guid": "dd22467b-53c0-44f3-9f9e-dc784798c346",
         "AmountOfJumps": 1,
         "Armor": 0,
         "AttackDamage": 1,
@@ -107,7 +82,7 @@
       },
       {
         "__type": "CharacterController",
-        "__guid": "52226a02-42e0-4f46-97ab-bcac03343185",
+        "__guid": "c718a66a-cdb8-4fce-b96e-cd0f1b4941b6",
         "Acceleration": 10,
         "Bounciness": 0.3,
         "GroundAngle": 45,
@@ -118,24 +93,24 @@
       },
       {
         "__type": "SimpleEnemyStateMachine",
-        "__guid": "57f40b4c-0eb3-473f-b610-948946beabc8",
+        "__guid": "3407415d-d30a-4137-995b-939bf84b26eb",
         "Agent": {
           "_type": "component",
-          "component_id": "b3818c93-504b-4a34-8615-04a2a9948995",
-          "go": "5024c63e-1202-435f-8516-8411e49e3038",
+          "component_id": "45a0fafe-e5ef-41ad-8bc7-bd6ecb23521b",
+          "go": "4955d068-b459-4fc0-875f-1953e20af412",
           "component_type": "Npcbase"
         },
         "CurrentState": {
           "_type": "component",
-          "component_id": "ce4f8930-df2b-4240-bee7-f4ee5f21c002",
-          "go": "b597c30a-b8c5-4528-9b6a-362055ec4816",
+          "component_id": "639899e2-f676-45c4-97f7-32bb65fd4896",
+          "go": "624c9da7-a759-401a-85de-0e81841666a8",
           "component_type": "IdleState"
         }
       }
     ],
     "Children": [
       {
-        "__guid": "a5edd316-6890-4f04-8d57-9d1aa46d26dd",
+        "__guid": "dc51b494-ec54-45ed-adf1-9f0a3bd1ae03",
         "Name": "Object",
         "Position": "8,-11,22",
         "Enabled": true,
@@ -143,7 +118,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "6dfc000d-d20c-4499-85c8-476a5f7dfccb",
+            "__guid": "9fcd0a2d-0b6b-4b2a-a533-a69672c5bf59",
             "BodyGroups": 171,
             "Model": "models/weapons/sbox_assault_m4a1/w_m4a1.vmdl",
             "RenderType": "On",
@@ -152,14 +127,14 @@
         ]
       },
       {
-        "__guid": "683f3a64-b047-49a8-aa9c-1f5e1727bd44",
+        "__guid": "48fd6b13-15f5-4fa1-8a62-6f31f9c299b8",
         "Name": "Eyes",
         "Position": "6.660816,0,54.20493",
         "Enabled": true,
         "NetworkMode": 2
       },
       {
-        "__guid": "b597c30a-b8c5-4528-9b6a-362055ec4816",
+        "__guid": "624c9da7-a759-401a-85de-0e81841666a8",
         "Name": "State Machine States",
         "Position": "-53.1981,-264.646,40.48121",
         "Enabled": true,
@@ -167,10 +142,10 @@
         "Components": [
           {
             "__type": "IdleState",
-            "__guid": "ce4f8930-df2b-4240-bee7-f4ee5f21c002",
+            "__guid": "639899e2-f676-45c4-97f7-32bb65fd4896",
             "NextTick": {
-              "Relative": -3855.2307,
-              "Passed": 3855.2307,
+              "Relative": -244.34486,
+              "Passed": 244.34486,
               "Fraction": 1
             },
             "Priority": 0,
@@ -178,10 +153,10 @@
           },
           {
             "__type": "ChasingState",
-            "__guid": "dc49ae9a-c624-436f-91eb-7c3620da2764",
+            "__guid": "6ca525d6-20e5-456d-aa3d-b18bb5b9bc60",
             "NextTick": {
-              "Relative": -3855.2307,
-              "Passed": 3855.2307,
+              "Relative": -244.34486,
+              "Passed": 244.34486,
               "Fraction": 1
             },
             "Priority": 0,
