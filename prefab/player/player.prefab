@@ -139,6 +139,16 @@
       {
         "__type": "InteractorUse",
         "__guid": "fb236346-2166-48fc-a959-fd51d5787418"
+      },
+      {
+        "__type": "FootSteps",
+        "__guid": "795e8d11-86e6-4a88-9ceb-d20c5d0e85cf",
+        "Source": {
+          "_type": "component",
+          "component_id": "c2f38b48-65cf-454d-819b-b57341d7a42d",
+          "go": "e26a53f0-67f0-4793-8f44-e106c535ec30",
+          "component_type": "SkinnedModelRenderer"
+        }
       }
     ],
     "Children": [
@@ -581,7 +591,7 @@
             "IsActive": false,
             "Priority": 0,
             "TimeSinceActiveChanged": {
-              "Relative": 1890.6885
+              "Relative": 3303.0098
             }
           },
           {
@@ -590,7 +600,7 @@
             "IsActive": false,
             "Priority": 1,
             "TimeSinceActiveChanged": {
-              "Relative": 1890.6885
+              "Relative": 3303.0098
             }
           },
           {
@@ -604,7 +614,7 @@
             "SlideFriction": 0.01,
             "SlideSpeed": 600,
             "TimeSinceActiveChanged": {
-              "Relative": 1890.6885
+              "Relative": 3303.0098
             },
             "WishDirectionScale": 0.4
           },
@@ -614,7 +624,7 @@
             "IsActive": false,
             "Priority": 0,
             "TimeSinceActiveChanged": {
-              "Relative": 1890.6885
+              "Relative": 3303.0098
             }
           }
         ]

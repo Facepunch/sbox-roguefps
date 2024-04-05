@@ -66,8 +66,8 @@ public abstract partial class Agent : Actor, Actor.IReceptor
 	{
 		if ( eventName == "damage" )
 		{
-			// var damageInfo = (DamageInfo)obj[0];
-			// LastStimulus = new HurtStimulus( damageInfo.Position );
+			var damageInfo = (DamageInfo)obj[0];
+			LastStimulus = new HurtStimulus( Transform.Position );
 		}
 
 		StateMachine?.OnEvent( eventName, obj );

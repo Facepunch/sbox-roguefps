@@ -3517,7 +3517,7 @@
             "prefab": "prefab/npc/test/groundnpctest.prefab"
           },
           "MaxEntities": 20,
-          "SpawnPerWave": 10,
+          "SpawnPerWave": 1,
           "WaveInterval": 20000
         }
       ]
@@ -3706,7 +3706,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-05T15:00:34.7195774\u002B01:00",
+  "LastSaved": "2024-04-05T15:12:45.9315693\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
