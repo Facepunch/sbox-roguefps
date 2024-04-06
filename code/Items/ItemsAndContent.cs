@@ -5,7 +5,8 @@
 	{
 		new AddJump(),
 		new LaunchJump(),
-		new FireHit()
+		new FireHit(),
+		new HealthIncrease()
 	};
 
 }
