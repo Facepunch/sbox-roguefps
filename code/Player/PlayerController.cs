@@ -98,6 +98,11 @@ public partial class PlayerController : Actor
 		*/
 		// Eye input
 
+		if(Input.Pressed("reload"))
+		{
+			OnDamage(new DamageInfo(5,GameObject, GameObject ) );
+		}
+
 		if ( !IsProxy && cc != null )
 		{
 			var cameraGameObject = CameraController.Camera.GameObject;

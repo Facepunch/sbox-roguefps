@@ -13,7 +13,11 @@
 					<div class="inner" style="@GetXpBar()"></div>
 				</div>
 			</div>
-			<div class="bar">50/100</div>
+			<div class="healthbar">
+				<div class="inner-delay" style="@GetHealthBar()"></div>
+				<div class="inner" style="@GetHealthBar()"></div>
+				<div class="txt">@_player.Health / @_playerStats.UpgradedStats[Stats.PlayerUpgradedStats.Health]</div>
+			</div>
 		</div>
 	</root>
 </root>
@@ -21,10 +25,12 @@
 @code
 {
 	Stats _playerStats;
+	Actor _player;
 
 	protected override void OnAwake()
 	{
 		_playerStats = Components.Get<Stats>(FindMode.InParent);
+		_player = Components.Get<Actor>(FindMode.InParent);
 
 		Log.Info(_playerStats);
 	}
@@ -34,9 +40,14 @@
 		//Turn the current xp into the width of the bar
 		return $"width: {(_playerStats.PlayerCoinsAndXp[Stats.CoinsAndXp.Xp] / (float)Stats.MaxExperienceForLevel(_playerStats.CurrentLevel)) * 100}%";
 	}
+	string GetHealthBar()
+	{
+		//Turn the current health into the width of the bar
+		return $"width: {(_player.Health / (float)_playerStats.UpgradedStats[Stats.PlayerUpgradedStats.Health]) * 100}%";
+	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Time.Delta );
+	protected override int BuildHash() => System.HashCode.Combine(GetHealthBar(), GetXpBar());
 }

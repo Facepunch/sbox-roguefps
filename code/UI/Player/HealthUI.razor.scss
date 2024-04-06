@@ -1,20 +1,23 @@
 HealthUI {
-	position: absolute;
-	bottom: 5%;
-	left: 5%;
-	width: 400px;
-	height: 100px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 400px;
+    height: 100px;
 }
+
 .bg {
     background-color: rgba(0,0,0,0.25);
-    position:absolute;
-    width:110%;
-    height:100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
+
 .lvl {
     width: 100%;
-    margin:5px;
+    margin: 5px;
 }
+
 .lvltxt {
     font-size: 18px;
     font-family: "Quantico";
@@ -24,11 +27,10 @@ HealthUI {
     text-align: center;
     text-shadow: 2px 2px 2px #000000;
 }
+
 .lvlbar {
     width: 1000px;
     height: 20px;
-    /*background-color: #0099ff;*/ /* Red health bar */
-    /*border-top: 2px solid #5cbeff;*/ /* Black border */
     background-color: rgba(0,0,0,0.5);
 
     .inner {
@@ -57,17 +59,37 @@ HealthUI {
     height: 100%;
 }
 
-.bar {
+.healthbar {
     width: 100%; /* Start with full health */
-        min-height: 30px;
-        background-color: #6fff00; /* Red health bar */
-        border-top: 4px solid #a3ff5c; /* Black border */
+    height: 30px;
+    background-color: rgba(0,0,0,0.5);
+
+    .txt {
+        text-align: center;
         color: #fff; /* Text color */
-        font-size: 24;
+        font-size: 24px;
         text-shadow: 2px 2px 2px #000000;
         font-family: "Quantico";
         font-weight: 800;
-        text-align: center;
-        align-content: center;
-        justify-content: center;
+        align-self:center;
+        justify-content:center;
+        width:100%;
     }
+
+    .inner {
+        width: 100%; /* Start with full health */
+        height: 100%;
+        background-color: #6fff00; /* Red health bar */
+        border-top: 4px solid #a3ff5c; /* Black border */
+        position: absolute;
+    }
+
+    .inner-delay {
+        width: 100%; /* Start with full health */
+        height: 100%;
+        background-color: #bbbbbb;
+        border-top: 2px solid white;
+        position: absolute;
+        transition: all 0.5s;
+    }
+}

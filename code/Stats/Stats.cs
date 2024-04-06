@@ -192,10 +192,13 @@ public sealed class Stats : Component
 		{
 			CurrentLevel++;
 			PlayerCoinsAndXp[CoinsAndXp.Xp] = 0;
-			//Log.Info( $"Level Up! Current Level: {CurrentLevel}" );
 
-			UpgradedStats[PlayerUpgradedStats.Health] = GetStartingStat( PlayerStartingStats.Health ) * CurrentLevel * 0.15f;
+			float healthRatio = Components.Get<Actor>().Health / UpgradedStats[PlayerUpgradedStats.Health];
+
+			UpgradedStats[PlayerUpgradedStats.Health] = GetStartingStat( PlayerStartingStats.Health ) * CurrentLevel * 1.15f;
 			UpgradedStats[PlayerUpgradedStats.AttackDamage] = GetStartingStat( PlayerStartingStats.AttackDamage ) * CurrentLevel * 0.5f;
+
+			Components.Get<Actor>().Health = UpgradedStats[PlayerUpgradedStats.Health] * healthRatio;
 		}
 		else
 		{

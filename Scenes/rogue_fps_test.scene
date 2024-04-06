@@ -3538,15 +3538,14 @@
         {
           "__type": "WaveSpawner",
           "__guid": "510a2e70-6468-47da-9d71-18b8f76d9a00",
-          "__enabled": false,
           "spawnedEntities": 0,
           "EntityPrefab": {
             "_type": "gameobject",
             "prefab": "prefab/npc/test/groundnpctest.prefab"
           },
           "MaxEntities": 20,
-          "SpawnPerWave": 1,
-          "WaveInterval": 20000
+          "SpawnPerWave": 5,
+          "WaveInterval": 2000
         }
       ]
     },
@@ -3710,7 +3709,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-06T16:27:33.1342254\u002B01:00",
+  "LastSaved": "2024-04-06T17:13:14.2097654\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
