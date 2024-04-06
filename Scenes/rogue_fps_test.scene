@@ -2,6 +2,19 @@
   "__guid": "fdaba2a7-3dd7-44c0-a72e-57311a94fbf6",
   "GameObjects": [
     {
+      "__guid": "56825e1e-dad2-4de7-9f36-ba8f2683fdd6",
+      "Name": "GameManager",
+      "Position": "0,-256,128",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MasterGameManager",
+          "__guid": "bac75faa-0da5-4149-a5b0-457fd804cb98"
+        }
+      ]
+    },
+    {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Name": "Sun",
       "Position": "285.6799,822.649,643.4822",
@@ -3525,6 +3538,7 @@
         {
           "__type": "WaveSpawner",
           "__guid": "510a2e70-6468-47da-9d71-18b8f76d9a00",
+          "__enabled": false,
           "spawnedEntities": 0,
           "EntityPrefab": {
             "_type": "gameobject",
@@ -3696,7 +3710,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-06T00:38:47.9238709\u002B01:00",
+  "LastSaved": "2024-04-06T16:27:33.1342254\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
