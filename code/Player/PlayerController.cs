@@ -98,19 +98,6 @@ public partial class PlayerController : Actor
 		*/
 		// Eye input
 
-		if ( Input.Down( "use" ) )
-		{
-			//Get a random item from the list
-			//var item = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
-			//tem.Owner = PlayerStatsComponent;
-			//PlayerStatsComponent.Inventory.AddItem( item );
-		}
-		if ( Input.Down( "reload" ) )
-		{
-			var item = ItemsAndContent.Items[Random.Shared.Int( 0, ItemsAndContent.Items.Count - 1 )];
-			Stats.Inventory.RemoveItem( item );
-		}
-
 		if ( !IsProxy && cc != null )
 		{
 			var cameraGameObject = CameraController.Camera.GameObject;

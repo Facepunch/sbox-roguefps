@@ -105,7 +105,7 @@
         "SprintMultiplier": 1.45,
         "UltimateCoolDown": 50,
         "UltimateUses": 1,
-        "WalkSpeed": 500
+        "WalkSpeed": 150
       }
     ],
     "Children": [
@@ -144,8 +144,8 @@
             "__type": "IdleState",
             "__guid": "2c7e6b2a-0c2c-49c0-aded-387f9c9eb952",
             "NextTick": {
-              "Relative": -1067.3572,
-              "Passed": 1067.3572,
+              "Relative": -1287.3064,
+              "Passed": 1287.3064,
               "Fraction": 1
             },
             "Priority": 0,
@@ -155,8 +155,8 @@
             "__type": "ChasingState",
             "__guid": "cd40569a-aff1-43eb-89b2-f9dfbdb3a6be",
             "NextTick": {
-              "Relative": -1067.3572,
-              "Passed": 1067.3572,
+              "Relative": -1287.3064,
+              "Passed": 1287.3064,
               "Fraction": 1
             },
             "Priority": 0,

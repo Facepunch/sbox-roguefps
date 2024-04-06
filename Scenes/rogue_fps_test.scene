@@ -82,14 +82,21 @@
         {
           "__type": "EnvmapProbe",
           "__guid": "2ec23178-1554-4a0d-82ca-f8a651235758",
+          "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
             "Mins": "-1024,-1024,-512",
             "Maxs": "1024,1024,512"
           },
+          "DelayBetweenUpdates": 0.1,
           "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
           "Projection": "Box",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "TintColor": "1,0.66584,0.33168,1"
+          "RenderDynamically": false,
+          "TintColor": "1,0.66584,0.33168,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
         }
       ]
     },
@@ -103,14 +110,21 @@
         {
           "__type": "EnvmapProbe",
           "__guid": "c7dc2e49-7b09-453e-a5ae-59fb085afd84",
+          "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
             "Mins": "-1024,-1024,-512",
             "Maxs": "1024,1024,512"
           },
+          "DelayBetweenUpdates": 0.1,
           "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
           "Projection": "Box",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "TintColor": "1,0.66584,0.33168,1"
+          "RenderDynamically": false,
+          "TintColor": "1,0.66584,0.33168,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
         }
       ]
     },
@@ -3622,12 +3636,6 @@
           "__type": "Npcbase",
           "__guid": "4347c6bf-c890-4980-98df-313f77aaa8f7",
           "__enabled": false,
-          "Agent": {
-            "_type": "component",
-            "component_id": "c1ab44fd-35a9-4503-af59-776a2df3b9f6",
-            "go": "91732fe1-35e0-4369-8d91-6f7e14022844",
-            "component_type": "NavMeshAgent"
-          },
           "BaseMovementSpeed": 100,
           "Coin": {
             "_type": "gameobject",
@@ -3642,24 +3650,6 @@
             "_type": "gameobject",
             "prefab": "prefab/coinandxp/xpitem.prefab"
           }
-        },
-        {
-          "__type": "PlayerStats",
-          "__guid": "fce09c05-cf9d-4bd9-aa8a-64057d2cac81",
-          "AmountOfJumps": 1,
-          "Armor": 0,
-          "AttackDamage": 10,
-          "AttackSpeed": 1,
-          "Health": 15,
-          "JumpHeight": 1,
-          "ReloadTime": 1,
-          "SecondaryAttackCoolDown": 5,
-          "SkillOneCoolDown": 5,
-          "SkillOneUses": 1,
-          "SprintMultiplier": 1.45,
-          "UltimateCoolDown": 50,
-          "UltimateUses": 1,
-          "WalkSpeed": 280
         },
         {
           "__type": "NavMeshAgent",
@@ -3706,7 +3696,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-05T15:12:45.9315693\u002B01:00",
+  "LastSaved": "2024-04-06T00:38:47.9238709\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
