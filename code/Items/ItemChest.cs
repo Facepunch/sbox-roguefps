@@ -37,6 +37,8 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		{
 			RandomItem = SceneUtility.GetPrefabScene( Items[Random.Shared.Int( 0, Items.Count - 1 )] );
 		}
+
+		Cost = (int)(25 * Scene.GetAllComponents<MasterGameManager>().FirstOrDefault().Current.TotalFactor * 1.25f);
 	}
 
 	protected override void OnUpdate()
