@@ -10,12 +10,21 @@ public sealed class MasterGameManager : Component
 	{
 		Current ??= FileSystem.Data.ReadJson<SessionProgess>( FileName, null );
 
-		Current ??= new SessionProgess();
+		if( Current == null )
+		{
+			Log.Info( "No session data found, starting new game." );
+			OnNewGame();
+		}
+		else
+		{
+			Log.Info( "Session data found, loading." );
+		}
 	}
 
 	protected override void OnStart()
 	{
-		base.OnStart();
+		if ( IsProxy )
+			return;
 
 		Fetch();
 
