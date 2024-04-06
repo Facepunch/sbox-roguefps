@@ -1,0 +1,20 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">@GetCurrentTime()</div>
+</root>
+
+@code
+{
+	public string GetCurrentTime()
+	{
+		return Scene.Components.GetAll<MasterGameManager>().FirstOrDefault().Current.CurrentTime.ToString(@"hh\:mm\:ss");
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(GetCurrentTime());
+}
