@@ -20,3 +20,5 @@ code/Editor/Properties/*
 *.los
 *.vpk
 *.sln
+*.blend
+*.psd
