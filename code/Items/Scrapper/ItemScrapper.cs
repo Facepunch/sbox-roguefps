@@ -48,7 +48,6 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 		var playerStats = plyStats;
 		if ( playerStats != null )
 		{
-
 			//Only scrap up to 10 items at a time
 			var amount = item.Amount > 10 ? 10 : item.Amount;
 			for ( int i = 0; i < amount; i++ )

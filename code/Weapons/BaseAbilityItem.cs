@@ -96,7 +96,7 @@ public class BaseAbilityItem : Component
 			case InputType.Secondary:
 				return "attack2";
 			case InputType.Utility:
-				return "slide";
+				return "ability";
 			case InputType.Ultimate:
 				return "reload";
 			default:

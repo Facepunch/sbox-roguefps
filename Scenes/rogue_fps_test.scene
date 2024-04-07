@@ -3516,6 +3516,10 @@
           "__type": "LootBoxSpawner",
           "__guid": "e2f34c32-bdcf-4a99-853d-1a89169d7e1a",
           "currentSpawned": 0,
+          "ItemScrapper": {
+            "_type": "gameobject",
+            "prefab": "prefab/shop_chest/itemscrapper.prefab"
+          },
           "LootBoxPrefab": {
             "_type": "gameobject",
             "prefab": "prefab/lootbox/testlootbox.prefab"
@@ -3685,71 +3689,6 @@
           "Static": false
         }
       ]
-    },
-    {
-      "__guid": "e70106e3-6f1f-4cb3-8fd7-ee56343ccc2a",
-      "Name": "item_scrapper",
-      "Position": "-128,512,0.00006035016",
-      "Tags": "interactable",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "dace97a1-9984-4f84-bb60-86a4935212d8",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/temp/scrapper/item_scrapper.vmdl",
-          "RenderType": "On",
-          "Tint": "0.28047,0.68837,0.1889,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__guid": "c29105b2-4fe8-44e3-a8d6-785f350ac4eb",
-          "IsTrigger": false,
-          "Model": "models/temp/scrapper/item_scrapper.vmdl",
-          "Static": false
-        },
-        {
-          "__type": "HighlightOutline",
-          "__guid": "c6cfc8ea-bf39-4dd5-9b84-f60f90172683",
-          "__enabled": false,
-          "Color": "0.99496,1,0.69767,1",
-          "InsideColor": "0,0,0,0",
-          "InsideObscuredColor": "0,0,0,0",
-          "ObscuredColor": "0,0,0,0",
-          "Width": 0.25
-        },
-        {
-          "__type": "ItemScrapper",
-          "__guid": "8e343dec-3c7b-4de6-94c6-4dae7687c4d1",
-          "Cost": 100,
-          "HasPrice": false,
-          "IsOpen": false,
-          "ItemSpawnLocation": {
-            "_type": "gameobject",
-            "go": "5cb21160-0583-40f8-8be4-e5875860f869"
-          },
-          "UseRandomItem": true
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "5cb21160-0583-40f8-8be4-e5875860f869",
-          "Name": "ItemLocation",
-          "Position": "0,0,27.99994",
-          "Enabled": true,
-          "NetworkMode": 2
-        }
-      ]
-    },
-    {
-      "__guid": "4b37f920-760a-4a0e-87e2-2cc05b60b5d0",
-      "Name": "testlootbox",
-      "Position": "-256,512,-0.0005187988",
-      "Tags": "interactable",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefab/lootbox/testlootbox.prefab"
     }
   ],
   "SceneProperties": {
@@ -3775,7 +3714,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-06T23:47:23.0990546\u002B01:00",
+  "LastSaved": "2024-04-07T14:34:21.194407\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

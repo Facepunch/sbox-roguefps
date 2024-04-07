@@ -17,15 +17,7 @@
 
 	public override void RemoveUpgrade()
 	{
-		if(GetAmountFromInventory() == 0)
-		{
-			Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] = Owner.StartingStats[Stats.PlayerStartingStats.Health];
-		}
-		else
-		{
-			Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] = Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] - StatUpgradeAmount * GetAmountFromInventory();
-		}
-
-		//Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
+		Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] = Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] - StatUpgradeAmount;
+		Owner.Components.Get<PlayerController>().Health -= StatUpgradeAmount;
 	}
 }
