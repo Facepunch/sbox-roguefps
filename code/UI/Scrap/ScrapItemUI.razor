@@ -1,0 +1,79 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="item-list">
+	@foreach (var item in invetoryItem.itemPickUps)
+	{
+		@if (item.Item.IsScrap) continue;
+		<div class="item">
+				<div class="icon" onmouseover="@(() => OnItemHover(item.Item))" onmouseout="@(() => OnItemHoverOut())" style="background-image: url(@item.Item.Icon); border: 2px solid @item.Item.ItemColor;" onclick=@(() => ItemToScrap(item))></div>
+			@* <div class="name">@item.Item.Name</div> *@
+			@* <div class="description">@item.Item.Description</div> *@
+			<div class="value">@item.Amount</div>
+		</div>
+	}
+	</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	ItemInventory invetoryItem;
+	ItemsUIToolTip itemsUIToolTip;
+
+	ItemScrapper itemScrapper;
+	Stats _stats;
+
+	public void OnItemHover(ItemDef item)
+	{
+		if (item != null)
+		{
+			itemsUIToolTip = new ItemsUIToolTip(item);
+			Panel.AddChild(itemsUIToolTip);
+		}
+		else
+		{
+			itemsUIToolTip?.Delete();
+		}
+	}
+	public void OnItemHoverOut()
+	{
+
+		//Panel.DeleteChildren();
+		itemsUIToolTip.Delete();
+
+	}
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+
+		if(Input.Pressed("use"))
+		{
+			Destroy();
+		}
+	}
+
+	public void ItemToScrap(InvetoryItem item)
+	{
+		Log.Info("Item to scrap: " + item.Item.Name);
+		itemScrapper.ScrapItem(item,_stats);
+		Destroy();
+	}
+
+	public void SetItem(ItemInventory item, ItemScrapper scrapper,Stats stats)
+	{
+		invetoryItem = item;
+		itemScrapper = scrapper;
+		_stats = stats;
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

@@ -1,0 +1,59 @@
+ScrapItemUI {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backdrop-filter: blur( 10px );
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+	pointer-events: all;
+
+	.item-list {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.5);
+		width: 90%;
+		height: 90%;
+	}
+
+	.item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+		padding: 10px;
+
+		.name {
+			font-size: 18px;
+			font-family: "Quantico";
+			color: #fff;
+			position: absolute;
+		}
+
+		.value {
+			font-size: 32px;
+			font-family: "Quantico";
+			color: #fff;
+			position: absolute;
+			top: 5%;
+			right: 20%;
+		}
+
+		.icon {
+			background-size: cover;
+			width: 100px;
+			height: 100px;
+
+			&:hover {
+				border: 18px solid #000;
+				transform: scale(1.1);
+			}
+		}
+	}
+}
