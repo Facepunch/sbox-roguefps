@@ -34,45 +34,51 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 
 	}
 
-	public override void OnInteract(GameObject player)
+	public override void OnInteract( GameObject player )
 	{
-		var screen = player.Components.Get<ScreenPanel>(FindMode.InChildren);
+		var screen = player.Components.Get<ScreenPanel>( FindMode.InChildren );
 		var scrapui = screen.Components.Create<ScrapItemUI>();
 		var playerInventory = player.Components.Get<Stats>();
 		scrapui.SetItem( playerInventory.Inventory, this, playerInventory );
 	}
 
-	public void ScrapItem(InvetoryItem item,Stats plyStats)
+	public void ScrapItem( InvetoryItem item, Stats plyStats )
 	{
 		// Assume that player is correctly set to the player's GameObject
 		var playerStats = plyStats;
-		if (playerStats != null)
+		if ( playerStats != null )
 		{
-			if(item.Item.ItemTier == ItemTier.Uncommon)
+
+			//Only scrap up to 10 items at a time
+			var amount = item.Amount > 10 ? 10 : item.Amount;
+			for ( int i = 0; i < amount; i++ )
 			{
-				//Only scrap up to 10 items at a time
-				var amount = item.Amount > 10 ? 10 : item.Amount;
-				for(int i = 0; i < amount; i++)
-				{
-					SpawnItem(new UncommonScrap());
-					playerStats.Inventory.RemoveItem( item.Item );
-				}
+				SpawnItem( GetScrapItem( item.Item ) );
+				playerStats.Inventory.RemoveItem( item.Item );
 			}
 
-			// Remove the item from the player's inventory
-
-
-			// Optional: Apply any effects or consequences of scrapping the item
-			Log.Info($"{item.Item.Name} has been scrapped.");
 		}
 	}
 
-	public void OpenChest(GameObject player )
+	ItemDef GetScrapItem( ItemDef item )
+	{
+		return item.ItemTier switch
+		{
+			ItemTier.Common => new CommonScrap(),
+			ItemTier.Uncommon => new UncommonScrap(),
+			ItemTier.Rare => new RareScrap(),
+			ItemTier.Epic => new EpicScrap(),
+			ItemTier.Legendary => new LegendaryScrap(),
+			_ => new CommonScrap(),
+		};
+	}
+
+	public void OpenChest( GameObject player )
 	{
 
 	}
 
-	void SpawnItem(ItemDef item)
+	void SpawnItem( ItemDef item )
 	{
 		//var randomItem = SceneUtility.GetPrefabScene( Items[Random.Shared.Int( 0, Items.Count - 1 )] );
 		var prefab = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/items/baseitem.prefab" ) );
@@ -80,22 +86,22 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 		var itemGet = item;
 		go.BreakFromPrefab();
 		go.Name = itemGet.Name;
-		go.Components.Get<ModelRenderer>(FindMode.InChildren).Model = itemGet.Model;
+		go.Components.Get<ModelRenderer>( FindMode.InChildren ).Model = itemGet.Model;
 		go.Components.Get<ModelRenderer>( FindMode.InChildren ).Tint = itemGet.ItemColor;
 		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = itemGet;
-		var interactable = go.Components.Get<Interactable>( );
+		var interactable = go.Components.Get<Interactable>();
 		interactable.Name = itemGet.Name;
 		//var item = RandomItem.Clone();
 		if ( ItemSpawnLocation != null )
 			go.Transform.Position = ItemSpawnLocation.Transform.Position;
 
-		var rb = go.Components.Get<Rigidbody>(FindMode.EnabledInSelf);
+		var rb = go.Components.Get<Rigidbody>( FindMode.EnabledInSelf );
 
 		if ( rb != null )
 		{
 			//This seems dumb
 			rb.ApplyForce( Vector3.Up * 1000f * 20f );
-			rb.ApplyForce( Transform.Rotation * Vector3.Forward * 1000f * 10f);
+			rb.ApplyForce( Transform.Rotation * Vector3.Forward * 1000f * 10f );
 		}
 	}
 	void ITriggerListener.OnTriggerEnter( Collider other )
@@ -107,12 +113,12 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 	void ITriggerListener.OnTriggerExit( Collider other )
 	{
 		//Log.Info( "OnTriggerExit" );
-		
+
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			if ( _UI != null )
 				_UI.Destroy();
-		}	
+		}
 	}
 }
 

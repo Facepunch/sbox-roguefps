@@ -5,6 +5,7 @@ public sealed class LootBoxSpawner : Component
 {
 	[Property] public GameObject LootBoxPrefab { get; set; }
 	[Property] public GameObject MultiShopPrefab { get; set; }
+	[Property] public GameObject ItemScrapper { get; set; }
 	[Property] public int SpawnAmount { get; set; } = 10;
 
 	[Property] int currentSpawned = 0;
@@ -40,6 +41,24 @@ public sealed class LootBoxSpawner : Component
 
 	async Task SpawnBoxes()
 	{
+		for ( int i = 0; i < 2; i++ )
+		{
+			await Task.Delay( 100 );
+			if ( ItemScrapper is null ) return;
+			var lootBox = ItemScrapper.Clone();
+			var pos = Scene.NavMesh.GetRandomPoint( Transform.Position, 2000 );
+
+			if ( pos.HasValue )
+			{
+				lootBox.Transform.Position = pos.Value;
+
+				lootBox.Transform.Rotation = Rotation.FromPitch( Random.Shared.Float( -10, 10 ) );
+				lootBox.Transform.Rotation = Rotation.FromRoll( Random.Shared.Float( -10, 10 ) );
+				lootBox.Transform.Rotation = Rotation.FromYaw( Random.Shared.Float( -360, 360 ) );
+				//lootBox.BreakFromPrefab();
+			}
+		}
+
 		for ( int i = 0; i < SpawnAmount; i++ )
 		{
 			await Task.Delay( 100 );
