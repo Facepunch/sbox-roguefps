@@ -4,7 +4,14 @@
 
 <root>
 	<div class="container">
-		<div class="cost @(Near? "broke" : "")">$@Value</div>
+		@if (IsText)
+		{
+			<div class="cost @(Near? "broke" : "")">@Text</div>
+		}
+		else
+		{
+			<div class="cost @(Near? "broke" : "")">$@Value</div>
+		}
 	</div>
 </root>
 
@@ -12,7 +19,9 @@
 {
 	public bool Near { get; set; }
 
+	public bool IsText { get; set; } = false;
 	public int Value { get; set; } = 1;
+	public string Text { get; set; } = "";
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
