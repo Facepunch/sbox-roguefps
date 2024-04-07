@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "868b329e-905d-4d53-92bc-353562b5b4d5",
+    "__guid": "2f9d5d71-d666-4978-81e8-7b51a755626a",
     "Name": "baseitem",
     "Tags": "item,interactable",
     "Enabled": true,
@@ -8,7 +8,7 @@
     "Components": [
       {
         "__type": "BoxCollider",
-        "__guid": "7d81c67d-7732-4e22-90fd-61666b6ea245",
+        "__guid": "e912b172-a61a-4f6d-97af-e397f9a6352e",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Scale": "20,20,20",
@@ -16,7 +16,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "422940a8-d80a-4d69-a157-90946a20e755",
+        "__guid": "a58d39ad-ea4c-4278-9150-5ac63372a8eb",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -32,7 +32,7 @@
       },
       {
         "__type": "Interactable",
-        "__guid": "6fc86c50-e2da-4a83-9913-34f6d60b1012",
+        "__guid": "17c3c096-1e26-426c-974a-d66d7d216a61",
         "Cost": 100,
         "HasPrice": false,
         "IsOpen": false,
@@ -41,7 +41,7 @@
     ],
     "Children": [
       {
-        "__guid": "b4c13037-a22f-45d1-8c86-4fd9857ca9b9",
+        "__guid": "8bc3e44d-8fb3-46fa-a9bc-379f01823c0d",
         "Name": "BaseItem",
         "Tags": "trigger",
         "Enabled": true,
@@ -49,7 +49,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "0bb168c8-7d99-4fec-8cec-91c5050da95d",
+            "__guid": "0613ccb2-e18e-4dae-9d4a-072b2d151ead",
             "BodyGroups": 18446744073709551615,
             "Model": "models/item/baseitem.vmdl",
             "RenderType": "On",
@@ -57,23 +57,15 @@
           },
           {
             "__type": "SphereCollider",
-            "__guid": "78ba7cbc-ca86-491b-ab5a-6458d6a77688",
+            "__guid": "263abdd7-25ea-4482-9019-de9fe7775fa5",
             "Center": "0,0,0",
             "IsTrigger": true,
             "Radius": 32,
             "Static": false
           },
           {
-            "__type": "TestItem",
-            "__guid": "1c64cd6c-5cea-4f01-a0fb-033b6e69ebef",
-            "__enabled": false,
-            "Amount": 1,
-            "IsStatUpgrade": true,
-            "SpawnChance": 0
-          },
-          {
             "__type": "HighlightOutline",
-            "__guid": "74ee8bdf-ce20-4bff-aff5-c95ff37c60b9",
+            "__guid": "31bbd31a-ea8f-4857-8323-056efeb887fd",
             "Color": "1,1,1,1",
             "InsideColor": "0,0,0,0",
             "InsideObscuredColor": "0,0,0,0",
@@ -82,11 +74,11 @@
           },
           {
             "__type": "ItemAnimator",
-            "__guid": "4c412d55-c14d-48b9-bf9c-e74c5f61e0ac"
+            "__guid": "863642bf-f606-44da-98c4-852e55618579"
           },
           {
             "__type": "ItemHelper",
-            "__guid": "8ededb88-ad43-44db-9bd0-17ded6403209",
+            "__guid": "ccb6c83f-0705-4a7f-b392-b3192bb58699",
             "Item": {}
           }
         ]

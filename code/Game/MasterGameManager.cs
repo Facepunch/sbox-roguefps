@@ -6,13 +6,13 @@ public sealed class MasterGameManager : Component
 	static string FileName = $"{Game.ActiveScene.Title}_currentSession.json";
 	public SessionProgess Current { get; set; }
 
-	void Fetch()
+	private void Fetch()
 	{
-		Current ??= FileSystem.Data.ReadJson<SessionProgess>( FileName, null );
+		//Current ??= FileSystem.Data.ReadJson<SessionProgess>( FileName, null );
 
 		if( Current == null )
 		{
-			Log.Info( "No session data found, starting new game." );
+			//Log.Info( "No session data found, starting new game." );
 			OnNewGame();
 		}
 		else
@@ -23,16 +23,16 @@ public sealed class MasterGameManager : Component
 
 	protected override void OnStart()
 	{
-		if ( IsProxy )
-			return;
+		//if ( IsProxy )
+			//return;
 
-		Fetch();
+		//Fetch();
 
-		OnStageBegin();
-		if ( Current == null )
-		{
-			startTime = DateTimeOffset.UtcNow;
-		}
+		//OnStageBegin();
+		//if ( Current == null )
+		//{
+		//	startTime = DateTimeOffset.UtcNow;
+		//}
 
 		OnNewGame();
 	}
@@ -46,7 +46,7 @@ public sealed class MasterGameManager : Component
 
 		if ( Input.Pressed( "use" ) )
 		{
-			Save();
+			//Save();
 		}
 	}
 
