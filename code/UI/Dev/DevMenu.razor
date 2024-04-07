@@ -1,0 +1,62 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">Dev Menu</div>
+	<div class="title">Item Menu</div>
+	<div class="items">
+		@foreach (var item in ItemsAndContent.Items)
+		{
+			<div class="item">
+				<div class="icon" style="background-image: url(@item.Icon); border: 2px solid @item.ItemColor;" onclick=@(() => AddItem(item))></div>
+				<div class="name">@item.Name</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	bool isOpen = false;
+
+	ItemInventory _inventory;
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+		_inventory = Components.Get<Stats>(FindMode.InParent).Inventory;
+	}
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+
+		if (Input.Pressed("devmenu"))
+		{
+			isOpen = !isOpen;
+		}
+
+		if (isOpen)
+		{
+			AddClass("open");
+		}
+		else
+		{
+			RemoveClass("open");
+		}
+	}
+
+	void AddItem(ItemDef item)
+	{
+		_inventory.AddItem(item);
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}
