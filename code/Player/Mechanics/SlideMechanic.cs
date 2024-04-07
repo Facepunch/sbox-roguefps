@@ -18,7 +18,7 @@ public partial class SlideMechanic : PlayerMechanic
 	{
 		if ( TimeSinceActiveChanged < NextSlideCooldown ) return false;
 
-		if ( CanSlide && Input.Pressed( "Slide" ) )
+		if ( CanSlide && Input.Pressed( "ability" ) )
 		{
 			slideCoolDown = Player.Stats.UpgradedStats[Stats.PlayerUpgradedStats.SkillOneCoolDown];
 			return true;
