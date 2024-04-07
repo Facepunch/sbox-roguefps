@@ -3689,95 +3689,6 @@
           "Static": false
         }
       ]
-    },
-    {
-      "__guid": "01058550-fe1b-4856-9509-7dde2d7207cf",
-      "Name": "printer",
-      "Position": "-144,432,0",
-      "Tags": "interactable",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "7fe38500-466c-47ad-a486-0a3881293294",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/temp/printer/printer.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ItemPrinter",
-          "__guid": "fa5967a5-fae5-484d-b94f-f3a9ce0673b1",
-          "Cost": 100,
-          "HasPrice": false,
-          "IsOpen": false,
-          "ItemLocation": {
-            "_type": "gameobject",
-            "go": "a221e886-42d8-425d-a596-ca0d58595225"
-          },
-          "ItemSpawnLocation": {
-            "_type": "gameobject",
-            "go": "1d40360e-64f9-494b-8c5d-8be44e95581f"
-          },
-          "Name": "Interactable"
-        },
-        {
-          "__type": "ModelCollider",
-          "__guid": "01a24212-db56-4313-a42e-d67446ffb002",
-          "IsTrigger": false,
-          "Model": "models/temp/printer/printer.vmdl",
-          "Static": true
-        },
-        {
-          "__type": "HighlightOutline",
-          "__guid": "8e7a28a9-437c-4ca3-b583-cad6f3d05f35",
-          "__enabled": false,
-          "Color": "0.99496,1,0.69767,1",
-          "InsideColor": "0,0,0,0",
-          "InsideObscuredColor": "0,0,0,0",
-          "ObscuredColor": "0,0,0,0",
-          "Width": 0.25
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "a221e886-42d8-425d-a596-ca0d58595225",
-          "Name": "ItemLocation",
-          "Position": "0,16,42",
-          "Scale": "0.5,0.5,0.5",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "cada791c-d55f-4223-9568-0abb020b33ed",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/item/baseitem.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "ItemAnimator",
-              "__guid": "9816480f-b468-4590-8fe7-c8c4a8b3ca7e"
-            }
-          ]
-        },
-        {
-          "__guid": "1d40360e-64f9-494b-8c5d-8be44e95581f",
-          "Name": "SpawnLocation",
-          "Position": "0,-16,32",
-          "Enabled": true,
-          "NetworkMode": 2
-        },
-        {
-          "__guid": "9da61cdd-bef8-4498-a5ca-126680ad8b47",
-          "Name": "WorldPanelLocation",
-          "Position": "18,0,16",
-          "Enabled": true,
-          "NetworkMode": 2
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -3803,7 +3714,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-07T23:07:06.113069\u002B01:00",
+  "LastSaved": "2024-04-07T23:20:22.6551367\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
