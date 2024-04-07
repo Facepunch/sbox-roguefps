@@ -2,26 +2,11 @@ using Sandbox;
 
 public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 {
-	List<PrefabFile> Items;
-
 	[Property]
 	[Group( "Item Chest" )]
 	GameObject ItemSpawnLocation { get; set; }
 
-
-	[Property]
-	bool UseRandomItem { get; set; } = true;
-
-	[Property]
-	GameObject Top { get; set; }
-
-	[Property] PrefabScene WorldUI { get; set; }
-
 	GameObject _UI;
-	WorldCostPanel _Panel;
-
-	PrefabScene RandomItem { get; set; }
-
 	public override string Name { get; set; } = "Scrap Items";
 	protected override void OnStart()
 	{

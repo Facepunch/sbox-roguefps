@@ -18,7 +18,7 @@
 			<div class="upgrade">
 				<div class="icon" onmouseout="" onmouseover=""></div>
 				@* <div class="icon" onmouseout="" onmouseover="" style="background-image: url('@upgrade.Icon')"></div> *@
-				@* <div class="name">@upgrade.Name</div>	
+		@* <div class="name">@upgrade.Name</div>	
 				<div class="amount">x10</div>
 			</div>
 		}
@@ -32,7 +32,7 @@
 
 	public void OnItemHover(ItemDef item)
 	{
-		if(item != null)
+		if (item != null)
 		{
 			itemsUIToolTip = new ItemsUIToolTip(item);
 			Panel.AddChild(itemsUIToolTip);
@@ -47,7 +47,7 @@
 
 		Panel.DeleteChildren();
 		itemsUIToolTip?.Delete();
-		
+
 	}
 
 	[Property] Stats TargetObject { get; set; }
@@ -64,6 +64,9 @@
 			RemoveClass("open");
 		}
 	}
+
+
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
