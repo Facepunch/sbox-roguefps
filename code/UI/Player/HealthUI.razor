@@ -16,7 +16,7 @@
 			<div class="healthbar">
 				<div class="inner-delay" style="@GetHealthBar()"></div>
 				<div class="inner" style="@GetHealthBar()"></div>
-				<div class="txt">@_player.Health / @_playerStats.UpgradedStats[Stats.PlayerUpgradedStats.Health]</div>
+				<div class="txt">@((int)_player.Health) / @_playerStats.UpgradedStats[Stats.PlayerUpgradedStats.Health]</div>
 			</div>
 		</div>
 	</root>
