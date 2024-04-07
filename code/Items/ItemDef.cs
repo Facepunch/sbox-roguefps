@@ -8,6 +8,7 @@
 	public virtual string ItemColor {get;}
 	public virtual int StatUpgradeAmount { get; }
 	public virtual GameObject PickUpPrefab { get; }
+	public virtual bool IsScrap { get; } = false;
 	public Stats Owner { get; set; }
 	int ItemAmount { get; set; }
 
