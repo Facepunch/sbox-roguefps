@@ -1,15 +1,14 @@
 {
   "RootObject": {
-    "__guid": "e70106e3-6f1f-4cb3-8fd7-ee56343ccc2a",
-    "Name": "item_scrapper",
-    "Position": "-128,512,0.00006035016",
+    "__guid": "9649e2be-d48c-4b49-9896-b2665d956356",
+    "Name": "itemscrapper",
     "Tags": "interactable",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "dace97a1-9984-4f84-bb60-86a4935212d8",
+        "__guid": "02457ed8-6361-412c-a905-ce8ba477526f",
         "BodyGroups": 18446744073709551615,
         "Model": "models/temp/scrapper/item_scrapper.vmdl",
         "RenderType": "On",
@@ -17,14 +16,14 @@
       },
       {
         "__type": "ModelCollider",
-        "__guid": "c29105b2-4fe8-44e3-a8d6-785f350ac4eb",
+        "__guid": "8a452162-8c57-4963-aff7-4a4c4ded940d",
         "IsTrigger": false,
         "Model": "models/temp/scrapper/item_scrapper.vmdl",
         "Static": false
       },
       {
         "__type": "HighlightOutline",
-        "__guid": "c6cfc8ea-bf39-4dd5-9b84-f60f90172683",
+        "__guid": "0bd930f2-414b-4d46-b1ff-e787d11cf3c3",
         "__enabled": false,
         "Color": "0.99496,1,0.69767,1",
         "InsideColor": "0,0,0,0",
@@ -34,20 +33,27 @@
       },
       {
         "__type": "ItemScrapper",
-        "__guid": "8e343dec-3c7b-4de6-94c6-4dae7687c4d1",
+        "__guid": "6161ec8b-1bb6-495d-8c7f-19e4fd6f9e3f",
         "Cost": 100,
         "HasPrice": false,
         "IsOpen": false,
         "ItemSpawnLocation": {
           "_type": "gameobject",
-          "go": "5cb21160-0583-40f8-8be4-e5875860f869"
-        },
-        "UseRandomItem": true
+          "go": "1b401cc7-0501-47eb-8e01-fd534a87e22c"
+        }
+      },
+      {
+        "__type": "SphereCollider",
+        "__guid": "b53e2930-608d-4673-88f2-8c291f26cba1",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 100,
+        "Static": false
       }
     ],
     "Children": [
       {
-        "__guid": "5cb21160-0583-40f8-8be4-e5875860f869",
+        "__guid": "1b401cc7-0501-47eb-8e01-fd534a87e22c",
         "Name": "ItemLocation",
         "Position": "0,0,27.99994",
         "Enabled": true,

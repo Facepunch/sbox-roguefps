@@ -1,4 +1,5 @@
 using Sandbox;
+using System.Numerics;
 
 public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 {
@@ -57,11 +58,6 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 		};
 	}
 
-	public void OpenChest( GameObject player )
-	{
-
-	}
-
 	void SpawnItem( ItemDef item )
 	{
 		//var randomItem = SceneUtility.GetPrefabScene( Items[Random.Shared.Int( 0, Items.Count - 1 )] );
@@ -98,10 +94,13 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 	{
 		//Log.Info( "OnTriggerExit" );
 
+		Log.Info( other.GameObject.Name );
+
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
-			if ( _UI != null )
-				_UI.Destroy();
+			var screen = other.Components.Get<Stats>( FindMode.InParent );
+			var scrapui = screen.Components.Get<ScrapItemUI>(FindMode.InChildren);
+			scrapui.Destroy();
 		}
 	}
 }
