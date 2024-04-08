@@ -205,10 +205,10 @@
           "GroupName": "Other"
         },
         {
-          "Name": "Menu",
+          "Name": "equipment",
           "KeyboardCode": "Q",
           "GamepadCode": "SwitchRightMenu",
-          "GroupName": "Other"
+          "GroupName": "Actions"
         },
         {
           "Name": "Chat",

@@ -26,6 +26,18 @@
 				CooldownTimer="@FormatTimeSince(abilityItem.ReloadTime)"/>
 			}
 		}
+		<div class="equipiment">
+			<AbilityIcon
+				AbilityName="@equipmentItem.Name"
+				AbilityImage="@equipmentItem.Icon"
+				AbilityInput="@equipmentItem.InputName"
+				hasAmmo="@HasAmmo(equipmentItem)" 
+				AmmoCount="@equipmentItem.CurrentUseCount" 
+				CooldownTime="@CoolDownBar(equipmentItem.ReloadTime, equipmentItem.ReloadTimeAmount)" 
+				CooldownCheck="@CoolDownMessage(!equipmentItem.IsReloading)"
+				CooldownTimer="@FormatTimeSince(equipmentItem.ReloadTime)"
+			</AbilityIcon>
+		</div>
     </div>
 </root>
 
@@ -34,9 +46,16 @@
 	[Property] PlayerAbilities playerAbility { get; set; }
 	[Property] Stats playerStats { get; set; }
 
+	BaseEquipmentBase equipmentItem { get; set; }
+
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
+
+		if(playerStats.Inventory.GetEquippedItem() != null)
+		{
+			equipmentItem = playerStats.Inventory.GetEquippedItem();
+		}
 	}
 
 	string FormatTimeSince(float time)
@@ -56,6 +75,18 @@
 		}
 	}
 
+	public bool HasAmmo(BaseEquipmentBase weapon)
+	{
+		if (weapon.MaxUseCount > 1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	public bool HasAmmo(BaseAbilityItem ability)
 	{
 		if (ability.MaxUseCount > 1)
@@ -66,6 +97,13 @@
 		{
 			return false;
 		}
+	}
+
+	public string CoolDownBar(float currentCooldown, float max)
+	{
+		float cooldownPercentage = currentCooldown / max * 100;
+		cooldownPercentage = Math.Clamp(cooldownPercentage, 0, 100); // Ensure it's between 0 and 100
+		return $"bottom: {cooldownPercentage}%";
 	}
 
 	public string CoolDownBar(float currentCooldown, Stats.PlayerUpgradedStats stat)

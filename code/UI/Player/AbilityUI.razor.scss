@@ -12,11 +12,18 @@ AbilityUI {
         right: 5%;
         bottom: 5%;
 
+
         AbilityIcon {
             flex-direction: column;
             justify-content: center;
             align-items: center;
             align-content: center;
+        }
+
+        .equipiment {
+            transform: scale(1.2);
+            bottom: 17px;
+            left: 10px;
         }
     }
 }
