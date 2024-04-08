@@ -3516,6 +3516,10 @@
           "__type": "LootBoxSpawner",
           "__guid": "e2f34c32-bdcf-4a99-853d-1a89169d7e1a",
           "currentSpawned": 0,
+          "ItemPrinter": {
+            "_type": "gameobject",
+            "prefab": "prefab/shop_chest/itemprinter.prefab"
+          },
           "ItemScrapper": {
             "_type": "gameobject",
             "prefab": "prefab/shop_chest/itemscrapper.prefab"
@@ -3714,7 +3718,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-07T23:20:22.6551367\u002B01:00",
+  "LastSaved": "2024-04-07T23:26:06.7273235\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
