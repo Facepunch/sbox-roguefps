@@ -6,7 +6,8 @@
 		new AddJump(),
 		new LaunchJump(),
 		new FireHit(),
-		new HealthIncrease()
+		new HealthRegen(),
+		new HealthIncrease(),
 	};
 
 }
