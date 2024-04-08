@@ -85,6 +85,13 @@ public partial class PlayerController : Actor
 		baseAcceleration = CharacterController.Acceleration;
 
 		Stats = Components.Get<Stats>( FindMode.EverythingInSelfAndAncestors );
+
+
+	}
+
+	protected override void OnStart()
+	{
+		Stats.Inventory.AddEquipment( new BaseEquipmentBase() );
 	}
 
 	protected override void OnUpdate()
@@ -97,6 +104,8 @@ public partial class PlayerController : Actor
 		}
 		*/
 		// Eye input
+
+
 
 		if(Input.Pressed("reload"))
 		{

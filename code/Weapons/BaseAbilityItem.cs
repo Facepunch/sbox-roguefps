@@ -99,6 +99,8 @@ public class BaseAbilityItem : Component
 				return "ability";
 			case InputType.Ultimate:
 				return "reload";
+			case InputType.Equipment:
+				return "equipment";
 			default:
 				return "attack1";
 		}
@@ -110,6 +112,7 @@ public enum InputType
 	Secondary,
 	Utility,
 	Ultimate,
+	Equipment,
 	Passive
 }
 

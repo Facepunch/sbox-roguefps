@@ -133,6 +133,13 @@ public sealed class Stats : Component
 				Actor.Health += UpgradedStats[PlayerUpgradedStats.HealthRegen] * Time.Delta;
 			}
 		}
+
+		var equippedItems = Inventory.GetEquippedItem();
+
+		if( equippedItems != null )
+		{
+			equippedItems.OnUpdate();
+		}
 	}
 
 	public void ApplyUpgrade( PlayerUpgradedStats stat, float amount )

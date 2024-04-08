@@ -9,6 +9,7 @@
 	public virtual int StatUpgradeAmount { get; }
 	public virtual GameObject PickUpPrefab { get; }
 	public virtual bool IsScrap { get; } = false;
+	public virtual bool IsEquipment { get; } = false;
 	public Stats Owner { get; set; }
 	int ItemAmount { get; set; }
 
@@ -58,6 +59,7 @@
 		}
 	}
 
+	public virtual void OnUse() { }
 	public virtual void OnJump() { }
 	public virtual void OnShoot() { }
 	public virtual void OnHit(GameObject target) { }

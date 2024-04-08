@@ -1,6 +1,7 @@
 ﻿public class ItemInventory
 {
 	public List<InvetoryItem> itemPickUps = new List<InvetoryItem>();
+	public BaseEquipmentBase equippedItem;
 
 	public Stats playerStats;
 
@@ -9,6 +10,11 @@
 		playerStats = stats;
 
 		Log.Info( "Inventory Created" );
+	}
+
+	public void AddEquipment( BaseEquipmentBase item )
+	{
+		equippedItem = item;
 	}
 
 	public void AddItem( ItemDef item )
@@ -55,6 +61,12 @@
 				break;
 			}
 		}
+	}
+
+	//Get the equipped item
+	public BaseEquipmentBase GetEquippedItem()
+	{
+		return equippedItem;
 	}
 
 	//Get the amount of a specific item in the inventory I don't think this is needed but it's here for now
