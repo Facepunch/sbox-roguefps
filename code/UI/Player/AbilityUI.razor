@@ -26,18 +26,30 @@
 				CooldownTimer="@FormatTimeSince(abilityItem.ReloadTime)"/>
 			}
 		}
-		<div class="equipiment">
-			<AbilityIcon
-				AbilityName="@equipmentItem.Name"
-				AbilityImage="@equipmentItem.Icon"
-				AbilityInput="@equipmentItem.InputName"
-				hasAmmo="@HasAmmo(equipmentItem)" 
-				AmmoCount="@equipmentItem.CurrentUseCount" 
-				CooldownTime="@CoolDownBar(equipmentItem.ReloadTime, equipmentItem.ReloadTimeAmount)" 
-				CooldownCheck="@CoolDownMessage(!equipmentItem.IsReloading)"
-				CooldownTimer="@FormatTimeSince(equipmentItem.ReloadTime)"
-			</AbilityIcon>
-		</div>
+        <div class="equipment">
+            @if (equipmentItem != null)
+            {
+                <AbilityIcon
+                    AbilityName="@equipmentItem.Name"
+                    AbilityImage="@equipmentItem.Icon"
+                    AbilityInput="equipment"
+                    hasAmmo="@HasAmmo(equipmentItem)" 
+                    AmmoCount="@equipmentItem.CurrentUseCount" 
+                    CooldownTime="@CoolDownBar(equipmentItem.ReloadTime, equipmentItem.ReloadTimeAmount)" 
+                    CooldownCheck="@CoolDownMessage(!equipmentItem.IsReloading)"
+                    CooldownTimer="@FormatTimeSince(equipmentItem.ReloadTime)"
+                />
+            }
+            else
+            {
+                <AbilityIcon
+                    AbilityName="No Equipment"
+                    AbilityImage="https://files.facepunch.com/louie/1b0811b1/devenv_eBWjYHMipW.png"
+                    AbilityInput="equipment"
+                    hasAmmo="false"
+                />
+            }
+        </div>
     </div>
 </root>
 
@@ -77,6 +89,8 @@
 
 	public bool HasAmmo(BaseEquipmentBase weapon)
 	{
+		if(weapon is null) return false;
+
 		if (weapon.MaxUseCount > 1)
 		{
 			return true;
@@ -89,6 +103,8 @@
 
 	public bool HasAmmo(BaseAbilityItem ability)
 	{
+		if (ability is null) return false;
+
 		if (ability.MaxUseCount > 1)
 		{
 			return true;
