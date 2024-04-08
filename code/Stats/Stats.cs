@@ -9,6 +9,7 @@ public sealed class Stats : Component
 
 	//Default Stats Property
 	[Property] public float Health { get; set; } = 100f;
+	[Property] public float HealthRegen { get; set; } = 0.1f;
 	[Property] public float Armor { get; set; } = 0f;
 	[Property, Group( "Movement" )] public float WalkSpeed { get; set; } = 280f;
 	[Property, Group( "Movement" )] public float SprintMultiplier { get; set; } = 1.45f;
@@ -24,6 +25,8 @@ public sealed class Stats : Component
 	[Property, Group( "Skill" )] public float UltimateUses { get; set; } = 1f;
 	//
 
+	Actor Actor => Components.Get<Actor>();
+
 	//Coin and XP
 	public enum CoinsAndXp { Coins, Xp }
 	public int CurrentLevel { get; set; } = 1;
@@ -36,7 +39,7 @@ public sealed class Stats : Component
 	public bool HasStat( PlayerStartingStats stat ) => StartingStats[stat] > 0f;
 	public enum PlayerStartingStats
 	{
-		Health, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -44,7 +47,7 @@ public sealed class Stats : Component
 	public IDictionary<PlayerUpgradedStats, float> UpgradedStats { get; private set; }
 	public enum PlayerUpgradedStats
 	{
-		Health, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -116,20 +119,21 @@ public sealed class Stats : Component
 
 		Inventory = new ItemInventory(this);
 
-		//PickedUpUpgrades = new Dictionary<string, UpgradeHas>();
-
-		//	StartingStats = new Dictionary<PlayerStartingStats, float>();
-		//	UpgradedStats = new Dictionary<PlayerUpgradedStats, float>();
-		//	GetStatingStats();
 		if ( IsProxy ) return;
 		Local = this;
 	}
 
-	//public void ApplyUpgrade( string upgradeName, float upgradeAmount )
-	//{
-	//	TypeLibrary.SetProperty( this, upgradeName, upgradeAmount );
-	//	Log.Info( $"Applied {upgradeName} upgrade to {upgradeAmount}." );
-	//}
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+		if ( Actor != null )
+		{
+			if( UpgradedStats[PlayerUpgradedStats.Health] > Actor.Health )
+			{
+				Actor.Health += UpgradedStats[PlayerUpgradedStats.HealthRegen] * Time.Delta;
+			}
+		}
+	}
 
 	public void ApplyUpgrade( PlayerUpgradedStats stat, float amount )
 	{
@@ -142,22 +146,6 @@ public sealed class Stats : Component
 		UpgradedStats[stat] -= amount;
 		Log.Info( $"Removed {stat} upgrade to {amount}." );
 	}
-
-	//public void AddUpgrade( UpgradeHas upgrade )
-	//{
-	//	if ( PickedUpUpgrades.TryGetValue( upgrade.Name, out UpgradeHas existingUpgrade ) )
-	//	{
-	//		existingUpgrade.Amount++;
-	//		PickedUpUpgrades[upgrade.Name] = existingUpgrade;
-	//	}
-	//	else
-	//	{
-	//		upgrade.Amount = 1;
-	//		PickedUpUpgrades.Add( upgrade.Name, upgrade );
-	//	}
-
-	//	Log.Info( $"Picked up upgrade: {upgrade.Name}, Total: {PickedUpUpgrades[upgrade.Name].Amount}" );
-	//}
 
 	public void AddCoin( int amount )
 	{
@@ -266,6 +254,7 @@ public sealed class Stats : Component
 
 		//Set Starting Stats
 		StartingStats[PlayerStartingStats.Health] = Health;
+		StartingStats[PlayerStartingStats.HealthRegen] = HealthRegen;
 		StartingStats[PlayerStartingStats.Armor] = Armor;
 		StartingStats[PlayerStartingStats.WalkSpeed] = WalkSpeed;
 		StartingStats[PlayerStartingStats.SprintMultiplier] = SprintMultiplier;
@@ -283,6 +272,7 @@ public sealed class Stats : Component
 
 		//Set Upgraded Stats
 		UpgradedStats[PlayerUpgradedStats.Health] = Health;
+		UpgradedStats[PlayerUpgradedStats.HealthRegen] = HealthRegen;
 		UpgradedStats[PlayerUpgradedStats.Armor] = Armor;
 		UpgradedStats[PlayerUpgradedStats.WalkSpeed] = WalkSpeed;
 		UpgradedStats[PlayerUpgradedStats.SprintMultiplier] = SprintMultiplier;
