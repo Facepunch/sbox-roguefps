@@ -1,0 +1,97 @@
+{
+  "RootObject": {
+    "__guid": "3817fbe1-c1d0-4782-a081-942cd78ccd24",
+    "Name": "equipmentitemchest",
+    "Position": "-148,-20,-0",
+    "Tags": "interactable",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "da97f3a8-940a-453e-b544-29f3b68e24d9",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/temp/equipment/equipment.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "9800dea1-b722-4259-bf7b-677c77b88803",
+        "IsTrigger": false,
+        "Model": "models/temp/equipment/equipment.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "EquipmentChest",
+        "__guid": "1faf0684-313a-48cb-ab4c-ab8c13fa1512",
+        "Cost": 10,
+        "HasPrice": true,
+        "IsOpen": false,
+        "ItemSpawnLocation": {
+          "_type": "gameobject",
+          "go": "7be3cc01-6be6-4a7a-b49a-ad0b5ac9a990"
+        },
+        "Top": {
+          "_type": "gameobject",
+          "go": "42e99ed2-391f-4d59-8e53-3d89ac32e278"
+        },
+        "UseRandomItem": false,
+        "WorldUI": {
+          "_type": "gameobject",
+          "prefab": "prefab/lootbox/costworldpanel.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "471cd707-204b-4868-92fe-606bd454bdcd",
+        "__enabled": false,
+        "Color": "0.99496,1,0.69767,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "ObscuredColor": "0,0,0,0",
+        "Width": 0.25
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "e5413ea6-ed7d-4068-bb44-288ec74f8e2d",
+        "Center": "0,0,16.39999",
+        "IsTrigger": true,
+        "Radius": 100,
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "42e99ed2-391f-4d59-8e53-3d89ac32e278",
+        "Name": "equipment_top",
+        "Position": "-7.5,0,30",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "812c8280-02fe-46d9-bd22-b2a3791f9ca8",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/temp/equipment/equipment_top.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "7be3cc01-6be6-4a7a-b49a-ad0b5ac9a990",
+        "Name": "Spawn",
+        "Position": "4,0,36",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
