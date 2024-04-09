@@ -2,7 +2,11 @@
 
 public class BaseEquipmentBase : ItemDef
 {
+	public override string Name => "Base Equipment";
 	public override string Icon => "ui/test/items/equipment.png";
+	public override Model Model => Model.Load( "models/citizen_props/trashbag02.vmdl_c" );
+	public override ItemTier ItemTier => ItemTier.Legendary;
+	public override string ItemColor => ColorSelection.GetRarityColor( ItemTier.Legendary );
 	public override bool IsEquipment => true;
 	public virtual float Cooldown => 10f;
 	public virtual int MaxUseCount { get; } = 2;
