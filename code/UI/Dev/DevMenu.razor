@@ -3,6 +3,7 @@
 @inherits PanelComponent
 
 <root>
+	<div class=" container">
 	<div class="title">Dev Menu</div>
 	<div class="title">Item Menu</div>
 	<div class="items">
@@ -13,6 +14,17 @@
 				<div class="name">@item.Name</div>
 			</div>
 		}
+	</div>
+	<div class="title">Equipment Menu</div>
+	<div class="items">
+		@foreach (var item in ItemsAndContent.Equipments)
+		{
+			<div class="item">
+				<div class="icon" style="background-image: url(@item.Icon); border: 2px solid @item.ItemColor;" onclick=@(() => AddEquipment(item))></div>
+				<div class="name">@item.Name</div>
+			</div>
+		}
+	</div>
 	</div>
 </root>
 
@@ -45,6 +57,11 @@
 		{
 			RemoveClass("open");
 		}
+	}
+
+	void AddEquipment(BaseEquipmentItem equipment)
+	{
+		_inventory.AddEquipment(equipment);
 	}
 
 	void AddItem(ItemDef item)
