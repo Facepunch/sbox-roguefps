@@ -9,16 +9,6 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 
 	GameObject _UI;
 	public override string Name { get; set; } = "Scrap Items";
-	protected override void OnStart()
-	{
-		base.OnStart();
-	}
-
-	protected override void OnUpdate()
-	{
-		base.OnUpdate();
-
-	}
 
 	public override void OnInteract( GameObject player )
 	{
@@ -28,7 +18,7 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 		scrapui.SetItem( playerInventory.Inventory, this, playerInventory );
 	}
 
-	public void ScrapItem( InvetoryItem item, Stats plyStats )
+	public async void ScrapItem( InvetoryItem item, Stats plyStats )
 	{
 		// Assume that player is correctly set to the player's GameObject
 		var playerStats = plyStats;
@@ -38,6 +28,7 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 			var amount = item.Amount > 10 ? 10 : item.Amount;
 			for ( int i = 0; i < amount; i++ )
 			{
+				await Task.Delay( 200 );
 				SpawnItem( GetScrapItem( item.Item ) );
 				playerStats.Inventory.RemoveItem( item.Item );
 			}
