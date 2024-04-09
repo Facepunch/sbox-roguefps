@@ -3693,6 +3693,273 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "3817fbe1-c1d0-4782-a081-942cd78ccd24",
+      "Name": "equipment",
+      "Position": "-148,-20,-0",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "da97f3a8-940a-453e-b544-29f3b68e24d9",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "9800dea1-b722-4259-bf7b-677c77b88803",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "1faf0684-313a-48cb-ab4c-ab8c13fa1512",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "7be3cc01-6be6-4a7a-b49a-ad0b5ac9a990"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "42e99ed2-391f-4d59-8e53-3d89ac32e278"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "471cd707-204b-4868-92fe-606bd454bdcd",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "e5413ea6-ed7d-4068-bb44-288ec74f8e2d",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "42e99ed2-391f-4d59-8e53-3d89ac32e278",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "812c8280-02fe-46d9-bd22-b2a3791f9ca8",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "7be3cc01-6be6-4a7a-b49a-ad0b5ac9a990",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "8f855f62-5ebd-4618-8496-908462778461",
+      "Name": "equipment (1)",
+      "Position": "-148,-92,0",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "164d83e7-9a7e-45a2-a9f7-6b4352d9aca1",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "d3ccb09e-04e5-4192-8fb7-250ec1b2cffe",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "41c3057d-5c4e-4569-8759-d41d56cbb375",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "bc62aa01-88bf-41c9-8b5c-47868209bbad"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "6ac7d9bd-fde1-40d1-b57d-9fdde05a99ae"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "361f8a39-e3a0-401e-8f52-b68ef18efbbb",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "167f7026-4060-40b0-b4c5-71a17993b489",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "6ac7d9bd-fde1-40d1-b57d-9fdde05a99ae",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "fe8930ba-a038-4cd8-9747-9719700b4525",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "bc62aa01-88bf-41c9-8b5c-47868209bbad",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "a4b3ecf9-e83c-4889-982a-2c70066b7a83",
+      "Name": "equipment (2)",
+      "Position": "-148,-208,0",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "c89be9ea-4cf1-457e-9eb0-87f777a4a0a4",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "69b6e6d6-0591-45f9-8daa-a3216eb89c1c",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "99b9e9f9-95d3-46aa-acd4-3b8282a7355b",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "7ef3d3a4-5682-43e7-bef3-47145898aad3"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "c8e907f5-542b-4086-a911-8f32b20f30ef"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "8ef99700-b2ec-4e6b-b9f4-0b5b72644abe",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "SphereCollider",
+          "__guid": "144e422e-ffd2-415a-a1b8-e81c35a64da2",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "c8e907f5-542b-4086-a911-8f32b20f30ef",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "3fb4c47c-b13e-4a90-8ef3-1eb55b6fb142",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "7ef3d3a4-5682-43e7-bef3-47145898aad3",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3718,7 +3985,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-08T16:26:48.1841201\u002B01:00",
+  "LastSaved": "2024-04-09T00:48:17.6593802\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

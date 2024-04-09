@@ -91,7 +91,7 @@ public partial class PlayerController : Actor
 
 	protected override void OnStart()
 	{
-		Stats.Inventory.AddEquipment( new BaseEquipmentBase() );
+		//Stats.Inventory.AddEquipment( new BaseEquipmentBase() );
 	}
 
 	protected override void OnUpdate()
