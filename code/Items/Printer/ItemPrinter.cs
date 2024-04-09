@@ -24,6 +24,7 @@ public sealed class ItemPrinter : Interactable
 		costPanel = WorldUI.Clone();
 		if ( PriceLocation != null )
 		costPanel.Transform.Position = PriceLocation.Transform.Position;
+		costPanel.Transform.Rotation = PriceLocation.Transform.Rotation;
 		costPanel.Components.Get<WorldCostPanel>().IsText = true;
 		costPanel.Components.Get<WorldCostPanel>().Text = "1 Item";
 	}
