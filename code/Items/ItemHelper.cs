@@ -2,20 +2,25 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 {
 	[Property]
 	public ItemDef Item { get; set; }
+	public BaseEquipmentBase Equipment { get; set; }
 	protected override void OnPreRender()
 	{
 		base.OnPreRender();
 	
-		//Cba to do this properly
-		var glow = GameObject.Components.Get<HighlightOutline>(FindMode.EverythingInSelf);
-		if(Item != null)
-		{
-			glow.Color = Item.ItemColor;
-		}
-		else
-		{
-			glow.Color = Color.White;
-		}
+		////Cba to do this properly
+		//var glow = GameObject.Components.Get<HighlightOutline>(FindMode.EverythingInSelf);
+		//if(Item != null)
+		//{
+		//	glow.Color = Item.ItemColor;
+		//}
+		//else if( Equipment != null)
+		//{
+		//	glow.Color = Equipment.ItemColor;
+		//}
+		//else
+		//{		
+		//	glow.Color = Color.White;
+		//}
 
 	}
 
@@ -44,7 +49,14 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 		if ( stats != null )
 		{
 			var inventory = stats.Inventory;
-			inventory.AddItem( Item );
+			if( Equipment != null)
+			{
+				inventory.AddEquipment( Equipment );
+			}
+			else
+			{
+				inventory.AddItem( Item );
+			}
 
 			Item.OnPickUp( stats );
 			Item.Owner = stats;
