@@ -1,27 +1,28 @@
 public sealed class ItemHelper : Component, Component.ITriggerListener
 {
 	[Property]
-	public ItemDef Item { get; set; }
-	public BaseEquipmentBase Equipment { get; set; }
-	protected override void OnPreRender()
+	public ItemDef Item { get; set; } = null;
+	[Property]
+	public BaseEquipmentItem Equipment { get; set; } = null;
+	protected override void OnUpdate()
 	{
-		base.OnPreRender();
-	
-		////Cba to do this properly
-		//var glow = GameObject.Components.Get<HighlightOutline>(FindMode.EverythingInSelf);
-		//if(Item != null)
-		//{
-		//	glow.Color = Item.ItemColor;
-		//}
-		//else if( Equipment != null)
-		//{
-		//	glow.Color = Equipment.ItemColor;
-		//}
-		//else
-		//{		
-		//	glow.Color = Color.White;
-		//}
+		base.OnUpdate();
 
+		/*
+		var glow = GameObject.Components.Get<HighlightOutline>(FindMode.EnabledInSelfAndDescendants);
+		if(Item != null)
+		{
+			glow.Color = Item.ItemColor;
+		}
+		else if ( Equipment != null)
+		{
+			glow.Color = Equipment.ItemColor;
+		}
+		else
+		{		
+			glow.Color = Color.White;
+		}
+		*/
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
@@ -31,7 +32,10 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 			var player = other.GameObject.Components.Get<Stats>(FindMode.InParent).GameObject;
 			if ( player != null )
 			{
-				OnPickedUp( player );
+				if( Equipment == null )
+				{
+					OnPickedUp( player );
+				}
 			}
 			else
 			{
@@ -40,17 +44,25 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 		}
 	}
 
+	ItemDef item;
+
 	public void OnPickedUp(GameObject player)
 	{
-		// This is called when the item is picked up by the player.
-		// You can add any logic here that should be executed when the item is picked up.
-
 		var stats = player.Components.Get<Stats>();
 		if ( stats != null )
 		{
 			var inventory = stats.Inventory;
-			if( Equipment != null)
+			if( inventory.equippedItem != null )
 			{
+				inventory.ReplaceEquipment( Equipment );
+				RecreateEquipment( inventory.equippedItem );
+
+				return;
+			}
+
+			if( Equipment != null )
+			{
+				Log.Info( "Equipping item" );
 				inventory.AddEquipment( Equipment );
 			}
 			else
@@ -58,11 +70,20 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 				inventory.AddItem( Item );
 			}
 
-			Item.OnPickUp( stats );
-			Item.Owner = stats;
+			if( Equipment != null )
+			{
+				item = Equipment;
+			}
+			else
+			{
+				item = Item;
+			}
+
+			item.OnPickUp( stats );
+			item.Owner = stats;
 
 			var pickupui = player.Components.Get<PickedUpItemUI>( FindMode.EnabledInSelfAndDescendants );
-			pickupui.NewItem( Item.Name, Item.Description, Item.Icon, Item.ItemColor );
+			pickupui.NewItem( item.Name, item.Description, item.Icon, item.ItemColor );
 
 			var interact = player.Components.Get<InteractorUse>( FindMode.EnabledInSelfAndDescendants );
 			interact.DestroyUI();
@@ -74,6 +95,12 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 				GameObject.Parent.Destroy();
 			}
 		}
+	}
 
+	public void RecreateEquipment(BaseEquipmentItem item)
+	{
+		Components.Get<ModelRenderer>( FindMode.InSelf ).Model = item.Model;
+		Components.Get<ModelRenderer>( FindMode.InSelf ).Tint = item.ItemColor;
+		Equipment = item;
 	}
 }

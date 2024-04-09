@@ -1,6 +1,6 @@
 ﻿using static Sandbox.Services.Stats;
 
-public class BaseEquipmentBase : ItemDef
+public class BaseEquipmentItem : ItemDef
 {
 	public override string Name => "Base Equipment";
 	public override string Icon => "ui/test/items/equipment.png";
@@ -10,7 +10,7 @@ public class BaseEquipmentBase : ItemDef
 	public override bool IsEquipment => true;
 	public virtual float Cooldown => 10f;
 	public virtual int MaxUseCount { get; } = 2;
-	public int CurrentUseCount { get; set; } = 2;
+	public virtual int CurrentUseCount { get; set; } = 2;
 	public TimeSince LastUsed { get; set; }
 	public TimeUntil ReloadTime { get; set; } = 1f;
 	public float ReloadTimeAmount { get; set; } = 2f;

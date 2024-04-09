@@ -1,7 +1,7 @@
 ﻿public class ItemInventory
 {
 	public List<InvetoryItem> itemPickUps = new List<InvetoryItem>();
-	public BaseEquipmentBase equippedItem;
+	public BaseEquipmentItem equippedItem;
 
 	public Stats playerStats;
 
@@ -12,7 +12,7 @@
 		Log.Info( "Inventory Created" );
 	}
 
-	public void AddEquipment( BaseEquipmentBase item )
+	public void AddEquipment( BaseEquipmentItem item )
 	{
 		equippedItem = item;
 	}
@@ -63,8 +63,16 @@
 		}
 	}
 
+	public async void ReplaceEquipment( BaseEquipmentItem newItem )
+	{
+		//I dont like this but it works for now.
+		await Task.Delay( 100 );
+
+		equippedItem = newItem;
+	}
+
 	//Get the equipped item
-	public BaseEquipmentBase GetEquippedItem()
+	public BaseEquipmentItem GetEquippedItem()
 	{
 		return equippedItem;
 	}

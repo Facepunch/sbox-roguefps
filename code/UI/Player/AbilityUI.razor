@@ -58,7 +58,7 @@
 	[Property] PlayerAbilities playerAbility { get; set; }
 	[Property] Stats playerStats { get; set; }
 
-	BaseEquipmentBase equipmentItem { get; set; }
+	BaseEquipmentItem equipmentItem { get; set; }
 
 	protected override void OnUpdate()
 	{
@@ -87,7 +87,7 @@
 		}
 	}
 
-	public bool HasAmmo(BaseEquipmentBase weapon)
+	public bool HasAmmo(BaseEquipmentItem weapon)
 	{
 		if(weapon is null) return false;
 

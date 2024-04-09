@@ -10,5 +10,11 @@
 		new HealthIncrease(),
 	};
 
+	public static List<BaseEquipmentItem> Equipments = new List<BaseEquipmentItem>
+	{
+		new BaseEquipmentItem(),
+		new TestEquip()
+	};
+
 }
 

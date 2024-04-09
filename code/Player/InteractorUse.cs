@@ -41,9 +41,19 @@ public sealed class InteractorUse : Component
 				var item = interactor.Components.Get<ItemHelper>(FindMode.EnabledInSelfAndChildren);
 				if ( item != null )
 				{
-					Log.Info( "Item component found" );
-					var pickupui = new ItemPickUp( $"Get {item.Item.Name}", interactor.Cost, false );
-					itemUI.Panel.AddChild( pickupui );
+					if(item.Equipment != null)
+					{
+						//Log.Info( "Equipment component found" );
+						var pickupui = new ItemPickUp( $"Get {item.Equipment.Name}", interactor.Cost, false );
+						itemUI.Panel.AddChild( pickupui );
+					}
+					else
+					{
+						//Log.Info( "Item component found" );
+						var pickupui = new ItemPickUp( $"Get {item.Item.Name}", interactor.Cost, false );
+						itemUI.Panel.AddChild( pickupui );
+					}
+
 				}
 				else
 				{

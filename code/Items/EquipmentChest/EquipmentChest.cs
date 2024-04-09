@@ -76,19 +76,14 @@ public sealed class EquipmentChest : Interactable, Component.ITriggerListener
 		//var randomItem = SceneUtility.GetPrefabScene( Items[Random.Shared.Int( 0, Items.Count - 1 )] );
 		var prefab = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/items/baseitem.prefab" ) );
 		var go = prefab.Clone();
-		var itemGet = new BaseEquipmentBase();
+		var itemGet = ItemsAndContent.Equipments[Random.Shared.Int( 0, ItemsAndContent.Equipments.Count - 1 )];
 		go.BreakFromPrefab();
 		go.Name = itemGet.Name;
 		go.Components.Get<ModelRenderer>(FindMode.InChildren).Model = itemGet.Model;
 		go.Components.Get<ModelRenderer>( FindMode.InChildren ).Tint = itemGet.ItemColor;
-		if ( itemGet.IsEquipment )
-		{
-			go.Components.Get<ItemHelper>( FindMode.InChildren ).Equipment = itemGet;
-		}
-		else
-		{
-			go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = itemGet;
-		}
+		go.Components.Get<ItemHelper>( FindMode.InChildren ).Equipment = itemGet;
+		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = null;
+		
 		var interactable = go.Components.Get<Interactable>( );
 		interactable.Name = itemGet.Name;
 		//var item = RandomItem.Clone();

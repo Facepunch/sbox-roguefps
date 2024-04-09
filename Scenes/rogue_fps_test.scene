@@ -24,7 +24,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "DirectionalLight",
+          "__type": "Sandbox.DirectionalLight",
           "__guid": "c259f1e5-fd0b-46fe-8fb7-bea51344fec9",
           "FogMode": "Enabled",
           "FogStrength": 1,
@@ -42,7 +42,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SkyBox2D",
+          "__type": "Sandbox.SkyBox2D",
           "__guid": "7e65928e-f0e3-4756-bf90-f026e6395ccd",
           "SkyMaterial": "materials/sky/sky_002.vmat",
           "Tint": "1,1,1,1"
@@ -57,7 +57,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "fcf46ed1-2eb3-4850-ac0e-31cf3cc52f78",
           "Surface": "surfaces/wood.surface"
         }
@@ -71,7 +71,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "GameNetworkManager",
+          "__type": "RogueFPS.GameNetworkManager",
           "__guid": "453dcace-7389-45ab-9b70-df9c762e2c4b",
           "IsMultiplayer": true,
           "PlayerPrefab": {
@@ -93,7 +93,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "EnvmapProbe",
+          "__type": "Sandbox.EnvmapProbe",
           "__guid": "2ec23178-1554-4a0d-82ca-f8a651235758",
           "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
@@ -121,7 +121,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "EnvmapProbe",
+          "__type": "Sandbox.EnvmapProbe",
           "__guid": "c7dc2e49-7b09-453e-a5ae-59fb085afd84",
           "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
@@ -148,7 +148,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "VolumetricFogVolume",
+          "__type": "Sandbox.VolumetricFogVolume",
           "__guid": "2d67dc62-c9e6-40d6-90c3-ef3aa1795c59",
           "Bounds": {
             "Mins": "-1500,-1500,-500",
@@ -169,7 +169,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "78deb05b-0e45-498f-8352-84c17706d719",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -177,12 +177,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "90878180-3676-40d8-85e4-e1da04cc60fe",
           "Surface": "surfaces/brick.surface"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "a643f781-12fe-4142-86ed-e98fbba3e588",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -201,7 +201,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "e0fdbab5-7c2c-4464-a398-34b5d463fedc",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -209,12 +209,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "c1292b35-5805-4f30-8d76-6b6ccc40151e",
           "Surface": "surfaces/brick.surface"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "ba372e3d-f955-4e57-a187-1810fc692129",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -234,7 +234,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "84ec61bb-63ac-4835-81af-2e9d5ac05e91",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -242,12 +242,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "8f30892f-7704-46bb-90eb-e30286c567c3",
           "Surface": "surfaces/brick.surface"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "277ae2f9-d0de-4326-ae62-3fc973d61b29",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -266,7 +266,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "95b85d7c-bf40-4203-9b31-9661a1e6ff7d",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -274,12 +274,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "86225022-39c6-4427-a136-d22b79ae85ff",
           "Surface": "surfaces/brick.surface"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "6b79db3a-ad7d-4e8c-9802-b073e2c2bb9f",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -298,7 +298,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "365e00dc-5950-4706-97e1-a13a4d0d5935",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -306,12 +306,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "5ed3f5a8-90b5-4049-a19b-4c82d6297668",
           "Surface": "surfaces/brick.surface"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "58e6bd5e-c3c3-46ea-bd73-7ba24430b10a",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -330,7 +330,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "3ede57da-7ac1-46d4-87a9-f3f9b8814f04",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -338,12 +338,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "fa4d23d1-a164-4711-9659-a5b00b77ca0b",
           "Surface": "surfaces/metal.surface"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "44ae5494-e7bd-4bee-80bc-f64530d001b0",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -362,7 +362,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "2a741a14-87d8-4233-883c-380453ca7d81",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
@@ -370,12 +370,12 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SurfaceComponent",
+          "__type": "RogueFPS.SurfaceComponent",
           "__guid": "eedbd60a-d93f-4f57-b4b9-ab34a02472de",
           "Surface": "surfaces/default.surface"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "2c5fd6de-e814-402e-aa7a-6ac01160fccb",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -392,7 +392,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "8f4fb660-3776-482c-968f-008db876f620",
           "Collision": "Mesh",
           "Color": "0.23018,0.25491,0.26047,1",
@@ -439,7 +439,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "56987ee6-aacd-465e-b134-2c25e6152420",
           "Collision": "Mesh",
           "Color": "1,0,0,1",
@@ -514,7 +514,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "a11e002a-d3d5-4e82-882b-237e8876ed1a",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -614,7 +614,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "23dbfae5-ce88-463b-8276-6fe6e31e9960",
           "Collision": "Mesh",
           "Color": "0.23109,0.46559,0.50698,1",
@@ -689,7 +689,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "cb1a7017-07fa-4336-b8ad-55e8feaff27b",
           "Collision": "Mesh",
           "Color": "0.23109,0.46559,0.50698,1",
@@ -764,7 +764,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "9ab0864c-2284-492c-a3c4-24522650920b",
           "Collision": "Mesh",
           "Color": "0.23109,0.46559,0.50698,1",
@@ -839,7 +839,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "b3ec896a-c3f0-44e6-9c15-fbdb5fcdd4f0",
           "Collision": "Mesh",
           "Color": "0.17209,0.17209,0.17209,1",
@@ -1034,7 +1034,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "9cc5b320-5538-4661-85f9-a04aceae7f0c",
           "Collision": "Mesh",
           "Color": "0.48399,0.50698,0.23109,1",
@@ -1109,7 +1109,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "98ea8b72-a620-421f-8e42-6c0c113a781a",
           "Collision": "Mesh",
           "Color": "0,0.49628,0.90233,1",
@@ -1328,7 +1328,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "cc6ba7b6-dd49-456a-9105-256212672fdd",
           "Collision": "Mesh",
           "Color": "0.23109,0.39662,0.50698,1",
@@ -1475,7 +1475,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "2357c3b9-8f8a-411d-8dbe-0bfef70c5766",
           "Collision": "Mesh",
           "Color": "0.23109,0.50698,0.33225,1",
@@ -1838,7 +1838,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "448b341b-f5a5-4fb6-ae46-64ec05be23f6",
           "Collision": "Mesh",
           "Color": "0.48235,0.50588,0.23137,1",
@@ -1913,7 +1913,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "2cce5fb0-a6d8-4cff-8c04-d43bd31ab3a4",
           "Collision": "Mesh",
           "Color": "1,0,0,1",
@@ -2155,7 +2155,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "e18c0e1c-ad40-4e62-a194-51dae3b6188b",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -2229,7 +2229,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "7376dede-1ded-4947-84a6-0f277512cf4e",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -2303,7 +2303,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "56995923-4a90-4dd4-9ecb-bfc32ba64431",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -2377,7 +2377,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "01f4c4f4-80a0-4035-be50-5899b2888be2",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -2499,7 +2499,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "ed0d122f-4c44-4bd7-9d06-be4ec2052dff",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -2669,7 +2669,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "9bcdf1a1-d5e5-4880-8c86-df8ee5562b48",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -2743,7 +2743,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "70f2317c-148d-42d5-8ade-6fc9042458f5",
           "Collision": "Mesh",
           "Color": "0.46275,0.65098,0.29412,1",
@@ -2817,7 +2817,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "ce362452-a345-40ff-976c-d4c5ccb6c299",
           "Collision": "Mesh",
           "Color": "0.46217,0.65116,0.29681,1",
@@ -2891,7 +2891,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "26b1ec18-206b-4310-bcbf-3bcd69978a75",
           "Collision": "Mesh",
           "Color": "1,0,0,1",
@@ -3133,7 +3133,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "0218aabf-47f8-4a6f-aabf-e18d6685164b",
           "Collision": "Mesh",
           "Color": "1,0,0,1",
@@ -3255,7 +3255,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SpawnPoint",
+          "__type": "Sandbox.SpawnPoint",
           "__guid": "c0c7fc29-4151-4872-840b-fe84bfec77b1",
           "Color": "0.8902,0.31765,0.05098,1"
         }
@@ -3269,7 +3269,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "db6f3783-6099-47f6-8944-48aba5d69e53",
           "Collision": "Mesh",
           "Color": "0.21845,0.20171,0.29302,1",
@@ -3343,7 +3343,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "f8abfa94-7396-4c30-bebb-ea640ddb2651",
           "Collision": "Mesh",
           "Color": "0.36434,0.46512,0.3245,1",
@@ -3433,7 +3433,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SpriteRenderer",
+          "__type": "Sandbox.SpriteRenderer",
           "__guid": "99fc3b9c-5f76-4fc9-b722-c4e25e3c7d43",
           "Additive": false,
           "CastShadows": true,
@@ -3447,7 +3447,7 @@
           "Texture": "ui/test/debugcoin.vtex"
         },
         {
-          "__type": "SphereCollider",
+          "__type": "Sandbox.SphereCollider",
           "__guid": "626adad0-c655-4e4b-8e29-39cfaa959fff",
           "Center": "0,0,0",
           "IsTrigger": true,
@@ -3455,7 +3455,7 @@
           "Static": false
         },
         {
-          "__type": "CoinItem",
+          "__type": "RogueFPS.CoinItem",
           "__guid": "0c5c2ced-bdc9-433b-9060-09dbee1c6932",
           "CoinAmount": 1000
         }
@@ -3469,7 +3469,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SpriteRenderer",
+          "__type": "Sandbox.SpriteRenderer",
           "__guid": "264a121b-ad02-4936-b53e-6fba2094e9bb",
           "Additive": false,
           "CastShadows": true,
@@ -3483,7 +3483,7 @@
           "Texture": "materials/particles/shapes/circle1.vtex"
         },
         {
-          "__type": "SphereCollider",
+          "__type": "Sandbox.SphereCollider",
           "__guid": "eb349a07-72c0-4aa7-8e61-048c06b7b0c3",
           "Center": "0,0,0",
           "IsTrigger": true,
@@ -3491,7 +3491,7 @@
           "Static": false
         },
         {
-          "__type": "CoinItem",
+          "__type": "RogueFPS.CoinItem",
           "__guid": "9113f91f-da79-4a59-a610-a1d55cca1518",
           "CoinAmount": 10
         }
@@ -3566,7 +3566,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MeshComponent",
+          "__type": "Sandbox.MeshComponent",
           "__guid": "14a04a00-a378-409d-aca5-038a002bd5d9",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
@@ -3639,7 +3639,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "b50ca9ee-6d20-4639-9ea1-09ae702238cb",
           "BodyGroups": 18446744073709551615,
           "Model": "models/editor/cordon_helper.vmdl",
@@ -3647,7 +3647,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "BoxCollider",
+          "__type": "Sandbox.BoxCollider",
           "__guid": "33de7ed1-dc4e-4a11-8fc8-8b2002d072d1",
           "Center": "0,0,0",
           "IsTrigger": false,
@@ -3674,7 +3674,7 @@
           }
         },
         {
-          "__type": "NavMeshAgent",
+          "__type": "Sandbox.NavMeshAgent",
           "__guid": "c1ab44fd-35a9-4503-af59-776a2df3b9f6",
           "Acceleration": 0,
           "Height": 64,
@@ -3685,7 +3685,7 @@
           "UpdateRotation": false
         },
         {
-          "__type": "SphereCollider",
+          "__type": "Sandbox.SphereCollider",
           "__guid": "4f7526e8-4f2a-4531-a9f2-f925a8dcdc97",
           "Center": "0,0,0",
           "IsTrigger": true,
@@ -3703,7 +3703,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "da97f3a8-940a-453e-b544-29f3b68e24d9",
           "BodyGroups": 18446744073709551615,
           "Model": "models/temp/equipment/equipment.vmdl",
@@ -3711,7 +3711,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "ModelCollider",
+          "__type": "Sandbox.ModelCollider",
           "__guid": "9800dea1-b722-4259-bf7b-677c77b88803",
           "IsTrigger": false,
           "Model": "models/temp/equipment/equipment.vmdl",
@@ -3738,7 +3738,7 @@
           }
         },
         {
-          "__type": "HighlightOutline",
+          "__type": "Sandbox.HighlightOutline",
           "__guid": "471cd707-204b-4868-92fe-606bd454bdcd",
           "__enabled": false,
           "Color": "0.99496,1,0.69767,1",
@@ -3748,7 +3748,7 @@
           "Width": 0.25
         },
         {
-          "__type": "SphereCollider",
+          "__type": "Sandbox.SphereCollider",
           "__guid": "e5413ea6-ed7d-4068-bb44-288ec74f8e2d",
           "Center": "0,0,16.39999",
           "IsTrigger": true,
@@ -3765,7 +3765,7 @@
           "NetworkMode": 2,
           "Components": [
             {
-              "__type": "ModelRenderer",
+              "__type": "Sandbox.ModelRenderer",
               "__guid": "812c8280-02fe-46d9-bd22-b2a3791f9ca8",
               "BodyGroups": 18446744073709551615,
               "Model": "models/temp/equipment/equipment_top.vmdl",
@@ -3784,6 +3784,451 @@
       ]
     },
     {
+      "__guid": "94396dac-9bac-40f6-97f3-83db00e2b898",
+      "Name": "equipment (3)",
+      "Position": "-272,-132,-0.000008925394",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "1a5daec9-edc8-4fbc-8af6-088330a3b915",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "ac91241c-6836-43c8-85f6-5cd5260fb819",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "60c6cdff-e8a5-4199-b5e1-3fbeea64cd03",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "d59a0140-de29-4449-b5d9-51a2449bd2cb"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "44a18563-86f3-4d1e-a5a8-ac8f9c730f4f"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "Sandbox.HighlightOutline",
+          "__guid": "cf7e97e3-90a8-4998-930e-287f0cb22cfa",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "26e79b13-54eb-4314-9d03-4d54d0968de5",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "44a18563-86f3-4d1e-a5a8-ac8f9c730f4f",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c18cc250-8479-45f0-bfb1-e086d3b1525f",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "d59a0140-de29-4449-b5d9-51a2449bd2cb",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "8535bd4d-c349-4a7a-9bc5-96707da45acb",
+      "Name": "equipment (4)",
+      "Position": "-272,-176,-0.000008925394",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "4af285f9-1fcf-4a65-9f4a-21c20d82d9e5",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "64c10538-9722-4500-bd8d-cf00185a31cb",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "bdc8e93f-0620-470f-9d6e-a08d33e56400",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "98c838cd-bd2c-4a14-ab7d-5d0a78eb5921"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "25d691c5-a2b6-4eef-8c1c-374b65820bf1"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "Sandbox.HighlightOutline",
+          "__guid": "68833c62-1a99-4ba1-a1a9-03cc31c7ce83",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "ee934da1-790e-4e55-a46b-44ff41d46129",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "25d691c5-a2b6-4eef-8c1c-374b65820bf1",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ad8a2a3a-0ff6-40a4-b67b-2fb2aefbac9b",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "98c838cd-bd2c-4a14-ab7d-5d0a78eb5921",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "cb7381bf-dffc-4da3-b8b2-e354d91d45bb",
+      "Name": "equipment (5)",
+      "Position": "-272,-260,-0.000008925394",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "7d519e05-423f-4ba4-9bd0-b5be44368515",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "af9301f0-0b61-4a24-835a-08dcdebd3033",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "2ed449a2-2cc8-4c9c-a829-cf0c3e8f0051",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "75f87a16-ec06-43ee-bb2b-f419a36759ef"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "ffa88707-7eea-4ca1-97a6-29060c24ae7a"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "Sandbox.HighlightOutline",
+          "__guid": "0a1dcdd7-88d0-41c3-b89b-b3193f45f202",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "a6313271-c3fa-49c3-b540-fb7f44c7c094",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "ffa88707-7eea-4ca1-97a6-29060c24ae7a",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "cba78eb6-9c30-4ded-ac65-66c085e79185",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "75f87a16-ec06-43ee-bb2b-f419a36759ef",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "fa1bd1fc-6865-4645-bd0f-f389d8b1cac4",
+      "Name": "equipment (6)",
+      "Position": "-272,-380,-0.000008925394",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "1bdbf411-cfb3-4ead-9a52-39ff68a1ec04",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "31819c70-3abb-48c4-b0ed-9cc398e7e2cb",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "fb28e304-20f5-4500-8d17-7d5b5f3b4e4c",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "c4059edf-675b-4c34-b06f-5d580532e24d"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "5bde46b1-06fb-44be-83d4-85189fb5da5a"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "Sandbox.HighlightOutline",
+          "__guid": "39a478db-4f66-4d4d-b8aa-fc0980943cba",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "1da4712b-110a-4720-b322-d5d3e4f3f7a3",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "5bde46b1-06fb-44be-83d4-85189fb5da5a",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "8990a12c-6680-45b2-a8ba-e6bbcd9fd476",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "c4059edf-675b-4c34-b06f-5d580532e24d",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "31743f1e-19a4-46c5-a1a3-c85adc58f661",
+      "Name": "equipment (7)",
+      "Position": "-272,-464,-0.000008925394",
+      "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0cf0fc41-9c5c-4a97-8843-17e605b6deef",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "a2e0d493-b1e0-4dff-90c9-0a9c6902139a",
+          "IsTrigger": false,
+          "Model": "models/temp/equipment/equipment.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "EquipmentChest",
+          "__guid": "26c345b5-82c2-4dd3-886c-e68acd8a25fa",
+          "Cost": 10,
+          "HasPrice": true,
+          "IsOpen": false,
+          "ItemSpawnLocation": {
+            "_type": "gameobject",
+            "go": "45081f52-09f1-48ea-9aab-0d9ff85fb4ed"
+          },
+          "Top": {
+            "_type": "gameobject",
+            "go": "2b2e0c62-b762-4efc-8518-0c11d90b5519"
+          },
+          "UseRandomItem": false,
+          "WorldUI": {
+            "_type": "gameobject",
+            "prefab": "prefab/lootbox/costworldpanel.prefab"
+          }
+        },
+        {
+          "__type": "Sandbox.HighlightOutline",
+          "__guid": "dd6da9e2-ba22-4446-b3cb-f180e30adf02",
+          "__enabled": false,
+          "Color": "0.99496,1,0.69767,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "8279a678-52b2-4767-b2fe-81fe17fc2098",
+          "Center": "0,0,16.39999",
+          "IsTrigger": true,
+          "Radius": 100,
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "2b2e0c62-b762-4efc-8518-0c11d90b5519",
+          "Name": "equipment_top",
+          "Position": "-7.5,0,30",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "956f1d53-88ca-4b6f-93d1-375bbce13968",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/equipment/equipment_top.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "45081f52-09f1-48ea-9aab-0d9ff85fb4ed",
+          "Name": "Spawn",
+          "Position": "4,0,36",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
       "__guid": "8f855f62-5ebd-4618-8496-908462778461",
       "Name": "equipment (1)",
       "Position": "-148,-92,0",
@@ -3792,7 +4237,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "164d83e7-9a7e-45a2-a9f7-6b4352d9aca1",
           "BodyGroups": 18446744073709551615,
           "Model": "models/temp/equipment/equipment.vmdl",
@@ -3800,7 +4245,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "ModelCollider",
+          "__type": "Sandbox.ModelCollider",
           "__guid": "d3ccb09e-04e5-4192-8fb7-250ec1b2cffe",
           "IsTrigger": false,
           "Model": "models/temp/equipment/equipment.vmdl",
@@ -3827,7 +4272,7 @@
           }
         },
         {
-          "__type": "HighlightOutline",
+          "__type": "Sandbox.HighlightOutline",
           "__guid": "361f8a39-e3a0-401e-8f52-b68ef18efbbb",
           "__enabled": false,
           "Color": "0.99496,1,0.69767,1",
@@ -3837,7 +4282,7 @@
           "Width": 0.25
         },
         {
-          "__type": "SphereCollider",
+          "__type": "Sandbox.SphereCollider",
           "__guid": "167f7026-4060-40b0-b4c5-71a17993b489",
           "Center": "0,0,16.39999",
           "IsTrigger": true,
@@ -3854,7 +4299,7 @@
           "NetworkMode": 2,
           "Components": [
             {
-              "__type": "ModelRenderer",
+              "__type": "Sandbox.ModelRenderer",
               "__guid": "fe8930ba-a038-4cd8-9747-9719700b4525",
               "BodyGroups": 18446744073709551615,
               "Model": "models/temp/equipment/equipment_top.vmdl",
@@ -3881,7 +4326,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
+          "__type": "Sandbox.ModelRenderer",
           "__guid": "c89be9ea-4cf1-457e-9eb0-87f777a4a0a4",
           "BodyGroups": 18446744073709551615,
           "Model": "models/temp/equipment/equipment.vmdl",
@@ -3889,7 +4334,7 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "ModelCollider",
+          "__type": "Sandbox.ModelCollider",
           "__guid": "69b6e6d6-0591-45f9-8daa-a3216eb89c1c",
           "IsTrigger": false,
           "Model": "models/temp/equipment/equipment.vmdl",
@@ -3916,7 +4361,7 @@
           }
         },
         {
-          "__type": "HighlightOutline",
+          "__type": "Sandbox.HighlightOutline",
           "__guid": "8ef99700-b2ec-4e6b-b9f4-0b5b72644abe",
           "__enabled": false,
           "Color": "0.99496,1,0.69767,1",
@@ -3926,7 +4371,7 @@
           "Width": 0.25
         },
         {
-          "__type": "SphereCollider",
+          "__type": "Sandbox.SphereCollider",
           "__guid": "144e422e-ffd2-415a-a1b8-e81c35a64da2",
           "Center": "0,0,16.39999",
           "IsTrigger": true,
@@ -3943,7 +4388,7 @@
           "NetworkMode": 2,
           "Components": [
             {
-              "__type": "ModelRenderer",
+              "__type": "Sandbox.ModelRenderer",
               "__guid": "3fb4c47c-b13e-4a90-8ef3-1eb55b6fb142",
               "BodyGroups": 18446744073709551615,
               "Model": "models/temp/equipment/equipment_top.vmdl",
@@ -3985,7 +4430,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-09T00:48:17.6593802\u002B01:00",
+  "LastSaved": "2024-04-09T14:18:06.6185779\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
