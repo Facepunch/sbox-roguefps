@@ -8,8 +8,7 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 	{
 		base.OnUpdate();
 
-		/*
-		var glow = GameObject.Components.Get<HighlightOutline>(FindMode.EnabledInSelfAndDescendants);
+		var glow = GameObject.Components.Get<HighlightOutline>(FindMode.InSelf);
 		if(Item != null)
 		{
 			glow.Color = Item.ItemColor;
@@ -22,7 +21,7 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 		{		
 			glow.Color = Color.White;
 		}
-		*/
+		
 	}
 
 	void ITriggerListener.OnTriggerEnter( Collider other )
