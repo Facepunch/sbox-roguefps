@@ -51,7 +51,7 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 		if ( stats != null )
 		{
 			var inventory = stats.Inventory;
-			if( inventory.equippedItem != null )
+			if( Equipment != null && inventory.equippedItem != null && Equipment.IsEquipment)
 			{
 				inventory.ReplaceEquipment( Equipment );
 				RecreateEquipment( inventory.equippedItem );
