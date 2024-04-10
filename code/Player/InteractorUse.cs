@@ -71,8 +71,8 @@ public sealed class InteractorUse : Component
 
 	public void ClearInteractor()
 	{
-		InteractObject = null;
 		DestroyUI();
+		InteractObject = null;
 	}
 
 	public void DestroyUI()
