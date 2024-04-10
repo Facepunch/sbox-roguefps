@@ -10,21 +10,27 @@ ChatUI {
 	flex-direction: column;
 	align-items: stretch;
 	font-size: 17px;
-	font-family: Poppins;
+	font-family: "Quantico";
 	gap: 10px;
 
+
 	.output {
-		flex-grow: 1;
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: stretch;
 		gap: 5px;
+		flex-grow: 1;
+		overflow: scroll;
+		display: flex;
+		max-height: 200px;
 
 		.chat_entry {
+			flex-shrink: 0;
 			padding: 2px;
 			gap: 10px;
 			text-shadow: 2px 2px 2px #000a;
 			align-items: center;
+			opacity: 0;
 
 			.avatar {
 				width: 32px;
@@ -50,7 +56,20 @@ ChatUI {
 		color: white;
 	}
 
+	&.msgsent {
+		.output {
+
+
+			.chat_entry {
+				transition: all 0.5s;
+				opacity: 1;
+			}
+		}
+	}
+
 	&.open {
+		pointer-events: all;
+
 		.input {
 			background-color: rgba(40, 37, 37, 0.5);
 		}

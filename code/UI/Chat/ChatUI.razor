@@ -24,9 +24,11 @@
 @code
 {
 	public record Entry( string author, string message, RealTimeSince timeSinceAdded );
-	
+
 	private List<Entry> Entries { get; set; } = new();
 	private TextEntry InputBox { get; set; }
+
+	RealTimeSince _timeSinceLastMessage;
 
 	public void AddTextLocal( string author, string message )
 	{
@@ -39,8 +41,10 @@
 
 		Entries.Add( new ( author, message, 0f ) );
 		StateHasChanged();
+
+		_timeSinceLastMessage = 0f;
 	}
-	
+
 	protected override void OnUpdate()
 	{
 		if ( InputBox is null )
@@ -51,13 +55,16 @@
 		if ( Input.Pressed( "chat" ) )
 		{
 			InputBox.Focus();
+			_timeSinceLastMessage = 0;
 		}
 
-		if ( Entries.RemoveAll( x => x.timeSinceAdded > 30f ) > 0 )
+		if ( _timeSinceLastMessage > 10f)
 		{
+			//Entries.RemoveAt( 0 );
 			StateHasChanged();
 		}
 
+		SetClass("msgsent", InputBox.HasFocus ? true : _timeSinceLastMessage < 10f);
 		SetClass( "open", InputBox.HasFocus );
 	}
 
@@ -76,6 +83,7 @@
 	private void SendText( string author, string message )
 	{
 		AddTextLocal( author, message );
+		_timeSinceLastMessage = 0f;
 	}
 
 	void INetworkListener.OnConnected( Connection channel )
