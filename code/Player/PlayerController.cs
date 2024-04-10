@@ -235,7 +235,7 @@ public partial class PlayerController : Actor
 		else
 		{
 			cc.Velocity -= Gravity * Time.Delta * 0.5f;
-			cc.Accelerate( WishVelocity / 2 );
+			cc.Accelerate( WishVelocity / 0.5f );
 		}
 
 		cc.ApplyFriction( GetFriction() );

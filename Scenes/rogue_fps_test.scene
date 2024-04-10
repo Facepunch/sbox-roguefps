@@ -80,7 +80,7 @@
           },
           "SpawnPoint": {
             "_type": "gameobject",
-            "go": "0f04ee6a-6956-44a5-851e-aa6b5151fa34"
+            "go": "81598fa3-159f-4eaf-8428-50d516ddf68e"
           }
         }
       ]
@@ -3333,8 +3333,8 @@
     },
     {
       "__guid": "81598fa3-159f-4eaf-8428-50d516ddf68e",
-      "Name": "Object",
-      "Position": "-1088,960,128",
+      "Name": "SpawnPoint",
+      "Position": "-384,960.0001,0",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -3806,7 +3806,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-10T02:37:35.5174698\u002B01:00",
+  "LastSaved": "2024-04-10T04:18:13.2834258\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
