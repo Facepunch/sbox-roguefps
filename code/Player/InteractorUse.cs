@@ -4,11 +4,6 @@ public sealed class InteractorUse : Component
 	private ItemPickUp _pickupPanel { get; set; }
 	private TimeSince _timeSinceUse { get; set; }
 
-	protected override void OnUpdate()
-	{
-
-	}
-
 	protected override void OnFixedUpdate()
 	{
 		base.OnFixedUpdate();
@@ -55,7 +50,6 @@ public sealed class InteractorUse : Component
 						_pickupPanel = new ItemPickUp( $"Get {item.Item.Name}", interactor.Cost, false );
 						itemUI.Panel.AddChild( _pickupPanel );
 					}
-
 				}
 				else
 				{
@@ -80,7 +74,6 @@ public sealed class InteractorUse : Component
 		InteractObject = null;
 		DestroyUI();
 	}
-
 
 	public void DestroyUI()
 	{
