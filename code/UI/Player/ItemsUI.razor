@@ -30,6 +30,13 @@
 {
 	ItemsUIToolTip itemsUIToolTip;
 
+	public static ItemsUI Instance;
+
+	public ItemsUI()
+	{
+		Instance = this;
+	}
+
 	public void OnItemHover(ItemDef item)
 	{
 		if (item != null)

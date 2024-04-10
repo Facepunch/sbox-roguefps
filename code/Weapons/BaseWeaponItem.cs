@@ -1,9 +1,6 @@
-using RogueFPS;
-using Sandbox;
-
 public class BaseWeaponItem : BaseAbilityItem
 {
-	[Property, Group("Info")] public override string AbilityName { get; set; } = "Weapon";
+	[Property, Group( "Info" )] public override string AbilityName { get; set; } = "Weapon";
 	[Property, Group( "Info" )] public override string AbilityDescription { get; set; } = "Weapon";
 	[Property, ImageAssetPath, Group( "Info" )] public override string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
 	[Property, Group( "Stats" )] public override int MaxUseCount { get; set; } = 30;
@@ -26,10 +23,13 @@ public class BaseWeaponItem : BaseAbilityItem
 		PlayerStats = GameObject.Components.Get<Stats>( FindMode.InParent );
 		CurrentUseCount = MaxUseCount;
 
-		ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
+		if ( ViewModelObject != null )
+		{
+			ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
+		}
 		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
 
-		CrosshairUI = GameObject.Parent.Components.Get<BasicCrosshairUI>(FindMode.EverythingInChildren);
+		CrosshairUI = GameObject.Parent.Components.Get<BasicCrosshairUI>( FindMode.EverythingInChildren );
 	}
 
 	protected override void DrawGizmos()
@@ -57,7 +57,7 @@ public class BaseWeaponItem : BaseAbilityItem
 			LastFired = 0;
 			OnPrimaryFire();
 			base.DoFire();
-			CameraShake.Shake();
+			CameraShake?.Shake();
 			CrosshairUI.OnShoot();
 			var sprintcomp = PlayerController.Components.Get<SprintMechanic>( FindMode.EverythingInSelfAndChildren );
 			if ( sprintcomp != null )
@@ -87,12 +87,12 @@ public class BaseWeaponItem : BaseAbilityItem
 
 	public SceneTraceResult TraceBullet( Vector3 start, Vector3 end )
 	{
-		if(RandomSpread)
+		if ( RandomSpread )
 		{
 			end += Vector3.Random.Normal * Spread;
 		}
 
-		if(UseMuzzle)
+		if ( UseMuzzle )
 		{
 			Muzzle = ViewModelObject.Components.Get<SkinnedModelRenderer>().GetAttachment( "muzzle" ).Value.Position;
 			start = Muzzle;
@@ -105,9 +105,9 @@ public class BaseWeaponItem : BaseAbilityItem
 		return tr;
 	}
 
-	public virtual void OnHit(GameObject obj)
+	public virtual void OnHit( GameObject obj )
 	{
-		if(obj != null)
+		if ( obj != null )
 		{
 			var health = obj.Components.Get<Npcbase>();
 			{
