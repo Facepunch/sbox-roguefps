@@ -4,21 +4,22 @@ public sealed class MasterGameManager : Component
 {
 	private static DateTimeOffset startTime = DateTimeOffset.UtcNow;
 	static string FileName = $"{Game.ActiveScene.Title}_currentSession.json";
-	public SessionProgess Current { get; set; }
+	public SessionProgess Current { get; set; } = new SessionProgess();
 
 	private void Fetch()
 	{
 		//Current ??= FileSystem.Data.ReadJson<SessionProgess>( FileName, null );
-
+		/*
 		if( Current == null )
 		{
 			//Log.Info( "No session data found, starting new game." );
-			OnNewGame();
+			//OnNewGame();
 		}
 		else
 		{
-			Log.Info( "Session data found, loading." );
+			//Log.Info( "Session data found, loading." );
 		}
+		*/
 	}
 
 	protected override void OnStart()

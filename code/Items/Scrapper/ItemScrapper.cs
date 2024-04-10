@@ -85,8 +85,6 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 	{
 		//Log.Info( "OnTriggerExit" );
 
-		Log.Info( other.GameObject.Name );
-
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			var screen = other.Components.Get<Stats>( FindMode.InParent );
