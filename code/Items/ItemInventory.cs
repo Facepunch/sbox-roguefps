@@ -19,6 +19,7 @@
 
 	public void AddItem( ItemDef item )
 	{
+		var chatUI = playerStats.Components.Get<ChatUI>( FindMode.InChildren );
 		int index = itemPickUps.FindIndex( x => x.Item.Name == item.Name );
 		if ( index != -1 )
 		{
@@ -27,7 +28,8 @@
 			existingItem.Amount++; // Increment amount on the copy
 			itemPickUps[index] = existingItem; // Put the modified copy back in the list
 			existingItem.Item.ApplyUpgrade(); // Apply the upgrade to the player
-			Log.Info( $"Added {item.Name} to inventory. Amount: {existingItem.Amount}" );
+			//Log.Info( $"Added {item.Name} to inventory. Amount: {existingItem.Amount}" );
+			chatUI.AddTextLocal( Sandbox.Utility.Steam.PersonaName, $"Added {item.Name} to inventory. Amount: {existingItem.Amount}" );
 		}
 		else
 		{
@@ -35,28 +37,33 @@
 			itemPickUps.Add( new InvetoryItem { Item = item, Amount = 1, OwnerStat = playerStats } );
 			item.OnPickUp( playerStats ); // Set the owner of the item
 			item.ApplyUpgrade(); // Apply the upgrade to the player
+			chatUI.AddTextLocal( Sandbox.Utility.Steam.PersonaName, $"Added {item.Name} to inventory." );
 		}
 	}
 
 	//Remove an item from the inventory, but only 1 at a time
 	public void RemoveItem( ItemDef item )
 	{
+		var chatUI = playerStats.Components.Get<ChatUI>( FindMode.InChildren );
 		for ( int i = 0; i < itemPickUps.Count; i++ )
 		{
 			if ( itemPickUps[i].Item.Name == item.Name )
 			{
 				var itemPickUp = itemPickUps[i];
 
+
 				itemPickUp.Amount--;
 				if ( itemPickUp.Amount <= 0 )
 				{
 					itemPickUps.RemoveAt( i );
 					itemPickUp.Item.RemoveUpgrade();
+					chatUI.AddTextLocal( Sandbox.Utility.Steam.PersonaName, $"Removed {item.Name} from inventory." );
 				}
 				else
 				{
 					itemPickUps[i] = itemPickUp;
 					itemPickUp.Item.RemoveUpgrade();
+					chatUI.AddTextLocal( Sandbox.Utility.Steam.PersonaName, $"Removed {item.Name} from inventory. Amount: {itemPickUp.Amount}" );
 				}
 				break;
 			}
