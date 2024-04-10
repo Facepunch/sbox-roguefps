@@ -23,7 +23,6 @@ public partial class JumpMechanic : PlayerMechanic
 			item.Item.OnJump();
 		}
 
-
 		Player.CharacterController.IsOnGround = false;
 		Player.CharacterController.Velocity = Player.CharacterController.Velocity.WithZ( 0 );
 		float jumpForce = CalculateJumpForce( Player.Stats.UpgradedStats[Stats.PlayerUpgradedStats.JumpHeight] );
