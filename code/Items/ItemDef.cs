@@ -59,6 +59,8 @@
 		}
 	}
 
+	public virtual void OnFall() { }
+	public virtual float OnFallDamage(float damage) { return damage; }
 	public virtual void OnUse() { }
 	public virtual void OnJump() { }
 	public virtual void OnShoot() { }

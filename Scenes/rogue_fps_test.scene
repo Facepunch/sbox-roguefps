@@ -66,7 +66,7 @@
     {
       "__guid": "0f04ee6a-6956-44a5-851e-aa6b5151fa34",
       "Name": "GameNetworkManager",
-      "Position": "-403.784,-123.1075,41.92808",
+      "Position": "-1808,1200,1104",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -3806,7 +3806,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-10T01:39:45.7761737\u002B01:00",
+  "LastSaved": "2024-04-10T02:22:55.4955778\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

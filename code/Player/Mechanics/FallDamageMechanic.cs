@@ -41,7 +41,13 @@ public partial class FallDamageMechanic : PlayerMechanic
 
 	float CalculateFallDamage( float fallSpeed )
 	{
+		var dmg = fallSpeed;
 
-		return MathF.Max( 0.0f, MathF.Abs( fallSpeed ) - 50.0f ) * 0.02f;
+		foreach ( var item in Player.Stats.Inventory.itemPickUps )
+		{
+			dmg += item.Item.OnFallDamage( MathF.Abs( landingVelocity ) );
+		}
+
+		return MathF.Max( 0.0f, MathF.Abs( dmg ) - 50.0f ) * 0.02f;
 	}
 }

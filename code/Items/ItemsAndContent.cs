@@ -8,6 +8,7 @@
 		new FireHit(),
 		new HealthRegen(),
 		new HealthIncrease(),
+		new LongFallBoots(),
 	};
 
 	public static List<BaseEquipmentItem> Equipments = new List<BaseEquipmentItem>
