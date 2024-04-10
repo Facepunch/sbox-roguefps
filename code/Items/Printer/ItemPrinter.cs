@@ -3,6 +3,7 @@ using Sandbox.UI;
 
 public sealed class ItemPrinter : Interactable
 {
+	public override string Name { get; set; } = "Item Printer";
 	[Property] GameObject ItemSpawnLocation { get; set; }
 	[Property] GameObject ItemLocation { get; set; }
 	[Property] PrefabScene WorldUI { get; set; }
