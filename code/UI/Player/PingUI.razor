@@ -10,14 +10,23 @@
 			<div class="icon" style="background-image: url('@GetIcon(entry.obj)')"></div>
 		</div>
 	}
+	@foreach (var entry in EntriesLocation)
+	{
+		if (!IsOffScreen(entry.location)) continue;
+		<div class="ping" style="@GetEnemyPos(entry.location)">
+			<div class="icon" style="background-image: url('@GetIcon(entry.obj)')"></div>
+		</div>
+	}
 </root>
 
 @code
 {
 	public record Entry(string author, GameObject obj, RealTimeSince timeSinceAdded);
+	public record EntryLocation(string author, GameObject obj, RealTimeSince timeSinceAdded,Vector3 location);
 	private List<Entry> Entries { get; set; } = new();
+	private List<EntryLocation> EntriesLocation { get; set; } = new();
 
-	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	[Property] GameObject PingedPrefab { get; set; }
 
 	protected override void OnUpdate()
 	{
@@ -28,24 +37,31 @@
 			var tr = Scene.Trace.Ray(Scene.Camera.Transform.Position, Scene.Camera.Transform.Position + Scene.Camera.Transform.Rotation.Forward * 1000000)
 			.Radius(2)
 			.WithoutTags("player")
-			//.WithTag("interactable")
 			.Run();
 
 			if (tr.Hit)
 			{
 				Log.Info(tr.GameObject);
 				var interactable = tr.GameObject.Components.Get<Interactable>();
+				var chatUI = Components.Get<ChatUI>();
 				if (interactable != null && !interactable.IsOpen)
 				{
 					Entries.Add(new Entry("You", tr.GameObject, 0));
 
-					var chatUI = Components.Get<ChatUI>();
+
 					chatUI.AddTextLocal(Sandbox.Utility.Steam.PersonaName, $"Pinged {interactable.PingString}");
 					var pingGlow = tr.GameObject.Components.Get<PingGlow>();
 					if (pingGlow == null)
 					{
 						tr.GameObject.Components.Create<PingGlow>();
 					}
+				}
+				else
+				{
+					var pinged = PingedPrefab.Clone();
+					chatUI.AddTextLocal(Sandbox.Utility.Steam.PersonaName, $"wants to move here!");
+					EntriesLocation.Add(new EntryLocation("Location", pinged, 0, tr.EndPosition));
+					pinged.Transform.Position = tr.EndPosition;
 				}
 			}
 
@@ -62,10 +78,21 @@
 		return Icon.PingIcon ?? "";
 	}
 
+	bool IsOffScreen(Vector3 obj)
+	{
+		var screenpos = Scene.Camera.PointToScreenNormal(obj, out bool isBehind);
+		return !isBehind;
+	}
+
 	bool IsOffScreen(GameObject obj)
 	{
 		var screenpos = Scene.Camera.PointToScreenNormal(obj.Transform.Position, out bool isBehind);
 		return !isBehind;
+	}
+	string GetEnemyPos(Vector3 obj)
+	{
+		var screenpos = Scene.Camera.PointToScreenNormal(obj + Vector3.Up * 48);
+		return $"top: {screenpos.y * 100}%; left: {screenpos.x * 100}%;";
 	}
 
 	string GetEnemyPos(GameObject obj)

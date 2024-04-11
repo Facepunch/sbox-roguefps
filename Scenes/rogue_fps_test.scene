@@ -6652,6 +6652,15 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "98bc7a1f-aa65-489e-bea4-ac181d7e6711",
+      "Name": "PingedLocation",
+      "Position": "128,0,64",
+      "Tags": "particles",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefab/player/pingedlocation.prefab"
     }
   ],
   "SceneProperties": {
@@ -6677,7 +6686,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-11T15:51:48.1614963\u002B01:00",
+  "LastSaved": "2024-04-11T16:18:28.6902471\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
