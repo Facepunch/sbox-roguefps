@@ -3,28 +3,15 @@ using Sandbox;
 public sealed class ItemChest : Interactable, Component.ITriggerListener
 {
 	List<PrefabFile> Items;
-
-	[Property]
-	[Group( "Item Chest" )]
-	GameObject ItemSpawnLocation { get; set; }
-
-	[Property]
-	[Group( "Item Chest" )]
-	ItemRarity Rarity { get; set; } = ItemRarity.Common;
-
-	[Property]
-	bool UseRandomItem { get; set; } = true;
-
-	[Property]
-	GameObject Top { get; set; }
-
+	[Property] [Group( "Item Chest" )] GameObject ItemSpawnLocation { get; set; }
+	[Property] [Group( "Item Chest" )] ItemRarity Rarity { get; set; } = ItemRarity.Common;
+	[Property] bool UseRandomItem { get; set; } = true;
+	[Property] GameObject Top { get; set; }
 	[Property] PrefabScene WorldUI { get; set; }
 
 	GameObject _UI;
 	WorldCostPanel _Panel;
-
 	PrefabScene RandomItem { get; set; }
-
 	public override string Name { get; set; } = "Open Chest";
 	protected override void OnStart()
 	{

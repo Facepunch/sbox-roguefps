@@ -6505,7 +6505,7 @@
           "BodyGroups": 18446744073709551615,
           "Model": "models/temp/itemterminal/itemterminal.vmdl",
           "RenderType": "On",
-          "Tint": "1,0.83333,0,1"
+          "Tint": "0.08837,0.08837,0.08837,1"
         },
         {
           "__type": "Sandbox.ModelCollider",
@@ -6517,16 +6517,20 @@
         {
           "__type": "ItemTerminal",
           "__guid": "838ff042-4728-4372-bedb-c280c436a5dc",
-          "Cost": 100,
+          "Cost": 15,
           "Door": {
             "_type": "gameobject",
             "go": "648e102e-bc35-4272-8e15-7568ea0d3b1b"
           },
-          "HasPrice": false,
+          "HasPrice": true,
           "IsOpen": false,
           "ItemSpawnLocation": {
             "_type": "gameobject",
             "go": "a6deea86-32c8-463d-ae1f-8127776b82cb"
+          },
+          "Light": {
+            "_type": "gameobject",
+            "go": "109ea724-4938-49cc-b24e-307f114b117e"
           },
           "Rarity": "Rare",
           "Screen": {
@@ -6537,6 +6541,10 @@
           "WorldUI": {
             "_type": "gameobject",
             "prefab": "prefab/shop_chest/costpanel-nolookatcamera.prefab"
+          },
+          "WorldUILocation": {
+            "_type": "gameobject",
+            "go": "fbd590b1-bf8a-4e92-94c9-a85f72dc114e"
           }
         },
         {
@@ -6548,6 +6556,14 @@
           "InsideObscuredColor": "0,0,0,0",
           "ObscuredColor": "0,0,0,0",
           "Width": 0.25
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "d30e2bf1-c92a-4294-a82c-e89ce80d71cb",
+          "Center": "0,0,64",
+          "IsTrigger": true,
+          "Radius": 128,
+          "Static": false
         }
       ],
       "Children": [
@@ -6586,6 +6602,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "d09314b2-4360-4d36-83d0-9d0a91235fbc",
               "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/dev/bright_10.vmat",
               "Model": "models/temp/itemterminal/itemterminal_screen.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -6595,6 +6612,40 @@
               "__guid": "f76515c3-4639-4ae7-baf3-af9093cd365c",
               "IsTrigger": false,
               "Model": "models/temp/itemterminal/itemterminal_screen.vmdl",
+              "Static": false
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "fbd590b1-bf8a-4e92-94c9-a85f72dc114e",
+              "Name": "WorldUILocation",
+              "Position": "7.456299,0,56.06163",
+              "Rotation": "0,-0.1305262,0,0.9914449",
+              "Enabled": true,
+              "NetworkMode": 2
+            }
+          ]
+        },
+        {
+          "__guid": "109ea724-4938-49cc-b24e-307f114b117e",
+          "Name": "itemterminal_light",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a90ae036-296d-4697-88e5-51c24641ef66",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/temp/itemterminal/itemterminal_light.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "caaed04a-012b-435c-be2a-cbcabe2dc51f",
+              "IsTrigger": false,
+              "Model": "models/temp/itemterminal/itemterminal_light.vmdl",
               "Static": false
             }
           ]
@@ -6625,7 +6676,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-11T13:08:04.9518368\u002B01:00",
+  "LastSaved": "2024-04-11T14:07:31.7480932\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

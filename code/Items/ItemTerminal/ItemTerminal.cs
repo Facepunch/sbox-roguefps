@@ -8,13 +8,18 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
     [Property] public bool UseRandomItem { get; set; } = true;
     [Property] public GameObject Door { get; set; }
     [Property] public PrefabScene WorldUI { get; set; }
+    [Property] public GameObject WorldUILocation { get; set; }
     [Property] public GameObject Screen { get; set; }
+	[Property] public GameObject Light { get; set; }
+
+	RealTimeSince refreshTimer;
+	float refreshDuration = 2.0f;
 
     GameObject _UI;
     WorldCostPanel _Panel;
     PrefabScene RandomItem { get; set; }
     int ItemSpawned { get; set; } = 0;
-    float ItemChance { get; set; } = 0.5f; // 50% chance to get an item
+    float ItemChance { get; set; } = 0.4f; // 50% chance to get an item
     public override string Name { get; set; } = "Open Chest";
 	protected override void OnStart()
 	{
@@ -45,7 +50,21 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
 		}
 
 		var screenTint = Screen.Components.Get<ModelRenderer>();
-		screenTint.Tint = Color.Lerp( ScreenColor, Color.White, timeSinceItem );
+
+		if ( refreshTimer <= refreshDuration || IsOpen )
+		{
+			screenTint.Tint = Color.Black;
+		}
+		else
+		{
+			screenTint.Tint = Color.Lerp( ScreenColor, Color.White, timeSinceItem );
+		}
+
+		if(Light != null)
+		{
+			var light = Light.Components.Get<ModelRenderer>();
+			light.Tint = Color.Lerp( ScreenColor, Color.White, timeSinceItem / 5 );
+		}
 
 		if ( IsOpen )
 		{
@@ -64,10 +83,19 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
 	{
 		//Check if the player has enough coins
 		var stats = player.Components.Get<Stats>();
+		
+		if( refreshTimer < refreshDuration ) return;
+
+		refreshTimer = 0;
 
 		if ( stats != null && stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins] >= Cost )
 		{
 			stats.AddCoin( -Cost );
+			Cost = (int)(Cost * 1.25f);
+			if ( _Panel != null )
+			{
+				_Panel.Value = Cost;
+			}
 			if ( Random.Shared.Float() < ItemChance ) // Check if an item should be given
 			{
 				SpawnItem();
@@ -127,7 +155,9 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			_UI = WorldUI.Clone();
-			_UI.Transform.Position = Transform.Position + Vector3.Up * 35;
+			_UI.Transform.Position = WorldUILocation.Transform.Position;
+			_UI.Transform.Rotation = WorldUILocation.Transform.Rotation;
+			_UI.Transform.Scale = 0.5f;
 			_Panel = _UI.Components.Get<WorldCostPanel>();
 			_Panel.Value = Cost;
 		}
