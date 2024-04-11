@@ -587,7 +587,7 @@
             "IsActive": false,
             "Priority": 0,
             "TimeSinceActiveChanged": {
-              "Relative": 3225.904
+              "Relative": 4109.6787
             }
           },
           {
@@ -596,7 +596,7 @@
             "IsActive": false,
             "Priority": 1,
             "TimeSinceActiveChanged": {
-              "Relative": 3225.904
+              "Relative": 4109.6787
             }
           },
           {
@@ -610,7 +610,7 @@
             "SlideFriction": 0.01,
             "SlideSpeed": 600,
             "TimeSinceActiveChanged": {
-              "Relative": 3225.904
+              "Relative": 4109.6787
             },
             "WishDirectionScale": 0.4
           },
@@ -620,7 +620,7 @@
             "IsActive": false,
             "Priority": 0,
             "TimeSinceActiveChanged": {
-              "Relative": 3225.904
+              "Relative": 4109.6787
             }
           },
           {
@@ -629,7 +629,7 @@
             "IsActive": false,
             "Priority": 1000,
             "TimeSinceActiveChanged": {
-              "Relative": 3225.904
+              "Relative": 4109.6787
             }
           }
         ]
@@ -728,6 +728,11 @@
           {
             "__type": "RogueFPS.ChatUI",
             "__guid": "30cf23b0-15c8-4020-8762-8af39bd5ab2c"
+          },
+          {
+            "__type": "PingUI",
+            "__guid": "b6a56fbf-d07d-406e-a04b-7aba0737c232",
+            "MyStringValue": "Hello World!"
           }
         ]
       },
