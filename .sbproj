@@ -227,6 +227,12 @@
           "KeyboardCode": "L",
           "GamepadCode": "None",
           "GroupName": "Other"
+        },
+        {
+          "Name": "Ping",
+          "KeyboardCode": "MOUSE3",
+          "GamepadCode": "None",
+          "GroupName": "Other"
         }
       ],
       "__guid": "1581ecd6-c894-43f0-bcbc-74d1b83341b7"
