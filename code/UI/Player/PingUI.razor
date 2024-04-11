@@ -1,0 +1,81 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@foreach (var entry in Entries)
+	{
+		if (!IsOffScreen(entry.obj)) continue;
+		<div class="ping" style="@GetEnemyPos(entry.obj)">
+			<div class="icon" style="background-image: url('@GetIcon(entry.obj)')"></div>
+		</div>
+	}
+</root>
+
+@code
+{
+	public record Entry(string author, GameObject obj, RealTimeSince timeSinceAdded);
+	private List<Entry> Entries { get; set; } = new();
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	protected override void OnUpdate()
+	{
+		base.OnUpdate();
+
+		if (Input.Pressed("ping"))
+		{
+			var tr = Scene.Trace.Ray(Scene.Camera.Transform.Position, Scene.Camera.Transform.Position + Scene.Camera.Transform.Rotation.Forward * 1000000)
+			.Radius(2)
+			.WithoutTags("player")
+			//.WithTag("interactable")
+			.Run();
+
+			if (tr.Hit)
+			{
+				Log.Info(tr.GameObject);
+				var interactable = tr.GameObject.Components.Get<Interactable>();
+				if (interactable != null && !interactable.IsOpen)
+				{
+					Entries.Add(new Entry("You", tr.GameObject, 0));
+
+					var chatUI = Components.Get<ChatUI>();
+					chatUI.AddTextLocal(Sandbox.Utility.Steam.PersonaName, $"Pinged {interactable.PingString}");
+					var pingGlow = tr.GameObject.Components.Get<PingGlow>();
+					if (pingGlow == null)
+					{
+						tr.GameObject.Components.Create<PingGlow>();
+					}
+				}
+			}
+
+		}
+
+		Entries.RemoveAll(x => x.timeSinceAdded > 5);
+	}
+
+	string GetIcon(GameObject obj)
+	{
+		var Icon = obj.Components.Get<Interactable>();
+		if (Icon == null) return "";
+		if (Icon.IsOpen) return "";
+		return Icon.PingIcon ?? "";
+	}
+
+	bool IsOffScreen(GameObject obj)
+	{
+		var screenpos = Scene.Camera.PointToScreenNormal(obj.Transform.Position, out bool isBehind);
+		return !isBehind;
+	}
+
+	string GetEnemyPos(GameObject obj)
+	{
+		var screenpos = Scene.Camera.PointToScreenNormal(obj.GetBounds().Center + Vector3.Up * obj.GetBounds().Size.z);
+		return $"top: {screenpos.y * 100}%; left: {screenpos.x * 100}%;";
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
+}
