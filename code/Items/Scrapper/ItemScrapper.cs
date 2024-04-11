@@ -10,6 +10,13 @@ public sealed class ItemScrapper : Interactable, Component.ITriggerListener
 	GameObject _UI;
 	public override string Name { get; set; } = "Scrap Items";
 
+	protected override void OnStart()
+	{
+		base.OnStart();
+
+		PingString = "Item Scrapper";
+	}
+
 	public override void OnInteract( GameObject player )
 	{
 		var screen = player.Components.Get<ScreenPanel>( FindMode.InChildren );

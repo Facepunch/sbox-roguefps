@@ -1,15 +1,14 @@
 {
   "RootObject": {
-    "__guid": "3817fbe1-c1d0-4782-a081-942cd78ccd24",
+    "__guid": "06058398-0bcf-4701-825d-4ebcffbc61fd",
     "Name": "equipmentitemchest",
-    "Position": "-148,-20,-0",
     "Tags": "interactable",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "da97f3a8-940a-453e-b544-29f3b68e24d9",
+        "__guid": "abeec80a-6c24-4873-bedc-0c8d2283a1da",
         "BodyGroups": 18446744073709551615,
         "Model": "models/temp/equipment/equipment.vmdl",
         "RenderType": "On",
@@ -17,24 +16,25 @@
       },
       {
         "__type": "Sandbox.ModelCollider",
-        "__guid": "9800dea1-b722-4259-bf7b-677c77b88803",
+        "__guid": "d243eb93-20da-42bc-9372-b4fe25cc45d3",
         "IsTrigger": false,
         "Model": "models/temp/equipment/equipment.vmdl",
         "Static": false
       },
       {
         "__type": "EquipmentChest",
-        "__guid": "1faf0684-313a-48cb-ab4c-ab8c13fa1512",
+        "__guid": "ed9e883d-7e07-4dd5-a756-48bbcc5c04c5",
         "Cost": 10,
         "HasPrice": true,
         "IsOpen": false,
         "ItemSpawnLocation": {
           "_type": "gameobject",
-          "go": "7be3cc01-6be6-4a7a-b49a-ad0b5ac9a990"
+          "go": "c3eb7881-72df-4bf4-bb5c-0c35b856d4d7"
         },
+        "PingIcon": "ui/ping/equipment.png",
         "Top": {
           "_type": "gameobject",
-          "go": "42e99ed2-391f-4d59-8e53-3d89ac32e278"
+          "go": "bcb8cb1b-c851-4d0f-8c91-fc009c0943fb"
         },
         "UseRandomItem": false,
         "WorldUI": {
@@ -44,7 +44,7 @@
       },
       {
         "__type": "Sandbox.HighlightOutline",
-        "__guid": "471cd707-204b-4868-92fe-606bd454bdcd",
+        "__guid": "4e009151-cee1-4e99-bfbf-aac452df1d5d",
         "__enabled": false,
         "Color": "0.99496,1,0.69767,1",
         "InsideColor": "0,0,0,0",
@@ -54,7 +54,7 @@
       },
       {
         "__type": "Sandbox.SphereCollider",
-        "__guid": "e5413ea6-ed7d-4068-bb44-288ec74f8e2d",
+        "__guid": "cfa1a874-aecc-43b1-9d64-c20b20233cde",
         "Center": "0,0,16.39999",
         "IsTrigger": true,
         "Radius": 100,
@@ -63,7 +63,7 @@
     ],
     "Children": [
       {
-        "__guid": "42e99ed2-391f-4d59-8e53-3d89ac32e278",
+        "__guid": "bcb8cb1b-c851-4d0f-8c91-fc009c0943fb",
         "Name": "equipment_top",
         "Position": "-7.5,0,30",
         "Enabled": true,
@@ -71,7 +71,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "812c8280-02fe-46d9-bd22-b2a3791f9ca8",
+            "__guid": "46542ee9-1f0f-4f77-bc4c-12a7240c7102",
             "BodyGroups": 18446744073709551615,
             "Model": "models/temp/equipment/equipment_top.vmdl",
             "RenderType": "On",
@@ -80,7 +80,7 @@
         ]
       },
       {
-        "__guid": "7be3cc01-6be6-4a7a-b49a-ad0b5ac9a990",
+        "__guid": "c3eb7881-72df-4bf4-bb5c-0c35b856d4d7",
         "Name": "Spawn",
         "Position": "4,0,36",
         "Enabled": true,

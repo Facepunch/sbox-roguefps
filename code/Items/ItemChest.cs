@@ -13,6 +13,8 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 	WorldCostPanel _Panel;
 	PrefabScene RandomItem { get; set; }
 	public override string Name { get; set; } = "Open Chest";
+
+
 	protected override void OnStart()
 	{
 		base.OnStart();
@@ -26,6 +28,8 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		}
 
 		Cost = (int)(25 * Scene.GetAllComponents<MasterGameManager>().FirstOrDefault().Current.TotalFactor * 1.25f);
+
+		PingString = $"Chest ({Cost} Coins)";
 	}
 
 	protected override void OnUpdate()
@@ -77,6 +81,7 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		go.Components.Get<ModelRenderer>( FindMode.InChildren ).Tint = itemGet.ItemColor;
 		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = itemGet;
 		var interactable = go.Components.Get<Interactable>( );
+		interactable.PingString = itemGet.Name;
 		interactable.Name = itemGet.Name;
 		//var item = RandomItem.Clone();
 		if ( ItemSpawnLocation != null )

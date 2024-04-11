@@ -2,11 +2,24 @@ using Sandbox;
 
 public class Interactable : Component
 {
+	[Property, ImageAssetPath] public string PingIcon { get; set; } = "ui/ping/ping.png";
 	[Property] public virtual string Name { get; set; } = "Interactable";
 	[Property] public bool HasPrice { get; set; } = false;
 	[Property] public int Cost { get; set; } = 100;
 	[Property] public bool IsOpen { get; set; } = false;
 	public GameObject Player { get; set; }
+	public virtual string PingString { get; set; } = "Interactable";
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+
+		var helper = GameObject.Components.Get<ItemHelper>(FindMode.InChildren);
+		if ( helper != null )
+		{
+			PingIcon = "ui/ping/item.png";
+		}
+	}
 
 	public virtual void OnInteract( GameObject player)
 	{

@@ -20,7 +20,8 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
     PrefabScene RandomItem { get; set; }
     int ItemSpawned { get; set; } = 0;
     float ItemChance { get; set; } = 0.4f; // 50% chance to get an item
-    public override string Name { get; set; } = "Open Chest";
+    public override string Name { get; set; } = "Open Terminal";
+	public override string PingString { get; set; } = "Terminal";
 	protected override void OnStart()
 	{
 		base.OnStart();
@@ -34,6 +35,8 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
 		}
 
 		Cost = (int)(15 * Scene.GetAllComponents<MasterGameManager>().FirstOrDefault().Current.TotalFactor * 1.25f);
+
+		PingString = $"Terminal ({Cost} Coins)";
 	}
 
 	TimeSince timeSinceItem = 0;
@@ -92,6 +95,7 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
 		{
 			stats.AddCoin( -Cost );
 			Cost = (int)(Cost * 1.25f);
+			PingString = $"Terminal ({Cost} Coins)";
 			if ( _Panel != null )
 			{
 				_Panel.Value = Cost;
@@ -132,6 +136,7 @@ public sealed class ItemTerminal : Interactable, Component.ITriggerListener
 		go.Components.Get<ModelRenderer>( FindMode.InChildren ).Tint = itemGet.ItemColor;
 		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = itemGet;
 		var interactable = go.Components.Get<Interactable>( );
+		interactable.PingString = itemGet.Name;
 		interactable.Name = itemGet.Name;
 		//var item = RandomItem.Clone();
 		if ( ItemSpawnLocation != null )

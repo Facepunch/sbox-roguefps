@@ -31,6 +31,8 @@ public sealed class MultiShopItem : Interactable
 
 			SetUpItemShop( randomItems[0], ItemLocationOne );
 		}
+
+		PingString = $"Shop ({ItemDef.Name}) ({Cost} Coins)";
 	}
 
 	public void SetUpItemShop( ItemDef item, GameObject itemLocation )
@@ -108,6 +110,7 @@ public sealed class MultiShopItem : Interactable
 		go.Components.Get<ModelRenderer>( FindMode.InChildren ).Tint = itemGet.ItemColor;
 		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = itemGet;
 		var interactable = go.Components.Get<Interactable>();
+		interactable.PingString = itemGet.Name;
 		interactable.Name = itemGet.Name;
 		//var item = RandomItem.Clone();
 		if ( ItemSpawnLocation != null )

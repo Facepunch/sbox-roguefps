@@ -1,29 +1,29 @@
 {
   "RootObject": {
-    "__guid": "9649e2be-d48c-4b49-9896-b2665d956356",
+    "__guid": "58bf5ea1-2be5-4ff3-bff7-be9f139c4ccf",
     "Name": "itemscrapper",
     "Tags": "interactable",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
-        "__type": "ModelRenderer",
-        "__guid": "02457ed8-6361-412c-a905-ce8ba477526f",
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "3cc6d054-a145-44e7-beee-d97761b5e226",
         "BodyGroups": 18446744073709551615,
         "Model": "models/temp/scrapper/item_scrapper.vmdl",
         "RenderType": "On",
         "Tint": "0.20465,0.20465,0.20465,1"
       },
       {
-        "__type": "ModelCollider",
-        "__guid": "8a452162-8c57-4963-aff7-4a4c4ded940d",
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "60ad1394-5397-4d4b-bfeb-af898393e1ea",
         "IsTrigger": false,
         "Model": "models/temp/scrapper/item_scrapper.vmdl",
         "Static": false
       },
       {
-        "__type": "HighlightOutline",
-        "__guid": "0bd930f2-414b-4d46-b1ff-e787d11cf3c3",
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "6dcb7cfd-56a1-4442-a59a-97e65528c06b",
         "__enabled": false,
         "Color": "0.99496,1,0.69767,1",
         "InsideColor": "0,0,0,0",
@@ -33,18 +33,19 @@
       },
       {
         "__type": "ItemScrapper",
-        "__guid": "6161ec8b-1bb6-495d-8c7f-19e4fd6f9e3f",
+        "__guid": "cd11fda3-5544-409d-a76a-4441ce85b3e3",
         "Cost": 100,
         "HasPrice": false,
         "IsOpen": false,
         "ItemSpawnLocation": {
           "_type": "gameobject",
-          "go": "1b401cc7-0501-47eb-8e01-fd534a87e22c"
-        }
+          "go": "e1d902a8-b1c1-4793-bd80-c7cde70656fc"
+        },
+        "PingIcon": "ui/ping/scrapper.png"
       },
       {
-        "__type": "SphereCollider",
-        "__guid": "b53e2930-608d-4673-88f2-8c291f26cba1",
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "9b606330-0f6a-4826-abb2-83ed0556424d",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Radius": 100,
@@ -53,7 +54,7 @@
     ],
     "Children": [
       {
-        "__guid": "1b401cc7-0501-47eb-8e01-fd534a87e22c",
+        "__guid": "e1d902a8-b1c1-4793-bd80-c7cde70656fc",
         "Name": "ItemLocation",
         "Position": "0,0,27.99994",
         "Enabled": true,

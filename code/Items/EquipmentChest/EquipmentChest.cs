@@ -32,6 +32,8 @@ public sealed class EquipmentChest : Interactable, Component.ITriggerListener
 		}
 
 		Cost = (int)(25 * Scene.GetAllComponents<MasterGameManager>().FirstOrDefault().Current.TotalFactor * 1.25f);
+
+		PingString = $"Equipment ({Cost} Coins)";
 	}
 
 	protected override void OnUpdate()
@@ -85,6 +87,7 @@ public sealed class EquipmentChest : Interactable, Component.ITriggerListener
 		go.Components.Get<ItemHelper>( FindMode.InChildren ).Item = null;
 		
 		var interactable = go.Components.Get<Interactable>( );
+		interactable.PingString = itemGet.Name;
 		interactable.Name = itemGet.Name;
 		//var item = RandomItem.Clone();
 		if ( ItemSpawnLocation != null )
