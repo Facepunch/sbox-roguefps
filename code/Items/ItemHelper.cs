@@ -28,6 +28,7 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 	{
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
+		
 			var player = other.GameObject.Components.Get<Stats>(FindMode.InParent).GameObject;
 			if ( player != null )
 			{
