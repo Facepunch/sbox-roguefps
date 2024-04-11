@@ -26,6 +26,8 @@
 	private List<Entry> Entries { get; set; } = new();
 	private List<EntryLocation> EntriesLocation { get; set; } = new();
 
+	RealTimeSince _lastPing;
+
 	[Property] GameObject PingedPrefab { get; set; }
 
 	protected override void OnUpdate()
@@ -34,6 +36,8 @@
 
 		if (Input.Pressed("ping"))
 		{
+			if (_lastPing < 0.75f) return;
+
 			var tr = Scene.Trace.Ray(Scene.Camera.Transform.Position, Scene.Camera.Transform.Position + Scene.Camera.Transform.Rotation.Forward * 1000000)
 			.Radius(2)
 			.WithoutTags("player")
@@ -63,6 +67,8 @@
 					EntriesLocation.Add(new EntryLocation("Location", pinged, 0, tr.EndPosition));
 					pinged.Transform.Position = tr.EndPosition;
 				}
+
+				_lastPing = 0;
 			}
 
 		}
