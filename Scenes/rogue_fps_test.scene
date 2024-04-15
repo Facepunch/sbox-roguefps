@@ -336,7 +336,7 @@
     {
       "__guid": "80ee03b2-f353-448f-a3be-abb0e229428c",
       "Name": "Cube (1)",
-      "Position": "-512,0,64",
+      "Position": "-512,64,64",
       "Scale": "1,1.5,3",
       "Tags": "solid",
       "Enabled": true,
@@ -899,12 +899,12 @@
               "0,0,-1"
             ],
             "TextureScale": [
-              "100,100",
               "0.25,0.25",
-              "100,100",
-              "100,100",
-              "100,100",
-              "100,100"
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
             ],
             "TextureAngle": [
               0,
@@ -4978,7 +4978,7 @@
               "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
-              "100,100",
+              "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25"
             ],
@@ -6524,162 +6524,343 @@
     {
       "__guid": "aad05772-c8ae-4212-9967-6db58ee75b9d",
       "Name": "itemterminal",
-      "Position": "-288,288,0.000002332129",
+      "Position": "-512,-96,0.00002646587",
       "Tags": "interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefab/shop_chest/itemterminal.prefab"
+    },
+    {
+      "__guid": "b1bb3a89-bc1e-4a25-90d2-d219b933454b",
+      "Name": "Object",
+      "Position": "0,-192,0",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "ccb3bcd0-c67a-46ae-aa65-3e3f3e2921a0",
+          "Name": "Cube",
+          "Position": "0,0,64",
+          "Scale": "2.56,0.32,2.56",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c01e7400-38c9-47f5-9da4-1bf01abcd134",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "DoorMove",
+              "__guid": "7d4609be-9505-4916-af65-74bb72b490f7",
+              "MoveDir": "0,0,1",
+              "MoveDistance": 128
+            }
+          ]
+        },
+        {
+          "__guid": "b2062bfe-ab92-48a9-aba9-d550e13fff4a",
+          "Name": "Cube",
+          "Position": "-80,16,48",
+          "Scale": "0.32,0.12,0.32",
+          "Tags": "interactable",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "273c0745-95ae-4642-86eb-1a9b92eeaf5a",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "KeyCardDoorLock",
+              "__guid": "262bbdd7-f8de-4ef6-b571-4d772999a9c7",
+              "Cost": 100,
+              "DoorToOpen": {
+                "_type": "component",
+                "component_id": "7d4609be-9505-4916-af65-74bb72b490f7",
+                "go": "ccb3bcd0-c67a-46ae-aa65-3e3f3e2921a0",
+                "component_type": "DoorMove"
+              },
+              "HasPrice": false,
+              "IsOpen": false
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "ff3c2f94-2cb7-4887-9df8-d38092bea4f8",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "ff9e37d5-cca0-4790-90a6-a35953678244",
+      "Name": "Box",
+      "Position": "-80,-192,63.99393",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "a54e6755-5419-4d11-ae81-b07c5d3fd76e",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/temp/itemterminal/itemterminal.vmdl",
-          "RenderType": "On",
-          "Tint": "0.08837,0.08837,0.08837,1"
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "b9e02a53-a237-41d5-a2a0-d7c54bf42fd4",
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "3fc6b0bb-58a2-47fc-8264-1978aff17597",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
           "IsTrigger": false,
-          "Model": "models/temp/itemterminal/itemterminal.vmdl",
-          "Static": false
-        },
-        {
-          "__type": "ItemTerminal",
-          "__guid": "838ff042-4728-4372-bedb-c280c436a5dc",
-          "Cost": 15,
-          "Door": {
-            "_type": "gameobject",
-            "go": "648e102e-bc35-4272-8e15-7568ea0d3b1b"
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACjWUh1JUQRRE37ILbtR9CLIiikg0YwIUlYyCEozw/z\u002BifarOTFXX9vbMTTP3vlFVVdfBnWAhGAuWgomgHXSDfnAzmA9eBfeC1WAveBIcBi\u002BCneBHsB18Cb4Gp8H34Dyo9PsoaATjQS3vBW\u002BN3wym5OSwotYKZuQd8608N\u002Bn\u002Bv6yuvvl/W47eN37TeifUqe2G56bl6G194H\u002BoDue38vxAf\u002Bi3PN9yr\u002BFez1hFG1cvdi3rIR5r1v/YPJSz5nyPge8AZz0wBvbLctZIreN7tfVZVsc3bajfVcPva3PjzjbUyn005feNVXItfbJvjtisy3mH3\u002B5j80bOvR57d9i/k9f2V1/7TTk\u002BF42J/tL80R\u002Br9cx9TP7UWH17u/T0c2MN7Onyxh\u002BMj82uHP2jfTZtn0\u002Bqf7Y\u002B7I/k6FtqtfMw1Oea8WtnZqD\u002BXg2/P9WYg79q2D8zZ/gnY9XO35R9e2qO2FzK0ZlD\u002Bh6bX3J0ZpO5wv6PHJ35RcP\u002BSo7PA2OiX5g/\u002Boka/vkukD/8m7Gw51vBWfiZsbDhm0G/Epf6yozztswAd0lv08f0FP1Dr9AXvBF23D33TM3URy3k/R/DRw725AQAAA==",
+            "TextureOrigin": "-80,-192,63.99393",
+            "Positions": [
+              "-15.99997,-15.99998,64",
+              "16.00005,-15.99998,64",
+              "15.99998,16.00002,64",
+              "-16.00004,16.00002,64",
+              "-16.00004,16.00002,-64",
+              "15.99998,16.00002,-64",
+              "16.00005,-15.99998,-64",
+              "-15.99997,-15.99998,-64",
+              "-15.99997,-15.99998,96.00607",
+              "16.00005,-15.99998,96.00607",
+              "15.99998,16.00002,96.00607",
+              "-16.00004,16.00002,96.00607",
+              "144,-15.99998,96.00607",
+              "144,-15.99998,64",
+              "144,16.00002,64",
+              "144,16.00002,96.00607",
+              "176,-15.99998,96.00607",
+              "176,-15.99998,64",
+              "176,16.00002,64",
+              "176,16.00002,96.00607",
+              "176,-15.99998,-63.99393",
+              "144,-15.99998,-63.99393",
+              "144,16.00002,-63.99393",
+              "176,16.00002,-63.99393"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
           },
-          "HasPrice": true,
-          "IsOpen": false,
-          "ItemSpawnLocation": {
-            "_type": "gameobject",
-            "go": "a6deea86-32c8-463d-ae1f-8127776b82cb"
-          },
-          "Light": {
-            "_type": "gameobject",
-            "go": "109ea724-4938-49cc-b24e-307f114b117e"
-          },
-          "PingIcon": "ui/ping/terminal.png",
-          "Rarity": "Rare",
-          "Screen": {
-            "_type": "gameobject",
-            "go": "d215f36a-88cc-4e7e-b366-896dedc3c5d3"
-          },
-          "UseRandomItem": true,
-          "WorldUI": {
-            "_type": "gameobject",
-            "prefab": "prefab/shop_chest/costpanel-nolookatcamera.prefab"
-          },
-          "WorldUILocation": {
-            "_type": "gameobject",
-            "go": "fbd590b1-bf8a-4e92-94c9-a85f72dc114e"
-          }
-        },
-        {
-          "__type": "Sandbox.HighlightOutline",
-          "__guid": "8e7a28a9-437c-4ca3-b583-cad6f3d05f35",
-          "__enabled": false,
-          "Color": "0.99496,1,0.69767,1",
-          "InsideColor": "0,0,0,0",
-          "InsideObscuredColor": "0,0,0,0",
-          "ObscuredColor": "0,0,0,0",
-          "Width": 0.25
-        },
-        {
-          "__type": "Sandbox.SphereCollider",
-          "__guid": "d30e2bf1-c92a-4294-a82c-e89ce80d71cb",
-          "Center": "0,0,64",
-          "IsTrigger": true,
-          "Radius": 128,
-          "Static": false
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "a6deea86-32c8-463d-ae1f-8127776b82cb",
-          "Name": "SpawnLocation",
-          "Position": "32,0,112",
-          "Enabled": true,
-          "NetworkMode": 2
-        },
-        {
-          "__guid": "648e102e-bc35-4272-8e15-7568ea0d3b1b",
-          "Name": "itemterminal_door",
-          "Position": "0,0,126",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ab1b27ac-00b3-4b39-ace5-94b4ee507ce6",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/temp/itemterminal/itemterminal_door.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "d215f36a-88cc-4e7e-b366-896dedc3c5d3",
-          "Name": "itemterminal_screen",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "d09314b2-4360-4d36-83d0-9d0a91235fbc",
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/dev/bright_10.vmat",
-              "Model": "models/temp/itemterminal/itemterminal_screen.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.ModelCollider",
-              "__guid": "f76515c3-4639-4ae7-baf3-af9093cd365c",
-              "IsTrigger": false,
-              "Model": "models/temp/itemterminal/itemterminal_screen.vmdl",
-              "Static": false
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "fbd590b1-bf8a-4e92-94c9-a85f72dc114e",
-              "Name": "WorldUILocation",
-              "Position": "7.456299,0,56.06163",
-              "Rotation": "0,-0.1305262,0,0.9914449",
-              "Enabled": true,
-              "NetworkMode": 2
-            }
-          ]
-        },
-        {
-          "__guid": "109ea724-4938-49cc-b24e-307f114b117e",
-          "Name": "itemterminal_light",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "a90ae036-296d-4697-88e5-51c24641ef66",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/temp/itemterminal/itemterminal_light.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.ModelCollider",
-              "__guid": "caaed04a-012b-435c-be2a-cbcabe2dc51f",
-              "IsTrigger": false,
-              "Model": "models/temp/itemterminal/itemterminal_light.vmdl",
-              "Static": false
-            }
-          ]
+          "SmoothingAngle": 40,
+          "Static": true
         }
       ]
     }
@@ -6707,7 +6888,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-12T07:44:22.2246785\u002B01:00",
+  "LastSaved": "2024-04-15T12:13:30.8054718\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
