@@ -8,12 +8,11 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 	[Property] bool UseRandomItem { get; set; } = true;
 	[Property] GameObject Top { get; set; }
 	[Property] PrefabScene WorldUI { get; set; }
-
+	[Property] bool IsFree { get; set; } = false;
 	GameObject _UI;
 	WorldCostPanel _Panel;
 	PrefabScene RandomItem { get; set; }
 	public override string Name { get; set; } = "Open Chest";
-
 
 	protected override void OnStart()
 	{
@@ -55,9 +54,12 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		//Check if the player has enough coins
 		var stats = player.Components.Get<Stats>();
 
-		if ( stats != null && stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins] >= Cost )
+		if ( stats != null && stats.PlayerCoinsAndXp[Stats.CoinsAndXp.Coins] >= Cost || IsFree)
 		{
-			stats.AddCoin( -Cost );
+			if ( !IsFree )
+			{
+				stats.AddCoin( -Cost );
+			}
 			SpawnItem();
 
 			IsOpen = true;
@@ -101,6 +103,8 @@ public sealed class ItemChest : Interactable, Component.ITriggerListener
 		//Log.Info( "OnTriggerEnter" );
 
 		if ( IsOpen ) return;
+
+		if ( IsFree ) return;
 	
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
