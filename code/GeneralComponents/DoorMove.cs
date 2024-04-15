@@ -4,6 +4,7 @@ public sealed class DoorMove : Component
 {
 	[Property] public Vector3 MoveDir { get; set; } = Vector3.Up;
 	[Property] public float MoveDistance { get; set; } = 128.0f;
+	[Property] public float Speed { get; set; } = 2.0f;
 	Vector3 StartingPos { get; set; }
 	public bool IsOpen { get; set; } = false;
 	public bool ShouldOpen { get; set; } = false;
@@ -41,7 +42,7 @@ public sealed class DoorMove : Component
 			}
 			else
 			{
-				GameObject.Transform.Position += MoveDir * 2.0f;
+				GameObject.Transform.Position += MoveDir * Speed;
 			}
 
 		}
