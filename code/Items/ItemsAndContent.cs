@@ -17,5 +17,10 @@
 		new TestEquip()
 	};
 
+	public static List<BaseKeyCard> KeyCards = new List<BaseKeyCard>
+	{
+		new BlueKeyCard()
+	};
+
 }
 

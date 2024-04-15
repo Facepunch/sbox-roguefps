@@ -5,5 +5,6 @@
 	Rare,
 	Epic,
 	Legendary,
+	KeyCard,
 	None
 }

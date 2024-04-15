@@ -2,7 +2,7 @@ using Sandbox;
 
 public class Interactable : Component
 {
-	[Property, ImageAssetPath] public string PingIcon { get; set; } = "ui/ping/ping.png";
+	[Property, ImageAssetPath] public virtual string PingIcon { get; set; } = "ui/ping/ping.png";
 	[Property] public virtual string Name { get; set; } = "Interactable";
 	[Property] public bool HasPrice { get; set; } = false;
 	[Property] public int Cost { get; set; } = 100;
