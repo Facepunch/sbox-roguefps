@@ -51,7 +51,6 @@
 			{
 				var itemPickUp = itemPickUps[i];
 
-
 				itemPickUp.Amount--;
 				if ( itemPickUp.Amount <= 0 )
 				{
