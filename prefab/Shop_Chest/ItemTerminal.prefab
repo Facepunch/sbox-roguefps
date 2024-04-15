@@ -1,0 +1,170 @@
+{
+  "RootObject": {
+    "__guid": "aad05772-c8ae-4212-9967-6db58ee75b9d",
+    "Name": "itemterminal",
+    "Position": "-288,288,0.000002332129",
+    "Tags": "interactable",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "a54e6755-5419-4d11-ae81-b07c5d3fd76e",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/temp/itemterminal/itemterminal.vmdl",
+        "RenderType": "On",
+        "Tint": "0.08837,0.08837,0.08837,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "b9e02a53-a237-41d5-a2a0-d7c54bf42fd4",
+        "IsTrigger": false,
+        "Model": "models/temp/itemterminal/itemterminal.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "ItemTerminal",
+        "__guid": "838ff042-4728-4372-bedb-c280c436a5dc",
+        "Cost": 15,
+        "Door": {
+          "_type": "gameobject",
+          "go": "648e102e-bc35-4272-8e15-7568ea0d3b1b"
+        },
+        "HasPrice": true,
+        "IsOpen": false,
+        "ItemSpawnLocation": {
+          "_type": "gameobject",
+          "go": "a6deea86-32c8-463d-ae1f-8127776b82cb"
+        },
+        "Light": {
+          "_type": "gameobject",
+          "go": "109ea724-4938-49cc-b24e-307f114b117e"
+        },
+        "PingIcon": "ui/ping/terminal.png",
+        "Rarity": "Rare",
+        "Screen": {
+          "_type": "gameobject",
+          "go": "d215f36a-88cc-4e7e-b366-896dedc3c5d3"
+        },
+        "UseRandomItem": true,
+        "WorldUI": {
+          "_type": "gameobject",
+          "prefab": "prefab/shop_chest/costpanel-nolookatcamera.prefab"
+        },
+        "WorldUILocation": {
+          "_type": "gameobject",
+          "go": "fbd590b1-bf8a-4e92-94c9-a85f72dc114e"
+        }
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "8e7a28a9-437c-4ca3-b583-cad6f3d05f35",
+        "__enabled": false,
+        "Color": "0.99496,1,0.69767,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "ObscuredColor": "0,0,0,0",
+        "Width": 0.25
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "d30e2bf1-c92a-4294-a82c-e89ce80d71cb",
+        "Center": "0,0,64",
+        "IsTrigger": true,
+        "Radius": 128,
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "a6deea86-32c8-463d-ae1f-8127776b82cb",
+        "Name": "SpawnLocation",
+        "Position": "32,0,112",
+        "Enabled": true,
+        "NetworkMode": 2
+      },
+      {
+        "__guid": "648e102e-bc35-4272-8e15-7568ea0d3b1b",
+        "Name": "itemterminal_door",
+        "Position": "0,0,126",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "ab1b27ac-00b3-4b39-ace5-94b4ee507ce6",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/temp/itemterminal/itemterminal_door.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "d215f36a-88cc-4e7e-b366-896dedc3c5d3",
+        "Name": "itemterminal_screen",
+        "Position": "0,0,0",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "d09314b2-4360-4d36-83d0-9d0a91235fbc",
+            "BodyGroups": 18446744073709551615,
+            "MaterialOverride": "materials/dev/bright_10.vmat",
+            "Model": "models/temp/itemterminal/itemterminal_screen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "f76515c3-4639-4ae7-baf3-af9093cd365c",
+            "IsTrigger": false,
+            "Model": "models/temp/itemterminal/itemterminal_screen.vmdl",
+            "Static": false
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "fbd590b1-bf8a-4e92-94c9-a85f72dc114e",
+            "Name": "WorldUILocation",
+            "Position": "7.456299,0,56.06163",
+            "Rotation": "0,-0.1305262,0,0.9914449",
+            "Enabled": true,
+            "NetworkMode": 2
+          }
+        ]
+      },
+      {
+        "__guid": "109ea724-4938-49cc-b24e-307f114b117e",
+        "Name": "itemterminal_light",
+        "Position": "0,0,0",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "a90ae036-296d-4697-88e5-51c24641ef66",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/temp/itemterminal/itemterminal_light.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "caaed04a-012b-435c-be2a-cbcabe2dc51f",
+            "IsTrigger": false,
+            "Model": "models/temp/itemterminal/itemterminal_light.vmdl",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
