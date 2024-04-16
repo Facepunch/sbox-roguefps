@@ -10,6 +10,9 @@ ScrapItemUI {
 	font-weight: bold;
 	border-radius: 20px;
 	pointer-events: all;
+	flex-direction:column;
+	align-content:center;
+	justify-content:center;
 
 	.item-list {
 		display: flex;
@@ -20,6 +23,17 @@ ScrapItemUI {
 		width: 90%;
 		height: 90%;
 	}
+
+	.button {
+		position:absolute;
+        background-color: #000;
+        color: #fff;
+        font-size: 24px;
+        font-family: "Quantico";
+        padding: 10px;
+        cursor: pointer;
+		bottom: 10%;
+    }
 
 	.item {
 		display: flex;
