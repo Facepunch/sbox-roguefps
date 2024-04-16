@@ -1,5 +1,8 @@
 public sealed class ElectricComponent : EffectBaseComponent
 {
+	public override string Icon { get; set; } = "ui/test/damagetypes/electric_damage_type.png";
+	public override string Name { get; set; } = "Electric";
+	public override string Description { get; set; } = "This target is being electrocuted.";
 	public override DamageTypes DamageType { get; set; } = DamageTypes.Electric;
 	public int Length { get; set; } = 1;
 	public TimeSince timeSinceSpawned { get; set; } = 0;

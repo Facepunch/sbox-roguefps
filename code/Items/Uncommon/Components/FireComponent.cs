@@ -1,13 +1,17 @@
 public sealed class FireComponent : EffectBaseComponent
 {
+	public override string Icon { get; set; } = "ui/test/damagetypes/fire_damage_type.png";
+	public override string Name { get; set; } = "Fire";
+	public override string Description { get; set; } = "This target is on fire.";
 	public override DamageTypes DamageType { get; set; } = DamageTypes.Fire;
 	public int Length { get; set; } = 1;
 	public TimeSince timeSinceSpawned { get; set; } = 0;
+	RealTimeSince lastDamged = 0;
 	public PrefabScene fireParticle { get; set; } = SceneUtility.GetPrefabScene( ResourceLibrary.Get<PrefabFile>( "prefab/particles/items/uncommon/fireeffect.prefab" ) );
 	GameObject fire;
 	bool spawned = false;
 
-	public float Damage { get; set; } = 0.1f;
+	public float Damage { get; set; } = 100f;
 	protected override void OnStart()
 	{
 		base.OnStart();
@@ -32,7 +36,13 @@ public sealed class FireComponent : EffectBaseComponent
 		{
 			if ( npc.Health > 0 )
 			{
-				npc.OnDamage( Damage, DamageType, GameObject.Parent );
+				Log.Info( lastDamged );
+				if( lastDamged > 1 )
+				{
+					Log.Info( "Damaged" );
+					npc.OnDamage( Damage, DamageType, GameObject.Parent );
+					lastDamged = 0;
+				}
 				if(!spawned)
 				{
 					spawned = true;
