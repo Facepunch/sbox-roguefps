@@ -1,0 +1,21 @@
+@using Sandbox.UI
+@using Sandbox
+
+@inherits Panel
+@namespace RogueFPS.UI
+
+<root class="body column">
+    <div class="with-small-gap column">
+        <a class="button" href="/">
+            RETURN
+        </a>
+    </div>
+</root>
+
+@code
+{
+    void Save()
+    {
+        this.Navigate("/");
+    }
+}

@@ -1,0 +1,29 @@
+@using Sandbox.Menu
+@using Sandbox.UI;
+
+@inherits Sandbox.UI.NavHostPanel
+@attribute [StyleSheet]
+@namespace RogueFPS.UI
+
+<root>
+	<div class="header">
+		<div class="title">ROGUE FPS</div>
+		<div class="subtitle">V.1</div>
+	</div>
+
+	<div class="navigator-canvas" slot="navigator-canvas" />
+</root>
+
+@code
+{
+	public MainMenu()
+	{
+		DefaultUrl = "/";
+		AddDestination("/", typeof(LandingPage));
+		AddDestination("/test", typeof(TestPage));
+		AddDestination("/play/singleplayer", typeof(SingleplayerPage));
+		// AddDestination("/play/demo", typeof(OpenScenePage));
+		// AddDestination("/settings", typeof(SettingsPage));
+		// AddDestination("/leaderboards", typeof(LeaderboardsPage));
+	}
+}

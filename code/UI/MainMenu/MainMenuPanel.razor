@@ -1,0 +1,71 @@
+@using Sandbox;
+@using Sandbox.UI;
+
+@namespace RogueFPS.UI
+@inherits PanelComponent
+
+<root>
+    <MainMenu @ref="Menu" />
+</root>
+
+@code
+{
+    public static MainMenuPanel Current { get; set; }
+    public MainMenu Menu { get; set; }
+
+    [Property] List<PageCameraSetup> CameraSetup { get; set; } = new();
+    [Property] public GameObject Camera { get; set; }
+
+    Vector3 lerpedPos = Vector3.Zero;
+    Rotation lerpedRot = Rotation.Identity;
+
+    bool firstUpdate = false;
+
+    [Property] public Action<string> OnUrlChangedAction { get; set; }
+
+    // THIS EXISTS BECAUSE WE DON'T HAVE DYNAMIC ACTIONGRAPH PROPERTIES YET!!
+    [Property] public string PlaySceneUrl { get; set; } = "/play/demo";
+
+    string currentUrl = "";
+    public void OnUrlChanged( string url )
+    {
+        OnUrlChangedAction?.Invoke( url );
+    }
+
+    protected override void OnUpdate()
+    {
+        if (Menu is null) return;
+
+        Current = this;
+
+        var url = Menu.CurrentUrl;
+        if (url != currentUrl )
+        {
+            currentUrl = url;
+            OnUrlChanged(url);
+        }
+
+        var setup = CameraSetup.FirstOrDefault(x => x.Url == Menu.CurrentUrl);
+
+        if (setup.CameraObject is null)
+        {
+            setup = CameraSetup.FirstOrDefault(x => x.Url == "/");
+        }
+
+        if ( !firstUpdate )
+        {
+            lerpedPos = Camera.Transform.Position;
+            lerpedRot = Camera.Transform.Rotation;
+            firstUpdate = true;
+        }
+
+        var targetPos = setup.CameraObject.Transform.Position;
+        var targetRot = setup.CameraObject.Transform.Rotation;
+
+        lerpedPos = lerpedPos.LerpTo( targetPos, Time.Delta * setup.PositionLerpSpeed );
+        lerpedRot = Rotation.Lerp( lerpedRot, targetRot, Time.Delta * setup.RotationLerpSpeed );
+
+        Camera.Transform.Position = lerpedPos;
+        Camera.Transform.Rotation = lerpedRot;
+    }
+}

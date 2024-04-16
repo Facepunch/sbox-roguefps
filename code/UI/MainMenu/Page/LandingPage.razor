@@ -1,0 +1,47 @@
+@using Sandbox.UI
+@using Sandbox
+
+@inherits Panel
+@namespace RogueFPS.UI
+
+<root class="body column">
+	<div class="with-small-gap column">
+		<a class="button cyan" href="/play/singleplayer">
+			SINGLEPLAYER
+		</a>
+		<a class="button cyan" href="/play/demo/animation">
+			MULTIPLAYER
+		</a>
+		<a class="button" href="/test">
+			Test
+		</a>
+	</div>
+
+	<div class="with-small-gap column">
+		<a class="button" href="/settings">
+			SETTINGS
+		</a>
+
+		@if (!Game.IsEditor)
+		{
+			<div class="button" @onclick=@Quit>
+				QUIT
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	void Quit()
+	{
+		if (Game.IsEditor)
+		{
+			// Don't work
+		}
+		else
+		{
+			Game.Close();
+		}
+	}
+}

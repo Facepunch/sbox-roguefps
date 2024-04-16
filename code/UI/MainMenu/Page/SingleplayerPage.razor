@@ -1,0 +1,29 @@
+@using Sandbox.UI
+@using Sandbox
+
+@inherits Panel
+@namespace RogueFPS.UI
+
+<root class="body column">
+	<div class="characterselect">
+	@for (int i = 0; i < 14; i++)
+	{
+		<div class="character">
+		<div class="icon" style="background-image: url('ui/ping/ping.png')"></div>
+		</div>
+	}
+	</div>
+    <div class="with-small-gap column">
+        <a class="button" href="/">
+            RETURN
+        </a>
+    </div>
+</root>
+
+@code
+{
+    void Save()
+    {
+        this.Navigate("/");
+    }
+}
