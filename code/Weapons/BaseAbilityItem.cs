@@ -7,6 +7,7 @@ public class BaseAbilityItem : Component
 	[Property, Group( "Info" )] public virtual string AbilityDescription { get; set; } = "Weapon";
 	[Property, ImageAssetPath, Group( "Info" )] public virtual string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
 	[Property, Group( "Stats" )] public virtual int MaxUseCount { get; set; } = 1;
+	[Property, Group( "Stats" )] public virtual bool ReloadAfterUse { get; set; } = false;
 	public int CurrentUseCount { get; set; }
 	public TimeSince LastUsed { get; set; }
 	public TimeUntil ReloadTime { get; set; } = 1f;
@@ -30,19 +31,39 @@ public class BaseAbilityItem : Component
 
 	protected override void OnUpdate()
 	{
-		if ( CurrentUseCount <= 0 )
+		if( ReloadAfterUse )
 		{
-			DoCooldown();
-			return;
-		}
+			if ( Input.Down( InputName ) && CurrentUseCount != 0 )
+			{
+				DoAction();
+			}
+			else
+			{
+				DoReleaseAction();
+			}
 
-		if ( Input.Down( InputName ) && !IsReloading )
-		{
-			DoAction();
+			if ( CurrentUseCount != MaxUseCount )
+			{
+				DoCooldown();
+				return;
+			}
 		}
 		else
 		{
-			DoReleaseAction();
+			if ( CurrentUseCount <= 0 )
+			{
+				DoCooldown();
+				return;
+			}
+
+			if ( Input.Down( InputName ) && !IsReloading )
+			{
+				DoAction();
+			}
+			else
+			{
+				DoReleaseAction();
+			}
 		}
 	}
 
@@ -57,7 +78,14 @@ public class BaseAbilityItem : Component
 		
 		if(CurrentUseCount != MaxUseCount && ReloadTime <= 0)
 		{
-			CurrentUseCount = MaxUseCount;
+			if( ReloadAfterUse )
+			{
+				CurrentUseCount++;
+			}
+			else
+			{
+				CurrentUseCount = MaxUseCount;
+			}
 			IsReloading = false;
 			DoReloadAnimation( false );
 		}
