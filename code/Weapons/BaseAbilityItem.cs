@@ -8,6 +8,7 @@ public class BaseAbilityItem : Component
 	[Property, ImageAssetPath, Group( "Info" )] public virtual string AbilityIcon { get; set; } = "ui/test/ability/ab1.png";
 	[Property, Group( "Stats" )] public virtual int MaxUseCount { get; set; } = 1;
 	[Property, Group( "Stats" )] public virtual bool ReloadAfterUse { get; set; } = false;
+	[Property, Group( "Stats" )] public virtual bool TapFire { get; set; } = false;
 	public int CurrentUseCount { get; set; }
 	public TimeSince LastUsed { get; set; }
 	public TimeUntil ReloadTime { get; set; } = 1f;
@@ -33,8 +34,9 @@ public class BaseAbilityItem : Component
 	{
 		if( ReloadAfterUse )
 		{
-			if ( Input.Down( InputName ) && CurrentUseCount != 0 )
+			if ( TapFire ? Input.Pressed( InputName ) : Input.Down( InputName ) )
 			{
+				if( CurrentUseCount <= 0) return;
 				DoAction();
 			}
 			else
@@ -47,6 +49,7 @@ public class BaseAbilityItem : Component
 				DoCooldown();
 				return;
 			}
+
 		}
 		else
 		{
