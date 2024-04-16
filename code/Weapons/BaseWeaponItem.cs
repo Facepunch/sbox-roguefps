@@ -14,8 +14,7 @@ public class BaseWeaponItem : BaseAbilityItem
 	public SkinnedModelRenderer ViewModel { get; set; }
 	[Property, Group( "Visual" )] public CameraShake CameraShake { get; set; }
 	[Property, ImageAssetPath, Group( "Visual" )] public string Crosshair { get; set; } = "ui/crosshair/crosshair001.png";
-
-	BasicCrosshairUI CrosshairUI { get; set; }
+	public virtual BasicCrosshairUI CrosshairUI { get; set; }
 
 	protected override void OnAwake()
 	{
@@ -41,11 +40,6 @@ public class BaseWeaponItem : BaseAbilityItem
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
-
-		if ( Input.Down( "attack2" ) && WeaponInputType == InputType.Secondary )
-		{
-			OnSecondaryFire();
-		}
 	}
 
 	public override void DoFire()
