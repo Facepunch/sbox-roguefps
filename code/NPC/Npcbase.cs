@@ -59,7 +59,7 @@ public sealed class Npcbase : Agent, Component.ITriggerListener
 					coin.Components.Get<CoinItem>().TargetPlayer = dmgDealer;
 				}
 			}
-			WaveSpawner.spawnedEntities--;
+			if ( WaveSpawner is not null ) WaveSpawner.spawnedEntities--;
 			GameObject.Destroy();
 		}
 

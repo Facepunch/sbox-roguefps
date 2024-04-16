@@ -3,27 +3,21 @@ namespace RogueFPS;
 [Title( "Chase" )]
 public partial class ChasingState : StateMachine.State
 {
-	/// <summary>
-	/// Should we be forcing into this state? Not super happy with this but it's event based.
-	/// </summary>
-	private bool forceIntoState = false;
-
 	public override bool ShouldEnterState( StateMachine machine )
 	{
-		// Forcing into state bypasses every other check
-		if ( forceIntoState )
-			return true;
-
-		// Only if we've been in another state for a second
-		if ( machine.TimeInState < 1f )
-			return false;
+		if ( machine.CurrentState is AttackingState && machine.TimeInState < 1f ) return false;
 
 		return true;
 	}
 
+	protected Actor GetTarget()
+	{
+		return Agent.GetAllPlayers().OrderBy( x => x.Transform.Position.DistanceSquared( Agent.Transform.Position ) ).FirstOrDefault();
+	}
+
 	public override void Tick()
 	{
-		var targetActor = Agent.GetAllPlayers().OrderBy( x => x.Transform.Position.DistanceSquared( Agent.Transform.Position ) ).FirstOrDefault();
+		var targetActor = GetTarget();
 
 		if ( !targetActor.IsValid() ) return;
 
@@ -82,20 +76,6 @@ public partial class ChasingState : StateMachine.State
 		{
 			// Optionally handle the case where there is no path or the target cannot be reached
 			Agent.WishMove = Vector3.Zero; // Stop moving if there's no target/path
-		}
-	}
-
-	public override void OnStateEnter( StateMachine.State prev )
-	{
-		base.OnStateEnter( prev );
-		forceIntoState = false;
-	}
-
-	public override void OnEvent( string eventName, params object[] obj )
-	{
-		if ( eventName == "damage" )
-		{
-			forceIntoState = true;
 		}
 	}
 }

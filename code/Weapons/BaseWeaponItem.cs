@@ -58,8 +58,8 @@ public class BaseWeaponItem : BaseAbilityItem
 			OnPrimaryFire();
 			base.DoFire();
 			CameraShake?.Shake();
-			CrosshairUI.OnShoot();
-			var sprintcomp = PlayerController.Components.Get<SprintMechanic>( FindMode.EverythingInSelfAndChildren );
+			CrosshairUI?.OnShoot();
+			var sprintcomp = PlayerController?.Components?.Get<SprintMechanic>( FindMode.EverythingInSelfAndChildren );
 			if ( sprintcomp != null )
 			{
 				sprintcomp.IsSprinting = false;
@@ -92,7 +92,7 @@ public class BaseWeaponItem : BaseAbilityItem
 			end += Vector3.Random.Normal * Spread;
 		}
 
-		if ( UseMuzzle )
+		if ( UseMuzzle && ViewModelObject.IsValid() )
 		{
 			Muzzle = ViewModelObject.Components.Get<SkinnedModelRenderer>().GetAttachment( "muzzle" ).Value.Position;
 			start = Muzzle;
@@ -110,6 +110,7 @@ public class BaseWeaponItem : BaseAbilityItem
 		if ( obj != null )
 		{
 			var health = obj.Components.Get<Npcbase>();
+			if ( health is not null ) 
 			{
 				health.OnDamage( PlayerStats.UpgradedStats[Stats.PlayerUpgradedStats.AttackDamage], DamageTypes.None, GameObject.Parent );
 			}
