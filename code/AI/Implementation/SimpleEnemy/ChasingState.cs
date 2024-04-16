@@ -3,6 +3,8 @@ namespace RogueFPS;
 [Title( "Chase" )]
 public partial class ChasingState : StateMachine.State
 {
+	[Property] public float StoppingDistance { get; set; } = 256f;
+
 	public override bool ShouldEnterState( StateMachine machine )
 	{
 		if ( machine.CurrentState is AttackingState && machine.TimeInState < 1f ) return false;
@@ -56,7 +58,7 @@ public partial class ChasingState : StateMachine.State
 			var globalDirection = (target - Agent.Transform.Position); // Global direction to the target
 			var distance = globalDirection.Length;
 
-			if ( distance > 0 ) // Make sure we're not already at the target
+			if ( distance > StoppingDistance ) // Make sure we're not already at the target
 			{
 				var localDirection = Agent.Transform.Rotation.Inverse * globalDirection; // Convert to local space
 				var direction = localDirection.Normal; // Normalize the direction
@@ -70,6 +72,11 @@ public partial class ChasingState : StateMachine.State
 					Gizmo.Draw.Color = Color.Green;
 					Gizmo.Draw.Arrow( Agent.Transform.Position, Agent.Transform.Position + (Agent.Transform.Rotation * localDirection) );
 				}
+			}
+			else
+			{
+				Agent.LookAt( target, 15f ); // Ensure the NPC looks at the target
+				Agent.WishMove = Vector3.Zero; // Stop moving if there's no target/path
 			}
 		}
 		else
