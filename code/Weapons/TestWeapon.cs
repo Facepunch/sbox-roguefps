@@ -28,14 +28,14 @@ public class TestWeapon : BaseWeaponItem
 		
 		var tr = TraceBullet( Scene.Camera.Transform.Position, Scene.Camera.Transform.Position + Scene.Camera.Transform.Rotation.Forward * 1000f );
 
-		ViewModel.Set("b_attack", true);
+		ViewModel?.Set("b_attack", true);
 
 		var tracer = BulletTrace.Clone();
 		var tracerParticle = tracer.Components.Get<TracerBulletParticle>();
 		tracerParticle.Start.Transform.Position = tr.StartPosition + Scene.Camera.Transform.Rotation.Forward * 10f;
 		tracerParticle.End.Transform.Position = tr.EndPosition;
 
-		var inventory = PlayerStats.Inventory;
+		var inventory = Stats.Inventory;
 
 		foreach ( var item in inventory.itemPickUps )
 		{

@@ -9,7 +9,7 @@ public class TestSlide : BaseAbilityItem
 	{
 		base.OnAwake();
 
-		MaxUseCount = (int)PlayerStats.UpgradedStats[Stats.PlayerUpgradedStats.SkillOneUses];
+		MaxUseCount = (int)Stats.UpgradedStats[Stats.PlayerUpgradedStats.SkillOneUses];
 		CurrentUseCount = MaxUseCount;
 	}
 

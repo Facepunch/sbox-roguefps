@@ -13,14 +13,14 @@ public class BaseAbilityItem : Component
 	public bool IsReloading { get; set; }
 	[Property, Group( "Input" )] public virtual InputType WeaponInputType { get; set; } = InputType.Primary;
 	[Property, Group( "Stats" )] public virtual Stats.PlayerUpgradedStats StatToUse { get; set; } = Stats.PlayerUpgradedStats.AttackSpeed;
-	public Stats PlayerStats { get; set; }
+	public Stats Stats { get; set; }
 	public PlayerController PlayerController { get; set; }
 	public string InputName { get; set; }
 
 	protected override void OnAwake()
 	{
 		base.OnAwake();
-		PlayerStats = GameObject.Components.Get<Stats>( FindMode.InParent );
+		Stats = GameObject.Components.Get<Stats>( FindMode.InParent );
 		CurrentUseCount = MaxUseCount;
 
 		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
@@ -50,7 +50,7 @@ public class BaseAbilityItem : Component
 	{
 		if ( !IsReloading )
 		{
-			ReloadTime = PlayerStats.UpgradedStats[StatToUse];
+			ReloadTime = Stats.UpgradedStats[StatToUse];
 			IsReloading = true;
 			DoReloadAnimation( true );
 		}

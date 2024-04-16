@@ -145,8 +145,8 @@
             "__type": "RogueFPS.ChasingState",
             "__guid": "0fd8e1a7-2572-4ecd-98b2-c2596d3c7d85",
             "NextTick": {
-              "Relative": -881.752,
-              "Passed": 881.752,
+              "Relative": -1224.1553,
+              "Passed": 1224.1553,
               "Fraction": 1
             },
             "Priority": 0,
@@ -157,12 +157,37 @@
             "__guid": "af5dadd7-5bee-4964-88e5-837edf782664",
             "AttackRange": 256,
             "NextTick": {
-              "Relative": -881.752,
-              "Passed": 881.752,
+              "Relative": -1224.1553,
+              "Passed": 1224.1553,
               "Fraction": 1
             },
             "Priority": 1,
             "TickFrequency": 0
+          }
+        ]
+      },
+      {
+        "__guid": "ccc04ee1-491a-46cf-b716-54d8bd5bb8ff",
+        "Name": "PrimaryWeapon",
+        "Position": "156.7419,216.0234,-57.01678",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "TestWeapon",
+            "__guid": "0d0410b1-7a76-4dad-8491-5e76ea64625a",
+            "AbilityDescription": "Its a machine Gun",
+            "AbilityIcon": "ui/test/ability/ab1.png",
+            "AbilityName": "Machine Gun",
+            "BulletTrace": {
+              "_type": "gameobject",
+              "prefab": "prefab/weapon/fx/bullettracer.prefab"
+            },
+            "Crosshair": "ui/crosshair/crosshair007.png",
+            "MaxUseCount": 30,
+            "StatToUse": "ReloadTime",
+            "UseMuzzle": true,
+            "WeaponInputType": "Primary"
           }
         ]
       }
