@@ -43,16 +43,10 @@ public sealed class CameraController : Component
 
 	protected override void OnUpdate()
 	{
-		ApplyRecoil();
+		//ApplyRecoil();
 	}
-
-	void ApplyRecoil()
+	public void ApplyRecoil()
 	{
-		/*
-		if ( PlayerController.Weapon.GetFunction<RecoilFunction>() is var fn )
-		{
-			PlayerController.EyeAngles += fn.Current;
-		}
-		*/
+		PlayerController.EyeAngles += (Rotation.FromPitch( -.25f ) + Rotation.FromYaw( Random.Shared.Float( -1f, 1f ) )).Angles();
 	}
 }
