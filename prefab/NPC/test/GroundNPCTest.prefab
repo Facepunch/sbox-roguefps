@@ -145,8 +145,8 @@
             "__type": "RogueFPS.ChasingState",
             "__guid": "0fd8e1a7-2572-4ecd-98b2-c2596d3c7d85",
             "NextTick": {
-              "Relative": -1224.1553,
-              "Passed": 1224.1553,
+              "Relative": -1770.8412,
+              "Passed": 1770.8412,
               "Fraction": 1
             },
             "Priority": 0,
@@ -157,8 +157,8 @@
             "__guid": "af5dadd7-5bee-4964-88e5-837edf782664",
             "AttackRange": 256,
             "NextTick": {
-              "Relative": -1224.1553,
-              "Passed": 1224.1553,
+              "Relative": -1770.8412,
+              "Passed": 1770.8412,
               "Fraction": 1
             },
             "Priority": 1,
@@ -169,7 +169,7 @@
       {
         "__guid": "ccc04ee1-491a-46cf-b716-54d8bd5bb8ff",
         "Name": "PrimaryWeapon",
-        "Position": "156.7419,216.0234,-57.01678",
+        "Position": "23.46886,0,36.24902",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
@@ -186,6 +186,7 @@
             "Crosshair": "ui/crosshair/crosshair007.png",
             "MaxUseCount": 30,
             "StatToUse": "ReloadTime",
+            "UseGameObjectForTrace": true,
             "UseMuzzle": true,
             "WeaponInputType": "Primary"
           }
