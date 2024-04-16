@@ -23,7 +23,11 @@ public partial class ChasingState : StateMachine.State
 
 	public override void Tick()
 	{
-		var path = Agent.GetPath( Agent.LastStimulus.Position );
+		var targetActor = Agent.GetAllPlayers().OrderBy( x => x.Transform.Position.DistanceSquared( Agent.Transform.Position ) ).FirstOrDefault();
+
+		if ( !targetActor.IsValid() ) return;
+
+		var path = Agent.GetPath( targetActor.Transform.Position );
 		var targetIndex = 0;
 
 		for ( int i = 0; i < path.Count; ++i )

@@ -1,6 +1,6 @@
 namespace RogueFPS;
 
-public abstract partial class Agent : Actor, Actor.IReceptor
+public abstract partial class Agent : Actor
 {
 	/// <summary>
 	/// An action called when the NPC is damaged by something.
@@ -44,8 +44,6 @@ public abstract partial class Agent : Actor, Actor.IReceptor
 			var health = Health.Remap( 0, 100, 1, 0 );
 			Model?.SceneObject.Attributes.Set( "bloodamount", health );
 		}
-
-		Scene.BroadcastStimulus( new FriendGotHurtStimulus( Transform.Position ) );
 	}
 
 	public override void OnKilled( in Sandbox.DamageInfo damage )
@@ -64,12 +62,6 @@ public abstract partial class Agent : Actor, Actor.IReceptor
 
 	public override void OnEvent( string eventName, params object[] obj )
 	{
-		if ( eventName == "damage" )
-		{
-			var damageInfo = (DamageInfo)obj[0];
-			LastStimulus = new HurtStimulus( damageInfo.Position );
-		}
-
 		StateMachine?.OnEvent( eventName, obj );
 	}
 
@@ -87,30 +79,6 @@ public abstract partial class Agent : Actor, Actor.IReceptor
 		base.OnUpdate();
 
 		UpdateMovement();
-		FindStimuli();
-		
-		// Kill off stimuli if it's based on old information
-		if ( LastStimulus is not null && !LastStimulus.ShouldReact( this ) )
-		{		
-			LastStimulus = null;
-		}
-	}
-
-	/// <summary>
-	/// The last stimulus info this actor took.
-	/// </summary>
-	public Stimulus LastStimulus { get; set; }
-
-	public void OnStimulusReceived( Stimulus stimulusInfo )
-	{
-		if ( stimulusInfo.HasExpired )
-			return;
-
-
-		if ( stimulusInfo.ShouldReact( this ) )
-		{
-			LastStimulus = stimulusInfo;
-		}
 	}
 
 	public virtual bool Hates( Actor other )

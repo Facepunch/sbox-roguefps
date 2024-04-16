@@ -2,7 +2,7 @@
 namespace RogueFPS;
 
 // Should probably all be in HostileNPC
-partial class Agent
+public partial class Agent
 {
 	/// <summary>
 	/// Does this agent have line of sight to a specified GameObject?
@@ -129,18 +129,5 @@ partial class Agent
 		return Scene.NavMesh.GetSimplePath( Transform.Position, target );
 	}
 
-	TimeUntil nextStimuli = 0f;
-
 	[Property] public float LineOfSightRange { get; set; } = -1;
-
-	public void FindStimuli()
-	{
-		var enemy = FindClosestEnemyInLineOfSight( LineOfSightRange );
-
-		// Can we actually see anyone?
-		if ( enemy == null )
-			return;
-
-		LastStimulus = new EnemySpottedStimulus( enemy );
-	}
 }

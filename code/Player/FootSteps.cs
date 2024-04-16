@@ -45,7 +45,5 @@ public sealed class FootSteps : Component
 
 		var handle = Sound.Play( sound, tr.HitPosition + tr.Normal * 5 );
 		handle.Volume = vol * e.Volume;
-
-		Scene.BroadcastStimulus( FootstepStimulus.From( e ) );
 	}
 }

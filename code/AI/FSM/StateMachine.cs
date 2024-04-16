@@ -129,6 +129,5 @@ public abstract partial class StateMachine : Component
 		DebugText( $"Mechanics: {string.Join( ", ", Agent.Mechanics.Where( x => x.IsActive ) )}" );
 		DebugText( $"State: {CurrentState}" );
 		DebugText( $"Name: {GameObject.Parent.Name}" );
-		DebugText( $"LastStimulus: {Agent.LastStimulus}" );
 	}
 }
