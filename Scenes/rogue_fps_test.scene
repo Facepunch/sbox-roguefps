@@ -5174,6 +5174,7 @@
         {
           "__type": "WaveSpawner",
           "__guid": "510a2e70-6468-47da-9d71-18b8f76d9a00",
+          "__enabled": false,
           "spawnedEntities": 0,
           "EntityPrefab": {
             "_type": "gameobject",
@@ -7886,7 +7887,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-16T14:26:56.2871178\u002B01:00",
+  "LastSaved": "2024-04-16T22:34:59.5285093\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
