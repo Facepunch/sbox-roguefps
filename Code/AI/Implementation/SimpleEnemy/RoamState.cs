@@ -5,7 +5,6 @@ namespace RogueFPS;
 public partial class RoamState : ChasingState
 {
 	[Property] public float AttackRange { get; set; } = 256f;
-
 	[Property] TimeSince timeSinceLastRoam;
 	Vector3? lastRoamPoint;
 
@@ -34,6 +33,14 @@ public partial class RoamState : ChasingState
 
 		Gizmo.Draw.Color = Color.Red;
 		Gizmo.Draw.SolidSphere( lastRoamPoint.Value, 10f);
+
+		//Get a new randompoint to roam to if the agent is close to the last roam point
+		if( targetIndex == path.Count - 1 )
+		{
+			lastRoamPoint = Agent.GetRandomPoint();
+			//timeSinceLastRoam = 0;
+			Log.Info( "Getting new random point" );
+		}
 
 		for ( int i = 0; i < path.Count; ++i )
 		{
@@ -67,7 +74,7 @@ public partial class RoamState : ChasingState
 			var globalDirection = (target - Agent.Transform.Position); // Global direction to the target
 			var distance = globalDirection.Length;
 
-			if ( distance > StoppingDistance ) // Make sure we're not already at the target
+			if ( distance > 0 ) // Make sure we're not already at the target
 			{
 				var localDirection = Agent.Transform.Rotation.Inverse * globalDirection; // Convert to local space
 				var direction = localDirection.Normal; // Normalize the direction
@@ -86,6 +93,8 @@ public partial class RoamState : ChasingState
 			{
 				Agent.LookAt( target, 15f ); // Ensure the NPC looks at the target
 				Agent.WishMove = Vector3.Zero; // Stop moving if there's no target/path
+
+				lastRoamPoint = Agent.GetRandomPoint();
 			}
 		}
 		else
