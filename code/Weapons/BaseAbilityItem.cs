@@ -9,6 +9,7 @@ public class BaseAbilityItem : Component
 	[Property, Group( "Stats" )] public virtual int MaxUseCount { get; set; } = 1;
 	[Property, Group( "Stats" )] public virtual bool ReloadAfterUse { get; set; } = false;
 	[Property, Group( "Stats" )] public virtual bool TapFire { get; set; } = false;
+	[Property, Group( "Stats" )] public virtual bool IsAI { get; set; } = false;
 	public int CurrentUseCount { get; set; }
 	public TimeSince LastUsed { get; set; }
 	public TimeUntil ReloadTime { get; set; } = 1f;
@@ -35,6 +36,8 @@ public class BaseAbilityItem : Component
 	}
 	protected override void OnUpdate()
 	{
+		if( IsAI ) return;
+
 		if( ReloadAfterUse )
 		{
 			if ( TapFire ? Input.Pressed( InputName ) : Input.Down( InputName ) )
