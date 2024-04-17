@@ -4820,7 +4820,7 @@
     {
       "__guid": "81598fa3-159f-4eaf-8428-50d516ddf68e",
       "Name": "SpawnPoint",
-      "Position": "-384,960.0001,0",
+      "Position": "-4640,4000,544",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -5159,7 +5159,7 @@
     {
       "__guid": "03388dc8-c755-438a-8313-a2463ebf2f23",
       "Name": "LootSpawner (1)",
-      "Position": "-128,2208,480",
+      "Position": "32,1088,-0.00009615815",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -5167,6 +5167,10 @@
           "__type": "WaveSpawner",
           "__guid": "510a2e70-6468-47da-9d71-18b8f76d9a00",
           "spawnedEntities": 0,
+          "BBox": {
+            "Mins": "3000,3000,200",
+            "Maxs": "-3000,-3000,-10"
+          },
           "EntityPrefab": {
             "_type": "gameobject",
             "prefab": "prefab/npc/test/groundnpctest.prefab"
@@ -7887,7 +7891,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-17T16:24:38.1284105\u002B01:00",
+  "LastSaved": "2024-04-17T23:14:29.8748545\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

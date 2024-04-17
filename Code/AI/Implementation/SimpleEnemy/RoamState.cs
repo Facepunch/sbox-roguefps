@@ -31,9 +31,6 @@ public partial class RoamState : ChasingState
 		var path = Agent.GetPath( lastRoamPoint.Value );
 		var targetIndex = 0;
 
-		Gizmo.Draw.Color = Color.Red;
-		Gizmo.Draw.SolidSphere( lastRoamPoint.Value, 10f);
-
 		//Get a new randompoint to roam to if the agent is close to the last roam point
 		if( targetIndex == path.Count - 1 )
 		{

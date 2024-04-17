@@ -14,6 +14,19 @@ public sealed class WaveSpawner : Component
 	[Property] public int spawnedEntities;
 	private TimeSince timeSinceLastWave = 0;
 
+	[Property, Title( "Box Size" ), Group( "Box" )]
+	public BBox BBox { get; set; }
+	protected override void DrawGizmos()
+	{
+		if ( !Gizmo.IsSelected && !Gizmo.IsHovered )
+			return;
+
+		Gizmo.Draw.LineThickness = 1;
+		Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( Gizmo.IsSelected ? 1.0f : 0.2f );
+		Gizmo.Draw.LineBBox( BBox );
+
+	}
+
 	protected override void OnStart()
 	{
 		base.OnStart();
@@ -49,7 +62,7 @@ public sealed class WaveSpawner : Component
 	{
 		if ( EntityPrefab == null ) return;
 		var entity = EntityPrefab.Clone();
-		var spawnPos = Scene.NavMesh.GetRandomPoint( Transform.Position, 2000 );
+		var spawnPos = Scene.NavMesh.GetRandomPoint( BBox );
 		entity.Components.Get<Npcbase>().WaveSpawner = this;
 		entity.BreakFromPrefab();
 		if ( spawnPos.HasValue )
