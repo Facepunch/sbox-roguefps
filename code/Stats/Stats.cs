@@ -22,6 +22,8 @@ public sealed class Stats : Component
 	[Property, Group( "Attack" )] public float SecondaryAttackCoolDown { get; set; } = 5f;
 	[Property, Group( "Skill" )] public float SkillOneCoolDown { get; set; } = 5f;
 	[Property, Group( "Skill" )] public float SkillOneUses { get; set; } = 1f;
+	[Property, Group( "Skill" )] public float SkillTwoCoolDown { get; set; } = 10f;
+	[Property, Group( "Skill" )] public float SkillTwoUses { get; set; } = 1f;
 	[Property, Group( "Skill" )] public float UltimateCoolDown { get; set; } = 50f;
 	[Property, Group( "Skill" )] public float UltimateUses { get; set; } = 1f;
 	//
@@ -40,7 +42,7 @@ public sealed class Stats : Component
 	public bool HasStat( PlayerStartingStats stat ) => StartingStats[stat] > 0f;
 	public enum PlayerStartingStats
 	{
-		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AmmoCount, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AmmoCount, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, SkillTwoCoolDown, SkillTwoUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -48,7 +50,7 @@ public sealed class Stats : Component
 	public IDictionary<PlayerUpgradedStats, float> UpgradedStats { get; private set; }
 	public enum PlayerUpgradedStats
 	{
-		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AmmoCount, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AmmoCount, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, SkillTwoCoolDown, SkillTwoUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -216,6 +218,10 @@ public sealed class Stats : Component
 	{
 		return StartingStats.ContainsKey( stat ) ? StartingStats[stat] : 0f;
 	}
+	public float GetUpgradedStat( PlayerUpgradedStats stat )
+	{
+		return UpgradedStats.ContainsKey( stat ) ? UpgradedStats[stat] : 0f;
+	}
 
 	public void Modify( PlayerUpgradedStats stat, float amount )
 	{
@@ -275,6 +281,8 @@ public sealed class Stats : Component
 		StartingStats[PlayerStartingStats.SecondaryAttackCoolDown] = SecondaryAttackCoolDown;
 		StartingStats[PlayerStartingStats.SkillOneCoolDown] = SkillOneCoolDown;
 		StartingStats[PlayerStartingStats.SkillOneUses] = SkillOneUses;
+		StartingStats[PlayerStartingStats.SkillTwoCoolDown] = SkillTwoCoolDown;
+		StartingStats[PlayerStartingStats.SkillTwoUses] = SkillTwoUses;
 		StartingStats[PlayerStartingStats.UltimateCoolDown] = UltimateCoolDown;
 		StartingStats[PlayerStartingStats.UltimateUses] = UltimateUses;
 
@@ -294,6 +302,8 @@ public sealed class Stats : Component
 		UpgradedStats[PlayerUpgradedStats.SecondaryAttackCoolDown] = SecondaryAttackCoolDown;
 		UpgradedStats[PlayerUpgradedStats.SkillOneCoolDown] = SkillOneCoolDown;
 		UpgradedStats[PlayerUpgradedStats.SkillOneUses] = SkillOneUses;
+		UpgradedStats[PlayerUpgradedStats.SkillTwoCoolDown] = SkillTwoCoolDown;
+		UpgradedStats[PlayerUpgradedStats.SkillTwoUses] = SkillTwoUses;
 		UpgradedStats[PlayerUpgradedStats.UltimateCoolDown] = UltimateCoolDown;
 		UpgradedStats[PlayerUpgradedStats.UltimateUses] = UltimateUses;
 
