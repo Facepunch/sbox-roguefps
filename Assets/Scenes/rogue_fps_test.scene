@@ -5168,8 +5168,8 @@
           "__guid": "510a2e70-6468-47da-9d71-18b8f76d9a00",
           "spawnedEntities": 0,
           "BBox": {
-            "Mins": "3000,3000,200",
-            "Maxs": "-3000,-3000,-10"
+            "Mins": "2929.629,3000,200",
+            "Maxs": "-3123.984,-3000,-10"
           },
           "EntityPrefab": {
             "_type": "gameobject",
@@ -7891,7 +7891,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-17T23:14:29.8748545\u002B01:00",
+  "LastSaved": "2024-04-17T23:19:13.0459189\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

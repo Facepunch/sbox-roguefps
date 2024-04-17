@@ -25,6 +25,12 @@ public sealed class WaveSpawner : Component
 		Gizmo.Draw.Color = Gizmo.Colors.Green.WithAlpha( Gizmo.IsSelected ? 1.0f : 0.2f );
 		Gizmo.Draw.LineBBox( BBox );
 
+		Gizmo.Draw.IgnoreDepth = true;
+
+		if (Gizmo.Control.BoundingBox("ResizeBox", BBox, out var outBox))
+		{
+			BBox = outBox;
+		}
 	}
 
 	protected override void OnStart()
