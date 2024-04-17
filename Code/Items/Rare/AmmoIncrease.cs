@@ -15,8 +15,6 @@ public class AmmoIncrease : ItemDef
 		var ammoIncrease = (int)(startingAmmo * 0.1);  // 10% increase
 
 		Owner.UpgradedStats[Stats.PlayerUpgradedStats.AmmoCount] += ammoIncrease;
-
-		Log.Info( $"Applied ammo upgrade: +{ammoIncrease}. Total ammo now: {Owner.UpgradedStats[Stats.PlayerUpgradedStats.AmmoCount]}" );
 	}
 
 	public override void RemoveUpgrade()
@@ -25,7 +23,5 @@ public class AmmoIncrease : ItemDef
 		var ammoIncrease = (int)(startingAmmo * 0.1);  // 10% increase
 
 		Owner.UpgradedStats[Stats.PlayerUpgradedStats.AmmoCount] -= ammoIncrease;
-
-		Log.Info( $"Removed ammo upgrade: -{ammoIncrease}. Total ammo now: {Owner.UpgradedStats[Stats.PlayerUpgradedStats.AmmoCount]}" );
 	}
 }
