@@ -6,22 +6,6 @@ public sealed class MasterGameManager : Component
 	static string FileName = $"{Game.ActiveScene.Title}_currentSession.json";
 	public SessionProgess Current { get; set; } = new SessionProgess();
 
-	private void Fetch()
-	{
-		//Current ??= FileSystem.Data.ReadJson<SessionProgess>( FileName, null );
-		/*
-		if( Current == null )
-		{
-			//Log.Info( "No session data found, starting new game." );
-			//OnNewGame();
-		}
-		else
-		{
-			//Log.Info( "Session data found, loading." );
-		}
-		*/
-	}
-
 	protected override void OnStart()
 	{
 		//if ( IsProxy )
@@ -63,7 +47,7 @@ public sealed class MasterGameManager : Component
 		// If we didn't load data yet (somehow)
 		if ( Current == null )
 		{
-			Fetch();
+			//Fetch();
 		}
 
 		FileSystem.Data.WriteJson( FileName, Current );
