@@ -130,7 +130,7 @@ public partial class Agent
 	}
 	public Vector3? GetRandomPoint()
 	{
-		return Scene.NavMesh.GetRandomPoint();
+		return Scene.NavMesh.GetRandomPoint(Transform.Position, 1000f);
 	}
 
 	[Property] public float LineOfSightRange { get; set; } = -1;
