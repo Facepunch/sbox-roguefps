@@ -5034,17 +5034,9 @@
       ]
     },
     {
-      "__guid": "10fdbf11-c844-4f86-b822-89604c9966c7",
-      "Name": "LootBox",
-      "Position": "0,1056,-0.000008201306",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefab/lootbox/testlootbox.prefab"
-    },
-    {
       "__guid": "95e4be5f-316a-4c8d-9841-037d6c25899f",
       "Name": "Coin",
-      "Position": "-448,832,32",
+      "Position": "-256,1408,31.9995",
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefab/coinandxp/coinitem.prefab"
@@ -5088,7 +5080,7 @@
     {
       "__guid": "6a3e07cf-ebdc-491f-9cf4-dfe0c28df847",
       "Name": "Coin (2)",
-      "Position": "-560,832,32",
+      "Position": "-352,1408,32.00005",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -5124,7 +5116,7 @@
     {
       "__guid": "b8310c48-cfbf-45b1-bc27-bf4687800eb0",
       "Name": "XP",
-      "Position": "-672,896,31.99999",
+      "Position": "-448,1408,32",
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefab/coinandxp/xpitem.prefab"
@@ -7855,15 +7847,6 @@
       ]
     },
     {
-      "__guid": "1786cf56-d9e8-440c-af2a-74ed94fc39c7",
-      "Name": "FreeItemChest",
-      "Position": "96,0,-0.0004868446",
-      "Tags": "interactable",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefab/shop_chest/freeitemchest.prefab"
-    },
-    {
       "__guid": "122b84c9-b8fd-49b1-9776-58240f4e27ae",
       "Name": "coinchest",
       "Position": "0,240,-0",
@@ -7892,11 +7875,11 @@
     "NavMesh": {
       "Enabled": true,
       "IncludeStaticBodies": true,
-      "IncludeKeyframedBodies": false,
+      "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
       "AgentHeight": 64,
       "AgentRadius": 16,
-      "AgentStepSize": 18,
+      "AgentStepSize": 32,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
       "IncludedBodies": ""
@@ -7904,7 +7887,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-17T16:15:58.8407966\u002B01:00",
+  "LastSaved": "2024-04-17T16:24:38.1284105\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

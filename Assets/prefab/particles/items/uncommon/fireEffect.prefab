@@ -1,14 +1,14 @@
 {
   "RootObject": {
-    "__guid": "2c46d238-5ee1-43cc-8798-ebb1f56ebbc4",
+    "__guid": "65852e92-1e33-49e4-89e0-1f54d8dddf69",
     "Name": "fireeffect",
     "Tags": "particle,particles",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
-        "__type": "ParticleEffect",
-        "__guid": "8946e577-105a-48a0-96c9-bed1f05c05b2",
+        "__type": "Sandbox.ParticleEffect",
+        "__guid": "6eefd4a4-cfbd-49ea-9179-37b18ed385d5",
         "Alpha": {
           "Type": "Curve",
           "CurveA": [
@@ -134,8 +134,8 @@
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "ParticleSpriteRenderer",
-        "__guid": "50ebb753-68dc-4b49-9289-399530abfbee",
+        "__type": "Sandbox.ParticleSpriteRenderer",
+        "__guid": "7ea95f6d-8ff5-4dfe-b2ec-9613d7fc7909",
         "Additive": false,
         "BlurAmount": 0.5,
         "BlurOpacity": 0.91,
@@ -153,8 +153,8 @@
         "Texture": "particles/fire/flame001_side.vtex"
       },
       {
-        "__type": "ParticleSphereEmitter",
-        "__guid": "67644d59-74ce-47ad-8908-cc322a184c15",
+        "__type": "Sandbox.ParticleSphereEmitter",
+        "__guid": "55800072-4dbb-4cb8-afe6-3ca1e388d32b",
         "Burst": 0,
         "Delay": 0,
         "DestroyOnEnd": false,
@@ -164,6 +164,11 @@
         "Radius": 26.64,
         "Rate": 76.64,
         "Velocity": 1
+      },
+      {
+        "__type": "Destroyer",
+        "__guid": "b7176159-8211-40e2-a900-0466e44afba2",
+        "TimeToDestroy": 5
       }
     ],
     "Children": []
