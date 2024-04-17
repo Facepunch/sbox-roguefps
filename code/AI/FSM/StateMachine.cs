@@ -41,7 +41,7 @@ public abstract partial class StateMachine : Component
 
 	public void OnStateChanged( State before, State after )
 	{
-		Log.Info( $"FSM state changed from {before} to {after}" );
+		//Log.Info( $"FSM state changed from {before} to {after}" );
 
 		before?.OnStateExit( after );
 		after?.OnStateEnter( before );

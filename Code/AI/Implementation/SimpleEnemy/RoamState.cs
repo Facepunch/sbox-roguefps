@@ -1,42 +1,39 @@
-using System.Reflection.PortableExecutable;
+using Sandbox.Navigation;
 
 namespace RogueFPS;
-
-[Title( "Chase" )]
-public partial class ChasingState : StateMachine.State
+[Title( "Roam" )]
+public partial class RoamState : ChasingState
 {
-	public Actor targetActor;
+	[Property] public float AttackRange { get; set; } = 256f;
 
-	[Property] public float StoppingDistance { get; set; } = 256f;
+	[Property] TimeSince timeSinceLastRoam;
+	Vector3? lastRoamPoint;
+
+	public BaseWeaponItem GetWeapon()
+	{
+		var wpn = GameObject.Root.Components.GetAll<BaseWeaponItem>( FindMode.EverythingInSelfAndDescendants ).FirstOrDefault();
+		return wpn;
+	}
 
 	public override bool ShouldEnterState( StateMachine machine )
 	{
-		if ( machine.CurrentState is AttackingState && machine.TimeInState < 1f || machine.CurrentState is RoamState && machine.TimeInState < 1f ) return false;
-		return true;
-	}
-
-	protected Actor GetTarget()
-	{
-		return Agent.GetAllPlayers().OrderBy( x => x.Transform.Position.DistanceSquared( Agent.Transform.Position ) ).FirstOrDefault();
+		//Get the target actor from the chasing state
+		return machine.Components.Get<ChasingState>(FindMode.EverythingInDescendants).targetActor == null;
 	}
 
 	public override void Tick()
 	{
-		targetActor = GetTarget();
-
-		var distancetoTarget = Agent.Transform.Position.Distance( targetActor.Transform.Position);
-
-		if ( distancetoTarget > StoppingDistance * 5 )
+		if( timeSinceLastRoam > Random.Shared.Float( 10f, 20f ) || !lastRoamPoint.HasValue )
 		{
-			Agent.StateMachine.SetState<RoamState>();
-			//targetActor = null;
-			return;
+			lastRoamPoint = Agent.GetRandomPoint();
+			timeSinceLastRoam = 0;
 		}
 
-		if ( !targetActor.IsValid() ) return;
-
-		var path = Agent.GetPath( targetActor.Transform.Position );
+		var path = Agent.GetPath( lastRoamPoint.Value );
 		var targetIndex = 0;
+
+		Gizmo.Draw.Color = Color.Red;
+		Gizmo.Draw.SolidSphere( lastRoamPoint.Value, 10f);
 
 		for ( int i = 0; i < path.Count; ++i )
 		{
@@ -96,5 +93,6 @@ public partial class ChasingState : StateMachine.State
 			// Optionally handle the case where there is no path or the target cannot be reached
 			Agent.WishMove = Vector3.Zero; // Stop moving if there's no target/path
 		}
+
 	}
 }
