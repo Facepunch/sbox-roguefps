@@ -29,7 +29,10 @@ public class BaseAbilityItem : Component
 
 		InputName = GetInputName( WeaponInputType );
 	}
-
+	public virtual void GetUpdatedStats()
+	{
+		
+	}
 	protected override void OnUpdate()
 	{
 		if( ReloadAfterUse )

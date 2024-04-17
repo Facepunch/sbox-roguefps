@@ -2,14 +2,13 @@
 {
 	public List<InvetoryItem> itemPickUps = new List<InvetoryItem>();
 	public BaseEquipmentItem equippedItem;
-
+	public PlayerAbilities playerAbilities;
 	public Stats playerStats;
 
 	public ItemInventory( Stats stats )
 	{
 		playerStats = stats;
-
-		Log.Info( "Inventory Created" );
+		playerAbilities = stats.Components.Get<PlayerAbilities>( FindMode.InSelf );
 	}
 
 	public void AddEquipment( BaseEquipmentItem item )
@@ -39,6 +38,11 @@
 			item.ApplyUpgrade(); // Apply the upgrade to the player
 			chatUI.AddTextLocal( Sandbox.Utility.Steam.PersonaName, $"Added {item.Name} to inventory." );
 		}
+
+		foreach ( var weapons in playerAbilities.Abilities )
+		{
+			weapons.GetUpdatedStats();
+		}
 	}
 
 	//Remove an item from the inventory, but only 1 at a time
@@ -66,6 +70,11 @@
 				}
 				break;
 			}
+		}
+
+		foreach ( var weapons in playerAbilities.Abilities )
+		{
+			weapons.GetUpdatedStats();
 		}
 	}
 
