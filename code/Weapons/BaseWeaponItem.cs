@@ -30,7 +30,6 @@ public class BaseWeaponItem : BaseAbilityItem
 
 		CrosshairUI = GameObject.Parent.Components.Get<BasicCrosshairUI>( FindMode.EverythingInChildren );
 	}
-
 	protected override void DrawGizmos()
 	{
 		base.DrawGizmos();

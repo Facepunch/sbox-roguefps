@@ -2,8 +2,7 @@ using Sandbox;
 
 public class TestWeapon : BaseWeaponItem
 {
-	[Property]
-	public GameObject BulletTrace { get; set; }
+	[Property] public GameObject BulletTrace { get; set; }
 
 	public override bool RandomSpread { get; set; } = true;
 	public override float Spread { get; set; } = 15.0f;
@@ -19,6 +18,13 @@ public class TestWeapon : BaseWeaponItem
 	}
 
 	[Property] public bool UseGameObjectForTrace { get; set; } = false;
+
+	public override void GetUpdatedStats()
+	{
+		base.GetUpdatedStats();
+
+		MaxUseCount = (int)Stats.UpgradedStats[Stats.PlayerUpgradedStats.AmmoCount];
+	}
 
 	protected override void OnUpdate()
 	{

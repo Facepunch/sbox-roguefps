@@ -1,5 +1,6 @@
 public class TestWeaponSecondary : BaseWeaponItem
 {
+	[Property] public GameObject BulletTrace { get; set; }
 	public override int MaxUseCount { get; set; } = 2;
 	public override bool ReloadAfterUse { get; set; } = true;
 	public override bool TapFire { get; set; } = true;
@@ -53,6 +54,11 @@ public class TestWeaponSecondary : BaseWeaponItem
 
 		var cameraController = cameraObject.Components.Get<CameraController>(FindMode.EverythingInAncestors);
 		cameraController.ApplyRecoil();
+
+		var tracer = BulletTrace.Clone();
+		var tracerParticle = tracer.Components.Get<TracerBulletParticle>();
+		tracerParticle.Start.Transform.Position = tr.StartPosition + cameraObject.Transform.Rotation.Forward * 10f;
+		tracerParticle.End.Transform.Position = tr.EndPosition;
 
 		CameraShake?.Shake();
 		CrosshairUI?.OnShoot();
