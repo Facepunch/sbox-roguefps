@@ -98,14 +98,44 @@ public class BaseWeaponItem : BaseAbilityItem
 		return tr;
 	}
 
+	public SceneTraceResult TraceBulletEnemy( Vector3 start, Vector3 end )
+	{
+		if ( RandomSpread )
+		{
+			end += Vector3.Random.Normal * Spread;
+		}
+
+		if ( UseMuzzle && ViewModelObject.IsValid() )
+		{
+			Muzzle = ViewModelObject.Components.Get<SkinnedModelRenderer>().GetAttachment( "muzzle" ).Value.Position;
+			start = Muzzle;
+		}
+		var tr = Scene.Trace.Ray( start, end )
+		.WithTag( "player" )
+		.Run();
+
+		return tr;
+	}
+
 	public virtual void OnHit( GameObject obj )
 	{
 		if ( obj != null )
 		{
 			var health = obj.Components.Get<Npcbase>();
+
 			if ( health is not null ) 
 			{
 				health.OnDamage( Stats.UpgradedStats[Stats.PlayerUpgradedStats.AttackDamage], DamageTypes.None, GameObject.Parent );
+			}
+			else
+			{
+				var player = obj.Parent.Components.Get<Actor>();
+				if ( player is not null )
+				{
+			
+					var dmginfo = new DamageInfo(5,null,null);
+					player.OnDamage( dmginfo );
+				}
 			}
 
 		}

@@ -148,8 +148,8 @@
             "__type": "RogueFPS.ChasingState",
             "__guid": "33aa2cd3-5dd3-4838-ac31-d26336819add",
             "NextTick": {
-              "Relative": -1612.3065,
-              "Passed": 1612.3065,
+              "Relative": -1878.457,
+              "Passed": 1878.457,
               "Fraction": 1
             },
             "Priority": 0,
@@ -161,8 +161,8 @@
             "__guid": "8ceb5db2-3951-4e4d-82f0-0fc47bd36d36",
             "AttackRange": 256,
             "NextTick": {
-              "Relative": -1612.3065,
-              "Passed": 1612.3065,
+              "Relative": -1878.457,
+              "Passed": 1878.457,
               "Fraction": 1
             },
             "Priority": 1,
@@ -179,16 +179,16 @@
         "NetworkMode": 2,
         "Components": [
           {
-            "__type": "TestWeapon",
-            "__guid": "9ac669cd-821e-4ff2-a4b2-a5513c4ca108",
-            "AbilityDescription": "Its a machine Gun",
+            "__type": "TestNPCGun",
+            "__guid": "6294de65-b1c6-4955-85b8-7ed1836e2907",
+            "AbilityDescription": "Weapon",
             "AbilityIcon": "ui/test/ability/ab1.png",
-            "AbilityName": "Machine Gun",
+            "AbilityName": "Weapon",
             "BulletTrace": {
               "_type": "gameobject",
-              "prefab": "prefab/weapon/fx/bullettracer.prefab"
+              "prefab": "prefab/weapon/fx/bullettracertest.prefab"
             },
-            "Crosshair": "ui/crosshair/crosshair007.png",
+            "Crosshair": "ui/crosshair/crosshair001.png",
             "IsAI": true,
             "MaxUseCount": 30,
             "ReloadAfterUse": false,
