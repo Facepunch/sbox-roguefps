@@ -10,6 +10,13 @@ public class TestWeaponSecondary : BaseWeaponItem
 	private int shotsFired = 0;
 	private bool isBursting = false;
 
+	protected override void OnStart()
+	{
+		base.OnStart();
+
+		MaxUseCount = (int)Stats.GetUpgradedStat( Stats.PlayerUpgradedStats.SkillTwoUses );
+	}
+
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
@@ -30,6 +37,19 @@ public class TestWeaponSecondary : BaseWeaponItem
 					shotsFired = 0;
 				}
 			}
+		}
+	}
+
+	public override void GetUpdatedStats()
+	{
+		base.GetUpdatedStats();
+
+		MaxUseCount = (int)Stats.GetUpgradedStat( Stats.PlayerUpgradedStats.SkillTwoUses );
+
+		if( CurrentUseCount > MaxUseCount )
+		{
+			CurrentUseCount = MaxUseCount;
+			IsReloading = false;
 		}
 	}
 
