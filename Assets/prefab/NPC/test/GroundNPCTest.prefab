@@ -148,8 +148,8 @@
             "__type": "RogueFPS.ChasingState",
             "__guid": "33aa2cd3-5dd3-4838-ac31-d26336819add",
             "NextTick": {
-              "Relative": -1878.457,
-              "Passed": 1878.457,
+              "Relative": -200.34859,
+              "Passed": 200.34859,
               "Fraction": 1
             },
             "Priority": 0,
@@ -161,8 +161,8 @@
             "__guid": "8ceb5db2-3951-4e4d-82f0-0fc47bd36d36",
             "AttackRange": 256,
             "NextTick": {
-              "Relative": -1878.457,
-              "Passed": 1878.457,
+              "Relative": -200.34859,
+              "Passed": 200.34859,
               "Fraction": 1
             },
             "Priority": 1,
@@ -191,6 +191,10 @@
             "Crosshair": "ui/crosshair/crosshair001.png",
             "IsAI": true,
             "MaxUseCount": 30,
+            "Projectile": {
+              "_type": "gameobject",
+              "prefab": "prefab/bullet/bullettestprojectile.prefab"
+            },
             "ReloadAfterUse": false,
             "StatToUse": "ReloadTime",
             "TapFire": false,

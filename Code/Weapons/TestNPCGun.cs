@@ -3,6 +3,7 @@ using Sandbox;
 public class TestNPCGun : BaseWeaponItem
 {
 	[Property] public GameObject BulletTrace { get; set; }
+	[Property] GameObject Projectile { get; set; }
 
 	public override bool RandomSpread { get; set; } = true;
 	public override float Spread { get; set; } = 15.0f;
@@ -50,18 +51,23 @@ public class TestNPCGun : BaseWeaponItem
 
 		ViewModel?.Set("b_attack", true);
 
+		var projectile = Projectile.Clone();
+		projectile.Transform.Position = tr.StartPosition;
+		projectile.Transform.Rotation = GameObject.Transform.Rotation;
+
+		/*
 		var tracer = BulletTrace.Clone();
 		var tracerParticle = tracer.Components.Get<TracerBulletParticle>();
 		tracerParticle.Start.Transform.Position = tr.StartPosition + cameraObject.Transform.Rotation.Forward * 10f;
 		tracerParticle.End.Transform.Position = tr.EndPosition;
-
+		*/
 		var inventory = Stats.Inventory;
 
 		foreach ( var item in inventory.itemPickUps )
 		{
 			item.Item.OnShoot();
 		}
-
+		/*
 		if ( tr.Hit )
 		{
 			if ( tr.GameObject.Parent.Components.Get<Actor>() != null)
@@ -74,5 +80,6 @@ public class TestNPCGun : BaseWeaponItem
 				}
 			}
 		}
+		*/
 	}
 }

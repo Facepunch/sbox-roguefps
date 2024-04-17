@@ -3210,7 +3210,7 @@
     {
       "__guid": "f185086f-b52b-4c28-883d-af0b2420d770",
       "Name": "Box",
-      "Position": "32,992,64.03353",
+      "Position": "-32,992,64.03353",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -3311,7 +3311,7 @@
     {
       "__guid": "7698f4a0-60ff-4270-8883-e4071edb35bc",
       "Name": "Box",
-      "Position": "32,800,64.01391",
+      "Position": "-32,800,64.01391",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -3412,7 +3412,7 @@
     {
       "__guid": "9b1e3f29-64df-4c99-a4e4-dc4bbcb30dc4",
       "Name": "Box",
-      "Position": "31.99773,800,192",
+      "Position": "-32,800,192",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -7871,6 +7871,14 @@
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefab/shop_chest/coinchest.prefab"
+    },
+    {
+      "__guid": "5c10fc57-a480-4428-9f71-ad95e52dc0c3",
+      "Name": "BulletTest",
+      "Position": "-320,0,224",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefab/bullet/bullettestprojectile.prefab"
     }
   ],
   "SceneProperties": {
@@ -7896,7 +7904,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-17T15:31:30.4393089\u002B01:00",
+  "LastSaved": "2024-04-17T16:15:58.8407966\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
