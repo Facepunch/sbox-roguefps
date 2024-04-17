@@ -15,6 +15,7 @@ public sealed class Stats : Component
 	[Property, Group( "Movement" )] public float SprintMultiplier { get; set; } = 1.45f;
 	[Property, Group( "Jump" )] public float AmountOfJumps { get; set; } = 1;
 	[Property, Group( "Jump" )] public float JumpHeight { get; set; } = 1f;
+	[Property, Group( "Attack" )] public int AmmoCount { get; set; } = 30;
 	[Property, Group( "Attack" )] public float AttackSpeed { get; set; } = 1f;
 	[Property, Group( "Attack" )] public float AttackDamage { get; set; } = 10f;
 	[Property, Group( "Attack" )] public float ReloadTime { get; set; } = 1f;
@@ -39,7 +40,7 @@ public sealed class Stats : Component
 	public bool HasStat( PlayerStartingStats stat ) => StartingStats[stat] > 0f;
 	public enum PlayerStartingStats
 	{
-		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AmmoCount, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -47,7 +48,7 @@ public sealed class Stats : Component
 	public IDictionary<PlayerUpgradedStats, float> UpgradedStats { get; private set; }
 	public enum PlayerUpgradedStats
 	{
-		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
+		Health, HealthRegen, Armor, WalkSpeed, SprintMultiplier, AmountOfJumps, JumpHeight, AmmoCount, AttackSpeed, AttackDamage, ReloadTime, SecondaryAttackCoolDown, SkillOneCoolDown, SkillOneUses, UltimateCoolDown, UltimateUses
 	}
 	//
 
@@ -263,6 +264,7 @@ public sealed class Stats : Component
 		StartingStats[PlayerStartingStats.Health] = Health;
 		StartingStats[PlayerStartingStats.HealthRegen] = HealthRegen;
 		StartingStats[PlayerStartingStats.Armor] = Armor;
+		StartingStats[PlayerStartingStats.AmmoCount] = AmmoCount;
 		StartingStats[PlayerStartingStats.WalkSpeed] = WalkSpeed;
 		StartingStats[PlayerStartingStats.SprintMultiplier] = SprintMultiplier;
 		StartingStats[PlayerStartingStats.AmountOfJumps] = AmountOfJumps;
@@ -281,6 +283,7 @@ public sealed class Stats : Component
 		UpgradedStats[PlayerUpgradedStats.Health] = Health;
 		UpgradedStats[PlayerUpgradedStats.HealthRegen] = HealthRegen;
 		UpgradedStats[PlayerUpgradedStats.Armor] = Armor;
+		UpgradedStats[PlayerUpgradedStats.AmmoCount] = AmmoCount;
 		UpgradedStats[PlayerUpgradedStats.WalkSpeed] = WalkSpeed;
 		UpgradedStats[PlayerUpgradedStats.SprintMultiplier] = SprintMultiplier;
 		UpgradedStats[PlayerUpgradedStats.AmountOfJumps] = AmountOfJumps;
