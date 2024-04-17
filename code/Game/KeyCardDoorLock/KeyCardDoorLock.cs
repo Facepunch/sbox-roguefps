@@ -31,6 +31,7 @@ public sealed class KeyCardDoorLock : Interactable
 			{
 				if ( keyCard.KeyColor == KeyCardNeeded )
 				{
+					inventory.RemoveItem( keyCard ); //Remove the keycard from the inventory
 					//Unlock the door
 					IsOpen = true;
 					CreateGlow();
