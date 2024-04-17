@@ -1,0 +1,44 @@
+{
+  "RootObject": {
+    "__guid": "b40fab39-3ccb-429d-8e73-a1ada605446d",
+    "Name": "coinitem",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.SpriteRenderer",
+        "__guid": "a85fe20e-a1f8-436d-bec9-443fbeeb78a4",
+        "Additive": false,
+        "CastShadows": true,
+        "Color": "1,0.9,0,1",
+        "DepthFeather": 0,
+        "FlipHorizontal": false,
+        "FlipVertical": false,
+        "FogStrength": 1,
+        "Opaque": true,
+        "Size": "10,10",
+        "Texture": "materials/particles/shapes/circle1.vtex"
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "29c55805-002e-4bd9-bdc2-a60f88b4ccb3",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 50,
+        "Static": false
+      },
+      {
+        "__type": "RogueFPS.CoinItem",
+        "__guid": "85996ccf-a494-4983-8958-c4224b43666c",
+        "CoinAmount": 100
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

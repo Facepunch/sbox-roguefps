@@ -1,0 +1,84 @@
+{
+  "RootObject": {
+    "__guid": "daec2b83-87be-4ed5-a8e9-b6be728f1bb3",
+    "Name": "bullettracer",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "LineRenderer",
+        "__guid": "f7d553a7-1f53-4368-96e7-dba56991f74a",
+        "Color": {
+          "color": [
+            {
+              "t": 0.4957265,
+              "c": "1,0.9,0,1"
+            }
+          ],
+          "alpha": []
+        },
+        "EndCap": "Rounded",
+        "Opaque": true,
+        "Points": [
+          {
+            "_type": "gameobject",
+            "go": "398205f2-5f95-4f2f-bcf3-7170eb76cc28"
+          },
+          {
+            "_type": "gameobject",
+            "go": "14c24956-db45-44be-a1d8-11f7211eff58"
+          }
+        ],
+        "SplineBias": 0,
+        "SplineContinuity": 0,
+        "SplineInterpolation": 1,
+        "SplineTension": -0.22,
+        "StartCap": "Rounded",
+        "Width": {
+          "rangey": "0,0.5",
+          "frames": [
+            {},
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "Wireframe": false
+      },
+      {
+        "__type": "TracerBulletParticle",
+        "__guid": "6e27292b-2f14-47fa-90e1-23245416a4fd",
+        "End": {
+          "_type": "gameobject",
+          "go": "14c24956-db45-44be-a1d8-11f7211eff58"
+        },
+        "Start": {
+          "_type": "gameobject",
+          "go": "398205f2-5f95-4f2f-bcf3-7170eb76cc28"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "398205f2-5f95-4f2f-bcf3-7170eb76cc28",
+        "Name": "Start",
+        "Enabled": true,
+        "NetworkMode": 2
+      },
+      {
+        "__guid": "14c24956-db45-44be-a1d8-11f7211eff58",
+        "Name": "End",
+        "Position": "128,0,0",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

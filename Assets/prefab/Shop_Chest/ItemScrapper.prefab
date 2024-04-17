@@ -1,0 +1,71 @@
+{
+  "RootObject": {
+    "__guid": "58bf5ea1-2be5-4ff3-bff7-be9f139c4ccf",
+    "Name": "itemscrapper",
+    "Tags": "interactable",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "3cc6d054-a145-44e7-beee-d97761b5e226",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/temp/scrapper/item_scrapper.vmdl",
+        "RenderType": "On",
+        "Tint": "0.20465,0.20465,0.20465,1"
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "60ad1394-5397-4d4b-bfeb-af898393e1ea",
+        "IsTrigger": false,
+        "Model": "models/temp/scrapper/item_scrapper.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "6dcb7cfd-56a1-4442-a59a-97e65528c06b",
+        "__enabled": false,
+        "Color": "0.99496,1,0.69767,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "ObscuredColor": "0,0,0,0",
+        "Width": 0.25
+      },
+      {
+        "__type": "ItemScrapper",
+        "__guid": "cd11fda3-5544-409d-a76a-4441ce85b3e3",
+        "Cost": 100,
+        "HasPrice": false,
+        "IsOpen": false,
+        "ItemSpawnLocation": {
+          "_type": "gameobject",
+          "go": "e1d902a8-b1c1-4793-bd80-c7cde70656fc"
+        },
+        "PingIcon": "ui/ping/scrapper.png"
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "9b606330-0f6a-4826-abb2-83ed0556424d",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 100,
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "e1d902a8-b1c1-4793-bd80-c7cde70656fc",
+        "Name": "ItemLocation",
+        "Position": "0,0,27.99994",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

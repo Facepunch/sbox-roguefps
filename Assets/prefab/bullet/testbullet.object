@@ -1,0 +1,123 @@
+{
+  "RootObject": {
+    "Id": "d9fcfb98-edff-4c8f-b274-51e9ff62048c",
+    "Name": "testbullet",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Components": [
+      {
+        "__type": "ParticleEffect",
+        "__enabled": true,
+        "Alpha": {
+          "Constants": "1,0,0,0"
+        },
+        "ApplyColor": true,
+        "ApplyRotation": false,
+        "ApplyShape": false,
+        "Bounce": {
+          "Constants": "1,0,0,0"
+        },
+        "Brightness": {
+          "Constants": "1,0,0,0"
+        },
+        "Bumpiness": {},
+        "Collision": true,
+        "CollisionIgnore": null,
+        "CollisionRadius": 0,
+        "Damping": {},
+        "DieOnCollisionChance": {
+          "Constants": "100,0,0,0"
+        },
+        "Force": false,
+        "ForceDirection": "0,0,0",
+        "ForceScale": {
+          "Constants": "10000,0,0,0"
+        },
+        "Friction": {
+          "Constants": "1,0,0,0"
+        },
+        "Gradient": {
+          "color": [
+            {
+              "t": 0.5,
+              "c": "1,1,1,1"
+            }
+          ],
+          "alpha": []
+        },
+        "Lifetime": {
+          "Constants": "10,0,0,0"
+        },
+        "MaxParticles": 1,
+        "PerParticleTimeScale": {
+          "Constants": "1,0,0,0"
+        },
+        "PushStrength": {},
+        "Roll": {},
+        "Scale": {
+          "Constants": "1,0,0,0"
+        },
+        "SequenceSpeed": 1,
+        "Space": "World",
+        "StartVelocity": {
+          "Constants": "10000,0,0,0"
+        },
+        "Stretch": {
+          "Type": "Curve",
+          "Evaluation": "Frame",
+          "CurveA": [
+            {
+              "y": 1
+            },
+            {
+              "x": 1
+            }
+          ]
+        },
+        "TimeScale": 1,
+        "Tint": "0.20392,0.57255,0.34118,1"
+      },
+      {
+        "__type": "ParticleConeEmitter",
+        "__enabled": true,
+        "Burst": 1,
+        "ConeAngle": 1,
+        "ConeFar": 50,
+        "ConeNear": 1,
+        "Delay": 0,
+        "Duration": 10,
+        "InVolume": false,
+        "Loop": false,
+        "OnEdge": false,
+        "Rate": 0
+      },
+      {
+        "__type": "ParticleSpriteRenderer",
+        "__enabled": true,
+        "Additive": false,
+        "BlurAmount": 10,
+        "BlurOpacity": 0.19,
+        "BlurSpacing": 0.5,
+        "DepthFeather": 0,
+        "FaceVelocity": true,
+        "FogStrength": 1,
+        "LeadingTrail": true,
+        "MotionBlur": true,
+        "RotationOffset": 0,
+        "Scale": 0.61,
+        "Shadows": false,
+        "SortMode": "Unsorted",
+        "Texture": "materials/particles/glow_simple_01.vtex"
+      },
+      {
+        "__type": "SelfDestructComponent",
+        "__enabled": true,
+        "Seconds": 10
+      }
+    ]
+  },
+  "__references": []
+}

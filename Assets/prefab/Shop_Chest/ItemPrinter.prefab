@@ -1,0 +1,104 @@
+{
+  "RootObject": {
+    "__guid": "45159ffa-8862-41e6-be18-302424be477e",
+    "Name": "itemprinter",
+    "Tags": "interactable",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "bd7faf80-2bab-447f-823b-aa8af9a47055",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/temp/printer/printer.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ItemPrinter",
+        "__guid": "7ada9c9b-c595-4a44-ba85-ad025cd663fd",
+        "Cost": 100,
+        "HasPrice": false,
+        "IsOpen": false,
+        "ItemLocation": {
+          "_type": "gameobject",
+          "go": "2408cbb3-aed7-47d6-a5ca-375ac2928a07"
+        },
+        "ItemSpawnLocation": {
+          "_type": "gameobject",
+          "go": "6b14f9a6-4ec6-446b-adb0-9edbda5884cc"
+        },
+        "PingIcon": "ui/ping/printer.png",
+        "PriceLocation": {
+          "_type": "gameobject",
+          "go": "2333c3d7-1b21-4cea-9b4f-904ec318cf04"
+        },
+        "WorldUI": {
+          "_type": "gameobject",
+          "prefab": "prefab/shop_chest/costpanel-nolookatcamera.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "2e2e1eb3-f818-4f06-b340-a73ce87e3da7",
+        "IsTrigger": false,
+        "Model": "models/temp/printer/printer.vmdl",
+        "Static": true
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "f637f953-6f50-4c76-a403-e87baa1b4af8",
+        "__enabled": false,
+        "Color": "0.99496,1,0.69767,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "ObscuredColor": "0,0,0,0",
+        "Width": 0.25
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "2408cbb3-aed7-47d6-a5ca-375ac2928a07",
+        "Name": "ItemLocation",
+        "Position": "0,16,42",
+        "Scale": "0.5,0.5,0.5",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "0a8d9cf9-b3f4-4177-8195-497f54bad1d6",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/item/baseitem.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ItemAnimator",
+            "__guid": "d6c08d9a-dd68-4148-b830-01a8a7068761"
+          }
+        ]
+      },
+      {
+        "__guid": "6b14f9a6-4ec6-446b-adb0-9edbda5884cc",
+        "Name": "SpawnLocation",
+        "Position": "0,-16,32",
+        "Enabled": true,
+        "NetworkMode": 2
+      },
+      {
+        "__guid": "2333c3d7-1b21-4cea-9b4f-904ec318cf04",
+        "Name": "WorldPanelLocation",
+        "Position": "18,0,16",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

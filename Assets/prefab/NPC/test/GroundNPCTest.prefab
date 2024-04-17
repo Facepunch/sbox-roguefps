@@ -1,0 +1,206 @@
+{
+  "RootObject": {
+    "__guid": "8199d9c5-4eab-4b48-802f-76a8dad7d531",
+    "Name": "groundnpctest",
+    "Tags": "agent",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "27f90638-4893-4d7f-9f4a-e33817e58cf5",
+        "BodyGroups": 18446744073709551615,
+        "Model": "feathersmcgraw.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "efb06143-cc15-443c-a823-14c58d3087d1",
+        "Center": "0,0,32.80003",
+        "IsTrigger": false,
+        "Scale": "27.46667,27.26667,68.99994",
+        "Static": false
+      },
+      {
+        "__type": "Npcbase",
+        "__guid": "d25f2e7d-8f27-49ba-8018-5e11d2b9e82f",
+        "BaseMovementSpeed": 100,
+        "CameraGameObject": {
+          "_type": "gameobject",
+          "go": "0c71c362-63e0-4f00-bc24-c44f302ef91d"
+        },
+        "CharacterController": {
+          "_type": "component",
+          "component_id": "8cd30046-aeb3-40a7-b11b-41509b095184",
+          "go": "8199d9c5-4eab-4b48-802f-76a8dad7d531",
+          "component_type": "CharacterController"
+        },
+        "Coin": {
+          "_type": "gameobject",
+          "prefab": "prefab/coinandxp/coinitem.prefab"
+        },
+        "Health": 100,
+        "IsAlive": true,
+        "LineOfSightRange": -1,
+        "NoReactionToSound": false,
+        "StateMachine": {
+          "_type": "component",
+          "component_id": "00e8d0bc-58cd-4f8f-bd5a-6aa68ff342c9",
+          "go": "8199d9c5-4eab-4b48-802f-76a8dad7d531",
+          "component_type": "SimpleEnemyStateMachine"
+        },
+        "Stats": {
+          "_type": "component",
+          "component_id": "ee1491e0-c7f7-4302-ad4c-2b462cda9630",
+          "go": "8199d9c5-4eab-4b48-802f-76a8dad7d531",
+          "component_type": "Stats"
+        },
+        "WishVelocity": "0,0,0",
+        "Xp": {
+          "_type": "gameobject",
+          "prefab": "prefab/coinandxp/xpitem.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "8cd30046-aeb3-40a7-b11b-41509b095184",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "RogueFPS.SimpleEnemyStateMachine",
+        "__guid": "00e8d0bc-58cd-4f8f-bd5a-6aa68ff342c9",
+        "Agent": {
+          "_type": "component",
+          "component_id": "d25f2e7d-8f27-49ba-8018-5e11d2b9e82f",
+          "go": "8199d9c5-4eab-4b48-802f-76a8dad7d531",
+          "component_type": "Npcbase"
+        },
+        "CurrentState": {
+          "_type": "component",
+          "component_id": "0fd8e1a7-2572-4ecd-98b2-c2596d3c7d85",
+          "go": "60d6c5cd-9a8f-4248-ae37-01d50231cad3",
+          "component_type": "ChasingState"
+        }
+      },
+      {
+        "__type": "RogueFPS.Stats",
+        "__guid": "ee1491e0-c7f7-4302-ad4c-2b462cda9630",
+        "AmountOfJumps": 1,
+        "Armor": 0,
+        "AttackDamage": 10,
+        "AttackSpeed": 1,
+        "Health": 100,
+        "HealthRegen": 0.1,
+        "JumpHeight": 1,
+        "ReloadTime": 1,
+        "SecondaryAttackCoolDown": 5,
+        "SkillOneCoolDown": 5,
+        "SkillOneUses": 1,
+        "SprintMultiplier": 1.45,
+        "UltimateCoolDown": 50,
+        "UltimateUses": 1,
+        "WalkSpeed": 150
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "3ed8fd6c-38c6-432d-a5e3-23e292fbdba5",
+        "Name": "Object",
+        "Position": "8,-11,22",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "965ae6c2-fcd0-4e3a-89d6-767214747e34",
+            "BodyGroups": 171,
+            "Model": "models/weapons/sbox_assault_m4a1/w_m4a1.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "0c71c362-63e0-4f00-bc24-c44f302ef91d",
+        "Name": "Eyes",
+        "Position": "6.660816,0,54.20493",
+        "Enabled": true,
+        "NetworkMode": 2
+      },
+      {
+        "__guid": "60d6c5cd-9a8f-4248-ae37-01d50231cad3",
+        "Name": "State Machine States",
+        "Position": "-53.1981,-264.646,40.48121",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "RogueFPS.ChasingState",
+            "__guid": "0fd8e1a7-2572-4ecd-98b2-c2596d3c7d85",
+            "NextTick": {
+              "Relative": -1770.8412,
+              "Passed": 1770.8412,
+              "Fraction": 1
+            },
+            "Priority": 0,
+            "TickFrequency": 0
+          },
+          {
+            "__type": "RogueFPS.AttackingState",
+            "__guid": "af5dadd7-5bee-4964-88e5-837edf782664",
+            "AttackRange": 256,
+            "NextTick": {
+              "Relative": -1770.8412,
+              "Passed": 1770.8412,
+              "Fraction": 1
+            },
+            "Priority": 1,
+            "TickFrequency": 0
+          }
+        ]
+      },
+      {
+        "__guid": "ccc04ee1-491a-46cf-b716-54d8bd5bb8ff",
+        "Name": "PrimaryWeapon",
+        "Position": "23.46886,0,36.24902",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "TestWeapon",
+            "__guid": "0d0410b1-7a76-4dad-8491-5e76ea64625a",
+            "AbilityDescription": "Its a machine Gun",
+            "AbilityIcon": "ui/test/ability/ab1.png",
+            "AbilityName": "Machine Gun",
+            "BulletTrace": {
+              "_type": "gameobject",
+              "prefab": "prefab/weapon/fx/bullettracer.prefab"
+            },
+            "Crosshair": "ui/crosshair/crosshair007.png",
+            "MaxUseCount": 30,
+            "StatToUse": "ReloadTime",
+            "UseGameObjectForTrace": true,
+            "UseMuzzle": true,
+            "WeaponInputType": "Primary"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "facepunch.w_m4a1",
+    "marauders.feathersmcgraw"
+  ]
+}
