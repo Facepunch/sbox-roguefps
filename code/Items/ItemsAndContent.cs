@@ -9,6 +9,7 @@
 		new HealthRegen(),
 		new HealthIncrease(),
 		new LongFallBoots(),
+		new AmmoIncrease(),
 	};
 
 	public static List<BaseEquipmentItem> Equipments = new List<BaseEquipmentItem>
