@@ -432,34 +432,9 @@
         {
           "__type": "Sandbox.SkinnedModelRenderer",
           "__guid": "6a80dfdd-d8e9-4b9d-8734-1b1d0415a3c1",
-          "BodyGroups": 1,
+          "BodyGroups": 341,
           "CreateBoneObjects": false,
           "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "a223aaaa-7aa4-4a39-8f78-107d2480f24a",
-      "Name": "citizen (1)",
-      "Position": "296.5742,-641.6819,0.03527856",
-      "Rotation": "0,0,0.8660253,0.5000001",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.SkinnedModelRenderer",
-          "__guid": "e896e29c-a8b7-46c3-ba2f-f75f289f5d17",
-          "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": {
-            "_type": "component",
-            "component_id": "6a80dfdd-d8e9-4b9d-8734-1b1d0415a3c1",
-            "go": "2e4b01aa-8312-4cbc-b5d7-aefc443cfb0d",
-            "component_type": "SkinnedModelRenderer"
-          },
-          "CreateBoneObjects": false,
-          "Model": "models/citizen_clothes/full_outfit/scifi_trooper_armour/models/scifi_trooper_armour_yellow.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -516,6 +491,10 @@
               "RotationLerpSpeed": 5
             }
           ],
+          "CharacterLocation": {
+            "_type": "gameobject",
+            "go": "2e4b01aa-8312-4cbc-b5d7-aefc443cfb0d"
+          },
           "PlaySceneUrl": "/play/demo"
         }
       ]
@@ -674,7 +653,27 @@
           "__type": "Sandbox.SkyBox2D",
           "__guid": "c1d45c85-93b5-4eb5-bfbe-1975050f49de",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
-          "Tint": "0,0,0,1"
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ca71c086-aa7e-45d3-890e-b92510aa3eb6",
+      "Name": "Sun",
+      "Position": "-105.3695,-79.76592,194.9389",
+      "Rotation": "-0.1464466,0.3535534,0.3535534,0.8535534",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "e321de07-6092-4fd1-be25-fbdfd7aae8fc",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
         }
       ]
     }
@@ -702,7 +701,7 @@
   },
   "Title": "mainmenu",
   "Description": "",
-  "LastSaved": "2024-04-16T16:30:17.0854677\u002B01:00",
+  "LastSaved": "2024-04-18T11:13:45.2608119\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

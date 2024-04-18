@@ -6,12 +6,18 @@
 
 <root class="body column">
 	<div class="characterselect">
-	@for (int i = 0; i < 14; i++)
+	@foreach (var character in Characters)
 	{
 		<div class="character">
-		<div class="icon" style="background-image: url('ui/ping/ping.png')"></div>
+				<div class="icon" style="background-image: url('@character.Icon');" onclick=@(() => SelectCharacter( character))></div>
 		</div>
 	}
+	</div>
+	<div class="info-section">
+		<div class="selection">
+			<div class="name">@SelectedCharacter.CharacterName</div>
+			<div class="description">@SelectedCharacter.CharacterDescription</div>
+		</div>
 	</div>
     <div class="with-small-gap column">
         <a class="button" href="/">
@@ -22,6 +28,19 @@
 
 @code
 {
+	List<CharacterResource> Characters = new();
+	CharacterResource SelectedCharacter;
+
+	public SingleplayerPage()
+	{
+		Characters = ResourceLibrary.GetAll<CharacterResource>().ToList();
+	}
+
+	void SelectCharacter(CharacterResource character)
+	{
+		SelectedCharacter = character;
+	}
+
     void Save()
     {
         this.Navigate("/");

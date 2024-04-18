@@ -22,6 +22,7 @@
     bool firstUpdate = false;
 
     [Property] public Action<string> OnUrlChangedAction { get; set; }
+	[Property] public GameObject CharacterLocation { get; set; }
 
     // THIS EXISTS BECAUSE WE DON'T HAVE DYNAMIC ACTIONGRAPH PROPERTIES YET!!
     [Property] public string PlaySceneUrl { get; set; } = "/play/demo";

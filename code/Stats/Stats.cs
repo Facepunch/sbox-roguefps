@@ -7,6 +7,10 @@ public sealed class Stats : Component
 {
 	public static Stats Local { get; private set; }
 
+	[Property] public string Name { get; set; } = "Default";
+	[Property] public string Description { get; set; } = "Default Description";
+	[Property, ImageAssetPath] public string Icon { get; set; } = "ui/ping/ping.png";
+
 	//Default Stats Property
 	[Property] public float Health { get; set; } = 100f;
 	[Property] public float HealthRegen { get; set; } = 0.1f;

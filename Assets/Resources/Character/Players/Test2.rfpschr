@@ -1,0 +1,16 @@
+{
+  "CharacterName": "Boy",
+  "CharacterDescription": "This is a test for another character",
+  "Icon": "ui/test/items/stick.png",
+  "Model": "tony_cube.vmdl",
+  "CharacterPrefab": {
+    "_type": "gameobject",
+    "prefab": "prefab/player/player.prefab"
+  },
+  "IsPlayable": true,
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "videogames.tony_cube"
+  ]
+}

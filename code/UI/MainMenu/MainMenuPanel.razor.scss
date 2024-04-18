@@ -369,15 +369,15 @@ SingleplayerPage {
 
 	.characterSelect {
 		width: 760px;
-		height: 400px;
+		height: 300px;
 		background-color: rgba(0, 0, 0, 0.5);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
 		align-content: flex-start;
-		gap:10px;
-		flex-grow:1;
-		flex-shrink:1;
+		gap: 10px;
+		flex-grow: 1;
+		flex-shrink: 1;
 	}
 
 	.character {
@@ -413,5 +413,32 @@ SingleplayerPage {
 		background-color: rgba(50, 50, 0, 0.5);
 		padding: 10px;
 		text-align: center;
+	}
+
+	.info-section {
+		width: 600px;
+		background-color: rgba(50, 50, 0, 0.5);
+		height:300px;
+
+		.selection {
+            width: 100%;
+            height: 100%;
+            display: flex;
+			flex-direction:column;
+        }
+		.name {
+            font-size: 24px;
+            font-family: "Quantico";
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+		.description {
+            font-size: 16px;
+            font-family: "Quantico";
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 	}
 }

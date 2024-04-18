@@ -5159,7 +5159,7 @@
     {
       "__guid": "03388dc8-c755-438a-8313-a2463ebf2f23",
       "Name": "LootSpawner (1)",
-      "Position": "32,1088,-0.00009615815",
+      "Position": "32,1088,0",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -7891,7 +7891,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-17T23:19:13.0459189\u002B01:00",
+  "LastSaved": "2024-04-17T23:31:50.0166451\u002B01:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
