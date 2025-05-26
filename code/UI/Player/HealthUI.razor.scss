@@ -32,6 +32,7 @@ HealthUI {
     width: 1000px;
     height: 20px;
     background-color: rgba(0,0,0,0.5);
+    position: relative;
 
     .inner {
         width: 100%; /* Start with full health */
@@ -62,6 +63,7 @@ HealthUI {
 .healthbar {
     width: 100%; /* Start with full health */
     height: 30px;
+    position:relative;
     background-color: rgba(0,0,0,0.5);
 
     .txt {
@@ -71,9 +73,9 @@ HealthUI {
         text-shadow: 2px 2px 2px #000000;
         font-family: "Quantico";
         font-weight: 800;
-        align-self:center;
-        justify-content:center;
-        width:100%;
+        align-self: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .inner {
