@@ -1,5 +1,4 @@
 ItemsUI {
-	position: absolute;
 	justify-content: center;
 	align-items: flex-start;
 	font-weight: bold;
@@ -17,6 +16,7 @@ ItemsUI {
 		width: 50%;
 		height: 12%;
 		background-color: rgba(0, 0, 0, 0.25);
+		position:relative;
 	}
 
 	&.open {
@@ -28,6 +28,7 @@ ItemsUI {
 		text-align: center;
 		justify-content: center;
 		align-items: center;
+		position:relative;
 
 		&:hover {
 			background-color: rgba(white, 0.2);
