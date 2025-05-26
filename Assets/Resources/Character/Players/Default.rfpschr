@@ -11,6 +11,6 @@
   "ResourceVersion": 0,
   "__version": 0,
   "__references": [
-    "videogames.matt_pyramid"
+    "videogames.matt_pyramid#59914"
   ]
 }

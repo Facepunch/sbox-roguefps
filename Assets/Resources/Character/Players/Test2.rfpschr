@@ -11,6 +11,6 @@
   "ResourceVersion": 0,
   "__version": 0,
   "__references": [
-    "videogames.tony_cube"
+    "videogames.tony_cube#59913"
   ]
 }
