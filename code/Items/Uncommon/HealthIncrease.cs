@@ -12,12 +12,12 @@
 	{
 		Log.Info( $"!!!!!!{Owner.Inventory.GetItemOwner( this )}!!!!!!" );
 		Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] = Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] + StatUpgradeAmount;
-		Owner.Components.Get<PlayerController>().Health += StatUpgradeAmount;
+		Owner.Components.Get<RogueFPS.PlayerController>().Health += StatUpgradeAmount;
 	}
 
 	public override void RemoveUpgrade()
 	{
 		Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] = Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] - StatUpgradeAmount;
-		Owner.Components.Get<PlayerController>().Health -= StatUpgradeAmount;
+		Owner.Components.Get<RogueFPS.PlayerController>().Health -= StatUpgradeAmount;
 	}
 }

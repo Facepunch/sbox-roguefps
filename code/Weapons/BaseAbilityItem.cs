@@ -17,7 +17,7 @@ public class BaseAbilityItem : Component
 	[Property, Group( "Input" )] public virtual InputType WeaponInputType { get; set; } = InputType.Primary;
 	[Property, Group( "Stats" )] public virtual Stats.PlayerUpgradedStats StatToUse { get; set; } = Stats.PlayerUpgradedStats.AttackSpeed;
 	public Stats Stats { get; set; }
-	public PlayerController PlayerController { get; set; }
+	public RogueFPS.PlayerController PlayerController { get; set; }
 	public string InputName { get; set; }
 
 	protected override void OnAwake()
@@ -26,7 +26,7 @@ public class BaseAbilityItem : Component
 		Stats = GameObject.Components.Get<Stats>( FindMode.InParent );
 		CurrentUseCount = MaxUseCount;
 
-		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
+		PlayerController = GameObject.Components.Get<RogueFPS.PlayerController>( FindMode.InParent );
 
 		InputName = GetInputName( WeaponInputType );
 	}

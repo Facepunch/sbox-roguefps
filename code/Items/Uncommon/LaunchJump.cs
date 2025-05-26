@@ -21,7 +21,7 @@
 	public override void OnJump()
 	{
 		Log.Info( "Jump Launch" );
-		if ( Owner.Components.Get<PlayerController>().CharacterController.IsOnGround && Owner.Components.Get<PlayerController>().MechanicTags.Has( "sprint" ) )
-			Owner.Components.Get<PlayerController>().CharacterController.Punch(Owner.Components.Get<PlayerController>().EyeAngles.Forward * 100f * GetAmountFromInventory());
+		if ( Owner.Components.Get<RogueFPS.PlayerController>().CharacterController.IsOnGround && Owner.Components.Get<RogueFPS.PlayerController>().MechanicTags.Has( "sprint" ) )
+			Owner.Components.Get<RogueFPS.PlayerController>().CharacterController.Punch(Owner.Components.Get<RogueFPS.PlayerController>().EyeAngles.Forward * 100f * GetAmountFromInventory());
 	}
 }

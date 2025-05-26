@@ -3,7 +3,7 @@ using Sandbox;
 public sealed class MasterGameManager : Component
 {
 	private static DateTimeOffset startTime = DateTimeOffset.UtcNow;
-	static string FileName = $"{Game.ActiveScene.Title}_currentSession.json";
+	static string FileName = $"{Game.ActiveScene.Name}_currentSession.json";
 	public SessionProgess Current { get; set; } = new SessionProgess();
 
 	protected override void OnStart()
@@ -37,8 +37,8 @@ public sealed class MasterGameManager : Component
 
 	public void OnStageBegin()
 	{
-		Current.PlayerFactor = 1.0f + 0.3f * (Scene.GetAllComponents<PlayerController>().Count() - 1);
-		Current.TimeFactor = 0.05f * (int)Current.DifficultyLevel * Scene.GetAllComponents<PlayerController>().Count() * 0.2f;
+		Current.PlayerFactor = 1.0f + 0.3f * (Scene.GetAllComponents<RogueFPS.PlayerController>().Count() - 1);
+		Current.TimeFactor = 0.05f * (int)Current.DifficultyLevel * Scene.GetAllComponents<RogueFPS.PlayerController>().Count() * 0.2f;
 		Current.StageFactor = 1.15f * Current.StagesCompleted;
 	}
 

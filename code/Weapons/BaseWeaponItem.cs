@@ -26,7 +26,7 @@ public class BaseWeaponItem : BaseAbilityItem
 		{
 			ViewModel = ViewModelObject.Components.Get<SkinnedModelRenderer>();
 		}
-		PlayerController = GameObject.Components.Get<PlayerController>( FindMode.InParent );
+		PlayerController = GameObject.Components.Get<RogueFPS.PlayerController>( FindMode.InParent );
 
 		CrosshairUI = GameObject.Parent.Components.Get<BasicCrosshairUI>( FindMode.EverythingInChildren );
 	}

@@ -41,7 +41,7 @@ public sealed class FootSteps : Component
 		var sound = tr.Surface.Sounds.FootLeft;
 		if ( sound is null ) return;
 
-		var vol = Components.Get<PlayerController>( FindMode.EverythingInSelfAndAncestors ).WishVelocity.Length.LerpInverse( 50, 150, true );
+		var vol = Components.Get<RogueFPS.PlayerController>( FindMode.EverythingInSelfAndAncestors ).WishVelocity.Length.LerpInverse( 50, 150, true );
 
 		var handle = Sound.Play( sound, tr.HitPosition + tr.Normal * 5 );
 		handle.Volume = vol * e.Volume;

@@ -51,7 +51,7 @@ public sealed class ViewModelAnimator : Component
 	//
 	[Property]
 	[Group( "Don't worry about these" )]
-	private PlayerController Player { get; set; }
+	private RogueFPS.PlayerController Player { get; set; }
 
 	[Property]
 	[Group( "Don't worry about these" )]
