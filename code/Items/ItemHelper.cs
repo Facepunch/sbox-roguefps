@@ -103,4 +103,5 @@ public sealed class ItemHelper : Component, Component.ITriggerListener
 		Components.Get<ModelRenderer>( FindMode.InSelf ).Tint = item.ItemColor;
 		Equipment = item;
 	}
+
 }

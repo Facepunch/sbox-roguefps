@@ -24,4 +24,13 @@ public class AmmoIncrease : ItemDef
 
 		Owner.UpgradedStats[Stats.PlayerUpgradedStats.AmmoCount] -= ammoIncrease;
 	}
+	public override List<StyledTextPart> GetStyledDescriptionParts()
+	{
+		return new List<StyledTextPart>
+		{
+			new("Increase ammo capacity by ", "default"),
+			new("10%", "utility"),
+			new("(+10% per stack)", "stack")
+		};
+	}
 }

@@ -2,8 +2,8 @@ ItemsUIToolTip {
     color: white;
     position: absolute;
     right: 400px;
-    min-width: 300px;
-max-width: 400px;
+    min-width: 350px;
+    max-width: 450px;
     padding: 20px;
     font-family: "Quantico";
     font-weight: 200;
@@ -59,10 +59,33 @@ max-width: 400px;
 
             .description {
                 font-size: 18px;
-                opacity: .5;
+                flex-direction: row;
                 background-color: rgba(0,0,0,.5);
                 width: 100%;
                 padding: 10px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+
+                .text-default {
+                    padding-right: 5px;
+                    color: #FFFFFF;
+                }
+
+                .text-damage {
+                    padding-right: 5px;
+                    color: #FF7F50;
+                }
+
+                .text-healing {
+                    padding-right: 5px;
+                    color: #00FF7F;
+                }
+
+                .text-stack {
+                    padding-right: 5px;
+                    color: #FFD700;
+                }
             }
         }
 

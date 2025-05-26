@@ -20,4 +20,14 @@
 		Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] = Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.Health] - StatUpgradeAmount;
 		Owner.Components.Get<RogueFPS.PlayerController>().Health -= StatUpgradeAmount;
 	}
+	public override List<StyledTextPart> GetStyledDescriptionParts()
+	{
+		return new List<StyledTextPart>
+	{
+		new StyledTextPart("Increases maximum health by ", "default"),
+		new StyledTextPart("25", "healing"),
+		new StyledTextPart(" (+25 per stack).", "stack")
+	};
+	}
+
 }

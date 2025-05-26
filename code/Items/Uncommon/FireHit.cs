@@ -39,4 +39,16 @@ public class FireHit : ItemDef
 			}
 		}
 	}
+	public override List<StyledTextPart> GetStyledDescriptionParts()
+	{
+		return new List<StyledTextPart>
+		{
+			new("Your attacks ", "default"),
+			new("ignite", "damage"),
+			new(" enemies, dealing ", "default"),
+			new("100% base damage", "damage"),
+			new(" over 4 seconds. ", "default"),
+			new("(+100% per stack)", "stack")
+		};
+	}
 }

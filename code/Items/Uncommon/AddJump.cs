@@ -27,4 +27,13 @@
 
 		//Owner.Inventory.GetItemOwner( this ).UpgradedStats[PlayerStats.PlayerUpgradedStats.AmountOfJumps] = Owner.StartingStats[PlayerStats.PlayerStartingStats.AmountOfJumps] + GetAmountFromInventory();
 	}
+	public override List<StyledTextPart> GetStyledDescriptionParts()
+	{
+		return new List<StyledTextPart>
+		{
+			new("Gain an extra ", "default"),
+			new("jump", "utility"),
+			new("(+1 per stack)", "stack")
+		};
+	}
 }

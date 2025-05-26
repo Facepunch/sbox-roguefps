@@ -24,7 +24,12 @@
 					<div class="rarity">@_item.ItemTier</div>
 				</div>
 			</div>
-		<div class="description">@_item.Description</div>
+			<span class ="description">
+					@foreach (var part in _item.GetStyledDescriptionParts())
+					{
+						<span class="@GetCssClassForStyle(part.Style)">@part.Text</span>
+					}
+				</span>
 		</div>
 	</div>
 </root>
@@ -50,6 +55,16 @@
 		Style.Left = Length.Fraction(mousePosRelative.x);
 		Style.Top = Length.Fraction(mousePosRelative.y);
 	
+	}
+	private string GetCssClassForStyle(string style)
+	{
+		return style switch
+		{
+			"damage" => "text-damage",
+			"healing" => "text-healing",
+			"stack" => "text-stack",
+			_ => "text-default"
+		};
 	}
 
 	/// <summary>

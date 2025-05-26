@@ -58,6 +58,10 @@
 			Owner.UpgradedStats[Stats.PlayerUpgradedStats.AttackSpeed] = Owner.GetStartingStat( Stats.PlayerStartingStats.AttackSpeed ) + StatUpgradeAmount * itemAmount;
 		}
 	}
+	public virtual List<StyledTextPart> GetStyledDescriptionParts()
+	{
+		return new List<StyledTextPart> { new( Description, "default" ) };
+	}
 
 	public virtual void OnFall() { }
 	public virtual float OnFallDamage(float damage) { return damage; }
@@ -65,4 +69,16 @@
 	public virtual void OnJump() { }
 	public virtual void OnShoot() { }
 	public virtual void OnHit(GameObject target) { }
+}
+
+public class StyledTextPart
+{
+	public string Text { get; set; }
+	public string Style { get; set; }
+
+	public StyledTextPart( string text, string style )
+	{
+		Text = text;
+		Style = style;
+	}
 }

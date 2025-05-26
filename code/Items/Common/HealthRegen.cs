@@ -18,4 +18,14 @@
 	{
 		Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.HealthRegen] = Owner.Inventory.GetItemOwner( this ).UpgradedStats[Stats.PlayerUpgradedStats.HealthRegen] - 0.03f;
 	}
+
+	public override List<StyledTextPart> GetStyledDescriptionParts()
+	{
+		return new List<StyledTextPart>
+		{
+			new("Gain ", "default"),
+			new("+2 health per second", "healing"),
+			new("(+2 per stack)", "stack")
+		};
+	}
 }
